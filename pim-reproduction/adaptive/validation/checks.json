@@ -1,0 +1,217 @@
+{
+  "native": [
+    {
+      "policy": "eager",
+      "native_passed": true
+    },
+    {
+      "policy": "lazy",
+      "native_passed": true
+    },
+    {
+      "policy": "fixed",
+      "native_passed": true
+    },
+    {
+      "policy": "fixed-2",
+      "native_passed": true
+    },
+    {
+      "policy": "adaptive",
+      "native_passed": true
+    }
+  ],
+  "simulator_requested": false,
+  "preserved_simulator_checks": [
+    {
+      "configuration": {
+        "action": "run",
+        "policy": "adaptive",
+        "threads": 16,
+        "workload": "correctness",
+        "burst": 2,
+        "rounds": 1,
+        "heap_kib": 1024,
+        "keep": 1,
+        "max_keep": 2,
+        "budget_pages": 4,
+        "decay_ops": 64,
+        "pressure_percent": 75,
+        "validate": true,
+        "tag": "validation-v1"
+      },
+      "passed": true,
+      "outcome": "completed",
+      "summary": "/home/mahaswint/cs5290/pim-reproduction/adaptive/results/validation-v1/adaptive_t16_correctness_b2_r1_h1024_k1_m2_e4_d64_p75_v1/summary.json"
+    },
+    {
+      "configuration": {
+        "action": "run",
+        "policy": "adaptive",
+        "threads": 1,
+        "workload": "correctness",
+        "burst": 4,
+        "rounds": 1,
+        "heap_kib": 512,
+        "keep": 1,
+        "max_keep": 2,
+        "budget_pages": 4,
+        "decay_ops": 64,
+        "pressure_percent": 75,
+        "validate": true,
+        "tag": "validation-v1"
+      },
+      "passed": true,
+      "outcome": "completed",
+      "summary": "/home/mahaswint/cs5290/pim-reproduction/adaptive/results/validation-v1/adaptive_t1_correctness_b4_r1_h512_k1_m2_e4_d64_p75_v1/summary.json"
+    },
+    {
+      "configuration": {
+        "action": "run",
+        "policy": "adaptive",
+        "threads": 4,
+        "workload": "correctness",
+        "burst": 4,
+        "rounds": 1,
+        "heap_kib": 512,
+        "keep": 1,
+        "max_keep": 2,
+        "budget_pages": 4,
+        "decay_ops": 64,
+        "pressure_percent": 75,
+        "validate": true,
+        "tag": "validation-v1"
+      },
+      "passed": true,
+      "outcome": "completed",
+      "summary": "/home/mahaswint/cs5290/pim-reproduction/adaptive/results/validation-v1/adaptive_t4_correctness_b4_r1_h512_k1_m2_e4_d64_p75_v1/summary.json"
+    },
+    {
+      "configuration": {
+        "action": "run",
+        "policy": "eager",
+        "threads": 1,
+        "workload": "correctness",
+        "burst": 4,
+        "rounds": 1,
+        "heap_kib": 512,
+        "keep": 1,
+        "max_keep": 2,
+        "budget_pages": 4,
+        "decay_ops": 64,
+        "pressure_percent": 75,
+        "validate": true,
+        "tag": "validation-v1"
+      },
+      "passed": true,
+      "outcome": "completed",
+      "summary": "/home/mahaswint/cs5290/pim-reproduction/adaptive/results/validation-v1/eager_t1_correctness_b4_r1_h512_k1_m2_e4_d64_p75_v1/summary.json"
+    },
+    {
+      "configuration": {
+        "action": "run",
+        "policy": "eager",
+        "threads": 4,
+        "workload": "correctness",
+        "burst": 4,
+        "rounds": 1,
+        "heap_kib": 512,
+        "keep": 1,
+        "max_keep": 2,
+        "budget_pages": 4,
+        "decay_ops": 64,
+        "pressure_percent": 75,
+        "validate": true,
+        "tag": "validation-v1"
+      },
+      "passed": true,
+      "outcome": "completed",
+      "summary": "/home/mahaswint/cs5290/pim-reproduction/adaptive/results/validation-v1/eager_t4_correctness_b4_r1_h512_k1_m2_e4_d64_p75_v1/summary.json"
+    },
+    {
+      "configuration": {
+        "action": "run",
+        "policy": "fixed",
+        "threads": 1,
+        "workload": "correctness",
+        "burst": 4,
+        "rounds": 1,
+        "heap_kib": 512,
+        "keep": 1,
+        "max_keep": 2,
+        "budget_pages": 4,
+        "decay_ops": 64,
+        "pressure_percent": 75,
+        "validate": true,
+        "tag": "validation-v1"
+      },
+      "passed": true,
+      "outcome": "completed",
+      "summary": "/home/mahaswint/cs5290/pim-reproduction/adaptive/results/validation-v1/fixed_t1_correctness_b4_r1_h512_k1_m2_e4_d64_p75_v1/summary.json"
+    },
+    {
+      "configuration": {
+        "action": "run",
+        "policy": "fixed",
+        "threads": 4,
+        "workload": "correctness",
+        "burst": 4,
+        "rounds": 1,
+        "heap_kib": 512,
+        "keep": 1,
+        "max_keep": 2,
+        "budget_pages": 4,
+        "decay_ops": 64,
+        "pressure_percent": 75,
+        "validate": true,
+        "tag": "validation-v1"
+      },
+      "passed": true,
+      "outcome": "completed",
+      "summary": "/home/mahaswint/cs5290/pim-reproduction/adaptive/results/validation-v1/fixed_t4_correctness_b4_r1_h512_k1_m2_e4_d64_p75_v1/summary.json"
+    },
+    {
+      "configuration": {
+        "action": "run",
+        "policy": "lazy",
+        "threads": 1,
+        "workload": "correctness",
+        "burst": 4,
+        "rounds": 1,
+        "heap_kib": 512,
+        "keep": 1,
+        "max_keep": 2,
+        "budget_pages": 4,
+        "decay_ops": 64,
+        "pressure_percent": 75,
+        "validate": true,
+        "tag": "validation-v1"
+      },
+      "passed": true,
+      "outcome": "completed",
+      "summary": "/home/mahaswint/cs5290/pim-reproduction/adaptive/results/validation-v1/lazy_t1_correctness_b4_r1_h512_k1_m2_e4_d64_p75_v1/summary.json"
+    },
+    {
+      "configuration": {
+        "action": "run",
+        "policy": "lazy",
+        "threads": 4,
+        "workload": "correctness",
+        "burst": 4,
+        "rounds": 1,
+        "heap_kib": 512,
+        "keep": 1,
+        "max_keep": 2,
+        "budget_pages": 4,
+        "decay_ops": 64,
+        "pressure_percent": 75,
+        "validate": true,
+        "tag": "validation-v1"
+      },
+      "passed": true,
+      "outcome": "completed",
+      "summary": "/home/mahaswint/cs5290/pim-reproduction/adaptive/results/validation-v1/lazy_t4_correctness_b4_r1_h512_k1_m2_e4_d64_p75_v1/summary.json"
+    }
+  ],
+  "completed_at_unix": 1793275487.1563997
+}

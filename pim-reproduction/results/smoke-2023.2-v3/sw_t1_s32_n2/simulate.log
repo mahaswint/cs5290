@@ -1,0 +1,19 @@
+panic: ExecuteSErri is not yet implemented
+
+goroutine 50 [running]:
+uPIMulator/src/device/simulator/dpu/logic.(*Logic).ExecuteSErri(...)
+	/home/mahaswint/cs5290/pim-reproduction/runtime/src/device/simulator/dpu/logic/logic.go:4903
+uPIMulator/src/device/simulator/dpu/logic.(*Logic).ExecuteInstruction(0xc10f572000, 0xc000099b60)
+	/home/mahaswint/cs5290/pim-reproduction/runtime/src/device/simulator/dpu/logic/logic.go:454 +0x789
+uPIMulator/src/device/simulator/dpu/logic.(*Logic).ServiceThreadScheduler(0xc10f572000)
+	/home/mahaswint/cs5290/pim-reproduction/runtime/src/device/simulator/dpu/logic/logic.go:250 +0x65f
+uPIMulator/src/device/simulator/dpu/logic.(*Logic).Cycle(0xc10f572000)
+	/home/mahaswint/cs5290/pim-reproduction/runtime/src/device/simulator/dpu/logic/logic.go:204 +0x1c
+uPIMulator/src/device/simulator/dpu.(*Dpu).Cycle(0xc001ed00b0)
+	/home/mahaswint/cs5290/pim-reproduction/runtime/src/device/simulator/dpu/dpu.go:205 +0xd6
+uPIMulator/src/host/vm.(*DpuComputeCycleJob).Execute(0xc001ec0310)
+	/home/mahaswint/cs5290/pim-reproduction/runtime/src/host/vm/dpu_compute_cycle_job.go:28 +0x25
+uPIMulator/src/device/core.(*ThreadPool).Dispatch(0x0?, {0x6a7c30?, 0xc001ec0310?})
+	/home/mahaswint/cs5290/pim-reproduction/runtime/src/device/core/thread_pool.go:31 +0x59
+created by uPIMulator/src/device/core.(*ThreadPool).Start in goroutine 1
+	/home/mahaswint/cs5290/pim-reproduction/runtime/src/device/core/thread_pool.go:24 +0x38

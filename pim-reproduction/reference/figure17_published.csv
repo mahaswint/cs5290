@@ -1,0 +1,6 @@
+data_structure,allocator,latency_label_value,unit,source
+static CSR,static,83.1,not explicitly printed beside labels,Figure 17a top label
+array of linked lists,buddy,331,not explicitly printed beside labels,Figure 17a top label
+array of linked lists,sw,14.6,not explicitly printed beside labels,Figure 17a top label
+variable-sized array,buddy,351,not explicitly printed beside labels,Figure 17a top label
+variable-sized array,sw,3.3,not explicitly printed beside labels,Figure 17a top label

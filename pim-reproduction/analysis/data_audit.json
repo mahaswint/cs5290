@@ -1,0 +1,67 @@
+{
+  "configurations": 12,
+  "total_samples": 13056,
+  "all_checks_passed": true,
+  "runs": [
+    {
+      "run": "buddy_t1_s32_n128",
+      "samples": 128,
+      "raw_csv_matches_native_counters": true
+    },
+    {
+      "run": "buddy_t1_s256_n128",
+      "samples": 128,
+      "raw_csv_matches_native_counters": true
+    },
+    {
+      "run": "buddy_t1_s4096_n128",
+      "samples": 128,
+      "raw_csv_matches_native_counters": true
+    },
+    {
+      "run": "sw_t1_s32_n128",
+      "samples": 128,
+      "raw_csv_matches_native_counters": true
+    },
+    {
+      "run": "sw_t1_s256_n128",
+      "samples": 128,
+      "raw_csv_matches_native_counters": true
+    },
+    {
+      "run": "sw_t1_s4096_n128",
+      "samples": 128,
+      "raw_csv_matches_native_counters": true
+    },
+    {
+      "run": "buddy_t16_s32_n128",
+      "samples": 2048,
+      "raw_csv_matches_native_counters": true
+    },
+    {
+      "run": "buddy_t16_s256_n128",
+      "samples": 2048,
+      "raw_csv_matches_native_counters": true
+    },
+    {
+      "run": "buddy_t16_s4096_n128",
+      "samples": 2048,
+      "raw_csv_matches_native_counters": true
+    },
+    {
+      "run": "sw_t16_s32_n128",
+      "samples": 2048,
+      "raw_csv_matches_native_counters": true
+    },
+    {
+      "run": "sw_t16_s256_n128",
+      "samples": 2048,
+      "raw_csv_matches_native_counters": true
+    },
+    {
+      "run": "sw_t16_s4096_n128",
+      "samples": 2048,
+      "raw_csv_matches_native_counters": true
+    }
+  ]
+}

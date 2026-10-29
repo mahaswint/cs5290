@@ -1,0 +1,2705 @@
+	.text
+	.file	"truncdfsf2.c"
+	.file	1 "/home/mahaswint/cs5290" "pim-reproduction/adaptive/runtime/sdk/syslib/fp_trunc.h"
+	.file	2 "/home/mahaswint/cs5290" "pim-reproduction/adaptive/runtime/sdk/stdlib/stdint.h"
+	.section	.text.__truncdfsf2,"ax",@progbits
+	.globl	__truncdfsf2                    // -- Begin function __truncdfsf2
+	.type	__truncdfsf2,@function
+__truncdfsf2:                           // @__truncdfsf2
+.Lfunc_begin0:
+	.file	3 "/home/mahaswint/cs5290" "pim-reproduction/adaptive/runtime/sdk/syslib/truncdfsf2.c"
+	.loc	3 16 0                          // pim-reproduction/adaptive/runtime/sdk/syslib/truncdfsf2.c:16:0
+	.cfi_sections .debug_frame
+	.cfi_startproc
+// %bb.0:
+	//DEBUG_VALUE: __truncdfsf2:a <- $d0
+	//DEBUG_VALUE: __truncdfsf2:a <- $d0
+	//DEBUG_VALUE: __truncXfYf2__:a <- $d0
+	//DEBUG_VALUE: __truncXfYf2__:a <- $d0
+	//DEBUG_VALUE: srcToRep:x <- $d0
+	//DEBUG_VALUE: srcToRep:x <- $d0
+	.cfi_def_cfa_offset 0
+	//DEBUG_VALUE: srcToRep:rep <- $d0
+	//DEBUG_VALUE: srcToRep:rep <- $d0
+	//DEBUG_VALUE: __truncXfYf2__:srcBits <- 64
+	//DEBUG_VALUE: __truncXfYf2__:srcExpBits <- 11
+	//DEBUG_VALUE: __truncXfYf2__:srcInfExp <- 2047
+	//DEBUG_VALUE: __truncXfYf2__:srcExpBias <- 1023
+	//DEBUG_VALUE: __truncXfYf2__:srcMinNormal <- 4503599627370496
+	//DEBUG_VALUE: __truncXfYf2__:srcSignificandMask <- 4503599627370495
+	//DEBUG_VALUE: __truncXfYf2__:srcInfinity <- 9218868437227405312
+	//DEBUG_VALUE: __truncXfYf2__:srcSignMask <- -9223372036854775808
+	//DEBUG_VALUE: __truncXfYf2__:srcAbsMask <- 9223372036854775807
+	//DEBUG_VALUE: __truncXfYf2__:roundMask <- 536870911
+	//DEBUG_VALUE: __truncXfYf2__:halfway <- 268435456
+	//DEBUG_VALUE: __truncXfYf2__:srcQNaN <- 2251799813685248
+	//DEBUG_VALUE: __truncXfYf2__:srcNaNCode <- 2251799813685247
+	//DEBUG_VALUE: __truncXfYf2__:dstBits <- 32
+	//DEBUG_VALUE: __truncXfYf2__:dstExpBits <- 8
+	//DEBUG_VALUE: __truncXfYf2__:dstInfExp <- 255
+	//DEBUG_VALUE: __truncXfYf2__:dstExpBias <- 127
+	//DEBUG_VALUE: __truncXfYf2__:underflowExponent <- 897
+	//DEBUG_VALUE: __truncXfYf2__:overflowExponent <- 1151
+	//DEBUG_VALUE: __truncXfYf2__:underflow <- 4039728865751334912
+	//DEBUG_VALUE: __truncXfYf2__:overflow <- 5183643171103440896
+	//DEBUG_VALUE: __truncXfYf2__:dstQNaN <- 4194304
+	//DEBUG_VALUE: __truncXfYf2__:dstNaNCode <- 4194303
+	//DEBUG_VALUE: __truncXfYf2__:aRep <- $d0
+	.file	4 "/home/mahaswint/cs5290" "pim-reproduction/adaptive/runtime/sdk/syslib/fp_trunc_impl.inc"
+	.loc	4 75 33 prologue_end            // pim-reproduction/adaptive/runtime/sdk/syslib/fp_trunc_impl.inc:75:33
+	and r5, r1, 4294967295
+	and r4, r0, 2147483647
+.Ltmp0:
+	//DEBUG_VALUE: __truncXfYf2__:sign <- [DW_OP_constu 9223372036854775808, DW_OP_and, DW_OP_stack_value] $d0
+	//DEBUG_VALUE: __truncXfYf2__:aAbs <- [DW_OP_constu 9223372036854775807, DW_OP_and, DW_OP_stack_value] $d0
+	.loc	4 79 14                         // pim-reproduction/adaptive/runtime/sdk/syslib/fp_trunc_impl.inc:79:14
+	add r3, r5, 0
+	addc r2, r4, 3354394624
+	.loc	4 79 33 is_stmt 0               // pim-reproduction/adaptive/runtime/sdk/syslib/fp_trunc_impl.inc:79:33
+	add r7, r5, 0
+	addc r6, r4, 3088056320
+.Ltmp1:
+	.loc	4 79 9                          // pim-reproduction/adaptive/runtime/sdk/syslib/fp_trunc_impl.inc:79:9
+	sub zero, r3, r7
+	subc zero, r2, r6, geu, .LBB0_5
+.Ltmp2:
+// %bb.1:
+	//DEBUG_VALUE: __truncXfYf2__:aAbs <- [DW_OP_constu 9223372036854775807, DW_OP_and, DW_OP_stack_value] $d0
+	//DEBUG_VALUE: __truncXfYf2__:sign <- [DW_OP_constu 9223372036854775808, DW_OP_and, DW_OP_stack_value] $d0
+	//DEBUG_VALUE: __truncXfYf2__:aRep <- $d0
+	//DEBUG_VALUE: __truncXfYf2__:a <- $d0
+	//DEBUG_VALUE: __truncdfsf2:a <- $d0
+	//DEBUG_VALUE: __truncXfYf2__:dstNaNCode <- 4194303
+	//DEBUG_VALUE: __truncXfYf2__:dstQNaN <- 4194304
+	//DEBUG_VALUE: __truncXfYf2__:overflow <- 5183643171103440896
+	//DEBUG_VALUE: __truncXfYf2__:underflow <- 4039728865751334912
+	//DEBUG_VALUE: __truncXfYf2__:overflowExponent <- 1151
+	//DEBUG_VALUE: __truncXfYf2__:underflowExponent <- 897
+	//DEBUG_VALUE: __truncXfYf2__:dstExpBias <- 127
+	//DEBUG_VALUE: __truncXfYf2__:dstInfExp <- 255
+	//DEBUG_VALUE: __truncXfYf2__:dstExpBits <- 8
+	//DEBUG_VALUE: __truncXfYf2__:dstBits <- 32
+	//DEBUG_VALUE: __truncXfYf2__:srcNaNCode <- 2251799813685247
+	//DEBUG_VALUE: __truncXfYf2__:srcQNaN <- 2251799813685248
+	//DEBUG_VALUE: __truncXfYf2__:halfway <- 268435456
+	//DEBUG_VALUE: __truncXfYf2__:roundMask <- 536870911
+	//DEBUG_VALUE: __truncXfYf2__:srcAbsMask <- 9223372036854775807
+	//DEBUG_VALUE: __truncXfYf2__:srcSignMask <- -9223372036854775808
+	//DEBUG_VALUE: __truncXfYf2__:srcInfinity <- 9218868437227405312
+	//DEBUG_VALUE: __truncXfYf2__:srcSignificandMask <- 4503599627370495
+	//DEBUG_VALUE: __truncXfYf2__:srcMinNormal <- 4503599627370496
+	//DEBUG_VALUE: __truncXfYf2__:srcExpBias <- 1023
+	//DEBUG_VALUE: __truncXfYf2__:srcInfExp <- 2047
+	//DEBUG_VALUE: __truncXfYf2__:srcExpBits <- 11
+	//DEBUG_VALUE: __truncXfYf2__:srcBits <- 64
+	.loc	4 83 26 is_stmt 1               // pim-reproduction/adaptive/runtime/sdk/syslib/fp_trunc_impl.inc:83:26
+	lsrx r2, r0, 29
+	lsr_add r5, r2, r1, 29
+	.loc	4 86 42                         // pim-reproduction/adaptive/runtime/sdk/syslib/fp_trunc_impl.inc:86:42
+	and r7, r1, 536870911
+	and r6, r0, 0
+.Ltmp3:
+	//DEBUG_VALUE: roundBits <- $d6
+	.loc	4 0 42 is_stmt 0                // pim-reproduction/adaptive/runtime/sdk/syslib/fp_trunc_impl.inc:0:42
+	move.s d2, 268435457
+	.loc	4 83 26 is_stmt 1               // pim-reproduction/adaptive/runtime/sdk/syslib/fp_trunc_impl.inc:83:26
+	lsr r4, r0, 29
+.Ltmp4:
+	//DEBUG_VALUE: __truncXfYf2__:absResult <- undef
+	.loc	4 88 13                         // pim-reproduction/adaptive/runtime/sdk/syslib/fp_trunc_impl.inc:88:13
+	sub zero, r7, r3
+	subc zero, r6, r2, ltu, .LBB0_3
+.Ltmp5:
+// %bb.2:
+	//DEBUG_VALUE: roundBits <- $d6
+	//DEBUG_VALUE: __truncXfYf2__:aAbs <- [DW_OP_constu 9223372036854775807, DW_OP_and, DW_OP_stack_value] $d0
+	//DEBUG_VALUE: __truncXfYf2__:sign <- [DW_OP_constu 9223372036854775808, DW_OP_and, DW_OP_stack_value] $d0
+	//DEBUG_VALUE: __truncXfYf2__:aRep <- $d0
+	//DEBUG_VALUE: __truncXfYf2__:a <- $d0
+	//DEBUG_VALUE: __truncdfsf2:a <- $d0
+	//DEBUG_VALUE: __truncXfYf2__:dstNaNCode <- 4194303
+	//DEBUG_VALUE: __truncXfYf2__:dstQNaN <- 4194304
+	//DEBUG_VALUE: __truncXfYf2__:overflow <- 5183643171103440896
+	//DEBUG_VALUE: __truncXfYf2__:underflow <- 4039728865751334912
+	//DEBUG_VALUE: __truncXfYf2__:overflowExponent <- 1151
+	//DEBUG_VALUE: __truncXfYf2__:underflowExponent <- 897
+	//DEBUG_VALUE: __truncXfYf2__:dstExpBias <- 127
+	//DEBUG_VALUE: __truncXfYf2__:dstInfExp <- 255
+	//DEBUG_VALUE: __truncXfYf2__:dstExpBits <- 8
+	//DEBUG_VALUE: __truncXfYf2__:dstBits <- 32
+	//DEBUG_VALUE: __truncXfYf2__:srcNaNCode <- 2251799813685247
+	//DEBUG_VALUE: __truncXfYf2__:srcQNaN <- 2251799813685248
+	//DEBUG_VALUE: __truncXfYf2__:halfway <- 268435456
+	//DEBUG_VALUE: __truncXfYf2__:roundMask <- 536870911
+	//DEBUG_VALUE: __truncXfYf2__:srcAbsMask <- 9223372036854775807
+	//DEBUG_VALUE: __truncXfYf2__:srcSignMask <- -9223372036854775808
+	//DEBUG_VALUE: __truncXfYf2__:srcInfinity <- 9218868437227405312
+	//DEBUG_VALUE: __truncXfYf2__:srcSignificandMask <- 4503599627370495
+	//DEBUG_VALUE: __truncXfYf2__:srcMinNormal <- 4503599627370496
+	//DEBUG_VALUE: __truncXfYf2__:srcExpBias <- 1023
+	//DEBUG_VALUE: __truncXfYf2__:srcInfExp <- 2047
+	//DEBUG_VALUE: __truncXfYf2__:srcExpBits <- 11
+	//DEBUG_VALUE: __truncXfYf2__:srcBits <- 64
+	.loc	4 89 22                         // pim-reproduction/adaptive/runtime/sdk/syslib/fp_trunc_impl.inc:89:22
+	add r3, r5, 1073741825
+.Ltmp6:
+	//DEBUG_VALUE: __truncXfYf2__:absResult <- $r3
+.LBB0_19:
+	//DEBUG_VALUE: __truncXfYf2__:aAbs <- [DW_OP_constu 9223372036854775807, DW_OP_and, DW_OP_stack_value] $d0
+	//DEBUG_VALUE: __truncXfYf2__:sign <- [DW_OP_constu 9223372036854775808, DW_OP_and, DW_OP_stack_value] $d0
+	//DEBUG_VALUE: __truncXfYf2__:aRep <- $d0
+	//DEBUG_VALUE: __truncXfYf2__:a <- $d0
+	//DEBUG_VALUE: __truncdfsf2:a <- $d0
+	//DEBUG_VALUE: __truncXfYf2__:dstNaNCode <- 4194303
+	//DEBUG_VALUE: __truncXfYf2__:dstQNaN <- 4194304
+	//DEBUG_VALUE: __truncXfYf2__:overflow <- 5183643171103440896
+	//DEBUG_VALUE: __truncXfYf2__:underflow <- 4039728865751334912
+	//DEBUG_VALUE: __truncXfYf2__:overflowExponent <- 1151
+	//DEBUG_VALUE: __truncXfYf2__:underflowExponent <- 897
+	//DEBUG_VALUE: __truncXfYf2__:dstExpBias <- 127
+	//DEBUG_VALUE: __truncXfYf2__:dstInfExp <- 255
+	//DEBUG_VALUE: __truncXfYf2__:dstExpBits <- 8
+	//DEBUG_VALUE: __truncXfYf2__:dstBits <- 32
+	//DEBUG_VALUE: __truncXfYf2__:srcNaNCode <- 2251799813685247
+	//DEBUG_VALUE: __truncXfYf2__:srcQNaN <- 2251799813685248
+	//DEBUG_VALUE: __truncXfYf2__:halfway <- 268435456
+	//DEBUG_VALUE: __truncXfYf2__:roundMask <- 536870911
+	//DEBUG_VALUE: __truncXfYf2__:srcAbsMask <- 9223372036854775807
+	//DEBUG_VALUE: __truncXfYf2__:srcSignMask <- -9223372036854775808
+	//DEBUG_VALUE: __truncXfYf2__:srcInfinity <- 9218868437227405312
+	//DEBUG_VALUE: __truncXfYf2__:srcSignificandMask <- 4503599627370495
+	//DEBUG_VALUE: __truncXfYf2__:srcMinNormal <- 4503599627370496
+	//DEBUG_VALUE: __truncXfYf2__:srcExpBias <- 1023
+	//DEBUG_VALUE: __truncXfYf2__:srcInfExp <- 2047
+	//DEBUG_VALUE: __truncXfYf2__:srcExpBits <- 11
+	//DEBUG_VALUE: __truncXfYf2__:srcBits <- 64
+	//DEBUG_VALUE: __truncXfYf2__:sign <- [DW_OP_constu 9223372036854775808, DW_OP_and, DW_OP_stack_value] $d0
+	//DEBUG_VALUE: __truncXfYf2__:absResult <- $r3
+	.loc	4 133 30                        // pim-reproduction/adaptive/runtime/sdk/syslib/fp_trunc_impl.inc:133:30
+	and r0, r0, -2147483648
+.Ltmp7:
+	or r0, r3, r0
+.Ltmp8:
+	//DEBUG_VALUE: dstFromRep:rep <- undef
+	//DEBUG_VALUE: dstFromRep:x <- $r0
+	//DEBUG_VALUE: __truncXfYf2__:result <- $r0
+	.loc	3 17 5                          // pim-reproduction/adaptive/runtime/sdk/syslib/truncdfsf2.c:17:5
+	jump r23
+.Ltmp9:
+.LBB0_5:
+	//DEBUG_VALUE: __truncXfYf2__:aAbs <- [DW_OP_constu 9223372036854775807, DW_OP_and, DW_OP_stack_value] $d0
+	//DEBUG_VALUE: __truncXfYf2__:sign <- [DW_OP_constu 9223372036854775808, DW_OP_and, DW_OP_stack_value] $d0
+	//DEBUG_VALUE: __truncXfYf2__:aRep <- $d0
+	//DEBUG_VALUE: __truncXfYf2__:a <- $d0
+	//DEBUG_VALUE: __truncdfsf2:a <- $d0
+	//DEBUG_VALUE: __truncXfYf2__:dstNaNCode <- 4194303
+	//DEBUG_VALUE: __truncXfYf2__:dstQNaN <- 4194304
+	//DEBUG_VALUE: __truncXfYf2__:overflow <- 5183643171103440896
+	//DEBUG_VALUE: __truncXfYf2__:underflow <- 4039728865751334912
+	//DEBUG_VALUE: __truncXfYf2__:overflowExponent <- 1151
+	//DEBUG_VALUE: __truncXfYf2__:underflowExponent <- 897
+	//DEBUG_VALUE: __truncXfYf2__:dstExpBias <- 127
+	//DEBUG_VALUE: __truncXfYf2__:dstInfExp <- 255
+	//DEBUG_VALUE: __truncXfYf2__:dstExpBits <- 8
+	//DEBUG_VALUE: __truncXfYf2__:dstBits <- 32
+	//DEBUG_VALUE: __truncXfYf2__:srcNaNCode <- 2251799813685247
+	//DEBUG_VALUE: __truncXfYf2__:srcQNaN <- 2251799813685248
+	//DEBUG_VALUE: __truncXfYf2__:halfway <- 268435456
+	//DEBUG_VALUE: __truncXfYf2__:roundMask <- 536870911
+	//DEBUG_VALUE: __truncXfYf2__:srcAbsMask <- 9223372036854775807
+	//DEBUG_VALUE: __truncXfYf2__:srcSignMask <- -9223372036854775808
+	//DEBUG_VALUE: __truncXfYf2__:srcInfinity <- 9218868437227405312
+	//DEBUG_VALUE: __truncXfYf2__:srcSignificandMask <- 4503599627370495
+	//DEBUG_VALUE: __truncXfYf2__:srcMinNormal <- 4503599627370496
+	//DEBUG_VALUE: __truncXfYf2__:srcExpBias <- 1023
+	//DEBUG_VALUE: __truncXfYf2__:srcInfExp <- 2047
+	//DEBUG_VALUE: __truncXfYf2__:srcExpBits <- 11
+	//DEBUG_VALUE: __truncXfYf2__:srcBits <- 64
+	.loc	3 0 5 is_stmt 0                 // pim-reproduction/adaptive/runtime/sdk/syslib/truncdfsf2.c:0:5
+	move r3, 1
+	move r2, 2146435072
+.Ltmp10:
+	.loc	4 94 14 is_stmt 1               // pim-reproduction/adaptive/runtime/sdk/syslib/fp_trunc_impl.inc:94:14
+	sub zero, r5, r3
+	subc zero, r4, r2, ltu, .LBB0_7
+.Ltmp11:
+// %bb.6:
+	//DEBUG_VALUE: __truncXfYf2__:aAbs <- [DW_OP_constu 9223372036854775807, DW_OP_and, DW_OP_stack_value] $d0
+	//DEBUG_VALUE: __truncXfYf2__:sign <- [DW_OP_constu 9223372036854775808, DW_OP_and, DW_OP_stack_value] $d0
+	//DEBUG_VALUE: __truncXfYf2__:aRep <- $d0
+	//DEBUG_VALUE: __truncXfYf2__:a <- $d0
+	//DEBUG_VALUE: __truncdfsf2:a <- $d0
+	//DEBUG_VALUE: __truncXfYf2__:dstNaNCode <- 4194303
+	//DEBUG_VALUE: __truncXfYf2__:dstQNaN <- 4194304
+	//DEBUG_VALUE: __truncXfYf2__:overflow <- 5183643171103440896
+	//DEBUG_VALUE: __truncXfYf2__:underflow <- 4039728865751334912
+	//DEBUG_VALUE: __truncXfYf2__:overflowExponent <- 1151
+	//DEBUG_VALUE: __truncXfYf2__:underflowExponent <- 897
+	//DEBUG_VALUE: __truncXfYf2__:dstExpBias <- 127
+	//DEBUG_VALUE: __truncXfYf2__:dstInfExp <- 255
+	//DEBUG_VALUE: __truncXfYf2__:dstExpBits <- 8
+	//DEBUG_VALUE: __truncXfYf2__:dstBits <- 32
+	//DEBUG_VALUE: __truncXfYf2__:srcNaNCode <- 2251799813685247
+	//DEBUG_VALUE: __truncXfYf2__:srcQNaN <- 2251799813685248
+	//DEBUG_VALUE: __truncXfYf2__:halfway <- 268435456
+	//DEBUG_VALUE: __truncXfYf2__:roundMask <- 536870911
+	//DEBUG_VALUE: __truncXfYf2__:srcAbsMask <- 9223372036854775807
+	//DEBUG_VALUE: __truncXfYf2__:srcSignMask <- -9223372036854775808
+	//DEBUG_VALUE: __truncXfYf2__:srcInfinity <- 9218868437227405312
+	//DEBUG_VALUE: __truncXfYf2__:srcSignificandMask <- 4503599627370495
+	//DEBUG_VALUE: __truncXfYf2__:srcMinNormal <- 4503599627370496
+	//DEBUG_VALUE: __truncXfYf2__:srcExpBias <- 1023
+	//DEBUG_VALUE: __truncXfYf2__:srcInfExp <- 2047
+	//DEBUG_VALUE: __truncXfYf2__:srcExpBits <- 11
+	//DEBUG_VALUE: __truncXfYf2__:srcBits <- 64
+	//DEBUG_VALUE: __truncXfYf2__:absResult <- 2143289344
+	.loc	4 100 43                        // pim-reproduction/adaptive/runtime/sdk/syslib/fp_trunc_impl.inc:100:43
+	lsrx r2, r0, 29
+	lsr_add r3, r2, r1, 29
+	lsr r2, r0, 29
+	.loc	4 100 19 is_stmt 0              // pim-reproduction/adaptive/runtime/sdk/syslib/fp_trunc_impl.inc:100:19
+	and r2, r3, 4194303
+	or r3, r2, 2143289344
+.Ltmp12:
+	//DEBUG_VALUE: __truncXfYf2__:absResult <- $r3
+	//DEBUG_VALUE: __truncXfYf2__:sign <- [DW_OP_constu 9223372036854775808, DW_OP_and, DW_OP_stack_value] $d0
+	//DEBUG_VALUE: __truncXfYf2__:absResult <- $r3
+	.loc	4 133 30 is_stmt 1              // pim-reproduction/adaptive/runtime/sdk/syslib/fp_trunc_impl.inc:133:30
+	and r0, r0, -2147483648
+.Ltmp13:
+	or r0, r3, r0
+.Ltmp14:
+	//DEBUG_VALUE: dstFromRep:rep <- undef
+	//DEBUG_VALUE: dstFromRep:x <- $r0
+	//DEBUG_VALUE: __truncXfYf2__:result <- $r0
+	.loc	3 17 5                          // pim-reproduction/adaptive/runtime/sdk/syslib/truncdfsf2.c:17:5
+	jump r23
+.Ltmp15:
+.LBB0_3:
+	//DEBUG_VALUE: roundBits <- $d6
+	//DEBUG_VALUE: __truncXfYf2__:aAbs <- [DW_OP_constu 9223372036854775807, DW_OP_and, DW_OP_stack_value] $d0
+	//DEBUG_VALUE: __truncXfYf2__:sign <- [DW_OP_constu 9223372036854775808, DW_OP_and, DW_OP_stack_value] $d0
+	//DEBUG_VALUE: __truncXfYf2__:aRep <- $d0
+	//DEBUG_VALUE: __truncXfYf2__:a <- $d0
+	//DEBUG_VALUE: __truncdfsf2:a <- $d0
+	//DEBUG_VALUE: __truncXfYf2__:dstNaNCode <- 4194303
+	//DEBUG_VALUE: __truncXfYf2__:dstQNaN <- 4194304
+	//DEBUG_VALUE: __truncXfYf2__:overflow <- 5183643171103440896
+	//DEBUG_VALUE: __truncXfYf2__:underflow <- 4039728865751334912
+	//DEBUG_VALUE: __truncXfYf2__:overflowExponent <- 1151
+	//DEBUG_VALUE: __truncXfYf2__:underflowExponent <- 897
+	//DEBUG_VALUE: __truncXfYf2__:dstExpBias <- 127
+	//DEBUG_VALUE: __truncXfYf2__:dstInfExp <- 255
+	//DEBUG_VALUE: __truncXfYf2__:dstExpBits <- 8
+	//DEBUG_VALUE: __truncXfYf2__:dstBits <- 32
+	//DEBUG_VALUE: __truncXfYf2__:srcNaNCode <- 2251799813685247
+	//DEBUG_VALUE: __truncXfYf2__:srcQNaN <- 2251799813685248
+	//DEBUG_VALUE: __truncXfYf2__:halfway <- 268435456
+	//DEBUG_VALUE: __truncXfYf2__:roundMask <- 536870911
+	//DEBUG_VALUE: __truncXfYf2__:srcAbsMask <- 9223372036854775807
+	//DEBUG_VALUE: __truncXfYf2__:srcSignMask <- -9223372036854775808
+	//DEBUG_VALUE: __truncXfYf2__:srcInfinity <- 9218868437227405312
+	//DEBUG_VALUE: __truncXfYf2__:srcSignificandMask <- 4503599627370495
+	//DEBUG_VALUE: __truncXfYf2__:srcMinNormal <- 4503599627370496
+	//DEBUG_VALUE: __truncXfYf2__:srcExpBias <- 1023
+	//DEBUG_VALUE: __truncXfYf2__:srcInfExp <- 2047
+	//DEBUG_VALUE: __truncXfYf2__:srcExpBits <- 11
+	//DEBUG_VALUE: __truncXfYf2__:srcBits <- 64
+	.loc	3 0 5 is_stmt 0                 // pim-reproduction/adaptive/runtime/sdk/syslib/truncdfsf2.c:0:5
+	move.s d8, 268435456
+	add r3, r5, 1073741824
+.Ltmp16:
+	//DEBUG_VALUE: __truncXfYf2__:absResult <- $r3
+	.loc	4 91 18 is_stmt 1               // pim-reproduction/adaptive/runtime/sdk/syslib/fp_trunc_impl.inc:91:18
+	jneq r7, r9, .LBB0_19
+.Ltmp17:
+// %bb.20:
+	jneq r6, r8, .LBB0_19
+// %bb.21:
+// %bb.4:
+.Ltmp18:
+	//DEBUG_VALUE: __truncXfYf2__:absResult <- $r3
+	//DEBUG_VALUE: roundBits <- $d6
+	//DEBUG_VALUE: __truncXfYf2__:aAbs <- [DW_OP_constu 9223372036854775807, DW_OP_and, DW_OP_stack_value] $d0
+	//DEBUG_VALUE: __truncXfYf2__:sign <- [DW_OP_constu 9223372036854775808, DW_OP_and, DW_OP_stack_value] $d0
+	//DEBUG_VALUE: __truncXfYf2__:aRep <- $d0
+	//DEBUG_VALUE: __truncXfYf2__:a <- $d0
+	//DEBUG_VALUE: __truncdfsf2:a <- $d0
+	//DEBUG_VALUE: __truncXfYf2__:dstNaNCode <- 4194303
+	//DEBUG_VALUE: __truncXfYf2__:dstQNaN <- 4194304
+	//DEBUG_VALUE: __truncXfYf2__:overflow <- 5183643171103440896
+	//DEBUG_VALUE: __truncXfYf2__:underflow <- 4039728865751334912
+	//DEBUG_VALUE: __truncXfYf2__:overflowExponent <- 1151
+	//DEBUG_VALUE: __truncXfYf2__:underflowExponent <- 897
+	//DEBUG_VALUE: __truncXfYf2__:dstExpBias <- 127
+	//DEBUG_VALUE: __truncXfYf2__:dstInfExp <- 255
+	//DEBUG_VALUE: __truncXfYf2__:dstExpBits <- 8
+	//DEBUG_VALUE: __truncXfYf2__:dstBits <- 32
+	//DEBUG_VALUE: __truncXfYf2__:srcNaNCode <- 2251799813685247
+	//DEBUG_VALUE: __truncXfYf2__:srcQNaN <- 2251799813685248
+	//DEBUG_VALUE: __truncXfYf2__:halfway <- 268435456
+	//DEBUG_VALUE: __truncXfYf2__:roundMask <- 536870911
+	//DEBUG_VALUE: __truncXfYf2__:srcAbsMask <- 9223372036854775807
+	//DEBUG_VALUE: __truncXfYf2__:srcSignMask <- -9223372036854775808
+	//DEBUG_VALUE: __truncXfYf2__:srcInfinity <- 9218868437227405312
+	//DEBUG_VALUE: __truncXfYf2__:srcSignificandMask <- 4503599627370495
+	//DEBUG_VALUE: __truncXfYf2__:srcMinNormal <- 4503599627370496
+	//DEBUG_VALUE: __truncXfYf2__:srcExpBias <- 1023
+	//DEBUG_VALUE: __truncXfYf2__:srcInfExp <- 2047
+	//DEBUG_VALUE: __truncXfYf2__:srcExpBits <- 11
+	//DEBUG_VALUE: __truncXfYf2__:srcBits <- 64
+	.loc	4 92 36                         // pim-reproduction/adaptive/runtime/sdk/syslib/fp_trunc_impl.inc:92:36
+	and r4, r5, 1
+	.loc	4 92 23 is_stmt 0               // pim-reproduction/adaptive/runtime/sdk/syslib/fp_trunc_impl.inc:92:23
+	add r3, r3, r4
+.Ltmp19:
+	//DEBUG_VALUE: __truncXfYf2__:absResult <- $r3
+	//DEBUG_VALUE: __truncXfYf2__:sign <- [DW_OP_constu 9223372036854775808, DW_OP_and, DW_OP_stack_value] $d0
+	//DEBUG_VALUE: __truncXfYf2__:absResult <- $r3
+	.loc	4 133 30 is_stmt 1              // pim-reproduction/adaptive/runtime/sdk/syslib/fp_trunc_impl.inc:133:30
+	and r0, r0, -2147483648
+.Ltmp20:
+	or r0, r3, r0
+.Ltmp21:
+	//DEBUG_VALUE: dstFromRep:rep <- undef
+	//DEBUG_VALUE: dstFromRep:x <- $r0
+	//DEBUG_VALUE: __truncXfYf2__:result <- $r0
+	.loc	3 17 5                          // pim-reproduction/adaptive/runtime/sdk/syslib/truncdfsf2.c:17:5
+	jump r23
+.Ltmp22:
+.LBB0_7:
+	//DEBUG_VALUE: __truncXfYf2__:aAbs <- [DW_OP_constu 9223372036854775807, DW_OP_and, DW_OP_stack_value] $d0
+	//DEBUG_VALUE: __truncXfYf2__:sign <- [DW_OP_constu 9223372036854775808, DW_OP_and, DW_OP_stack_value] $d0
+	//DEBUG_VALUE: __truncXfYf2__:aRep <- $d0
+	//DEBUG_VALUE: __truncXfYf2__:a <- $d0
+	//DEBUG_VALUE: __truncdfsf2:a <- $d0
+	//DEBUG_VALUE: __truncXfYf2__:dstNaNCode <- 4194303
+	//DEBUG_VALUE: __truncXfYf2__:dstQNaN <- 4194304
+	//DEBUG_VALUE: __truncXfYf2__:overflow <- 5183643171103440896
+	//DEBUG_VALUE: __truncXfYf2__:underflow <- 4039728865751334912
+	//DEBUG_VALUE: __truncXfYf2__:overflowExponent <- 1151
+	//DEBUG_VALUE: __truncXfYf2__:underflowExponent <- 897
+	//DEBUG_VALUE: __truncXfYf2__:dstExpBias <- 127
+	//DEBUG_VALUE: __truncXfYf2__:dstInfExp <- 255
+	//DEBUG_VALUE: __truncXfYf2__:dstExpBits <- 8
+	//DEBUG_VALUE: __truncXfYf2__:dstBits <- 32
+	//DEBUG_VALUE: __truncXfYf2__:srcNaNCode <- 2251799813685247
+	//DEBUG_VALUE: __truncXfYf2__:srcQNaN <- 2251799813685248
+	//DEBUG_VALUE: __truncXfYf2__:halfway <- 268435456
+	//DEBUG_VALUE: __truncXfYf2__:roundMask <- 536870911
+	//DEBUG_VALUE: __truncXfYf2__:srcAbsMask <- 9223372036854775807
+	//DEBUG_VALUE: __truncXfYf2__:srcSignMask <- -9223372036854775808
+	//DEBUG_VALUE: __truncXfYf2__:srcInfinity <- 9218868437227405312
+	//DEBUG_VALUE: __truncXfYf2__:srcSignificandMask <- 4503599627370495
+	//DEBUG_VALUE: __truncXfYf2__:srcMinNormal <- 4503599627370496
+	//DEBUG_VALUE: __truncXfYf2__:srcExpBias <- 1023
+	//DEBUG_VALUE: __truncXfYf2__:srcInfExp <- 2047
+	//DEBUG_VALUE: __truncXfYf2__:srcExpBits <- 11
+	//DEBUG_VALUE: __truncXfYf2__:srcBits <- 64
+	.loc	3 0 5 is_stmt 0                 // pim-reproduction/adaptive/runtime/sdk/syslib/truncdfsf2.c:0:5
+	move r7, 4294967295
+	move r6, 1206910975
+	move r3, 2139095040
+.Ltmp23:
+	.loc	4 102 14 is_stmt 1              // pim-reproduction/adaptive/runtime/sdk/syslib/fp_trunc_impl.inc:102:14
+	sub zero, r5, r7
+	subc zero, r4, r6, xgtu, .LBB0_19
+.Ltmp24:
+// %bb.8:
+	//DEBUG_VALUE: __truncXfYf2__:aAbs <- [DW_OP_constu 9223372036854775807, DW_OP_and, DW_OP_stack_value] $d0
+	//DEBUG_VALUE: __truncXfYf2__:sign <- [DW_OP_constu 9223372036854775808, DW_OP_and, DW_OP_stack_value] $d0
+	//DEBUG_VALUE: __truncXfYf2__:aRep <- $d0
+	//DEBUG_VALUE: __truncXfYf2__:a <- $d0
+	//DEBUG_VALUE: __truncdfsf2:a <- $d0
+	//DEBUG_VALUE: __truncXfYf2__:dstNaNCode <- 4194303
+	//DEBUG_VALUE: __truncXfYf2__:dstQNaN <- 4194304
+	//DEBUG_VALUE: __truncXfYf2__:overflow <- 5183643171103440896
+	//DEBUG_VALUE: __truncXfYf2__:underflow <- 4039728865751334912
+	//DEBUG_VALUE: __truncXfYf2__:overflowExponent <- 1151
+	//DEBUG_VALUE: __truncXfYf2__:underflowExponent <- 897
+	//DEBUG_VALUE: __truncXfYf2__:dstExpBias <- 127
+	//DEBUG_VALUE: __truncXfYf2__:dstInfExp <- 255
+	//DEBUG_VALUE: __truncXfYf2__:dstExpBits <- 8
+	//DEBUG_VALUE: __truncXfYf2__:dstBits <- 32
+	//DEBUG_VALUE: __truncXfYf2__:srcNaNCode <- 2251799813685247
+	//DEBUG_VALUE: __truncXfYf2__:srcQNaN <- 2251799813685248
+	//DEBUG_VALUE: __truncXfYf2__:halfway <- 268435456
+	//DEBUG_VALUE: __truncXfYf2__:roundMask <- 536870911
+	//DEBUG_VALUE: __truncXfYf2__:srcAbsMask <- 9223372036854775807
+	//DEBUG_VALUE: __truncXfYf2__:srcSignMask <- -9223372036854775808
+	//DEBUG_VALUE: __truncXfYf2__:srcInfinity <- 9218868437227405312
+	//DEBUG_VALUE: __truncXfYf2__:srcSignificandMask <- 4503599627370495
+	//DEBUG_VALUE: __truncXfYf2__:srcMinNormal <- 4503599627370496
+	//DEBUG_VALUE: __truncXfYf2__:srcExpBias <- 1023
+	//DEBUG_VALUE: __truncXfYf2__:srcInfExp <- 2047
+	//DEBUG_VALUE: __truncXfYf2__:srcExpBits <- 11
+	//DEBUG_VALUE: __truncXfYf2__:srcBits <- 64
+	.loc	4 110 31                        // pim-reproduction/adaptive/runtime/sdk/syslib/fp_trunc_impl.inc:110:31
+	lsr.u d4, r4, 20
+.Ltmp25:
+	//DEBUG_VALUE: significand <- undef
+	//DEBUG_VALUE: shift <- undef
+	//DEBUG_VALUE: aExp <- $r5
+	.loc	4 0 31 is_stmt 0                // pim-reproduction/adaptive/runtime/sdk/syslib/fp_trunc_impl.inc:0:31
+	move r3, 0
+	.loc	4 116 13 is_stmt 1              // pim-reproduction/adaptive/runtime/sdk/syslib/fp_trunc_impl.inc:116:13
+	jltu r5, 845, .LBB0_19
+.Ltmp26:
+// %bb.9:
+	//DEBUG_VALUE: aExp <- $r5
+	//DEBUG_VALUE: __truncXfYf2__:aAbs <- [DW_OP_constu 9223372036854775807, DW_OP_and, DW_OP_stack_value] $d0
+	//DEBUG_VALUE: __truncXfYf2__:sign <- [DW_OP_constu 9223372036854775808, DW_OP_and, DW_OP_stack_value] $d0
+	//DEBUG_VALUE: __truncXfYf2__:aRep <- $d0
+	//DEBUG_VALUE: __truncXfYf2__:a <- $d0
+	//DEBUG_VALUE: __truncdfsf2:a <- $d0
+	//DEBUG_VALUE: __truncXfYf2__:dstNaNCode <- 4194303
+	//DEBUG_VALUE: __truncXfYf2__:dstQNaN <- 4194304
+	//DEBUG_VALUE: __truncXfYf2__:overflow <- 5183643171103440896
+	//DEBUG_VALUE: __truncXfYf2__:underflow <- 4039728865751334912
+	//DEBUG_VALUE: __truncXfYf2__:overflowExponent <- 1151
+	//DEBUG_VALUE: __truncXfYf2__:underflowExponent <- 897
+	//DEBUG_VALUE: __truncXfYf2__:dstExpBias <- 127
+	//DEBUG_VALUE: __truncXfYf2__:dstInfExp <- 255
+	//DEBUG_VALUE: __truncXfYf2__:dstExpBits <- 8
+	//DEBUG_VALUE: __truncXfYf2__:dstBits <- 32
+	//DEBUG_VALUE: __truncXfYf2__:srcNaNCode <- 2251799813685247
+	//DEBUG_VALUE: __truncXfYf2__:srcQNaN <- 2251799813685248
+	//DEBUG_VALUE: __truncXfYf2__:halfway <- 268435456
+	//DEBUG_VALUE: __truncXfYf2__:roundMask <- 536870911
+	//DEBUG_VALUE: __truncXfYf2__:srcAbsMask <- 9223372036854775807
+	//DEBUG_VALUE: __truncXfYf2__:srcSignMask <- -9223372036854775808
+	//DEBUG_VALUE: __truncXfYf2__:srcInfinity <- 9218868437227405312
+	//DEBUG_VALUE: __truncXfYf2__:srcSignificandMask <- 4503599627370495
+	//DEBUG_VALUE: __truncXfYf2__:srcMinNormal <- 4503599627370496
+	//DEBUG_VALUE: __truncXfYf2__:srcExpBias <- 1023
+	//DEBUG_VALUE: __truncXfYf2__:srcInfExp <- 2047
+	//DEBUG_VALUE: __truncXfYf2__:srcExpBits <- 11
+	//DEBUG_VALUE: __truncXfYf2__:srcBits <- 64
+	.loc	4 0 0 is_stmt 0                 // pim-reproduction/adaptive/runtime/sdk/syslib/fp_trunc_impl.inc:0:0
+	and r3, r1, 4294967295
+	and r2, r0, 1048575
+	or r3, r3, 0
+	or r2, r2, 1048576
+.Ltmp27:
+	//DEBUG_VALUE: significand <- $d2
+	.loc	4 119 57 is_stmt 1              // pim-reproduction/adaptive/runtime/sdk/syslib/fp_trunc_impl.inc:119:57
+	add r8, r5, -833
+.Ltmp28:
+	.loc	4 111 58                        // pim-reproduction/adaptive/runtime/sdk/syslib/fp_trunc_impl.inc:111:58
+	sub r4, 897, r5
+.Ltmp29:
+	//DEBUG_VALUE: shift <- $r4
+	.loc	4 119 45                        // pim-reproduction/adaptive/runtime/sdk/syslib/fp_trunc_impl.inc:119:45
+	lslx r5, r3, r8, sh32, .LBB0_11
+.Ltmp30:
+// %bb.10:
+	//DEBUG_VALUE: shift <- $r4
+	//DEBUG_VALUE: significand <- $d2
+	//DEBUG_VALUE: __truncXfYf2__:aAbs <- [DW_OP_constu 9223372036854775807, DW_OP_and, DW_OP_stack_value] $d0
+	//DEBUG_VALUE: __truncXfYf2__:sign <- [DW_OP_constu 9223372036854775808, DW_OP_and, DW_OP_stack_value] $d0
+	//DEBUG_VALUE: __truncXfYf2__:aRep <- $d0
+	//DEBUG_VALUE: __truncXfYf2__:a <- $d0
+	//DEBUG_VALUE: __truncdfsf2:a <- $d0
+	//DEBUG_VALUE: __truncXfYf2__:dstNaNCode <- 4194303
+	//DEBUG_VALUE: __truncXfYf2__:dstQNaN <- 4194304
+	//DEBUG_VALUE: __truncXfYf2__:overflow <- 5183643171103440896
+	//DEBUG_VALUE: __truncXfYf2__:underflow <- 4039728865751334912
+	//DEBUG_VALUE: __truncXfYf2__:overflowExponent <- 1151
+	//DEBUG_VALUE: __truncXfYf2__:underflowExponent <- 897
+	//DEBUG_VALUE: __truncXfYf2__:dstExpBias <- 127
+	//DEBUG_VALUE: __truncXfYf2__:dstInfExp <- 255
+	//DEBUG_VALUE: __truncXfYf2__:dstExpBits <- 8
+	//DEBUG_VALUE: __truncXfYf2__:dstBits <- 32
+	//DEBUG_VALUE: __truncXfYf2__:srcNaNCode <- 2251799813685247
+	//DEBUG_VALUE: __truncXfYf2__:srcQNaN <- 2251799813685248
+	//DEBUG_VALUE: __truncXfYf2__:halfway <- 268435456
+	//DEBUG_VALUE: __truncXfYf2__:roundMask <- 536870911
+	//DEBUG_VALUE: __truncXfYf2__:srcAbsMask <- 9223372036854775807
+	//DEBUG_VALUE: __truncXfYf2__:srcSignMask <- -9223372036854775808
+	//DEBUG_VALUE: __truncXfYf2__:srcInfinity <- 9218868437227405312
+	//DEBUG_VALUE: __truncXfYf2__:srcSignificandMask <- 4503599627370495
+	//DEBUG_VALUE: __truncXfYf2__:srcMinNormal <- 4503599627370496
+	//DEBUG_VALUE: __truncXfYf2__:srcExpBias <- 1023
+	//DEBUG_VALUE: __truncXfYf2__:srcInfExp <- 2047
+	//DEBUG_VALUE: __truncXfYf2__:srcExpBits <- 11
+	//DEBUG_VALUE: __truncXfYf2__:srcBits <- 64
+	lsl r6, r2, r8
+	or r6, r6, r5
+	lsl r7, r3, r8
+	move.s d8, 0
+	.loc	4 119 33 is_stmt 0              // pim-reproduction/adaptive/runtime/sdk/syslib/fp_trunc_impl.inc:119:33
+	sub zero, r7, r9
+	subc r5, r6, r8, xnz
+.Ltmp31:
+	//DEBUG_VALUE: sticky <- [DW_OP_LLVM_convert 1 7, DW_OP_LLVM_convert 8 7, DW_OP_stack_value] $r5
+	.loc	4 120 61 is_stmt 1              // pim-reproduction/adaptive/runtime/sdk/syslib/fp_trunc_impl.inc:120:61
+	lsrx r6, r2, r4, sh32, .LBB0_14
+	jump .LBB0_13
+.Ltmp32:
+.LBB0_14:
+	//DEBUG_VALUE: sticky <- [DW_OP_LLVM_convert 1 7, DW_OP_LLVM_convert 8 7, DW_OP_stack_value] $r5
+	//DEBUG_VALUE: shift <- $r4
+	//DEBUG_VALUE: significand <- $d2
+	//DEBUG_VALUE: __truncXfYf2__:aAbs <- [DW_OP_constu 9223372036854775807, DW_OP_and, DW_OP_stack_value] $d0
+	//DEBUG_VALUE: __truncXfYf2__:sign <- [DW_OP_constu 9223372036854775808, DW_OP_and, DW_OP_stack_value] $d0
+	//DEBUG_VALUE: __truncXfYf2__:aRep <- $d0
+	//DEBUG_VALUE: __truncXfYf2__:a <- $d0
+	//DEBUG_VALUE: __truncdfsf2:a <- $d0
+	//DEBUG_VALUE: __truncXfYf2__:dstNaNCode <- 4194303
+	//DEBUG_VALUE: __truncXfYf2__:dstQNaN <- 4194304
+	//DEBUG_VALUE: __truncXfYf2__:overflow <- 5183643171103440896
+	//DEBUG_VALUE: __truncXfYf2__:underflow <- 4039728865751334912
+	//DEBUG_VALUE: __truncXfYf2__:overflowExponent <- 1151
+	//DEBUG_VALUE: __truncXfYf2__:underflowExponent <- 897
+	//DEBUG_VALUE: __truncXfYf2__:dstExpBias <- 127
+	//DEBUG_VALUE: __truncXfYf2__:dstInfExp <- 255
+	//DEBUG_VALUE: __truncXfYf2__:dstExpBits <- 8
+	//DEBUG_VALUE: __truncXfYf2__:dstBits <- 32
+	//DEBUG_VALUE: __truncXfYf2__:srcNaNCode <- 2251799813685247
+	//DEBUG_VALUE: __truncXfYf2__:srcQNaN <- 2251799813685248
+	//DEBUG_VALUE: __truncXfYf2__:halfway <- 268435456
+	//DEBUG_VALUE: __truncXfYf2__:roundMask <- 536870911
+	//DEBUG_VALUE: __truncXfYf2__:srcAbsMask <- 9223372036854775807
+	//DEBUG_VALUE: __truncXfYf2__:srcSignMask <- -9223372036854775808
+	//DEBUG_VALUE: __truncXfYf2__:srcInfinity <- 9218868437227405312
+	//DEBUG_VALUE: __truncXfYf2__:srcSignificandMask <- 4503599627370495
+	//DEBUG_VALUE: __truncXfYf2__:srcMinNormal <- 4503599627370496
+	//DEBUG_VALUE: __truncXfYf2__:srcExpBias <- 1023
+	//DEBUG_VALUE: __truncXfYf2__:srcInfExp <- 2047
+	//DEBUG_VALUE: __truncXfYf2__:srcExpBits <- 11
+	//DEBUG_VALUE: __truncXfYf2__:srcBits <- 64
+	lsr.u d6, r2, r4
+	jump .LBB0_15
+.Ltmp33:
+.LBB0_11:
+	//DEBUG_VALUE: shift <- $r4
+	//DEBUG_VALUE: significand <- $d2
+	//DEBUG_VALUE: __truncXfYf2__:aAbs <- [DW_OP_constu 9223372036854775807, DW_OP_and, DW_OP_stack_value] $d0
+	//DEBUG_VALUE: __truncXfYf2__:sign <- [DW_OP_constu 9223372036854775808, DW_OP_and, DW_OP_stack_value] $d0
+	//DEBUG_VALUE: __truncXfYf2__:aRep <- $d0
+	//DEBUG_VALUE: __truncXfYf2__:a <- $d0
+	//DEBUG_VALUE: __truncdfsf2:a <- $d0
+	//DEBUG_VALUE: __truncXfYf2__:dstNaNCode <- 4194303
+	//DEBUG_VALUE: __truncXfYf2__:dstQNaN <- 4194304
+	//DEBUG_VALUE: __truncXfYf2__:overflow <- 5183643171103440896
+	//DEBUG_VALUE: __truncXfYf2__:underflow <- 4039728865751334912
+	//DEBUG_VALUE: __truncXfYf2__:overflowExponent <- 1151
+	//DEBUG_VALUE: __truncXfYf2__:underflowExponent <- 897
+	//DEBUG_VALUE: __truncXfYf2__:dstExpBias <- 127
+	//DEBUG_VALUE: __truncXfYf2__:dstInfExp <- 255
+	//DEBUG_VALUE: __truncXfYf2__:dstExpBits <- 8
+	//DEBUG_VALUE: __truncXfYf2__:dstBits <- 32
+	//DEBUG_VALUE: __truncXfYf2__:srcNaNCode <- 2251799813685247
+	//DEBUG_VALUE: __truncXfYf2__:srcQNaN <- 2251799813685248
+	//DEBUG_VALUE: __truncXfYf2__:halfway <- 268435456
+	//DEBUG_VALUE: __truncXfYf2__:roundMask <- 536870911
+	//DEBUG_VALUE: __truncXfYf2__:srcAbsMask <- 9223372036854775807
+	//DEBUG_VALUE: __truncXfYf2__:srcSignMask <- -9223372036854775808
+	//DEBUG_VALUE: __truncXfYf2__:srcInfinity <- 9218868437227405312
+	//DEBUG_VALUE: __truncXfYf2__:srcSignificandMask <- 4503599627370495
+	//DEBUG_VALUE: __truncXfYf2__:srcMinNormal <- 4503599627370496
+	//DEBUG_VALUE: __truncXfYf2__:srcExpBias <- 1023
+	//DEBUG_VALUE: __truncXfYf2__:srcInfExp <- 2047
+	//DEBUG_VALUE: __truncXfYf2__:srcExpBits <- 11
+	//DEBUG_VALUE: __truncXfYf2__:srcBits <- 64
+	.loc	4 119 45                        // pim-reproduction/adaptive/runtime/sdk/syslib/fp_trunc_impl.inc:119:45
+	lsl r6, r3, r8
+	move r7, 0
+	move.s d8, 0
+	.loc	4 119 33 is_stmt 0              // pim-reproduction/adaptive/runtime/sdk/syslib/fp_trunc_impl.inc:119:33
+	sub zero, r7, r9
+	subc r5, r6, r8, xnz
+.Ltmp34:
+	//DEBUG_VALUE: sticky <- [DW_OP_LLVM_convert 1 7, DW_OP_LLVM_convert 8 7, DW_OP_stack_value] $r5
+	.loc	4 120 61 is_stmt 1              // pim-reproduction/adaptive/runtime/sdk/syslib/fp_trunc_impl.inc:120:61
+	lsrx r6, r2, r4, sh32, .LBB0_14
+.Ltmp35:
+.LBB0_13:
+	//DEBUG_VALUE: sticky <- [DW_OP_LLVM_convert 1 7, DW_OP_LLVM_convert 8 7, DW_OP_stack_value] $r5
+	//DEBUG_VALUE: shift <- $r4
+	//DEBUG_VALUE: significand <- $d2
+	//DEBUG_VALUE: __truncXfYf2__:aAbs <- [DW_OP_constu 9223372036854775807, DW_OP_and, DW_OP_stack_value] $d0
+	//DEBUG_VALUE: __truncXfYf2__:sign <- [DW_OP_constu 9223372036854775808, DW_OP_and, DW_OP_stack_value] $d0
+	//DEBUG_VALUE: __truncXfYf2__:aRep <- $d0
+	//DEBUG_VALUE: __truncXfYf2__:a <- $d0
+	//DEBUG_VALUE: __truncdfsf2:a <- $d0
+	//DEBUG_VALUE: __truncXfYf2__:dstNaNCode <- 4194303
+	//DEBUG_VALUE: __truncXfYf2__:dstQNaN <- 4194304
+	//DEBUG_VALUE: __truncXfYf2__:overflow <- 5183643171103440896
+	//DEBUG_VALUE: __truncXfYf2__:underflow <- 4039728865751334912
+	//DEBUG_VALUE: __truncXfYf2__:overflowExponent <- 1151
+	//DEBUG_VALUE: __truncXfYf2__:underflowExponent <- 897
+	//DEBUG_VALUE: __truncXfYf2__:dstExpBias <- 127
+	//DEBUG_VALUE: __truncXfYf2__:dstInfExp <- 255
+	//DEBUG_VALUE: __truncXfYf2__:dstExpBits <- 8
+	//DEBUG_VALUE: __truncXfYf2__:dstBits <- 32
+	//DEBUG_VALUE: __truncXfYf2__:srcNaNCode <- 2251799813685247
+	//DEBUG_VALUE: __truncXfYf2__:srcQNaN <- 2251799813685248
+	//DEBUG_VALUE: __truncXfYf2__:halfway <- 268435456
+	//DEBUG_VALUE: __truncXfYf2__:roundMask <- 536870911
+	//DEBUG_VALUE: __truncXfYf2__:srcAbsMask <- 9223372036854775807
+	//DEBUG_VALUE: __truncXfYf2__:srcSignMask <- -9223372036854775808
+	//DEBUG_VALUE: __truncXfYf2__:srcInfinity <- 9218868437227405312
+	//DEBUG_VALUE: __truncXfYf2__:srcSignificandMask <- 4503599627370495
+	//DEBUG_VALUE: __truncXfYf2__:srcMinNormal <- 4503599627370496
+	//DEBUG_VALUE: __truncXfYf2__:srcExpBias <- 1023
+	//DEBUG_VALUE: __truncXfYf2__:srcInfExp <- 2047
+	//DEBUG_VALUE: __truncXfYf2__:srcExpBits <- 11
+	//DEBUG_VALUE: __truncXfYf2__:srcBits <- 64
+	lsr r7, r3, r4
+	or r7, r6, r7
+	lsr r6, r2, r4
+.Ltmp36:
+.LBB0_15:
+	//DEBUG_VALUE: sticky <- [DW_OP_LLVM_convert 1 7, DW_OP_LLVM_convert 8 7, DW_OP_stack_value] $r5
+	//DEBUG_VALUE: shift <- $r4
+	//DEBUG_VALUE: significand <- $d2
+	//DEBUG_VALUE: __truncXfYf2__:aAbs <- [DW_OP_constu 9223372036854775807, DW_OP_and, DW_OP_stack_value] $d0
+	//DEBUG_VALUE: __truncXfYf2__:sign <- [DW_OP_constu 9223372036854775808, DW_OP_and, DW_OP_stack_value] $d0
+	//DEBUG_VALUE: __truncXfYf2__:aRep <- $d0
+	//DEBUG_VALUE: __truncXfYf2__:a <- $d0
+	//DEBUG_VALUE: __truncdfsf2:a <- $d0
+	//DEBUG_VALUE: __truncXfYf2__:dstNaNCode <- 4194303
+	//DEBUG_VALUE: __truncXfYf2__:dstQNaN <- 4194304
+	//DEBUG_VALUE: __truncXfYf2__:overflow <- 5183643171103440896
+	//DEBUG_VALUE: __truncXfYf2__:underflow <- 4039728865751334912
+	//DEBUG_VALUE: __truncXfYf2__:overflowExponent <- 1151
+	//DEBUG_VALUE: __truncXfYf2__:underflowExponent <- 897
+	//DEBUG_VALUE: __truncXfYf2__:dstExpBias <- 127
+	//DEBUG_VALUE: __truncXfYf2__:dstInfExp <- 255
+	//DEBUG_VALUE: __truncXfYf2__:dstExpBits <- 8
+	//DEBUG_VALUE: __truncXfYf2__:dstBits <- 32
+	//DEBUG_VALUE: __truncXfYf2__:srcNaNCode <- 2251799813685247
+	//DEBUG_VALUE: __truncXfYf2__:srcQNaN <- 2251799813685248
+	//DEBUG_VALUE: __truncXfYf2__:halfway <- 268435456
+	//DEBUG_VALUE: __truncXfYf2__:roundMask <- 536870911
+	//DEBUG_VALUE: __truncXfYf2__:srcAbsMask <- 9223372036854775807
+	//DEBUG_VALUE: __truncXfYf2__:srcSignMask <- -9223372036854775808
+	//DEBUG_VALUE: __truncXfYf2__:srcInfinity <- 9218868437227405312
+	//DEBUG_VALUE: __truncXfYf2__:srcSignificandMask <- 4503599627370495
+	//DEBUG_VALUE: __truncXfYf2__:srcMinNormal <- 4503599627370496
+	//DEBUG_VALUE: __truncXfYf2__:srcExpBias <- 1023
+	//DEBUG_VALUE: __truncXfYf2__:srcInfExp <- 2047
+	//DEBUG_VALUE: __truncXfYf2__:srcExpBits <- 11
+	//DEBUG_VALUE: __truncXfYf2__:srcBits <- 64
+	.loc	4 120 72 is_stmt 0              // pim-reproduction/adaptive/runtime/sdk/syslib/fp_trunc_impl.inc:120:72
+	move.u d4, r5
+.Ltmp37:
+	//DEBUG_VALUE: denormalizedSignificand <- undef
+	.loc	4 121 49 is_stmt 1              // pim-reproduction/adaptive/runtime/sdk/syslib/fp_trunc_impl.inc:121:49
+	lsrx r2, r6, 29
+.Ltmp38:
+	lsr_add r3, r2, r7, 29
+	.loc	4 122 65                        // pim-reproduction/adaptive/runtime/sdk/syslib/fp_trunc_impl.inc:122:65
+	and r9, r7, 536870911
+	and r8, r6, 0
+	or r5, r9, r5
+	or r4, r8, r4
+.Ltmp39:
+	//DEBUG_VALUE: roundBits <- $d4
+	.loc	4 0 65 is_stmt 0                // pim-reproduction/adaptive/runtime/sdk/syslib/fp_trunc_impl.inc:0:65
+	move.s d8, 268435457
+	.loc	4 121 49 is_stmt 1              // pim-reproduction/adaptive/runtime/sdk/syslib/fp_trunc_impl.inc:121:49
+	lsr r2, r6, 29
+.Ltmp40:
+	//DEBUG_VALUE: __truncXfYf2__:absResult <- $r3
+	.loc	4 124 17                        // pim-reproduction/adaptive/runtime/sdk/syslib/fp_trunc_impl.inc:124:17
+	sub zero, r5, r9
+	subc zero, r4, r8, ltu, .LBB0_17
+.Ltmp41:
+// %bb.16:
+	//DEBUG_VALUE: __truncXfYf2__:absResult <- $r3
+	//DEBUG_VALUE: roundBits <- $d4
+	//DEBUG_VALUE: __truncXfYf2__:aAbs <- [DW_OP_constu 9223372036854775807, DW_OP_and, DW_OP_stack_value] $d0
+	//DEBUG_VALUE: __truncXfYf2__:sign <- [DW_OP_constu 9223372036854775808, DW_OP_and, DW_OP_stack_value] $d0
+	//DEBUG_VALUE: __truncXfYf2__:aRep <- $d0
+	//DEBUG_VALUE: __truncXfYf2__:a <- $d0
+	//DEBUG_VALUE: __truncdfsf2:a <- $d0
+	//DEBUG_VALUE: __truncXfYf2__:dstNaNCode <- 4194303
+	//DEBUG_VALUE: __truncXfYf2__:dstQNaN <- 4194304
+	//DEBUG_VALUE: __truncXfYf2__:overflow <- 5183643171103440896
+	//DEBUG_VALUE: __truncXfYf2__:underflow <- 4039728865751334912
+	//DEBUG_VALUE: __truncXfYf2__:overflowExponent <- 1151
+	//DEBUG_VALUE: __truncXfYf2__:underflowExponent <- 897
+	//DEBUG_VALUE: __truncXfYf2__:dstExpBias <- 127
+	//DEBUG_VALUE: __truncXfYf2__:dstInfExp <- 255
+	//DEBUG_VALUE: __truncXfYf2__:dstExpBits <- 8
+	//DEBUG_VALUE: __truncXfYf2__:dstBits <- 32
+	//DEBUG_VALUE: __truncXfYf2__:srcNaNCode <- 2251799813685247
+	//DEBUG_VALUE: __truncXfYf2__:srcQNaN <- 2251799813685248
+	//DEBUG_VALUE: __truncXfYf2__:halfway <- 268435456
+	//DEBUG_VALUE: __truncXfYf2__:roundMask <- 536870911
+	//DEBUG_VALUE: __truncXfYf2__:srcAbsMask <- 9223372036854775807
+	//DEBUG_VALUE: __truncXfYf2__:srcSignMask <- -9223372036854775808
+	//DEBUG_VALUE: __truncXfYf2__:srcInfinity <- 9218868437227405312
+	//DEBUG_VALUE: __truncXfYf2__:srcSignificandMask <- 4503599627370495
+	//DEBUG_VALUE: __truncXfYf2__:srcMinNormal <- 4503599627370496
+	//DEBUG_VALUE: __truncXfYf2__:srcExpBias <- 1023
+	//DEBUG_VALUE: __truncXfYf2__:srcInfExp <- 2047
+	//DEBUG_VALUE: __truncXfYf2__:srcExpBits <- 11
+	//DEBUG_VALUE: __truncXfYf2__:srcBits <- 64
+	.loc	4 125 26                        // pim-reproduction/adaptive/runtime/sdk/syslib/fp_trunc_impl.inc:125:26
+	add r3, r3, 1
+.Ltmp42:
+	//DEBUG_VALUE: __truncXfYf2__:absResult <- $r3
+	//DEBUG_VALUE: __truncXfYf2__:sign <- [DW_OP_constu 9223372036854775808, DW_OP_and, DW_OP_stack_value] $d0
+	//DEBUG_VALUE: __truncXfYf2__:absResult <- $r3
+	.loc	4 133 30                        // pim-reproduction/adaptive/runtime/sdk/syslib/fp_trunc_impl.inc:133:30
+	and r0, r0, -2147483648
+.Ltmp43:
+	or r0, r3, r0
+.Ltmp44:
+	//DEBUG_VALUE: dstFromRep:rep <- undef
+	//DEBUG_VALUE: dstFromRep:x <- $r0
+	//DEBUG_VALUE: __truncXfYf2__:result <- $r0
+	.loc	3 17 5                          // pim-reproduction/adaptive/runtime/sdk/syslib/truncdfsf2.c:17:5
+	jump r23
+.Ltmp45:
+.LBB0_17:
+	//DEBUG_VALUE: __truncXfYf2__:absResult <- $r3
+	//DEBUG_VALUE: roundBits <- $d4
+	//DEBUG_VALUE: __truncXfYf2__:aAbs <- [DW_OP_constu 9223372036854775807, DW_OP_and, DW_OP_stack_value] $d0
+	//DEBUG_VALUE: __truncXfYf2__:sign <- [DW_OP_constu 9223372036854775808, DW_OP_and, DW_OP_stack_value] $d0
+	//DEBUG_VALUE: __truncXfYf2__:aRep <- $d0
+	//DEBUG_VALUE: __truncXfYf2__:a <- $d0
+	//DEBUG_VALUE: __truncdfsf2:a <- $d0
+	//DEBUG_VALUE: __truncXfYf2__:dstNaNCode <- 4194303
+	//DEBUG_VALUE: __truncXfYf2__:dstQNaN <- 4194304
+	//DEBUG_VALUE: __truncXfYf2__:overflow <- 5183643171103440896
+	//DEBUG_VALUE: __truncXfYf2__:underflow <- 4039728865751334912
+	//DEBUG_VALUE: __truncXfYf2__:overflowExponent <- 1151
+	//DEBUG_VALUE: __truncXfYf2__:underflowExponent <- 897
+	//DEBUG_VALUE: __truncXfYf2__:dstExpBias <- 127
+	//DEBUG_VALUE: __truncXfYf2__:dstInfExp <- 255
+	//DEBUG_VALUE: __truncXfYf2__:dstExpBits <- 8
+	//DEBUG_VALUE: __truncXfYf2__:dstBits <- 32
+	//DEBUG_VALUE: __truncXfYf2__:srcNaNCode <- 2251799813685247
+	//DEBUG_VALUE: __truncXfYf2__:srcQNaN <- 2251799813685248
+	//DEBUG_VALUE: __truncXfYf2__:halfway <- 268435456
+	//DEBUG_VALUE: __truncXfYf2__:roundMask <- 536870911
+	//DEBUG_VALUE: __truncXfYf2__:srcAbsMask <- 9223372036854775807
+	//DEBUG_VALUE: __truncXfYf2__:srcSignMask <- -9223372036854775808
+	//DEBUG_VALUE: __truncXfYf2__:srcInfinity <- 9218868437227405312
+	//DEBUG_VALUE: __truncXfYf2__:srcSignificandMask <- 4503599627370495
+	//DEBUG_VALUE: __truncXfYf2__:srcMinNormal <- 4503599627370496
+	//DEBUG_VALUE: __truncXfYf2__:srcExpBias <- 1023
+	//DEBUG_VALUE: __truncXfYf2__:srcInfExp <- 2047
+	//DEBUG_VALUE: __truncXfYf2__:srcExpBits <- 11
+	//DEBUG_VALUE: __truncXfYf2__:srcBits <- 64
+	.loc	3 0 5 is_stmt 0                 // pim-reproduction/adaptive/runtime/sdk/syslib/truncdfsf2.c:0:5
+	move.s d6, 268435456
+.Ltmp46:
+	.loc	4 127 22 is_stmt 1              // pim-reproduction/adaptive/runtime/sdk/syslib/fp_trunc_impl.inc:127:22
+	jneq r5, r7, .LBB0_19
+.Ltmp47:
+// %bb.22:
+	jneq r4, r6, .LBB0_19
+// %bb.23:
+// %bb.18:
+.Ltmp48:
+	//DEBUG_VALUE: __truncXfYf2__:absResult <- $r3
+	//DEBUG_VALUE: roundBits <- $d4
+	//DEBUG_VALUE: __truncXfYf2__:aAbs <- [DW_OP_constu 9223372036854775807, DW_OP_and, DW_OP_stack_value] $d0
+	//DEBUG_VALUE: __truncXfYf2__:sign <- [DW_OP_constu 9223372036854775808, DW_OP_and, DW_OP_stack_value] $d0
+	//DEBUG_VALUE: __truncXfYf2__:aRep <- $d0
+	//DEBUG_VALUE: __truncXfYf2__:a <- $d0
+	//DEBUG_VALUE: __truncdfsf2:a <- $d0
+	//DEBUG_VALUE: __truncXfYf2__:dstNaNCode <- 4194303
+	//DEBUG_VALUE: __truncXfYf2__:dstQNaN <- 4194304
+	//DEBUG_VALUE: __truncXfYf2__:overflow <- 5183643171103440896
+	//DEBUG_VALUE: __truncXfYf2__:underflow <- 4039728865751334912
+	//DEBUG_VALUE: __truncXfYf2__:overflowExponent <- 1151
+	//DEBUG_VALUE: __truncXfYf2__:underflowExponent <- 897
+	//DEBUG_VALUE: __truncXfYf2__:dstExpBias <- 127
+	//DEBUG_VALUE: __truncXfYf2__:dstInfExp <- 255
+	//DEBUG_VALUE: __truncXfYf2__:dstExpBits <- 8
+	//DEBUG_VALUE: __truncXfYf2__:dstBits <- 32
+	//DEBUG_VALUE: __truncXfYf2__:srcNaNCode <- 2251799813685247
+	//DEBUG_VALUE: __truncXfYf2__:srcQNaN <- 2251799813685248
+	//DEBUG_VALUE: __truncXfYf2__:halfway <- 268435456
+	//DEBUG_VALUE: __truncXfYf2__:roundMask <- 536870911
+	//DEBUG_VALUE: __truncXfYf2__:srcAbsMask <- 9223372036854775807
+	//DEBUG_VALUE: __truncXfYf2__:srcSignMask <- -9223372036854775808
+	//DEBUG_VALUE: __truncXfYf2__:srcInfinity <- 9218868437227405312
+	//DEBUG_VALUE: __truncXfYf2__:srcSignificandMask <- 4503599627370495
+	//DEBUG_VALUE: __truncXfYf2__:srcMinNormal <- 4503599627370496
+	//DEBUG_VALUE: __truncXfYf2__:srcExpBias <- 1023
+	//DEBUG_VALUE: __truncXfYf2__:srcInfExp <- 2047
+	//DEBUG_VALUE: __truncXfYf2__:srcExpBits <- 11
+	//DEBUG_VALUE: __truncXfYf2__:srcBits <- 64
+	.loc	4 128 40                        // pim-reproduction/adaptive/runtime/sdk/syslib/fp_trunc_impl.inc:128:40
+	and r4, r3, 1
+.Ltmp49:
+	.loc	4 128 27 is_stmt 0              // pim-reproduction/adaptive/runtime/sdk/syslib/fp_trunc_impl.inc:128:27
+	add r3, r4, r3
+.Ltmp50:
+	//DEBUG_VALUE: __truncXfYf2__:absResult <- $r3
+	//DEBUG_VALUE: __truncXfYf2__:sign <- [DW_OP_constu 9223372036854775808, DW_OP_and, DW_OP_stack_value] $d0
+	//DEBUG_VALUE: __truncXfYf2__:absResult <- $r3
+	.loc	4 133 30 is_stmt 1              // pim-reproduction/adaptive/runtime/sdk/syslib/fp_trunc_impl.inc:133:30
+	and r0, r0, -2147483648
+.Ltmp51:
+	or r0, r3, r0
+.Ltmp52:
+	//DEBUG_VALUE: dstFromRep:rep <- undef
+	//DEBUG_VALUE: dstFromRep:x <- $r0
+	//DEBUG_VALUE: __truncXfYf2__:result <- $r0
+	.loc	3 17 5                          // pim-reproduction/adaptive/runtime/sdk/syslib/truncdfsf2.c:17:5
+	jump r23
+.Ltmp53:
+.Lfunc_end0:
+	.size	__truncdfsf2, .Lfunc_end0-__truncdfsf2
+	.cfi_endproc
+	.section	.stack_sizes,"o",@progbits,.text.__truncdfsf2
+	.long	.Lfunc_begin0
+	.byte	0
+	.section	.text.__truncdfsf2,"ax",@progbits
+                                        // -- End function
+	.section	.debug_loc,"",@progbits
+.Ldebug_loc0:
+	.long	.Lfunc_begin0-.Lfunc_begin0
+	.long	.Ltmp7-.Lfunc_begin0
+	.short	6                               // Loc expr size
+	.byte	81                              // sub-register DW_OP_reg1
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.byte	80                              // sub-register DW_OP_reg0
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.long	.Ltmp9-.Lfunc_begin0
+	.long	.Ltmp13-.Lfunc_begin0
+	.short	6                               // Loc expr size
+	.byte	81                              // sub-register DW_OP_reg1
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.byte	80                              // sub-register DW_OP_reg0
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.long	.Ltmp15-.Lfunc_begin0
+	.long	.Ltmp17-.Lfunc_begin0
+	.short	6                               // Loc expr size
+	.byte	81                              // sub-register DW_OP_reg1
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.byte	80                              // sub-register DW_OP_reg0
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.long	.Ltmp18-.Lfunc_begin0
+	.long	.Ltmp20-.Lfunc_begin0
+	.short	6                               // Loc expr size
+	.byte	81                              // sub-register DW_OP_reg1
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.byte	80                              // sub-register DW_OP_reg0
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.long	.Ltmp22-.Lfunc_begin0
+	.long	.Ltmp43-.Lfunc_begin0
+	.short	6                               // Loc expr size
+	.byte	81                              // sub-register DW_OP_reg1
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.byte	80                              // sub-register DW_OP_reg0
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.long	.Ltmp45-.Lfunc_begin0
+	.long	.Ltmp47-.Lfunc_begin0
+	.short	6                               // Loc expr size
+	.byte	81                              // sub-register DW_OP_reg1
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.byte	80                              // sub-register DW_OP_reg0
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.long	.Ltmp48-.Lfunc_begin0
+	.long	.Ltmp51-.Lfunc_begin0
+	.short	6                               // Loc expr size
+	.byte	81                              // sub-register DW_OP_reg1
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.byte	80                              // sub-register DW_OP_reg0
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.long	0
+	.long	0
+.Ldebug_loc1:
+	.long	.Lfunc_begin0-.Lfunc_begin0
+	.long	.Ltmp7-.Lfunc_begin0
+	.short	6                               // Loc expr size
+	.byte	81                              // sub-register DW_OP_reg1
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.byte	80                              // sub-register DW_OP_reg0
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.long	.Ltmp9-.Lfunc_begin0
+	.long	.Ltmp13-.Lfunc_begin0
+	.short	6                               // Loc expr size
+	.byte	81                              // sub-register DW_OP_reg1
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.byte	80                              // sub-register DW_OP_reg0
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.long	.Ltmp15-.Lfunc_begin0
+	.long	.Ltmp17-.Lfunc_begin0
+	.short	6                               // Loc expr size
+	.byte	81                              // sub-register DW_OP_reg1
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.byte	80                              // sub-register DW_OP_reg0
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.long	.Ltmp18-.Lfunc_begin0
+	.long	.Ltmp20-.Lfunc_begin0
+	.short	6                               // Loc expr size
+	.byte	81                              // sub-register DW_OP_reg1
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.byte	80                              // sub-register DW_OP_reg0
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.long	.Ltmp22-.Lfunc_begin0
+	.long	.Ltmp43-.Lfunc_begin0
+	.short	6                               // Loc expr size
+	.byte	81                              // sub-register DW_OP_reg1
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.byte	80                              // sub-register DW_OP_reg0
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.long	.Ltmp45-.Lfunc_begin0
+	.long	.Ltmp47-.Lfunc_begin0
+	.short	6                               // Loc expr size
+	.byte	81                              // sub-register DW_OP_reg1
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.byte	80                              // sub-register DW_OP_reg0
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.long	.Ltmp48-.Lfunc_begin0
+	.long	.Ltmp51-.Lfunc_begin0
+	.short	6                               // Loc expr size
+	.byte	81                              // sub-register DW_OP_reg1
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.byte	80                              // sub-register DW_OP_reg0
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.long	0
+	.long	0
+.Ldebug_loc2:
+	.long	.Lfunc_begin0-.Lfunc_begin0
+	.long	.Ltmp17-.Lfunc_begin0
+	.short	3                               // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	64                              // 64
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp18-.Lfunc_begin0
+	.long	.Ltmp47-.Lfunc_begin0
+	.short	3                               // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	64                              // 64
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp48-.Lfunc_begin0
+	.long	.Lfunc_end0-.Lfunc_begin0
+	.short	3                               // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	64                              // 64
+	.byte	159                             // DW_OP_stack_value
+	.long	0
+	.long	0
+.Ldebug_loc3:
+	.long	.Lfunc_begin0-.Lfunc_begin0
+	.long	.Ltmp17-.Lfunc_begin0
+	.short	2                               // Loc expr size
+	.byte	59                              // DW_OP_lit11
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp18-.Lfunc_begin0
+	.long	.Ltmp47-.Lfunc_begin0
+	.short	2                               // Loc expr size
+	.byte	59                              // DW_OP_lit11
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp48-.Lfunc_begin0
+	.long	.Lfunc_end0-.Lfunc_begin0
+	.short	2                               // Loc expr size
+	.byte	59                              // DW_OP_lit11
+	.byte	159                             // DW_OP_stack_value
+	.long	0
+	.long	0
+.Ldebug_loc4:
+	.long	.Lfunc_begin0-.Lfunc_begin0
+	.long	.Ltmp17-.Lfunc_begin0
+	.short	4                               // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	255                             // 2047
+	.byte	15                              // 
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp18-.Lfunc_begin0
+	.long	.Ltmp47-.Lfunc_begin0
+	.short	4                               // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	255                             // 2047
+	.byte	15                              // 
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp48-.Lfunc_begin0
+	.long	.Lfunc_end0-.Lfunc_begin0
+	.short	4                               // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	255                             // 2047
+	.byte	15                              // 
+	.byte	159                             // DW_OP_stack_value
+	.long	0
+	.long	0
+.Ldebug_loc5:
+	.long	.Lfunc_begin0-.Lfunc_begin0
+	.long	.Ltmp17-.Lfunc_begin0
+	.short	4                               // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	255                             // 1023
+	.byte	7                               // 
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp18-.Lfunc_begin0
+	.long	.Ltmp47-.Lfunc_begin0
+	.short	4                               // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	255                             // 1023
+	.byte	7                               // 
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp48-.Lfunc_begin0
+	.long	.Lfunc_end0-.Lfunc_begin0
+	.short	4                               // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	255                             // 1023
+	.byte	7                               // 
+	.byte	159                             // DW_OP_stack_value
+	.long	0
+	.long	0
+.Ldebug_loc6:
+	.long	.Lfunc_begin0-.Lfunc_begin0
+	.long	.Ltmp17-.Lfunc_begin0
+	.short	10                              // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	128                             // 4503599627370496
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	8                               // 
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp18-.Lfunc_begin0
+	.long	.Ltmp47-.Lfunc_begin0
+	.short	10                              // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	128                             // 4503599627370496
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	8                               // 
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp48-.Lfunc_begin0
+	.long	.Lfunc_end0-.Lfunc_begin0
+	.short	10                              // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	128                             // 4503599627370496
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	8                               // 
+	.byte	159                             // DW_OP_stack_value
+	.long	0
+	.long	0
+.Ldebug_loc7:
+	.long	.Lfunc_begin0-.Lfunc_begin0
+	.long	.Ltmp17-.Lfunc_begin0
+	.short	10                              // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	255                             // 4503599627370495
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	7                               // 
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp18-.Lfunc_begin0
+	.long	.Ltmp47-.Lfunc_begin0
+	.short	10                              // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	255                             // 4503599627370495
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	7                               // 
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp48-.Lfunc_begin0
+	.long	.Lfunc_end0-.Lfunc_begin0
+	.short	10                              // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	255                             // 4503599627370495
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	7                               // 
+	.byte	159                             // DW_OP_stack_value
+	.long	0
+	.long	0
+.Ldebug_loc8:
+	.long	.Lfunc_begin0-.Lfunc_begin0
+	.long	.Ltmp17-.Lfunc_begin0
+	.short	11                              // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	128                             // 9218868437227405312
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	248                             // 
+	.byte	127                             // 
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp18-.Lfunc_begin0
+	.long	.Ltmp47-.Lfunc_begin0
+	.short	11                              // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	128                             // 9218868437227405312
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	248                             // 
+	.byte	127                             // 
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp48-.Lfunc_begin0
+	.long	.Lfunc_end0-.Lfunc_begin0
+	.short	11                              // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	128                             // 9218868437227405312
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	248                             // 
+	.byte	127                             // 
+	.byte	159                             // DW_OP_stack_value
+	.long	0
+	.long	0
+.Ldebug_loc9:
+	.long	.Lfunc_begin0-.Lfunc_begin0
+	.long	.Ltmp17-.Lfunc_begin0
+	.short	12                              // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	128                             // 9223372036854775808
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	1                               // 
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp18-.Lfunc_begin0
+	.long	.Ltmp47-.Lfunc_begin0
+	.short	12                              // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	128                             // 9223372036854775808
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	1                               // 
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp48-.Lfunc_begin0
+	.long	.Lfunc_end0-.Lfunc_begin0
+	.short	12                              // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	128                             // 9223372036854775808
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	1                               // 
+	.byte	159                             // DW_OP_stack_value
+	.long	0
+	.long	0
+.Ldebug_loc10:
+	.long	.Lfunc_begin0-.Lfunc_begin0
+	.long	.Ltmp17-.Lfunc_begin0
+	.short	11                              // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	255                             // 9223372036854775807
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	127                             // 
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp18-.Lfunc_begin0
+	.long	.Ltmp47-.Lfunc_begin0
+	.short	11                              // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	255                             // 9223372036854775807
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	127                             // 
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp48-.Lfunc_begin0
+	.long	.Lfunc_end0-.Lfunc_begin0
+	.short	11                              // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	255                             // 9223372036854775807
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	127                             // 
+	.byte	159                             // DW_OP_stack_value
+	.long	0
+	.long	0
+.Ldebug_loc11:
+	.long	.Lfunc_begin0-.Lfunc_begin0
+	.long	.Ltmp17-.Lfunc_begin0
+	.short	7                               // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	255                             // 536870911
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	1                               // 
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp18-.Lfunc_begin0
+	.long	.Ltmp47-.Lfunc_begin0
+	.short	7                               // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	255                             // 536870911
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	1                               // 
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp48-.Lfunc_begin0
+	.long	.Lfunc_end0-.Lfunc_begin0
+	.short	7                               // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	255                             // 536870911
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	1                               // 
+	.byte	159                             // DW_OP_stack_value
+	.long	0
+	.long	0
+.Ldebug_loc12:
+	.long	.Lfunc_begin0-.Lfunc_begin0
+	.long	.Ltmp17-.Lfunc_begin0
+	.short	7                               // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	128                             // 268435456
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	1                               // 
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp18-.Lfunc_begin0
+	.long	.Ltmp47-.Lfunc_begin0
+	.short	7                               // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	128                             // 268435456
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	1                               // 
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp48-.Lfunc_begin0
+	.long	.Lfunc_end0-.Lfunc_begin0
+	.short	7                               // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	128                             // 268435456
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	1                               // 
+	.byte	159                             // DW_OP_stack_value
+	.long	0
+	.long	0
+.Ldebug_loc13:
+	.long	.Lfunc_begin0-.Lfunc_begin0
+	.long	.Ltmp17-.Lfunc_begin0
+	.short	10                              // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	128                             // 2251799813685248
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	4                               // 
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp18-.Lfunc_begin0
+	.long	.Ltmp47-.Lfunc_begin0
+	.short	10                              // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	128                             // 2251799813685248
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	4                               // 
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp48-.Lfunc_begin0
+	.long	.Lfunc_end0-.Lfunc_begin0
+	.short	10                              // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	128                             // 2251799813685248
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	4                               // 
+	.byte	159                             // DW_OP_stack_value
+	.long	0
+	.long	0
+.Ldebug_loc14:
+	.long	.Lfunc_begin0-.Lfunc_begin0
+	.long	.Ltmp17-.Lfunc_begin0
+	.short	10                              // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	255                             // 2251799813685247
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	3                               // 
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp18-.Lfunc_begin0
+	.long	.Ltmp47-.Lfunc_begin0
+	.short	10                              // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	255                             // 2251799813685247
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	3                               // 
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp48-.Lfunc_begin0
+	.long	.Lfunc_end0-.Lfunc_begin0
+	.short	10                              // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	255                             // 2251799813685247
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	3                               // 
+	.byte	159                             // DW_OP_stack_value
+	.long	0
+	.long	0
+.Ldebug_loc15:
+	.long	.Lfunc_begin0-.Lfunc_begin0
+	.long	.Ltmp17-.Lfunc_begin0
+	.short	3                               // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	32                              // 32
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp18-.Lfunc_begin0
+	.long	.Ltmp47-.Lfunc_begin0
+	.short	3                               // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	32                              // 32
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp48-.Lfunc_begin0
+	.long	.Lfunc_end0-.Lfunc_begin0
+	.short	3                               // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	32                              // 32
+	.byte	159                             // DW_OP_stack_value
+	.long	0
+	.long	0
+.Ldebug_loc16:
+	.long	.Lfunc_begin0-.Lfunc_begin0
+	.long	.Ltmp17-.Lfunc_begin0
+	.short	2                               // Loc expr size
+	.byte	56                              // DW_OP_lit8
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp18-.Lfunc_begin0
+	.long	.Ltmp47-.Lfunc_begin0
+	.short	2                               // Loc expr size
+	.byte	56                              // DW_OP_lit8
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp48-.Lfunc_begin0
+	.long	.Lfunc_end0-.Lfunc_begin0
+	.short	2                               // Loc expr size
+	.byte	56                              // DW_OP_lit8
+	.byte	159                             // DW_OP_stack_value
+	.long	0
+	.long	0
+.Ldebug_loc17:
+	.long	.Lfunc_begin0-.Lfunc_begin0
+	.long	.Ltmp17-.Lfunc_begin0
+	.short	4                               // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	255                             // 255
+	.byte	1                               // 
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp18-.Lfunc_begin0
+	.long	.Ltmp47-.Lfunc_begin0
+	.short	4                               // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	255                             // 255
+	.byte	1                               // 
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp48-.Lfunc_begin0
+	.long	.Lfunc_end0-.Lfunc_begin0
+	.short	4                               // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	255                             // 255
+	.byte	1                               // 
+	.byte	159                             // DW_OP_stack_value
+	.long	0
+	.long	0
+.Ldebug_loc18:
+	.long	.Lfunc_begin0-.Lfunc_begin0
+	.long	.Ltmp17-.Lfunc_begin0
+	.short	3                               // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	127                             // 127
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp18-.Lfunc_begin0
+	.long	.Ltmp47-.Lfunc_begin0
+	.short	3                               // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	127                             // 127
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp48-.Lfunc_begin0
+	.long	.Lfunc_end0-.Lfunc_begin0
+	.short	3                               // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	127                             // 127
+	.byte	159                             // DW_OP_stack_value
+	.long	0
+	.long	0
+.Ldebug_loc19:
+	.long	.Lfunc_begin0-.Lfunc_begin0
+	.long	.Ltmp17-.Lfunc_begin0
+	.short	4                               // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	129                             // 897
+	.byte	7                               // 
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp18-.Lfunc_begin0
+	.long	.Ltmp47-.Lfunc_begin0
+	.short	4                               // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	129                             // 897
+	.byte	7                               // 
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp48-.Lfunc_begin0
+	.long	.Lfunc_end0-.Lfunc_begin0
+	.short	4                               // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	129                             // 897
+	.byte	7                               // 
+	.byte	159                             // DW_OP_stack_value
+	.long	0
+	.long	0
+.Ldebug_loc20:
+	.long	.Lfunc_begin0-.Lfunc_begin0
+	.long	.Ltmp17-.Lfunc_begin0
+	.short	4                               // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	255                             // 1151
+	.byte	8                               // 
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp18-.Lfunc_begin0
+	.long	.Ltmp47-.Lfunc_begin0
+	.short	4                               // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	255                             // 1151
+	.byte	8                               // 
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp48-.Lfunc_begin0
+	.long	.Lfunc_end0-.Lfunc_begin0
+	.short	4                               // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	255                             // 1151
+	.byte	8                               // 
+	.byte	159                             // DW_OP_stack_value
+	.long	0
+	.long	0
+.Ldebug_loc21:
+	.long	.Lfunc_begin0-.Lfunc_begin0
+	.long	.Ltmp17-.Lfunc_begin0
+	.short	11                              // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	128                             // 4039728865751334912
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	136                             // 
+	.byte	56                              // 
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp18-.Lfunc_begin0
+	.long	.Ltmp47-.Lfunc_begin0
+	.short	11                              // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	128                             // 4039728865751334912
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	136                             // 
+	.byte	56                              // 
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp48-.Lfunc_begin0
+	.long	.Lfunc_end0-.Lfunc_begin0
+	.short	11                              // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	128                             // 4039728865751334912
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	136                             // 
+	.byte	56                              // 
+	.byte	159                             // DW_OP_stack_value
+	.long	0
+	.long	0
+.Ldebug_loc22:
+	.long	.Lfunc_begin0-.Lfunc_begin0
+	.long	.Ltmp17-.Lfunc_begin0
+	.short	11                              // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	128                             // 5183643171103440896
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	248                             // 
+	.byte	71                              // 
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp18-.Lfunc_begin0
+	.long	.Ltmp47-.Lfunc_begin0
+	.short	11                              // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	128                             // 5183643171103440896
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	248                             // 
+	.byte	71                              // 
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp48-.Lfunc_begin0
+	.long	.Lfunc_end0-.Lfunc_begin0
+	.short	11                              // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	128                             // 5183643171103440896
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	248                             // 
+	.byte	71                              // 
+	.byte	159                             // DW_OP_stack_value
+	.long	0
+	.long	0
+.Ldebug_loc23:
+	.long	.Lfunc_begin0-.Lfunc_begin0
+	.long	.Ltmp17-.Lfunc_begin0
+	.short	6                               // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	128                             // 4194304
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	2                               // 
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp18-.Lfunc_begin0
+	.long	.Ltmp47-.Lfunc_begin0
+	.short	6                               // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	128                             // 4194304
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	2                               // 
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp48-.Lfunc_begin0
+	.long	.Lfunc_end0-.Lfunc_begin0
+	.short	6                               // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	128                             // 4194304
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	2                               // 
+	.byte	159                             // DW_OP_stack_value
+	.long	0
+	.long	0
+.Ldebug_loc24:
+	.long	.Lfunc_begin0-.Lfunc_begin0
+	.long	.Ltmp17-.Lfunc_begin0
+	.short	6                               // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	255                             // 4194303
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	1                               // 
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp18-.Lfunc_begin0
+	.long	.Ltmp47-.Lfunc_begin0
+	.short	6                               // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	255                             // 4194303
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	1                               // 
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp48-.Lfunc_begin0
+	.long	.Lfunc_end0-.Lfunc_begin0
+	.short	6                               // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	255                             // 4194303
+	.byte	255                             // 
+	.byte	255                             // 
+	.byte	1                               // 
+	.byte	159                             // DW_OP_stack_value
+	.long	0
+	.long	0
+.Ldebug_loc25:
+	.long	.Lfunc_begin0-.Lfunc_begin0
+	.long	.Ltmp7-.Lfunc_begin0
+	.short	6                               // Loc expr size
+	.byte	81                              // sub-register DW_OP_reg1
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.byte	80                              // sub-register DW_OP_reg0
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.long	.Ltmp9-.Lfunc_begin0
+	.long	.Ltmp13-.Lfunc_begin0
+	.short	6                               // Loc expr size
+	.byte	81                              // sub-register DW_OP_reg1
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.byte	80                              // sub-register DW_OP_reg0
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.long	.Ltmp15-.Lfunc_begin0
+	.long	.Ltmp17-.Lfunc_begin0
+	.short	6                               // Loc expr size
+	.byte	81                              // sub-register DW_OP_reg1
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.byte	80                              // sub-register DW_OP_reg0
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.long	.Ltmp18-.Lfunc_begin0
+	.long	.Ltmp20-.Lfunc_begin0
+	.short	6                               // Loc expr size
+	.byte	81                              // sub-register DW_OP_reg1
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.byte	80                              // sub-register DW_OP_reg0
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.long	.Ltmp22-.Lfunc_begin0
+	.long	.Ltmp43-.Lfunc_begin0
+	.short	6                               // Loc expr size
+	.byte	81                              // sub-register DW_OP_reg1
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.byte	80                              // sub-register DW_OP_reg0
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.long	.Ltmp45-.Lfunc_begin0
+	.long	.Ltmp47-.Lfunc_begin0
+	.short	6                               // Loc expr size
+	.byte	81                              // sub-register DW_OP_reg1
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.byte	80                              // sub-register DW_OP_reg0
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.long	.Ltmp48-.Lfunc_begin0
+	.long	.Ltmp51-.Lfunc_begin0
+	.short	6                               // Loc expr size
+	.byte	81                              // sub-register DW_OP_reg1
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.byte	80                              // sub-register DW_OP_reg0
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.long	0
+	.long	0
+.Ldebug_loc26:
+	.long	.Ltmp3-.Lfunc_begin0
+	.long	.Ltmp6-.Lfunc_begin0
+	.short	6                               // Loc expr size
+	.byte	87                              // sub-register DW_OP_reg7
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.byte	86                              // sub-register DW_OP_reg6
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.long	.Ltmp15-.Lfunc_begin0
+	.long	.Ltmp17-.Lfunc_begin0
+	.short	6                               // Loc expr size
+	.byte	87                              // sub-register DW_OP_reg7
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.byte	86                              // sub-register DW_OP_reg6
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.long	.Ltmp18-.Lfunc_begin0
+	.long	.Ltmp22-.Lfunc_begin0
+	.short	6                               // Loc expr size
+	.byte	87                              // sub-register DW_OP_reg7
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.byte	86                              // sub-register DW_OP_reg6
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.long	0
+	.long	0
+.Ldebug_loc27:
+	.long	.Ltmp6-.Lfunc_begin0
+	.long	.Ltmp9-.Lfunc_begin0
+	.short	1                               // Loc expr size
+	.byte	83                              // DW_OP_reg3
+	.long	.Ltmp11-.Lfunc_begin0
+	.long	.Ltmp12-.Lfunc_begin0
+	.short	7                               // Loc expr size
+	.byte	16                              // DW_OP_constu
+	.byte	128                             // 2143289344
+	.byte	128                             // 
+	.byte	128                             // 
+	.byte	254                             // 
+	.byte	7                               // 
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp12-.Lfunc_begin0
+	.long	.Ltmp15-.Lfunc_begin0
+	.short	1                               // Loc expr size
+	.byte	83                              // DW_OP_reg3
+	.long	.Ltmp16-.Lfunc_begin0
+	.long	.Ltmp17-.Lfunc_begin0
+	.short	1                               // Loc expr size
+	.byte	83                              // DW_OP_reg3
+	.long	.Ltmp18-.Lfunc_begin0
+	.long	.Ltmp22-.Lfunc_begin0
+	.short	1                               // Loc expr size
+	.byte	83                              // DW_OP_reg3
+	.long	.Ltmp40-.Lfunc_begin0
+	.long	.Ltmp47-.Lfunc_begin0
+	.short	1                               // Loc expr size
+	.byte	83                              // DW_OP_reg3
+	.long	.Ltmp48-.Lfunc_begin0
+	.long	.Lfunc_end0-.Lfunc_begin0
+	.short	1                               // Loc expr size
+	.byte	83                              // DW_OP_reg3
+	.long	0
+	.long	0
+.Ldebug_loc28:
+	.long	.Ltmp27-.Lfunc_begin0
+	.long	.Ltmp38-.Lfunc_begin0
+	.short	6                               // Loc expr size
+	.byte	83                              // sub-register DW_OP_reg3
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.byte	82                              // sub-register DW_OP_reg2
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.long	0
+	.long	0
+.Ldebug_loc29:
+	.long	.Ltmp29-.Lfunc_begin0
+	.long	.Ltmp37-.Lfunc_begin0
+	.short	1                               // Loc expr size
+	.byte	84                              // DW_OP_reg4
+	.long	0
+	.long	0
+.Ldebug_loc30:
+	.long	.Ltmp25-.Lfunc_begin0
+	.long	.Ltmp30-.Lfunc_begin0
+	.short	1                               // Loc expr size
+	.byte	85                              // DW_OP_reg5
+	.long	0
+	.long	0
+.Ldebug_loc31:
+	.long	.Ltmp31-.Lfunc_begin0
+	.long	.Ltmp33-.Lfunc_begin0
+	.short	6                               // Loc expr size
+	.byte	117                             // DW_OP_breg5
+	.byte	0                               // 0
+	.byte	16                              // DW_OP_constu
+	.byte	1                               // 1
+	.byte	26                              // DW_OP_and
+	.byte	159                             // DW_OP_stack_value
+	.long	.Ltmp34-.Lfunc_begin0
+	.long	.Ltmp37-.Lfunc_begin0
+	.short	6                               // Loc expr size
+	.byte	117                             // DW_OP_breg5
+	.byte	0                               // 0
+	.byte	16                              // DW_OP_constu
+	.byte	1                               // 1
+	.byte	26                              // DW_OP_and
+	.byte	159                             // DW_OP_stack_value
+	.long	0
+	.long	0
+.Ldebug_loc32:
+	.long	.Ltmp39-.Lfunc_begin0
+	.long	.Ltmp47-.Lfunc_begin0
+	.short	6                               // Loc expr size
+	.byte	85                              // sub-register DW_OP_reg5
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.byte	84                              // sub-register DW_OP_reg4
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.long	.Ltmp48-.Lfunc_begin0
+	.long	.Ltmp49-.Lfunc_begin0
+	.short	6                               // Loc expr size
+	.byte	85                              // sub-register DW_OP_reg5
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.byte	84                              // sub-register DW_OP_reg4
+	.byte	147                             // DW_OP_piece
+	.byte	4                               // 4
+	.long	0
+	.long	0
+	.section	.debug_abbrev,"",@progbits
+	.byte	1                               // Abbreviation Code
+	.byte	17                              // DW_TAG_compile_unit
+	.byte	1                               // DW_CHILDREN_yes
+	.byte	37                              // DW_AT_producer
+	.byte	14                              // DW_FORM_strp
+	.byte	19                              // DW_AT_language
+	.byte	5                               // DW_FORM_data2
+	.byte	3                               // DW_AT_name
+	.byte	14                              // DW_FORM_strp
+	.byte	16                              // DW_AT_stmt_list
+	.byte	23                              // DW_FORM_sec_offset
+	.byte	27                              // DW_AT_comp_dir
+	.byte	14                              // DW_FORM_strp
+	.byte	17                              // DW_AT_low_pc
+	.byte	1                               // DW_FORM_addr
+	.byte	18                              // DW_AT_high_pc
+	.byte	6                               // DW_FORM_data4
+	.byte	0                               // EOM(1)
+	.byte	0                               // EOM(2)
+	.byte	2                               // Abbreviation Code
+	.byte	52                              // DW_TAG_variable
+	.byte	0                               // DW_CHILDREN_no
+	.byte	3                               // DW_AT_name
+	.byte	14                              // DW_FORM_strp
+	.byte	73                              // DW_AT_type
+	.byte	19                              // DW_FORM_ref4
+	.byte	58                              // DW_AT_decl_file
+	.byte	11                              // DW_FORM_data1
+	.byte	59                              // DW_AT_decl_line
+	.byte	11                              // DW_FORM_data1
+	.byte	28                              // DW_AT_const_value
+	.byte	15                              // DW_FORM_udata
+	.byte	0                               // EOM(1)
+	.byte	0                               // EOM(2)
+	.byte	3                               // Abbreviation Code
+	.byte	38                              // DW_TAG_const_type
+	.byte	0                               // DW_CHILDREN_no
+	.byte	73                              // DW_AT_type
+	.byte	19                              // DW_FORM_ref4
+	.byte	0                               // EOM(1)
+	.byte	0                               // EOM(2)
+	.byte	4                               // Abbreviation Code
+	.byte	36                              // DW_TAG_base_type
+	.byte	0                               // DW_CHILDREN_no
+	.byte	3                               // DW_AT_name
+	.byte	14                              // DW_FORM_strp
+	.byte	62                              // DW_AT_encoding
+	.byte	11                              // DW_FORM_data1
+	.byte	11                              // DW_AT_byte_size
+	.byte	11                              // DW_FORM_data1
+	.byte	0                               // EOM(1)
+	.byte	0                               // EOM(2)
+	.byte	5                               // Abbreviation Code
+	.byte	22                              // DW_TAG_typedef
+	.byte	0                               // DW_CHILDREN_no
+	.byte	73                              // DW_AT_type
+	.byte	19                              // DW_FORM_ref4
+	.byte	3                               // DW_AT_name
+	.byte	14                              // DW_FORM_strp
+	.byte	58                              // DW_AT_decl_file
+	.byte	11                              // DW_FORM_data1
+	.byte	59                              // DW_AT_decl_line
+	.byte	11                              // DW_FORM_data1
+	.byte	0                               // EOM(1)
+	.byte	0                               // EOM(2)
+	.byte	6                               // Abbreviation Code
+	.byte	46                              // DW_TAG_subprogram
+	.byte	1                               // DW_CHILDREN_yes
+	.byte	3                               // DW_AT_name
+	.byte	14                              // DW_FORM_strp
+	.byte	58                              // DW_AT_decl_file
+	.byte	11                              // DW_FORM_data1
+	.byte	59                              // DW_AT_decl_line
+	.byte	11                              // DW_FORM_data1
+	.byte	39                              // DW_AT_prototyped
+	.byte	25                              // DW_FORM_flag_present
+	.byte	73                              // DW_AT_type
+	.byte	19                              // DW_FORM_ref4
+	.byte	32                              // DW_AT_inline
+	.byte	11                              // DW_FORM_data1
+	.byte	0                               // EOM(1)
+	.byte	0                               // EOM(2)
+	.byte	7                               // Abbreviation Code
+	.byte	5                               // DW_TAG_formal_parameter
+	.byte	0                               // DW_CHILDREN_no
+	.byte	3                               // DW_AT_name
+	.byte	14                              // DW_FORM_strp
+	.byte	58                              // DW_AT_decl_file
+	.byte	11                              // DW_FORM_data1
+	.byte	59                              // DW_AT_decl_line
+	.byte	11                              // DW_FORM_data1
+	.byte	73                              // DW_AT_type
+	.byte	19                              // DW_FORM_ref4
+	.byte	0                               // EOM(1)
+	.byte	0                               // EOM(2)
+	.byte	8                               // Abbreviation Code
+	.byte	52                              // DW_TAG_variable
+	.byte	0                               // DW_CHILDREN_no
+	.byte	3                               // DW_AT_name
+	.byte	14                              // DW_FORM_strp
+	.byte	58                              // DW_AT_decl_file
+	.byte	11                              // DW_FORM_data1
+	.byte	59                              // DW_AT_decl_line
+	.byte	11                              // DW_FORM_data1
+	.byte	73                              // DW_AT_type
+	.byte	19                              // DW_FORM_ref4
+	.byte	0                               // EOM(1)
+	.byte	0                               // EOM(2)
+	.byte	9                               // Abbreviation Code
+	.byte	11                              // DW_TAG_lexical_block
+	.byte	1                               // DW_CHILDREN_yes
+	.byte	0                               // EOM(1)
+	.byte	0                               // EOM(2)
+	.byte	10                              // Abbreviation Code
+	.byte	46                              // DW_TAG_subprogram
+	.byte	1                               // DW_CHILDREN_yes
+	.byte	17                              // DW_AT_low_pc
+	.byte	1                               // DW_FORM_addr
+	.byte	18                              // DW_AT_high_pc
+	.byte	6                               // DW_FORM_data4
+	.byte	64                              // DW_AT_frame_base
+	.byte	24                              // DW_FORM_exprloc
+	.ascii	"\227B"                         // DW_AT_GNU_all_call_sites
+	.byte	25                              // DW_FORM_flag_present
+	.byte	3                               // DW_AT_name
+	.byte	14                              // DW_FORM_strp
+	.byte	58                              // DW_AT_decl_file
+	.byte	11                              // DW_FORM_data1
+	.byte	59                              // DW_AT_decl_line
+	.byte	11                              // DW_FORM_data1
+	.byte	39                              // DW_AT_prototyped
+	.byte	25                              // DW_FORM_flag_present
+	.byte	73                              // DW_AT_type
+	.byte	19                              // DW_FORM_ref4
+	.byte	63                              // DW_AT_external
+	.byte	25                              // DW_FORM_flag_present
+	.byte	0                               // EOM(1)
+	.byte	0                               // EOM(2)
+	.byte	11                              // Abbreviation Code
+	.byte	5                               // DW_TAG_formal_parameter
+	.byte	0                               // DW_CHILDREN_no
+	.byte	2                               // DW_AT_location
+	.byte	23                              // DW_FORM_sec_offset
+	.byte	3                               // DW_AT_name
+	.byte	14                              // DW_FORM_strp
+	.byte	58                              // DW_AT_decl_file
+	.byte	11                              // DW_FORM_data1
+	.byte	59                              // DW_AT_decl_line
+	.byte	11                              // DW_FORM_data1
+	.byte	73                              // DW_AT_type
+	.byte	19                              // DW_FORM_ref4
+	.byte	0                               // EOM(1)
+	.byte	0                               // EOM(2)
+	.byte	12                              // Abbreviation Code
+	.byte	29                              // DW_TAG_inlined_subroutine
+	.byte	1                               // DW_CHILDREN_yes
+	.byte	49                              // DW_AT_abstract_origin
+	.byte	19                              // DW_FORM_ref4
+	.byte	85                              // DW_AT_ranges
+	.byte	23                              // DW_FORM_sec_offset
+	.byte	88                              // DW_AT_call_file
+	.byte	11                              // DW_FORM_data1
+	.byte	89                              // DW_AT_call_line
+	.byte	11                              // DW_FORM_data1
+	.byte	87                              // DW_AT_call_column
+	.byte	11                              // DW_FORM_data1
+	.byte	0                               // EOM(1)
+	.byte	0                               // EOM(2)
+	.byte	13                              // Abbreviation Code
+	.byte	5                               // DW_TAG_formal_parameter
+	.byte	0                               // DW_CHILDREN_no
+	.byte	2                               // DW_AT_location
+	.byte	23                              // DW_FORM_sec_offset
+	.byte	49                              // DW_AT_abstract_origin
+	.byte	19                              // DW_FORM_ref4
+	.byte	0                               // EOM(1)
+	.byte	0                               // EOM(2)
+	.byte	14                              // Abbreviation Code
+	.byte	52                              // DW_TAG_variable
+	.byte	0                               // DW_CHILDREN_no
+	.byte	2                               // DW_AT_location
+	.byte	23                              // DW_FORM_sec_offset
+	.byte	49                              // DW_AT_abstract_origin
+	.byte	19                              // DW_FORM_ref4
+	.byte	0                               // EOM(1)
+	.byte	0                               // EOM(2)
+	.byte	15                              // Abbreviation Code
+	.byte	52                              // DW_TAG_variable
+	.byte	0                               // DW_CHILDREN_no
+	.byte	49                              // DW_AT_abstract_origin
+	.byte	19                              // DW_FORM_ref4
+	.byte	0                               // EOM(1)
+	.byte	0                               // EOM(2)
+	.byte	16                              // Abbreviation Code
+	.byte	11                              // DW_TAG_lexical_block
+	.byte	1                               // DW_CHILDREN_yes
+	.byte	85                              // DW_AT_ranges
+	.byte	23                              // DW_FORM_sec_offset
+	.byte	0                               // EOM(1)
+	.byte	0                               // EOM(2)
+	.byte	0                               // EOM(3)
+	.section	.debug_info,"",@progbits
+.Lcu_begin0:
+	.long	.Ldebug_info_end0-.Ldebug_info_start0 // Length of Unit
+.Ldebug_info_start0:
+	.short	4                               // DWARF version number
+	.long	.debug_abbrev                   // Offset Into Abbrev. Section
+	.byte	4                               // Address Size (in bytes)
+	.byte	1                               // Abbrev [1] 0xb:0x3c6 DW_TAG_compile_unit
+	.long	.Linfo_string0                  // DW_AT_producer
+	.short	12                              // DW_AT_language
+	.long	.Linfo_string1                  // DW_AT_name
+	.long	.Lline_table_start0             // DW_AT_stmt_list
+	.long	.Linfo_string2                  // DW_AT_comp_dir
+	.long	.Lfunc_begin0                   // DW_AT_low_pc
+	.long	.Lfunc_end0-.Lfunc_begin0       // DW_AT_high_pc
+	.byte	2                               // Abbrev [2] 0x26:0xc DW_TAG_variable
+	.long	.Linfo_string3                  // DW_AT_name
+	.long	50                              // DW_AT_type
+	.byte	1                               // DW_AT_decl_file
+	.byte	29                              // DW_AT_decl_line
+	.byte	52                              // DW_AT_const_value
+	.byte	3                               // Abbrev [3] 0x32:0x5 DW_TAG_const_type
+	.long	55                              // DW_AT_type
+	.byte	4                               // Abbrev [4] 0x37:0x7 DW_TAG_base_type
+	.long	.Linfo_string4                  // DW_AT_name
+	.byte	5                               // DW_AT_encoding
+	.byte	4                               // DW_AT_byte_size
+	.byte	2                               // Abbrev [2] 0x3e:0xc DW_TAG_variable
+	.long	.Linfo_string5                  // DW_AT_name
+	.long	50                              // DW_AT_type
+	.byte	1                               // DW_AT_decl_file
+	.byte	51                              // DW_AT_decl_line
+	.byte	23                              // DW_AT_const_value
+	.byte	5                               // Abbrev [5] 0x4a:0xb DW_TAG_typedef
+	.long	85                              // DW_AT_type
+	.long	.Linfo_string8                  // DW_AT_name
+	.byte	1                               // DW_AT_decl_file
+	.byte	27                              // DW_AT_decl_line
+	.byte	5                               // Abbrev [5] 0x55:0xb DW_TAG_typedef
+	.long	96                              // DW_AT_type
+	.long	.Linfo_string7                  // DW_AT_name
+	.byte	2                               // DW_AT_decl_file
+	.byte	53                              // DW_AT_decl_line
+	.byte	4                               // Abbrev [4] 0x60:0x7 DW_TAG_base_type
+	.long	.Linfo_string6                  // DW_AT_name
+	.byte	7                               // DW_AT_encoding
+	.byte	8                               // DW_AT_byte_size
+	.byte	5                               // Abbrev [5] 0x67:0xb DW_TAG_typedef
+	.long	114                             // DW_AT_type
+	.long	.Linfo_string11                 // DW_AT_name
+	.byte	1                               // DW_AT_decl_file
+	.byte	49                              // DW_AT_decl_line
+	.byte	5                               // Abbrev [5] 0x72:0xb DW_TAG_typedef
+	.long	125                             // DW_AT_type
+	.long	.Linfo_string10                 // DW_AT_name
+	.byte	2                               // DW_AT_decl_file
+	.byte	48                              // DW_AT_decl_line
+	.byte	4                               // Abbrev [4] 0x7d:0x7 DW_TAG_base_type
+	.long	.Linfo_string9                  // DW_AT_name
+	.byte	7                               // DW_AT_encoding
+	.byte	4                               // DW_AT_byte_size
+	.byte	6                               // Abbrev [6] 0x84:0x19f DW_TAG_subprogram
+	.long	.Linfo_string12                 // DW_AT_name
+	.byte	4                               // DW_AT_decl_file
+	.byte	42                              // DW_AT_decl_line
+                                        // DW_AT_prototyped
+	.long	547                             // DW_AT_type
+	.byte	1                               // DW_AT_inline
+	.byte	7                               // Abbrev [7] 0x90:0xb DW_TAG_formal_parameter
+	.long	.Linfo_string15                 // DW_AT_name
+	.byte	4                               // DW_AT_decl_file
+	.byte	42                              // DW_AT_decl_line
+	.long	565                             // DW_AT_type
+	.byte	8                               // Abbrev [8] 0x9b:0xb DW_TAG_variable
+	.long	.Linfo_string18                 // DW_AT_name
+	.byte	4                               // DW_AT_decl_file
+	.byte	45                              // DW_AT_decl_line
+	.long	50                              // DW_AT_type
+	.byte	8                               // Abbrev [8] 0xa6:0xb DW_TAG_variable
+	.long	.Linfo_string19                 // DW_AT_name
+	.byte	4                               // DW_AT_decl_file
+	.byte	46                              // DW_AT_decl_line
+	.long	50                              // DW_AT_type
+	.byte	8                               // Abbrev [8] 0xb1:0xb DW_TAG_variable
+	.long	.Linfo_string20                 // DW_AT_name
+	.byte	4                               // DW_AT_decl_file
+	.byte	47                              // DW_AT_decl_line
+	.long	50                              // DW_AT_type
+	.byte	8                               // Abbrev [8] 0xbc:0xb DW_TAG_variable
+	.long	.Linfo_string21                 // DW_AT_name
+	.byte	4                               // DW_AT_decl_file
+	.byte	48                              // DW_AT_decl_line
+	.long	50                              // DW_AT_type
+	.byte	8                               // Abbrev [8] 0xc7:0xb DW_TAG_variable
+	.long	.Linfo_string22                 // DW_AT_name
+	.byte	4                               // DW_AT_decl_file
+	.byte	50                              // DW_AT_decl_line
+	.long	583                             // DW_AT_type
+	.byte	8                               // Abbrev [8] 0xd2:0xb DW_TAG_variable
+	.long	.Linfo_string23                 // DW_AT_name
+	.byte	4                               // DW_AT_decl_file
+	.byte	51                              // DW_AT_decl_line
+	.long	583                             // DW_AT_type
+	.byte	8                               // Abbrev [8] 0xdd:0xb DW_TAG_variable
+	.long	.Linfo_string24                 // DW_AT_name
+	.byte	4                               // DW_AT_decl_file
+	.byte	52                              // DW_AT_decl_line
+	.long	583                             // DW_AT_type
+	.byte	8                               // Abbrev [8] 0xe8:0xb DW_TAG_variable
+	.long	.Linfo_string25                 // DW_AT_name
+	.byte	4                               // DW_AT_decl_file
+	.byte	53                              // DW_AT_decl_line
+	.long	583                             // DW_AT_type
+	.byte	8                               // Abbrev [8] 0xf3:0xb DW_TAG_variable
+	.long	.Linfo_string26                 // DW_AT_name
+	.byte	4                               // DW_AT_decl_file
+	.byte	54                              // DW_AT_decl_line
+	.long	583                             // DW_AT_type
+	.byte	8                               // Abbrev [8] 0xfe:0xb DW_TAG_variable
+	.long	.Linfo_string27                 // DW_AT_name
+	.byte	4                               // DW_AT_decl_file
+	.byte	55                              // DW_AT_decl_line
+	.long	583                             // DW_AT_type
+	.byte	8                               // Abbrev [8] 0x109:0xb DW_TAG_variable
+	.long	.Linfo_string28                 // DW_AT_name
+	.byte	4                               // DW_AT_decl_file
+	.byte	56                              // DW_AT_decl_line
+	.long	583                             // DW_AT_type
+	.byte	8                               // Abbrev [8] 0x114:0xb DW_TAG_variable
+	.long	.Linfo_string29                 // DW_AT_name
+	.byte	4                               // DW_AT_decl_file
+	.byte	57                              // DW_AT_decl_line
+	.long	583                             // DW_AT_type
+	.byte	8                               // Abbrev [8] 0x11f:0xb DW_TAG_variable
+	.long	.Linfo_string30                 // DW_AT_name
+	.byte	4                               // DW_AT_decl_file
+	.byte	58                              // DW_AT_decl_line
+	.long	583                             // DW_AT_type
+	.byte	8                               // Abbrev [8] 0x12a:0xb DW_TAG_variable
+	.long	.Linfo_string31                 // DW_AT_name
+	.byte	4                               // DW_AT_decl_file
+	.byte	60                              // DW_AT_decl_line
+	.long	50                              // DW_AT_type
+	.byte	8                               // Abbrev [8] 0x135:0xb DW_TAG_variable
+	.long	.Linfo_string32                 // DW_AT_name
+	.byte	4                               // DW_AT_decl_file
+	.byte	61                              // DW_AT_decl_line
+	.long	50                              // DW_AT_type
+	.byte	8                               // Abbrev [8] 0x140:0xb DW_TAG_variable
+	.long	.Linfo_string33                 // DW_AT_name
+	.byte	4                               // DW_AT_decl_file
+	.byte	62                              // DW_AT_decl_line
+	.long	50                              // DW_AT_type
+	.byte	8                               // Abbrev [8] 0x14b:0xb DW_TAG_variable
+	.long	.Linfo_string34                 // DW_AT_name
+	.byte	4                               // DW_AT_decl_file
+	.byte	63                              // DW_AT_decl_line
+	.long	50                              // DW_AT_type
+	.byte	8                               // Abbrev [8] 0x156:0xb DW_TAG_variable
+	.long	.Linfo_string35                 // DW_AT_name
+	.byte	4                               // DW_AT_decl_file
+	.byte	65                              // DW_AT_decl_line
+	.long	50                              // DW_AT_type
+	.byte	8                               // Abbrev [8] 0x161:0xb DW_TAG_variable
+	.long	.Linfo_string36                 // DW_AT_name
+	.byte	4                               // DW_AT_decl_file
+	.byte	66                              // DW_AT_decl_line
+	.long	50                              // DW_AT_type
+	.byte	8                               // Abbrev [8] 0x16c:0xb DW_TAG_variable
+	.long	.Linfo_string37                 // DW_AT_name
+	.byte	4                               // DW_AT_decl_file
+	.byte	67                              // DW_AT_decl_line
+	.long	583                             // DW_AT_type
+	.byte	8                               // Abbrev [8] 0x177:0xb DW_TAG_variable
+	.long	.Linfo_string38                 // DW_AT_name
+	.byte	4                               // DW_AT_decl_file
+	.byte	68                              // DW_AT_decl_line
+	.long	583                             // DW_AT_type
+	.byte	8                               // Abbrev [8] 0x182:0xb DW_TAG_variable
+	.long	.Linfo_string39                 // DW_AT_name
+	.byte	4                               // DW_AT_decl_file
+	.byte	70                              // DW_AT_decl_line
+	.long	588                             // DW_AT_type
+	.byte	8                               // Abbrev [8] 0x18d:0xb DW_TAG_variable
+	.long	.Linfo_string40                 // DW_AT_name
+	.byte	4                               // DW_AT_decl_file
+	.byte	71                              // DW_AT_decl_line
+	.long	588                             // DW_AT_type
+	.byte	8                               // Abbrev [8] 0x198:0xb DW_TAG_variable
+	.long	.Linfo_string41                 // DW_AT_name
+	.byte	4                               // DW_AT_decl_file
+	.byte	74                              // DW_AT_decl_line
+	.long	583                             // DW_AT_type
+	.byte	8                               // Abbrev [8] 0x1a3:0xb DW_TAG_variable
+	.long	.Linfo_string42                 // DW_AT_name
+	.byte	4                               // DW_AT_decl_file
+	.byte	76                              // DW_AT_decl_line
+	.long	583                             // DW_AT_type
+	.byte	8                               // Abbrev [8] 0x1ae:0xb DW_TAG_variable
+	.long	.Linfo_string43                 // DW_AT_name
+	.byte	4                               // DW_AT_decl_file
+	.byte	75                              // DW_AT_decl_line
+	.long	583                             // DW_AT_type
+	.byte	8                               // Abbrev [8] 0x1b9:0xb DW_TAG_variable
+	.long	.Linfo_string44                 // DW_AT_name
+	.byte	4                               // DW_AT_decl_file
+	.byte	77                              // DW_AT_decl_line
+	.long	103                             // DW_AT_type
+	.byte	8                               // Abbrev [8] 0x1c4:0xb DW_TAG_variable
+	.long	.Linfo_string45                 // DW_AT_name
+	.byte	4                               // DW_AT_decl_file
+	.byte	133                             // DW_AT_decl_line
+	.long	588                             // DW_AT_type
+	.byte	9                               // Abbrev [9] 0x1cf:0xd DW_TAG_lexical_block
+	.byte	8                               // Abbrev [8] 0x1d0:0xb DW_TAG_variable
+	.long	.Linfo_string46                 // DW_AT_name
+	.byte	4                               // DW_AT_decl_file
+	.byte	86                              // DW_AT_decl_line
+	.long	583                             // DW_AT_type
+	.byte	0                               // End Of Children Mark
+	.byte	9                               // Abbrev [9] 0x1dc:0x46 DW_TAG_lexical_block
+	.byte	8                               // Abbrev [8] 0x1dd:0xb DW_TAG_variable
+	.long	.Linfo_string47                 // DW_AT_name
+	.byte	4                               // DW_AT_decl_file
+	.byte	113                             // DW_AT_decl_line
+	.long	583                             // DW_AT_type
+	.byte	8                               // Abbrev [8] 0x1e8:0xb DW_TAG_variable
+	.long	.Linfo_string48                 // DW_AT_name
+	.byte	4                               // DW_AT_decl_file
+	.byte	111                             // DW_AT_decl_line
+	.long	50                              // DW_AT_type
+	.byte	8                               // Abbrev [8] 0x1f3:0xb DW_TAG_variable
+	.long	.Linfo_string49                 // DW_AT_name
+	.byte	4                               // DW_AT_decl_file
+	.byte	110                             // DW_AT_decl_line
+	.long	50                              // DW_AT_type
+	.byte	9                               // Abbrev [9] 0x1fe:0x23 DW_TAG_lexical_block
+	.byte	8                               // Abbrev [8] 0x1ff:0xb DW_TAG_variable
+	.long	.Linfo_string50                 // DW_AT_name
+	.byte	4                               // DW_AT_decl_file
+	.byte	119                             // DW_AT_decl_line
+	.long	593                             // DW_AT_type
+	.byte	8                               // Abbrev [8] 0x20a:0xb DW_TAG_variable
+	.long	.Linfo_string52                 // DW_AT_name
+	.byte	4                               // DW_AT_decl_file
+	.byte	120                             // DW_AT_decl_line
+	.long	74                              // DW_AT_type
+	.byte	8                               // Abbrev [8] 0x215:0xb DW_TAG_variable
+	.long	.Linfo_string46                 // DW_AT_name
+	.byte	4                               // DW_AT_decl_file
+	.byte	122                             // DW_AT_decl_line
+	.long	583                             // DW_AT_type
+	.byte	0                               // End Of Children Mark
+	.byte	0                               // End Of Children Mark
+	.byte	0                               // End Of Children Mark
+	.byte	5                               // Abbrev [5] 0x223:0xb DW_TAG_typedef
+	.long	558                             // DW_AT_type
+	.long	.Linfo_string14                 // DW_AT_name
+	.byte	1                               // DW_AT_decl_file
+	.byte	48                              // DW_AT_decl_line
+	.byte	4                               // Abbrev [4] 0x22e:0x7 DW_TAG_base_type
+	.long	.Linfo_string13                 // DW_AT_name
+	.byte	4                               // DW_AT_encoding
+	.byte	4                               // DW_AT_byte_size
+	.byte	5                               // Abbrev [5] 0x235:0xb DW_TAG_typedef
+	.long	576                             // DW_AT_type
+	.long	.Linfo_string17                 // DW_AT_name
+	.byte	1                               // DW_AT_decl_file
+	.byte	26                              // DW_AT_decl_line
+	.byte	4                               // Abbrev [4] 0x240:0x7 DW_TAG_base_type
+	.long	.Linfo_string16                 // DW_AT_name
+	.byte	4                               // DW_AT_encoding
+	.byte	8                               // DW_AT_byte_size
+	.byte	3                               // Abbrev [3] 0x247:0x5 DW_TAG_const_type
+	.long	74                              // DW_AT_type
+	.byte	3                               // Abbrev [3] 0x24c:0x5 DW_TAG_const_type
+	.long	103                             // DW_AT_type
+	.byte	3                               // Abbrev [3] 0x251:0x5 DW_TAG_const_type
+	.long	598                             // DW_AT_type
+	.byte	4                               // Abbrev [4] 0x256:0x7 DW_TAG_base_type
+	.long	.Linfo_string51                 // DW_AT_name
+	.byte	2                               // DW_AT_encoding
+	.byte	1                               // DW_AT_byte_size
+	.byte	10                              // Abbrev [10] 0x25d:0x173 DW_TAG_subprogram
+	.long	.Lfunc_begin0                   // DW_AT_low_pc
+	.long	.Lfunc_end0-.Lfunc_begin0       // DW_AT_high_pc
+	.byte	1                               // DW_AT_frame_base
+	.byte	102
+                                        // DW_AT_GNU_all_call_sites
+	.long	.Linfo_string53                 // DW_AT_name
+	.byte	3                               // DW_AT_decl_file
+	.byte	15                              // DW_AT_decl_line
+                                        // DW_AT_prototyped
+	.long	558                             // DW_AT_type
+                                        // DW_AT_external
+	.byte	11                              // Abbrev [11] 0x272:0xf DW_TAG_formal_parameter
+	.long	.Ldebug_loc0                    // DW_AT_location
+	.long	.Linfo_string15                 // DW_AT_name
+	.byte	3                               // DW_AT_decl_file
+	.byte	15                              // DW_AT_decl_line
+	.long	576                             // DW_AT_type
+	.byte	12                              // Abbrev [12] 0x281:0x14e DW_TAG_inlined_subroutine
+	.long	132                             // DW_AT_abstract_origin
+	.long	.Ldebug_ranges0                 // DW_AT_ranges
+	.byte	3                               // DW_AT_call_file
+	.byte	17                              // DW_AT_call_line
+	.byte	12                              // DW_AT_call_column
+	.byte	13                              // Abbrev [13] 0x28d:0x9 DW_TAG_formal_parameter
+	.long	.Ldebug_loc1                    // DW_AT_location
+	.long	144                             // DW_AT_abstract_origin
+	.byte	14                              // Abbrev [14] 0x296:0x9 DW_TAG_variable
+	.long	.Ldebug_loc2                    // DW_AT_location
+	.long	155                             // DW_AT_abstract_origin
+	.byte	14                              // Abbrev [14] 0x29f:0x9 DW_TAG_variable
+	.long	.Ldebug_loc3                    // DW_AT_location
+	.long	166                             // DW_AT_abstract_origin
+	.byte	14                              // Abbrev [14] 0x2a8:0x9 DW_TAG_variable
+	.long	.Ldebug_loc4                    // DW_AT_location
+	.long	177                             // DW_AT_abstract_origin
+	.byte	14                              // Abbrev [14] 0x2b1:0x9 DW_TAG_variable
+	.long	.Ldebug_loc5                    // DW_AT_location
+	.long	188                             // DW_AT_abstract_origin
+	.byte	14                              // Abbrev [14] 0x2ba:0x9 DW_TAG_variable
+	.long	.Ldebug_loc6                    // DW_AT_location
+	.long	199                             // DW_AT_abstract_origin
+	.byte	14                              // Abbrev [14] 0x2c3:0x9 DW_TAG_variable
+	.long	.Ldebug_loc7                    // DW_AT_location
+	.long	210                             // DW_AT_abstract_origin
+	.byte	14                              // Abbrev [14] 0x2cc:0x9 DW_TAG_variable
+	.long	.Ldebug_loc8                    // DW_AT_location
+	.long	221                             // DW_AT_abstract_origin
+	.byte	14                              // Abbrev [14] 0x2d5:0x9 DW_TAG_variable
+	.long	.Ldebug_loc9                    // DW_AT_location
+	.long	232                             // DW_AT_abstract_origin
+	.byte	14                              // Abbrev [14] 0x2de:0x9 DW_TAG_variable
+	.long	.Ldebug_loc10                   // DW_AT_location
+	.long	243                             // DW_AT_abstract_origin
+	.byte	14                              // Abbrev [14] 0x2e7:0x9 DW_TAG_variable
+	.long	.Ldebug_loc11                   // DW_AT_location
+	.long	254                             // DW_AT_abstract_origin
+	.byte	14                              // Abbrev [14] 0x2f0:0x9 DW_TAG_variable
+	.long	.Ldebug_loc12                   // DW_AT_location
+	.long	265                             // DW_AT_abstract_origin
+	.byte	14                              // Abbrev [14] 0x2f9:0x9 DW_TAG_variable
+	.long	.Ldebug_loc13                   // DW_AT_location
+	.long	276                             // DW_AT_abstract_origin
+	.byte	14                              // Abbrev [14] 0x302:0x9 DW_TAG_variable
+	.long	.Ldebug_loc14                   // DW_AT_location
+	.long	287                             // DW_AT_abstract_origin
+	.byte	14                              // Abbrev [14] 0x30b:0x9 DW_TAG_variable
+	.long	.Ldebug_loc15                   // DW_AT_location
+	.long	298                             // DW_AT_abstract_origin
+	.byte	14                              // Abbrev [14] 0x314:0x9 DW_TAG_variable
+	.long	.Ldebug_loc16                   // DW_AT_location
+	.long	309                             // DW_AT_abstract_origin
+	.byte	14                              // Abbrev [14] 0x31d:0x9 DW_TAG_variable
+	.long	.Ldebug_loc17                   // DW_AT_location
+	.long	320                             // DW_AT_abstract_origin
+	.byte	14                              // Abbrev [14] 0x326:0x9 DW_TAG_variable
+	.long	.Ldebug_loc18                   // DW_AT_location
+	.long	331                             // DW_AT_abstract_origin
+	.byte	14                              // Abbrev [14] 0x32f:0x9 DW_TAG_variable
+	.long	.Ldebug_loc19                   // DW_AT_location
+	.long	342                             // DW_AT_abstract_origin
+	.byte	14                              // Abbrev [14] 0x338:0x9 DW_TAG_variable
+	.long	.Ldebug_loc20                   // DW_AT_location
+	.long	353                             // DW_AT_abstract_origin
+	.byte	14                              // Abbrev [14] 0x341:0x9 DW_TAG_variable
+	.long	.Ldebug_loc21                   // DW_AT_location
+	.long	364                             // DW_AT_abstract_origin
+	.byte	14                              // Abbrev [14] 0x34a:0x9 DW_TAG_variable
+	.long	.Ldebug_loc22                   // DW_AT_location
+	.long	375                             // DW_AT_abstract_origin
+	.byte	14                              // Abbrev [14] 0x353:0x9 DW_TAG_variable
+	.long	.Ldebug_loc23                   // DW_AT_location
+	.long	386                             // DW_AT_abstract_origin
+	.byte	14                              // Abbrev [14] 0x35c:0x9 DW_TAG_variable
+	.long	.Ldebug_loc24                   // DW_AT_location
+	.long	397                             // DW_AT_abstract_origin
+	.byte	14                              // Abbrev [14] 0x365:0x9 DW_TAG_variable
+	.long	.Ldebug_loc25                   // DW_AT_location
+	.long	408                             // DW_AT_abstract_origin
+	.byte	15                              // Abbrev [15] 0x36e:0x5 DW_TAG_variable
+	.long	419                             // DW_AT_abstract_origin
+	.byte	15                              // Abbrev [15] 0x373:0x5 DW_TAG_variable
+	.long	430                             // DW_AT_abstract_origin
+	.byte	14                              // Abbrev [14] 0x378:0x9 DW_TAG_variable
+	.long	.Ldebug_loc27                   // DW_AT_location
+	.long	441                             // DW_AT_abstract_origin
+	.byte	16                              // Abbrev [16] 0x381:0xf DW_TAG_lexical_block
+	.long	.Ldebug_ranges1                 // DW_AT_ranges
+	.byte	14                              // Abbrev [14] 0x386:0x9 DW_TAG_variable
+	.long	.Ldebug_loc26                   // DW_AT_location
+	.long	464                             // DW_AT_abstract_origin
+	.byte	0                               // End Of Children Mark
+	.byte	16                              // Abbrev [16] 0x390:0x3e DW_TAG_lexical_block
+	.long	.Ldebug_ranges3                 // DW_AT_ranges
+	.byte	14                              // Abbrev [14] 0x395:0x9 DW_TAG_variable
+	.long	.Ldebug_loc28                   // DW_AT_location
+	.long	477                             // DW_AT_abstract_origin
+	.byte	14                              // Abbrev [14] 0x39e:0x9 DW_TAG_variable
+	.long	.Ldebug_loc29                   // DW_AT_location
+	.long	488                             // DW_AT_abstract_origin
+	.byte	14                              // Abbrev [14] 0x3a7:0x9 DW_TAG_variable
+	.long	.Ldebug_loc30                   // DW_AT_location
+	.long	499                             // DW_AT_abstract_origin
+	.byte	16                              // Abbrev [16] 0x3b0:0x1d DW_TAG_lexical_block
+	.long	.Ldebug_ranges2                 // DW_AT_ranges
+	.byte	14                              // Abbrev [14] 0x3b5:0x9 DW_TAG_variable
+	.long	.Ldebug_loc31                   // DW_AT_location
+	.long	511                             // DW_AT_abstract_origin
+	.byte	15                              // Abbrev [15] 0x3be:0x5 DW_TAG_variable
+	.long	522                             // DW_AT_abstract_origin
+	.byte	14                              // Abbrev [14] 0x3c3:0x9 DW_TAG_variable
+	.long	.Ldebug_loc32                   // DW_AT_location
+	.long	533                             // DW_AT_abstract_origin
+	.byte	0                               // End Of Children Mark
+	.byte	0                               // End Of Children Mark
+	.byte	0                               // End Of Children Mark
+	.byte	0                               // End Of Children Mark
+	.byte	0                               // End Of Children Mark
+.Ldebug_info_end0:
+	.section	.debug_ranges,"",@progbits
+.Ldebug_ranges0:
+	.long	.Lfunc_begin0-.Lfunc_begin0
+	.long	.Ltmp8-.Lfunc_begin0
+	.long	.Ltmp10-.Lfunc_begin0
+	.long	.Ltmp14-.Lfunc_begin0
+	.long	.Ltmp16-.Lfunc_begin0
+	.long	.Ltmp21-.Lfunc_begin0
+	.long	.Ltmp23-.Lfunc_begin0
+	.long	.Ltmp44-.Lfunc_begin0
+	.long	.Ltmp46-.Lfunc_begin0
+	.long	.Ltmp52-.Lfunc_begin0
+	.long	0
+	.long	0
+.Ldebug_ranges1:
+	.long	.Ltmp2-.Lfunc_begin0
+	.long	.Ltmp6-.Lfunc_begin0
+	.long	.Ltmp16-.Lfunc_begin0
+	.long	.Ltmp19-.Lfunc_begin0
+	.long	0
+	.long	0
+.Ldebug_ranges2:
+	.long	.Ltmp27-.Lfunc_begin0
+	.long	.Ltmp28-.Lfunc_begin0
+	.long	.Ltmp29-.Lfunc_begin0
+	.long	.Ltmp42-.Lfunc_begin0
+	.long	.Ltmp46-.Lfunc_begin0
+	.long	.Ltmp50-.Lfunc_begin0
+	.long	0
+	.long	0
+.Ldebug_ranges3:
+	.long	.Ltmp24-.Lfunc_begin0
+	.long	.Ltmp42-.Lfunc_begin0
+	.long	.Ltmp46-.Lfunc_begin0
+	.long	.Ltmp50-.Lfunc_begin0
+	.long	0
+	.long	0
+	.section	.debug_str,"MS",@progbits,1
+.Linfo_string0:
+	.asciz	"clang version 12.0.0 (https://github.com/upmem/llvm-project.git 846fdda8285dcc9b20ee5d2fec9e54dfea6a8928)" // string offset=0
+.Linfo_string1:
+	.asciz	"/home/mahaswint/cs5290/pim-reproduction/adaptive/runtime/sdk/syslib/truncdfsf2.c" // string offset=106
+.Linfo_string2:
+	.asciz	"/home/mahaswint/cs5290"        // string offset=187
+.Linfo_string3:
+	.asciz	"srcSigBits"                    // string offset=210
+.Linfo_string4:
+	.asciz	"int"                           // string offset=221
+.Linfo_string5:
+	.asciz	"dstSigBits"                    // string offset=225
+.Linfo_string6:
+	.asciz	"long unsigned int"             // string offset=236
+.Linfo_string7:
+	.asciz	"uint64_t"                      // string offset=254
+.Linfo_string8:
+	.asciz	"src_rep_t"                     // string offset=263
+.Linfo_string9:
+	.asciz	"unsigned int"                  // string offset=273
+.Linfo_string10:
+	.asciz	"uint32_t"                      // string offset=286
+.Linfo_string11:
+	.asciz	"dst_rep_t"                     // string offset=295
+.Linfo_string12:
+	.asciz	"__truncXfYf2__"                // string offset=305
+.Linfo_string13:
+	.asciz	"float"                         // string offset=320
+.Linfo_string14:
+	.asciz	"dst_t"                         // string offset=326
+.Linfo_string15:
+	.asciz	"a"                             // string offset=332
+.Linfo_string16:
+	.asciz	"double"                        // string offset=334
+.Linfo_string17:
+	.asciz	"src_t"                         // string offset=341
+.Linfo_string18:
+	.asciz	"srcBits"                       // string offset=347
+.Linfo_string19:
+	.asciz	"srcExpBits"                    // string offset=355
+.Linfo_string20:
+	.asciz	"srcInfExp"                     // string offset=366
+.Linfo_string21:
+	.asciz	"srcExpBias"                    // string offset=376
+.Linfo_string22:
+	.asciz	"srcMinNormal"                  // string offset=387
+.Linfo_string23:
+	.asciz	"srcSignificandMask"            // string offset=400
+.Linfo_string24:
+	.asciz	"srcInfinity"                   // string offset=419
+.Linfo_string25:
+	.asciz	"srcSignMask"                   // string offset=431
+.Linfo_string26:
+	.asciz	"srcAbsMask"                    // string offset=443
+.Linfo_string27:
+	.asciz	"roundMask"                     // string offset=454
+.Linfo_string28:
+	.asciz	"halfway"                       // string offset=464
+.Linfo_string29:
+	.asciz	"srcQNaN"                       // string offset=472
+.Linfo_string30:
+	.asciz	"srcNaNCode"                    // string offset=480
+.Linfo_string31:
+	.asciz	"dstBits"                       // string offset=491
+.Linfo_string32:
+	.asciz	"dstExpBits"                    // string offset=499
+.Linfo_string33:
+	.asciz	"dstInfExp"                     // string offset=510
+.Linfo_string34:
+	.asciz	"dstExpBias"                    // string offset=520
+.Linfo_string35:
+	.asciz	"underflowExponent"             // string offset=531
+.Linfo_string36:
+	.asciz	"overflowExponent"              // string offset=549
+.Linfo_string37:
+	.asciz	"underflow"                     // string offset=566
+.Linfo_string38:
+	.asciz	"overflow"                      // string offset=576
+.Linfo_string39:
+	.asciz	"dstQNaN"                       // string offset=585
+.Linfo_string40:
+	.asciz	"dstNaNCode"                    // string offset=593
+.Linfo_string41:
+	.asciz	"aRep"                          // string offset=604
+.Linfo_string42:
+	.asciz	"sign"                          // string offset=609
+.Linfo_string43:
+	.asciz	"aAbs"                          // string offset=614
+.Linfo_string44:
+	.asciz	"absResult"                     // string offset=619
+.Linfo_string45:
+	.asciz	"result"                        // string offset=629
+.Linfo_string46:
+	.asciz	"roundBits"                     // string offset=636
+.Linfo_string47:
+	.asciz	"significand"                   // string offset=646
+.Linfo_string48:
+	.asciz	"shift"                         // string offset=658
+.Linfo_string49:
+	.asciz	"aExp"                          // string offset=664
+.Linfo_string50:
+	.asciz	"sticky"                        // string offset=669
+.Linfo_string51:
+	.asciz	"_Bool"                         // string offset=676
+.Linfo_string52:
+	.asciz	"denormalizedSignificand"       // string offset=682
+.Linfo_string53:
+	.asciz	"__truncdfsf2"                  // string offset=706
+	.addrsig
+	.section	.debug_line,"",@progbits
+.Lline_table_start0:

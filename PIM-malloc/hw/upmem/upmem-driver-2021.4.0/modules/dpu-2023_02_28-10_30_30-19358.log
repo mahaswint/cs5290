@@ -1,0 +1,5 @@
+api:D:2023-02-28|10:30:31: dpu_get_rank_of_type: 
+api:V:2023-02-28|10:30:31: dpu_properties_load_from_profile: "backend=hw,rankPath=/dev/dpu_rank15,ignoreVpd=true"
+hw:D:2023-02-28|10:30:31: hw_fill_description_from_profile: Region mode not specified, switching to default (perf)
+hw:W:2023-02-28|10:30:31: dpu_sysfs_get_available_rank: Allocation of requested /dev/dpu_rank15 rank failed
+hw:I:2023-02-28|10:30:31: hw_allocate: Failed to find available rank with mode 1

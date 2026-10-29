@@ -1,0 +1,23 @@
+[
+  "/home/mahaswint/cs5290/pim-reproduction/runtime/build/uPIMulator",
+  "--root_dirpath",
+  "/home/mahaswint/cs5290/pim-reproduction/runtime",
+  "--bin_dirpath",
+  "/home/mahaswint/cs5290/pim-reproduction/results/fig15/buddy_t1_s4096_n128",
+  "--benchmark",
+  "microbenchmark",
+  "--num_channels",
+  "1",
+  "--num_ranks_per_channel",
+  "1",
+  "--num_dpus_per_rank",
+  "1",
+  "--num_vm_ranks_per_channel",
+  "1",
+  "--num_vm_banks_per_rank",
+  "1",
+  "--num_tasklets",
+  "1",
+  "--verbose",
+  "0"
+]

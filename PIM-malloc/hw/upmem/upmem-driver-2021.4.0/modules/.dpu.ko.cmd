@@ -1,0 +1,1 @@
+cmd_/home/bongjoon/mosaic/upmem/upmem-driver-2021.4.0/modules//dpu.ko := ld -r -m elf_x86_64  --build-id=sha1  -T scripts/module.lds -o /home/bongjoon/mosaic/upmem/upmem-driver-2021.4.0/modules//dpu.ko /home/bongjoon/mosaic/upmem/upmem-driver-2021.4.0/modules//dpu.o /home/bongjoon/mosaic/upmem/upmem-driver-2021.4.0/modules//dpu.mod.o;  true

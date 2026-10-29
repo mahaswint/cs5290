@@ -1,0 +1,52 @@
+{
+  "compiler": [
+    "/home/mahaswint/cs5290/pim-reproduction/toolchain/LoCaLUT/upmem-2023.2.0-Linux-x86_64/bin/dpu-upmem-dpurte-clang",
+    "-w",
+    "-O3",
+    "-S",
+    "-c",
+    "/home/mahaswint/cs5290/pim-reproduction/adaptive/runtime/benchmark/microbenchmark/dpu/task.c",
+    "-o",
+    "/home/mahaswint/cs5290/pim-reproduction/adaptive/runtime/benchmark/build/microbenchmark/dpu/CMakeFiles/microbenchmark_device.dir/task.c.o"
+  ],
+  "simulator": [
+    "/home/mahaswint/cs5290/pim-reproduction/adaptive/runtime/build/uPIMulator",
+    "--root_dirpath",
+    "/home/mahaswint/cs5290/pim-reproduction/adaptive/runtime",
+    "--bin_dirpath",
+    "/home/mahaswint/cs5290/pim-reproduction/adaptive/results/pressure-check-v1/adaptive_t1_pressure_b16_r1_h64_k1_m2_e4_d64_p75_v1",
+    "--benchmark",
+    "microbenchmark",
+    "--num_channels",
+    "1",
+    "--num_ranks_per_channel",
+    "1",
+    "--num_dpus_per_rank",
+    "1",
+    "--num_vm_ranks_per_channel",
+    "1",
+    "--num_vm_banks_per_rank",
+    "1",
+    "--num_tasklets",
+    "1",
+    "--verbose",
+    "0"
+  ],
+  "implementation_sha256": "27729eaedbd3641abce4ca2a7ccb66f96130b4162536362d7e8e6974db996c00",
+  "configuration": {
+    "action": "run",
+    "policy": "adaptive",
+    "threads": 1,
+    "workload": "pressure",
+    "burst": 16,
+    "rounds": 1,
+    "heap_kib": 64,
+    "keep": 1,
+    "max_keep": 2,
+    "budget_pages": 4,
+    "decay_ops": 64,
+    "pressure_percent": 75,
+    "validate": true,
+    "tag": "pressure-check-v1"
+  }
+}

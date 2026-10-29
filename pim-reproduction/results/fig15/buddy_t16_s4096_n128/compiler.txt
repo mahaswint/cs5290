@@ -1,0 +1,4 @@
+clang version 12.0.0 (https://github.com/upmem/llvm-project.git 846fdda8285dcc9b20ee5d2fec9e54dfea6a8928)
+Target: dpu-upmem-dpurte
+Thread model: posix
+InstalledDir: /home/mahaswint/cs5290/pim-reproduction/toolchain/LoCaLUT/upmem-2023.2.0-Linux-x86_64/bin

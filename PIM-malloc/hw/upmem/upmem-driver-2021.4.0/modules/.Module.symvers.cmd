@@ -1,0 +1,1 @@
+cmd_/home/bongjoon/mosaic/upmem/upmem-driver-2021.4.0/modules//Module.symvers := sed 's/ko$$/o/' /home/bongjoon/mosaic/upmem/upmem-driver-2021.4.0/modules//modules.order | scripts/mod/modpost -m -a   -o /home/bongjoon/mosaic/upmem/upmem-driver-2021.4.0/modules//Module.symvers -e -i Module.symvers   -T -

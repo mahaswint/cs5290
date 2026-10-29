@@ -1,0 +1,13 @@
+/home/mahaswint/cs5290/pim-reproduction/runtime/benchmark/microbenchmark/dpu/task.c:210:22: error: invalid symbol redefinition
+    __asm__ volatile("repro_end:" ::: "memory");
+                     ^
+<inline asm>:1:2: note: instantiated into assembly here
+        repro_end:
+        ^
+/home/mahaswint/cs5290/pim-reproduction/runtime/benchmark/microbenchmark/dpu/task.c:210:22: error: invalid symbol redefinition
+    __asm__ volatile("repro_end:" ::: "memory");
+                     ^
+<inline asm>:1:2: note: instantiated into assembly here
+        repro_end:
+        ^
+2 errors generated.

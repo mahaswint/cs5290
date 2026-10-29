@@ -1,0 +1,13 @@
+threads,size_bytes,allocator,average_latency_us,source
+1,32,buddy,630,Figure 15 printed label
+1,32,sw,6.9,Figure 15 printed label
+1,256,buddy,520,Figure 15 printed label
+1,256,sw,32,Figure 15 printed label
+1,4096,buddy,350,Figure 15 printed label
+1,4096,sw,310,Figure 15 printed label
+16,32,buddy,13000,Figure 15 printed label 13K
+16,32,sw,51,Figure 15 printed label
+16,256,buddy,11000,Figure 15 printed label 11K
+16,256,sw,430,Figure 15 printed label
+16,4096,buddy,7700,Figure 15 printed label 7.7K
+16,4096,sw,6700,Figure 15 printed label 6.7K

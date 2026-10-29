@@ -1,0 +1,266 @@
+	.text
+	.file	"mul32.c"
+	.section	.text.__mulsi3,"ax",@progbits
+	.globl	__mulsi3                        // -- Begin function __mulsi3
+	.type	__mulsi3,@function
+__mulsi3:                               // @__mulsi3
+.Lfunc_begin0:
+	.file	1 "/home/mahaswint/cs5290" "pim-reproduction/runtime/sdk/syslib/mul32.c"
+	.loc	1 9 0                           // pim-reproduction/runtime/sdk/syslib/mul32.c:9:0
+	.cfi_sections .debug_frame
+	.cfi_startproc
+// %bb.0:
+	//DEBUG_VALUE: __mulsi3:a <- $r0
+	//DEBUG_VALUE: __mulsi3:a <- $r0
+	//DEBUG_VALUE: __mulsi3:b <- $r1
+	//DEBUG_VALUE: __mulsi3:b <- $r1
+	.cfi_def_cfa_offset 0
+	.loc	1 11 5 prologue_end             // pim-reproduction/runtime/sdk/syslib/mul32.c:11:5
+	// inline asm
+	jgtu r1, r0, __mulsi3_swap
+	move r2, r0
+	move r0, r1, true, __mulsi3_start
+__mulsi3_swap:
+	move r2, r1
+	move r0, r0
+__mulsi3_start:
+	move r1, zero
+	mul_step d0, r2, d0, 0, z, __mulsi3_exit
+	mul_step d0, r2, d0, 1, z, __mulsi3_exit
+	mul_step d0, r2, d0, 2, z, __mulsi3_exit
+	mul_step d0, r2, d0, 3, z, __mulsi3_exit
+	mul_step d0, r2, d0, 4, z, __mulsi3_exit
+	mul_step d0, r2, d0, 5, z, __mulsi3_exit
+	mul_step d0, r2, d0, 6, z, __mulsi3_exit
+	mul_step d0, r2, d0, 7, z, __mulsi3_exit
+	mul_step d0, r2, d0, 8, z, __mulsi3_exit
+	mul_step d0, r2, d0, 9, z, __mulsi3_exit
+	mul_step d0, r2, d0, 10, z, __mulsi3_exit
+	mul_step d0, r2, d0, 11, z, __mulsi3_exit
+	mul_step d0, r2, d0, 12, z, __mulsi3_exit
+	mul_step d0, r2, d0, 13, z, __mulsi3_exit
+	mul_step d0, r2, d0, 14, z, __mulsi3_exit
+	mul_step d0, r2, d0, 15, z, __mulsi3_exit
+	mul_step d0, r2, d0, 16, z, __mulsi3_exit
+	mul_step d0, r2, d0, 17, z, __mulsi3_exit
+	mul_step d0, r2, d0, 18, z, __mulsi3_exit
+	mul_step d0, r2, d0, 19, z, __mulsi3_exit
+	mul_step d0, r2, d0, 20, z, __mulsi3_exit
+	mul_step d0, r2, d0, 21, z, __mulsi3_exit
+	mul_step d0, r2, d0, 22, z, __mulsi3_exit
+	mul_step d0, r2, d0, 23, z, __mulsi3_exit
+	mul_step d0, r2, d0, 24, z, __mulsi3_exit
+	mul_step d0, r2, d0, 25, z, __mulsi3_exit
+	mul_step d0, r2, d0, 26, z, __mulsi3_exit
+	mul_step d0, r2, d0, 27, z, __mulsi3_exit
+	mul_step d0, r2, d0, 28, z, __mulsi3_exit
+	mul_step d0, r2, d0, 29, z, __mulsi3_exit
+	mul_step d0, r2, d0, 30, z, __mulsi3_exit
+	mul_step d0, r2, d0, 31, z, __mulsi3_exit
+__mulsi3_exit:
+	move r0, r1
+
+	// inline asm
+.Ltmp0:
+	//DEBUG_VALUE: __mulsi3:dest <- $r0
+	.loc	1 55 5                          // pim-reproduction/runtime/sdk/syslib/mul32.c:55:5
+	jump r23
+.Ltmp1:
+.Lfunc_end0:
+	.size	__mulsi3, .Lfunc_end0-__mulsi3
+	.cfi_endproc
+	.section	.stack_sizes,"o",@progbits,.text.__mulsi3
+	.long	.Lfunc_begin0
+	.byte	0
+	.section	.text.__mulsi3,"ax",@progbits
+                                        // -- End function
+	.section	.debug_loc,"",@progbits
+.Ldebug_loc0:
+	.long	.Lfunc_begin0-.Lfunc_begin0
+	.long	.Ltmp0-.Lfunc_begin0
+	.short	1                               // Loc expr size
+	.byte	80                              // DW_OP_reg0
+	.long	0
+	.long	0
+.Ldebug_loc1:
+	.long	.Ltmp0-.Lfunc_begin0
+	.long	.Lfunc_end0-.Lfunc_begin0
+	.short	1                               // Loc expr size
+	.byte	80                              // DW_OP_reg0
+	.long	0
+	.long	0
+	.section	.debug_abbrev,"",@progbits
+	.byte	1                               // Abbreviation Code
+	.byte	17                              // DW_TAG_compile_unit
+	.byte	1                               // DW_CHILDREN_yes
+	.byte	37                              // DW_AT_producer
+	.byte	14                              // DW_FORM_strp
+	.byte	19                              // DW_AT_language
+	.byte	5                               // DW_FORM_data2
+	.byte	3                               // DW_AT_name
+	.byte	14                              // DW_FORM_strp
+	.byte	16                              // DW_AT_stmt_list
+	.byte	23                              // DW_FORM_sec_offset
+	.byte	27                              // DW_AT_comp_dir
+	.byte	14                              // DW_FORM_strp
+	.byte	17                              // DW_AT_low_pc
+	.byte	1                               // DW_FORM_addr
+	.byte	18                              // DW_AT_high_pc
+	.byte	6                               // DW_FORM_data4
+	.byte	0                               // EOM(1)
+	.byte	0                               // EOM(2)
+	.byte	2                               // Abbreviation Code
+	.byte	46                              // DW_TAG_subprogram
+	.byte	1                               // DW_CHILDREN_yes
+	.byte	17                              // DW_AT_low_pc
+	.byte	1                               // DW_FORM_addr
+	.byte	18                              // DW_AT_high_pc
+	.byte	6                               // DW_FORM_data4
+	.byte	64                              // DW_AT_frame_base
+	.byte	24                              // DW_FORM_exprloc
+	.ascii	"\227B"                         // DW_AT_GNU_all_call_sites
+	.byte	25                              // DW_FORM_flag_present
+	.byte	3                               // DW_AT_name
+	.byte	14                              // DW_FORM_strp
+	.byte	58                              // DW_AT_decl_file
+	.byte	11                              // DW_FORM_data1
+	.byte	59                              // DW_AT_decl_line
+	.byte	11                              // DW_FORM_data1
+	.byte	39                              // DW_AT_prototyped
+	.byte	25                              // DW_FORM_flag_present
+	.byte	73                              // DW_AT_type
+	.byte	19                              // DW_FORM_ref4
+	.byte	63                              // DW_AT_external
+	.byte	25                              // DW_FORM_flag_present
+	.byte	0                               // EOM(1)
+	.byte	0                               // EOM(2)
+	.byte	3                               // Abbreviation Code
+	.byte	5                               // DW_TAG_formal_parameter
+	.byte	0                               // DW_CHILDREN_no
+	.byte	2                               // DW_AT_location
+	.byte	23                              // DW_FORM_sec_offset
+	.byte	3                               // DW_AT_name
+	.byte	14                              // DW_FORM_strp
+	.byte	58                              // DW_AT_decl_file
+	.byte	11                              // DW_FORM_data1
+	.byte	59                              // DW_AT_decl_line
+	.byte	11                              // DW_FORM_data1
+	.byte	73                              // DW_AT_type
+	.byte	19                              // DW_FORM_ref4
+	.byte	0                               // EOM(1)
+	.byte	0                               // EOM(2)
+	.byte	4                               // Abbreviation Code
+	.byte	5                               // DW_TAG_formal_parameter
+	.byte	0                               // DW_CHILDREN_no
+	.byte	2                               // DW_AT_location
+	.byte	24                              // DW_FORM_exprloc
+	.byte	3                               // DW_AT_name
+	.byte	14                              // DW_FORM_strp
+	.byte	58                              // DW_AT_decl_file
+	.byte	11                              // DW_FORM_data1
+	.byte	59                              // DW_AT_decl_line
+	.byte	11                              // DW_FORM_data1
+	.byte	73                              // DW_AT_type
+	.byte	19                              // DW_FORM_ref4
+	.byte	0                               // EOM(1)
+	.byte	0                               // EOM(2)
+	.byte	5                               // Abbreviation Code
+	.byte	52                              // DW_TAG_variable
+	.byte	0                               // DW_CHILDREN_no
+	.byte	2                               // DW_AT_location
+	.byte	23                              // DW_FORM_sec_offset
+	.byte	3                               // DW_AT_name
+	.byte	14                              // DW_FORM_strp
+	.byte	58                              // DW_AT_decl_file
+	.byte	11                              // DW_FORM_data1
+	.byte	59                              // DW_AT_decl_line
+	.byte	11                              // DW_FORM_data1
+	.byte	73                              // DW_AT_type
+	.byte	19                              // DW_FORM_ref4
+	.byte	0                               // EOM(1)
+	.byte	0                               // EOM(2)
+	.byte	6                               // Abbreviation Code
+	.byte	36                              // DW_TAG_base_type
+	.byte	0                               // DW_CHILDREN_no
+	.byte	3                               // DW_AT_name
+	.byte	14                              // DW_FORM_strp
+	.byte	62                              // DW_AT_encoding
+	.byte	11                              // DW_FORM_data1
+	.byte	11                              // DW_AT_byte_size
+	.byte	11                              // DW_FORM_data1
+	.byte	0                               // EOM(1)
+	.byte	0                               // EOM(2)
+	.byte	0                               // EOM(3)
+	.section	.debug_info,"",@progbits
+.Lcu_begin0:
+	.long	.Ldebug_info_end0-.Ldebug_info_start0 // Length of Unit
+.Ldebug_info_start0:
+	.short	4                               // DWARF version number
+	.long	.debug_abbrev                   // Offset Into Abbrev. Section
+	.byte	4                               // Address Size (in bytes)
+	.byte	1                               // Abbrev [1] 0xb:0x64 DW_TAG_compile_unit
+	.long	.Linfo_string0                  // DW_AT_producer
+	.short	12                              // DW_AT_language
+	.long	.Linfo_string1                  // DW_AT_name
+	.long	.Lline_table_start0             // DW_AT_stmt_list
+	.long	.Linfo_string2                  // DW_AT_comp_dir
+	.long	.Lfunc_begin0                   // DW_AT_low_pc
+	.long	.Lfunc_end0-.Lfunc_begin0       // DW_AT_high_pc
+	.byte	2                               // Abbrev [2] 0x26:0x41 DW_TAG_subprogram
+	.long	.Lfunc_begin0                   // DW_AT_low_pc
+	.long	.Lfunc_end0-.Lfunc_begin0       // DW_AT_high_pc
+	.byte	1                               // DW_AT_frame_base
+	.byte	102
+                                        // DW_AT_GNU_all_call_sites
+	.long	.Linfo_string3                  // DW_AT_name
+	.byte	1                               // DW_AT_decl_file
+	.byte	8                               // DW_AT_decl_line
+                                        // DW_AT_prototyped
+	.long	103                             // DW_AT_type
+                                        // DW_AT_external
+	.byte	3                               // Abbrev [3] 0x3b:0xf DW_TAG_formal_parameter
+	.long	.Ldebug_loc0                    // DW_AT_location
+	.long	.Linfo_string5                  // DW_AT_name
+	.byte	1                               // DW_AT_decl_file
+	.byte	8                               // DW_AT_decl_line
+	.long	103                             // DW_AT_type
+	.byte	4                               // Abbrev [4] 0x4a:0xd DW_TAG_formal_parameter
+	.byte	1                               // DW_AT_location
+	.byte	81
+	.long	.Linfo_string6                  // DW_AT_name
+	.byte	1                               // DW_AT_decl_file
+	.byte	8                               // DW_AT_decl_line
+	.long	103                             // DW_AT_type
+	.byte	5                               // Abbrev [5] 0x57:0xf DW_TAG_variable
+	.long	.Ldebug_loc1                    // DW_AT_location
+	.long	.Linfo_string7                  // DW_AT_name
+	.byte	1                               // DW_AT_decl_file
+	.byte	10                              // DW_AT_decl_line
+	.long	103                             // DW_AT_type
+	.byte	0                               // End Of Children Mark
+	.byte	6                               // Abbrev [6] 0x67:0x7 DW_TAG_base_type
+	.long	.Linfo_string4                  // DW_AT_name
+	.byte	5                               // DW_AT_encoding
+	.byte	4                               // DW_AT_byte_size
+	.byte	0                               // End Of Children Mark
+.Ldebug_info_end0:
+	.section	.debug_str,"MS",@progbits,1
+.Linfo_string0:
+	.asciz	"clang version 12.0.0 (https://github.com/upmem/llvm-project.git 846fdda8285dcc9b20ee5d2fec9e54dfea6a8928)" // string offset=0
+.Linfo_string1:
+	.asciz	"/home/mahaswint/cs5290/pim-reproduction/runtime/sdk/syslib/mul32.c" // string offset=106
+.Linfo_string2:
+	.asciz	"/home/mahaswint/cs5290"        // string offset=173
+.Linfo_string3:
+	.asciz	"__mulsi3"                      // string offset=196
+.Linfo_string4:
+	.asciz	"int"                           // string offset=205
+.Linfo_string5:
+	.asciz	"a"                             // string offset=209
+.Linfo_string6:
+	.asciz	"b"                             // string offset=211
+.Linfo_string7:
+	.asciz	"dest"                          // string offset=213
+	.addrsig
+	.section	.debug_line,"",@progbits
+.Lline_table_start0:

@@ -1,0 +1,13 @@
+{
+  "author_commit": "4fdcbcac3b0d94f2d4d51d8d84c3a3a640ad14a4",
+  "author_source_sha256": "cd8770256f3d245cc92b23a1c1f773aa8a76d6fedccf043717378a2701628c52",
+  "backend_sha256": "f6b266942507a7df2bf19b7a99db77336a5f78a2db4d4416b472a02d2e3301a7",
+  "shared_repairs": [
+    "nonfatal allocation failure",
+    "large-block free traversal",
+    "DMA-aligned metadata storage and byte-address tail bounds",
+    "allow root-sized allocations"
+  ],
+  "frontend": "Common maintained bitmap/page-list frontend in allocator.c; all policies share it.",
+  "scope": "Same-tasklet frees; fixed original size classes and 4 KiB pages."
+}

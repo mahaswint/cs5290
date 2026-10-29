@@ -1,0 +1,155 @@
+	.text
+	.file	"accessMramFromDpu.c"
+	.section	.text.__bootstrap,"ax",@progbits
+	.globl	__bootstrap                     // -- Begin function __bootstrap
+	.type	__bootstrap,@function
+__bootstrap:                            // @__bootstrap
+.Lfunc_begin0:
+	.file	1 "/home/mahaswint/cs5290" "pim-reproduction/runtime/sdk/misc/accessMramFromDpu.c"
+	.loc	1 7 0                           // pim-reproduction/runtime/sdk/misc/accessMramFromDpu.c:7:0
+	.cfi_sections .debug_frame
+	.cfi_startproc
+// %bb.0:
+	.loc	1 12 5 prologue_end             // pim-reproduction/runtime/sdk/misc/accessMramFromDpu.c:12:5
+	// inline asm
+	sd zero, 0, d0
+	sd zero, 8, d2
+.Ltmp0:
+	or r0, zero, 0, xnz, .Ltmp0+2
+	or r0, r0, 2
+	addc r0, r0, 0
+	sw zero, 16, r0
+	lw r0, zero, 20
+resume_start:
+	lw r1, zero, 24
+	move r2, 32
+	move r3, 2048
+transfer_loop:
+	jltu r1, r3, last_transfer
+	ldma r2, r0, 255
+	add r0, r0, r3
+	add r2, r2, r3
+	sub r1, r1, r3, true, transfer_loop
+last_transfer:
+	jz r1, end
+	lsr r3, r1, 3
+	add r3, r3, -1
+	lsl_add r2, r2, r3, 24
+	ldma r2, r0, 0
+	add r0, r0, r1
+end:
+	lw r2, zero, 28
+.Ltmp1:
+	jnz r2, .Ltmp1+2
+	stop true, resume_start
+	ld d2, zero, 8
+	lw r0, zero, 16
+	add r1, r0, r0
+	add r0, r0, r1
+.Ltmp2:
+	call zero, r0, .Ltmp2+1
+	add r0, zero, 1
+	ld d0, zero, 0
+	stop true, 0x0
+	add r0, mneg, 2147483649
+	ld d0, zero, 0
+	stop true, 0x0
+	add r0, zero, 0
+	ld d0, zero, 0
+	stop true, 0x0
+	add r0, mneg, 2147483648
+	ld d0, zero, 0
+	stop true, 0x0
+
+	// inline asm
+.Ltmp3:
+.Lfunc_end0:
+	.size	__bootstrap, .Lfunc_end0-__bootstrap
+	.cfi_endproc
+	.section	.stack_sizes,"o",@progbits,.text.__bootstrap
+	.long	.Lfunc_begin0
+	.byte	0
+	.section	.text.__bootstrap,"ax",@progbits
+                                        // -- End function
+	.section	.debug_abbrev,"",@progbits
+	.byte	1                               // Abbreviation Code
+	.byte	17                              // DW_TAG_compile_unit
+	.byte	1                               // DW_CHILDREN_yes
+	.byte	37                              // DW_AT_producer
+	.byte	14                              // DW_FORM_strp
+	.byte	19                              // DW_AT_language
+	.byte	5                               // DW_FORM_data2
+	.byte	3                               // DW_AT_name
+	.byte	14                              // DW_FORM_strp
+	.byte	16                              // DW_AT_stmt_list
+	.byte	23                              // DW_FORM_sec_offset
+	.byte	27                              // DW_AT_comp_dir
+	.byte	14                              // DW_FORM_strp
+	.byte	17                              // DW_AT_low_pc
+	.byte	1                               // DW_FORM_addr
+	.byte	18                              // DW_AT_high_pc
+	.byte	6                               // DW_FORM_data4
+	.byte	0                               // EOM(1)
+	.byte	0                               // EOM(2)
+	.byte	2                               // Abbreviation Code
+	.byte	46                              // DW_TAG_subprogram
+	.byte	0                               // DW_CHILDREN_no
+	.byte	17                              // DW_AT_low_pc
+	.byte	1                               // DW_FORM_addr
+	.byte	18                              // DW_AT_high_pc
+	.byte	6                               // DW_FORM_data4
+	.byte	64                              // DW_AT_frame_base
+	.byte	24                              // DW_FORM_exprloc
+	.ascii	"\227B"                         // DW_AT_GNU_all_call_sites
+	.byte	25                              // DW_FORM_flag_present
+	.byte	3                               // DW_AT_name
+	.byte	14                              // DW_FORM_strp
+	.byte	58                              // DW_AT_decl_file
+	.byte	11                              // DW_FORM_data1
+	.byte	59                              // DW_AT_decl_line
+	.byte	11                              // DW_FORM_data1
+	.byte	63                              // DW_AT_external
+	.byte	25                              // DW_FORM_flag_present
+	.byte	0                               // EOM(1)
+	.byte	0                               // EOM(2)
+	.byte	0                               // EOM(3)
+	.section	.debug_info,"",@progbits
+.Lcu_begin0:
+	.long	.Ldebug_info_end0-.Ldebug_info_start0 // Length of Unit
+.Ldebug_info_start0:
+	.short	4                               // DWARF version number
+	.long	.debug_abbrev                   // Offset Into Abbrev. Section
+	.byte	4                               // Address Size (in bytes)
+	.byte	1                               // Abbrev [1] 0xb:0x2d DW_TAG_compile_unit
+	.long	.Linfo_string0                  // DW_AT_producer
+	.short	12                              // DW_AT_language
+	.long	.Linfo_string1                  // DW_AT_name
+	.long	.Lline_table_start0             // DW_AT_stmt_list
+	.long	.Linfo_string2                  // DW_AT_comp_dir
+	.long	.Lfunc_begin0                   // DW_AT_low_pc
+	.long	.Lfunc_end0-.Lfunc_begin0       // DW_AT_high_pc
+	.byte	2                               // Abbrev [2] 0x26:0x11 DW_TAG_subprogram
+	.long	.Lfunc_begin0                   // DW_AT_low_pc
+	.long	.Lfunc_end0-.Lfunc_begin0       // DW_AT_high_pc
+	.byte	1                               // DW_AT_frame_base
+	.byte	102
+                                        // DW_AT_GNU_all_call_sites
+	.long	.Linfo_string3                  // DW_AT_name
+	.byte	1                               // DW_AT_decl_file
+	.byte	6                               // DW_AT_decl_line
+                                        // DW_AT_external
+	.byte	0                               // End Of Children Mark
+.Ldebug_info_end0:
+	.section	.debug_str,"MS",@progbits,1
+.Linfo_string0:
+	.asciz	"clang version 12.0.0 (https://github.com/upmem/llvm-project.git 846fdda8285dcc9b20ee5d2fec9e54dfea6a8928)" // string offset=0
+.Linfo_string1:
+	.asciz	"/home/mahaswint/cs5290/pim-reproduction/runtime/sdk/misc/accessMramFromDpu.c" // string offset=106
+.Linfo_string2:
+	.asciz	"/home/mahaswint/cs5290"        // string offset=183
+.Linfo_string3:
+	.asciz	"__bootstrap"                   // string offset=206
+	.addrsig
+	.addrsig_sym __bootstrap
+	.section	.debug_line,"",@progbits
+.Lline_table_start0:

@@ -1,0 +1,99 @@
+{
+  "configuration": {
+    "action": "run",
+    "policy": "lazy",
+    "threads": 1,
+    "workload": "correctness",
+    "burst": 4,
+    "rounds": 1,
+    "heap_kib": 512,
+    "keep": 1,
+    "max_keep": 2,
+    "budget_pages": 4,
+    "decay_ops": 64,
+    "pressure_percent": 75,
+    "validate": true,
+    "tag": "validation-v1"
+  },
+  "correctness_passed": true,
+  "implementation_sha256": "e19bf969bc0b06df3aabd5b490914699bff60ba681ff1edf34e718c3e4156321",
+  "outcome": "completed",
+  "frequency_mhz": 350,
+  "metrics": {
+    "alloc": {
+      "samples": 16,
+      "mean_us": 47.956607142857145,
+      "p99_us": 80.67714285714285,
+      "max_us": 80.67714285714285
+    },
+    "free": {
+      "samples": 16,
+      "mean_us": 34.90482142857143,
+      "p99_us": 57.63142857142857,
+      "max_us": 57.63142857142857
+    },
+    "init": {
+      "samples": 1,
+      "mean_us": 23.062857142857144,
+      "p99_us": 23.062857142857144,
+      "max_us": 23.062857142857144
+    },
+    "work": {
+      "samples": 1,
+      "mean_us": 1388.1142857142856,
+      "p99_us": 1388.1142857142856,
+      "max_us": 1388.1142857142856
+    },
+    "drain": {
+      "samples": 1,
+      "mean_us": 3.2685714285714287,
+      "p99_us": 3.2685714285714287,
+      "max_us": 3.2685714285714287
+    },
+    "total": {
+      "samples": 1,
+      "mean_us": 1415.4514285714286,
+      "p99_us": 1415.4514285714286,
+      "max_us": 1415.4514285714286
+    }
+  },
+  "work_makespan_us": 1388.1142857142856,
+  "successful_allocations_per_second": 11526.428453811955,
+  "totals": {
+    "alloc_calls": 16,
+    "successes": 16,
+    "free_calls": 16,
+    "cache_hits": 6,
+    "refills": 2,
+    "returns": 2,
+    "failures": 0,
+    "retained_hits": 0,
+    "retained": 0,
+    "live_slots": 0,
+    "peak_slots": 32768,
+    "grows": 0,
+    "decays": 0,
+    "idle_trims": 0,
+    "pressure_trims": 0,
+    "budget_trims": 0,
+    "emergency_trims": 0
+  },
+  "backend": {
+    "used_bytes": 0,
+    "peak_bytes": 32768,
+    "allocations": 10,
+    "frees": 10,
+    "failed_attempts": 0
+  },
+  "wram": {
+    "heap_end_address": 38940,
+    "cache_descriptor_bytes": 256,
+    "stats_bytes": 72
+  },
+  "peak_requested_at_barriers_bytes": 32768,
+  "max_reserved_at_live_barriers_ratio": 64.0,
+  "host_runtime_seconds": 2.724956512451172,
+  "capacity_profile": "WRAM end 65536; 24 stacks x 1536 B; inherited IRAM/timing defaults",
+  "source_sha256": "27d961433cc52adfb35d7d0c876026807da5244607c001ab8c45ebf02b7865f9",
+  "simulator_sha256": "907c1e5efe6302aa971e1e3824a2473c20b688da8f5ee093d52069fc2c8a8808"
+}

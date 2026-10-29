@@ -1,0 +1,12 @@
+# Local Git metadata, credentials, environments, and caches
+.git/
+.cache/
+.agents/
+.codex/
+.aws/
+.venv/
+__pycache__/
+.pytest_cache/
+.env
+.env.*
+!.env.example

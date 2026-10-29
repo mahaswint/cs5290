@@ -1,0 +1,50 @@
+POLICY_EVENT,init,0,0,362,7855,7493
+POLICY_EVENT,alloc,0,0,8592,28810,20218
+POLICY_EVENT,alloc,0,1,29157,30701,1544
+POLICY_EVENT,alloc,0,2,31048,32603,1555
+POLICY_EVENT,alloc,0,3,32950,34505,1555
+POLICY_EVENT,free,0,0,35738,37295,1557
+POLICY_EVENT,free,0,1,37719,39276,1557
+POLICY_EVENT,free,0,2,39700,41235,1535
+POLICY_EVENT,free,0,3,41659,43403,1744
+POLICY_EVENT,alloc,0,4,46218,68232,22014
+POLICY_EVENT,alloc,0,5,68579,70332,1753
+POLICY_EVENT,alloc,0,6,70679,72454,1775
+POLICY_EVENT,alloc,0,7,72801,74576,1775
+POLICY_EVENT,free,0,4,75809,77567,1758
+POLICY_EVENT,free,0,5,77991,79749,1758
+POLICY_EVENT,free,0,6,80173,81909,1736
+POLICY_EVENT,free,0,7,82333,84278,1945
+POLICY_EVENT,alloc,0,8,87444,108102,20658
+POLICY_EVENT,alloc,0,9,108460,130152,21692
+POLICY_EVENT,alloc,0,10,130510,150959,20449
+POLICY_EVENT,alloc,0,11,151317,173042,21725
+POLICY_EVENT,free,0,8,174297,189296,14999
+POLICY_EVENT,free,0,9,189731,204642,14911
+POLICY_EVENT,free,0,10,205077,220065,14988
+POLICY_EVENT,free,0,11,220500,235444,14944
+POLICY_EVENT,alloc,0,12,238610,256804,18194
+POLICY_EVENT,alloc,0,13,257162,275180,18018
+POLICY_EVENT,alloc,0,14,275538,294711,19173
+POLICY_EVENT,alloc,0,15,295069,312900,17831
+POLICY_EVENT,free,0,12,314155,327757,13602
+POLICY_EVENT,free,0,13,328192,341871,13679
+POLICY_EVENT,free,0,14,342306,355941,13635
+POLICY_EVENT,free,0,15,356376,370044,13668
+POLICY_EVENT,work,0,0,8163,373111,364948
+POLICY_EVENT,drain,0,0,373111,403240,30129
+panic: missing policy start: 0:total
+
+goroutine 21 [running]:
+uPIMulator/src/device/simulator/dpu/logic.(*Logic).ServiceThreadScheduler(0xc0153ee000)
+	/home/mahaswint/cs5290/pim-reproduction/adaptive/runtime/src/device/simulator/dpu/logic/logic.go:235 +0x8c5
+uPIMulator/src/device/simulator/dpu/logic.(*Logic).Cycle(0xc0153ee000)
+	/home/mahaswint/cs5290/pim-reproduction/adaptive/runtime/src/device/simulator/dpu/logic/logic.go:205 +0x1c
+uPIMulator/src/device/simulator/dpu.(*Dpu).Cycle(0xc0000ba2c0)
+	/home/mahaswint/cs5290/pim-reproduction/adaptive/runtime/src/device/simulator/dpu/dpu.go:205 +0xd6
+uPIMulator/src/host/vm.(*DpuComputeCycleJob).Execute(0xc0009b22c0)
+	/home/mahaswint/cs5290/pim-reproduction/adaptive/runtime/src/host/vm/dpu_compute_cycle_job.go:28 +0x25
+uPIMulator/src/device/core.(*ThreadPool).Dispatch(0x0?, {0x6afe90?, 0xc0009b22c0?})
+	/home/mahaswint/cs5290/pim-reproduction/adaptive/runtime/src/device/core/thread_pool.go:31 +0x59
+created by uPIMulator/src/device/core.(*ThreadPool).Start in goroutine 1
+	/home/mahaswint/cs5290/pim-reproduction/adaptive/runtime/src/device/core/thread_pool.go:24 +0x38

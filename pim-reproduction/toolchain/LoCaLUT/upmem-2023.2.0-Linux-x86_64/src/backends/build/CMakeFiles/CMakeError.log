@@ -1,0 +1,1385 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_c9dc0/fast && /usr/bin/make -f CMakeFiles/cmTC_c9dc0.dir/build.make CMakeFiles/cmTC_c9dc0.dir/build
+make[1]: Entering directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c9dc0.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_c9dc0.dir/src.c.o   -c /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_c9dc0
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c9dc0.dir/link.txt --verbose=1
+/usr/bin/cc  -Wall -Werror -Wextra -std=gnu11  -DCMAKE_HAVE_LIBC_PTHREAD  -Wl,--enable-new-dtags  CMakeFiles/cmTC_c9dc0.dir/src.c.o  -o cmTC_c9dc0 
+CMakeFiles/cmTC_c9dc0.dir/src.c.o: In function `main':
+src.c:(.text+0x3e): undefined reference to `pthread_create'
+src.c:(.text+0x4a): undefined reference to `pthread_detach'
+src.c:(.text+0x56): undefined reference to `pthread_cancel'
+src.c:(.text+0x67): undefined reference to `pthread_join'
+src.c:(.text+0x7b): undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_c9dc0.dir/build.make:103: recipe for target 'cmTC_c9dc0' failed
+make[1]: *** [cmTC_c9dc0] Error 1
+make[1]: Leaving directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_c9dc0/fast' failed
+make: *** [cmTC_c9dc0/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_02536/fast && /usr/bin/make -f CMakeFiles/cmTC_02536.dir/build.make CMakeFiles/cmTC_02536.dir/build
+make[1]: Entering directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_02536.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_02536.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.17/Modules/CheckFunctionExists.c
+Linking C executable cmTC_02536
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_02536.dir/link.txt --verbose=1
+/usr/bin/cc  -Wall -Werror -Wextra -std=gnu11  -DCHECK_FUNCTION_EXISTS=pthread_create  -Wl,--enable-new-dtags  CMakeFiles/cmTC_02536.dir/CheckFunctionExists.c.o  -o cmTC_02536  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_02536.dir/build.make:103: recipe for target 'cmTC_02536' failed
+make[1]: *** [cmTC_02536] Error 1
+make[1]: Leaving directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_02536/fast' failed
+make: *** [cmTC_02536/fast] Error 2
+
+
+
+Performing C SOURCE FILE Test C_HAS_SSE3_1 failed with the following compile output:
+Change Dir: /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_1071b/fast && /usr/bin/make -f CMakeFiles/cmTC_1071b.dir/build.make CMakeFiles/cmTC_1071b.dir/build
+make[1]: Entering directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1071b.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DC_HAS_SSE3_1   -o CMakeFiles/cmTC_1071b.dir/src.c.o   -c /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+In file included from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/pmmintrin.h:110:1: error: inlining failed in call to always_inline ‘_mm_lddqu_si128’: target specific option mismatch
+ _mm_lddqu_si128 (__m128i const *__P)
+ ^~~~~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:9: note: called from here
+     a = _mm_lddqu_si128( (const __m128i*)vals );
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+CMakeFiles/cmTC_1071b.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_1071b.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_1071b.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_1071b/fast' failed
+make: *** [cmTC_1071b/fast] Error 2
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+  #include <pmmintrin.h>
+  int main( )
+  {
+    const int vals[4] = {0,0,0,0};
+    __attribute__((unused)) __m128i a;
+    a = _mm_lddqu_si128( (const __m128i*)vals );
+    return 0;
+  }
+Performing C SOURCE FILE Test C_COMPILES_SSE3_1 failed with the following output:
+Change Dir: /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_d04a0/fast && /usr/bin/make -f CMakeFiles/cmTC_d04a0.dir/build.make CMakeFiles/cmTC_d04a0.dir/build
+make[1]: Entering directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d04a0.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DC_COMPILES_SSE3_1   -o CMakeFiles/cmTC_d04a0.dir/src.c.o   -c /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+In file included from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/pmmintrin.h:110:1: error: inlining failed in call to always_inline ‘_mm_lddqu_si128’: target specific option mismatch
+ _mm_lddqu_si128 (__m128i const *__P)
+ ^~~~~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:9: note: called from here
+     a = _mm_lddqu_si128( (const __m128i*)vals );
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+CMakeFiles/cmTC_d04a0.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_d04a0.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_d04a0.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_d04a0/fast' failed
+make: *** [cmTC_d04a0/fast] Error 2
+
+
+Source file was:
+
+  #include <pmmintrin.h>
+  int main( )
+  {
+    const int vals[4] = {0,0,0,0};
+    __attribute__((unused)) __m128i a;
+    a = _mm_lddqu_si128( (const __m128i*)vals );
+    return 0;
+  }
+Performing C SOURCE FILE Test C_HAS_SSE4_1_1 failed with the following compile output:
+Change Dir: /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_11135/fast && /usr/bin/make -f CMakeFiles/cmTC_11135.dir/build.make CMakeFiles/cmTC_11135.dir/build
+make[1]: Entering directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_11135.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DC_HAS_SSE4_1_1   -o CMakeFiles/cmTC_11135.dir/src.c.o   -c /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+In file included from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/smmintrin.h:282:1: error: inlining failed in call to always_inline ‘_mm_max_epi8’: target specific option mismatch
+ _mm_max_epi8 (__m128i __X, __m128i __Y)
+ ^~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:43: note: called from here
+     __attribute__((unused)) __m128i res = _mm_max_epi8(a, b);
+                                           ^~~~~~~~~~~~~~~~~~
+In file included from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/smmintrin.h:282:1: error: inlining failed in call to always_inline ‘_mm_max_epi8’: target specific option mismatch
+ _mm_max_epi8 (__m128i __X, __m128i __Y)
+ ^~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:43: note: called from here
+     __attribute__((unused)) __m128i res = _mm_max_epi8(a, b);
+                                           ^~~~~~~~~~~~~~~~~~
+CMakeFiles/cmTC_11135.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_11135.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_11135.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_11135/fast' failed
+make: *** [cmTC_11135/fast] Error 2
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+  #include <smmintrin.h>
+  int main ()
+  {
+    __m128i a = _mm_set_epi8(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+    __m128i b = _mm_set_epi8(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+    __attribute__((unused)) __m128i res = _mm_max_epi8(a, b);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test C_COMPILES_SSE4_1_1 failed with the following output:
+Change Dir: /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_50d01/fast && /usr/bin/make -f CMakeFiles/cmTC_50d01.dir/build.make CMakeFiles/cmTC_50d01.dir/build
+make[1]: Entering directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_50d01.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DC_COMPILES_SSE4_1_1   -o CMakeFiles/cmTC_50d01.dir/src.c.o   -c /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+In file included from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/smmintrin.h:282:1: error: inlining failed in call to always_inline ‘_mm_max_epi8’: target specific option mismatch
+ _mm_max_epi8 (__m128i __X, __m128i __Y)
+ ^~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:43: note: called from here
+     __attribute__((unused)) __m128i res = _mm_max_epi8(a, b);
+                                           ^~~~~~~~~~~~~~~~~~
+In file included from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/smmintrin.h:282:1: error: inlining failed in call to always_inline ‘_mm_max_epi8’: target specific option mismatch
+ _mm_max_epi8 (__m128i __X, __m128i __Y)
+ ^~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:43: note: called from here
+     __attribute__((unused)) __m128i res = _mm_max_epi8(a, b);
+                                           ^~~~~~~~~~~~~~~~~~
+CMakeFiles/cmTC_50d01.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_50d01.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_50d01.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_50d01/fast' failed
+make: *** [cmTC_50d01/fast] Error 2
+
+
+Source file was:
+
+  #include <smmintrin.h>
+  int main ()
+  {
+    __m128i a = _mm_set_epi8(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+    __m128i b = _mm_set_epi8(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+    __attribute__((unused)) __m128i res = _mm_max_epi8(a, b);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test C_HAS_SSE4_2_1 failed with the following compile output:
+Change Dir: /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_718db/fast && /usr/bin/make -f CMakeFiles/cmTC_718db.dir/build.make CMakeFiles/cmTC_718db.dir/build
+make[1]: Entering directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_718db.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DC_HAS_SSE4_2_1   -o CMakeFiles/cmTC_718db.dir/src.c.o   -c /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+In file included from /usr/lib/gcc/x86_64-linux-gnu/8/include/nmmintrin.h:31,
+                 from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/smmintrin.h:796:1: error: inlining failed in call to always_inline ‘_mm_cmpgt_epi64’: target specific option mismatch
+ _mm_cmpgt_epi64 (__m128i __X, __m128i __Y)
+ ^~~~~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:8:9: note: called from here
+     c = _mm_cmpgt_epi64(a, b);
+         ^~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/8/include/nmmintrin.h:31,
+                 from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/smmintrin.h:796:1: error: inlining failed in call to always_inline ‘_mm_cmpgt_epi64’: target specific option mismatch
+ _mm_cmpgt_epi64 (__m128i __X, __m128i __Y)
+ ^~~~~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:8:9: note: called from here
+     c = _mm_cmpgt_epi64(a, b);
+         ^~~~~~~~~~~~~~~~~~~~~
+CMakeFiles/cmTC_718db.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_718db.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_718db.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_718db/fast' failed
+make: *** [cmTC_718db/fast] Error 2
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+  #include <nmmintrin.h>
+  int main()
+  {
+    __m128i a = _mm_set_epi8(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+    __m128i b = _mm_set_epi8(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+    __attribute__((unused)) __m128i c = _mm_set_epi8(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+    c = _mm_cmpgt_epi64(a, b);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test C_COMPILES_SSE4_2_1 failed with the following output:
+Change Dir: /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_54efb/fast && /usr/bin/make -f CMakeFiles/cmTC_54efb.dir/build.make CMakeFiles/cmTC_54efb.dir/build
+make[1]: Entering directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_54efb.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DC_COMPILES_SSE4_2_1   -o CMakeFiles/cmTC_54efb.dir/src.c.o   -c /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+In file included from /usr/lib/gcc/x86_64-linux-gnu/8/include/nmmintrin.h:31,
+                 from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/smmintrin.h:796:1: error: inlining failed in call to always_inline ‘_mm_cmpgt_epi64’: target specific option mismatch
+ _mm_cmpgt_epi64 (__m128i __X, __m128i __Y)
+ ^~~~~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:8:9: note: called from here
+     c = _mm_cmpgt_epi64(a, b);
+         ^~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/8/include/nmmintrin.h:31,
+                 from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/smmintrin.h:796:1: error: inlining failed in call to always_inline ‘_mm_cmpgt_epi64’: target specific option mismatch
+ _mm_cmpgt_epi64 (__m128i __X, __m128i __Y)
+ ^~~~~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:8:9: note: called from here
+     c = _mm_cmpgt_epi64(a, b);
+         ^~~~~~~~~~~~~~~~~~~~~
+CMakeFiles/cmTC_54efb.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_54efb.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_54efb.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_54efb/fast' failed
+make: *** [cmTC_54efb/fast] Error 2
+
+
+Source file was:
+
+  #include <nmmintrin.h>
+  int main()
+  {
+    __m128i a = _mm_set_epi8(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+    __m128i b = _mm_set_epi8(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+    __attribute__((unused)) __m128i c = _mm_set_epi8(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+    c = _mm_cmpgt_epi64(a, b);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test C_HAS_AVX_1 failed with the following compile output:
+Change Dir: /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_5c102/fast && /usr/bin/make -f CMakeFiles/cmTC_5c102.dir/build.make CMakeFiles/cmTC_5c102.dir/build
+make[1]: Entering directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5c102.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DC_HAS_AVX_1   -o CMakeFiles/cmTC_5c102.dir/src.c.o   -c /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:7: error: AVX vector return without AVX enabled changes the ABI [-Werror=psabi]
+     a = _mm256_set1_ps(0);
+     ~~^~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/8/include/immintrin.h:41,
+                 from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/avxintrin.h:1311:1: error: inlining failed in call to always_inline ‘_mm256_set1_ps’: target specific option mismatch
+ _mm256_set1_ps (float __A)
+ ^~~~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+     a = _mm256_set1_ps(0);
+         ^~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+CMakeFiles/cmTC_5c102.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_5c102.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_5c102.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_5c102/fast' failed
+make: *** [cmTC_5c102/fast] Error 2
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+  #include <immintrin.h>
+  int main()
+  {
+    __attribute__((unused)) __m256 a;
+    a = _mm256_set1_ps(0);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test C_COMPILES_AVX_1 failed with the following output:
+Change Dir: /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_17cde/fast && /usr/bin/make -f CMakeFiles/cmTC_17cde.dir/build.make CMakeFiles/cmTC_17cde.dir/build
+make[1]: Entering directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_17cde.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DC_COMPILES_AVX_1   -o CMakeFiles/cmTC_17cde.dir/src.c.o   -c /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:7: error: AVX vector return without AVX enabled changes the ABI [-Werror=psabi]
+     a = _mm256_set1_ps(0);
+     ~~^~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/8/include/immintrin.h:41,
+                 from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/avxintrin.h:1311:1: error: inlining failed in call to always_inline ‘_mm256_set1_ps’: target specific option mismatch
+ _mm256_set1_ps (float __A)
+ ^~~~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+     a = _mm256_set1_ps(0);
+         ^~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+CMakeFiles/cmTC_17cde.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_17cde.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_17cde.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_17cde/fast' failed
+make: *** [cmTC_17cde/fast] Error 2
+
+
+Source file was:
+
+  #include <immintrin.h>
+  int main()
+  {
+    __attribute__((unused)) __m256 a;
+    a = _mm256_set1_ps(0);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test C_HAS_AVX2_1 failed with the following compile output:
+Change Dir: /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_e5e9f/fast && /usr/bin/make -f CMakeFiles/cmTC_e5e9f.dir/build.make CMakeFiles/cmTC_e5e9f.dir/build
+make[1]: Entering directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e5e9f.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DC_HAS_AVX2_1   -o CMakeFiles/cmTC_e5e9f.dir/src.c.o   -c /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:7: error: AVX vector return without AVX enabled changes the ABI [-Werror=psabi]
+     a = _mm256_abs_epi16(a);
+     ~~^~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/8/include/immintrin.h:43,
+                 from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/avx2intrin.h:63:1: error: inlining failed in call to always_inline ‘_mm256_abs_epi16’: target specific option mismatch
+ _mm256_abs_epi16 (__m256i __A)
+ ^~~~~~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+     a = _mm256_abs_epi16(a);
+         ^~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+CMakeFiles/cmTC_e5e9f.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_e5e9f.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_e5e9f.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_e5e9f/fast' failed
+make: *** [cmTC_e5e9f/fast] Error 2
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+  #include <immintrin.h>
+  int main()
+  {
+    __m256i a = {0};
+    a = _mm256_abs_epi16(a);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test C_COMPILES_AVX2_1 failed with the following output:
+Change Dir: /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_14a81/fast && /usr/bin/make -f CMakeFiles/cmTC_14a81.dir/build.make CMakeFiles/cmTC_14a81.dir/build
+make[1]: Entering directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_14a81.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DC_COMPILES_AVX2_1   -o CMakeFiles/cmTC_14a81.dir/src.c.o   -c /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:7: error: AVX vector return without AVX enabled changes the ABI [-Werror=psabi]
+     a = _mm256_abs_epi16(a);
+     ~~^~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/8/include/immintrin.h:43,
+                 from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/avx2intrin.h:63:1: error: inlining failed in call to always_inline ‘_mm256_abs_epi16’: target specific option mismatch
+ _mm256_abs_epi16 (__m256i __A)
+ ^~~~~~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+     a = _mm256_abs_epi16(a);
+         ^~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+CMakeFiles/cmTC_14a81.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_14a81.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_14a81.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_14a81/fast' failed
+make: *** [cmTC_14a81/fast] Error 2
+
+
+Source file was:
+
+  #include <immintrin.h>
+  int main()
+  {
+    __m256i a = {0};
+    a = _mm256_abs_epi16(a);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test C_HAS_AVX512F_1 failed with the following compile output:
+Change Dir: /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_9a58f/fast && /usr/bin/make -f CMakeFiles/cmTC_9a58f.dir/build.make CMakeFiles/cmTC_9a58f.dir/build
+make[1]: Entering directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9a58f.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DC_HAS_AVX512F_1   -o CMakeFiles/cmTC_9a58f.dir/src.c.o   -c /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:12: error: AVX512F vector return without AVX512F enabled changes the ABI [-Werror=psabi]
+     __m512 a = _mm512_set1_ps(1.f);
+            ^
+In file included from /usr/lib/gcc/x86_64-linux-gnu/8/include/immintrin.h:45,
+                 from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/avx512fintrin.h:11534:1: error: inlining failed in call to always_inline ‘_mm512_add_ps’: target specific option mismatch
+ _mm512_add_ps (__m512 __A, __m512 __B)
+ ^~~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+     a = _mm512_add_ps(a, _mm512_set1_ps(1.f));;
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/8/include/immintrin.h:45,
+                 from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/avx512fintrin.h:201:1: error: inlining failed in call to always_inline ‘_mm512_set1_ps’: target specific option mismatch
+ _mm512_set1_ps (float __A)
+ ^~~~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+     a = _mm512_add_ps(a, _mm512_set1_ps(1.f));;
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/8/include/immintrin.h:45,
+                 from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/avx512fintrin.h:201:1: error: inlining failed in call to always_inline ‘_mm512_set1_ps’: target specific option mismatch
+ _mm512_set1_ps (float __A)
+ ^~~~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:16: note: called from here
+     __m512 a = _mm512_set1_ps(1.f);
+                ^~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+CMakeFiles/cmTC_9a58f.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_9a58f.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_9a58f.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_9a58f/fast' failed
+make: *** [cmTC_9a58f/fast] Error 2
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+  #include <immintrin.h>
+  int main()
+  {
+    __m512 a = _mm512_set1_ps(1.f);
+    a = _mm512_add_ps(a, _mm512_set1_ps(1.f));;
+    return 0;
+  }
+
+Performing C SOURCE FILE Test C_COMPILES_AVX512F_1 failed with the following output:
+Change Dir: /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_dabd1/fast && /usr/bin/make -f CMakeFiles/cmTC_dabd1.dir/build.make CMakeFiles/cmTC_dabd1.dir/build
+make[1]: Entering directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_dabd1.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DC_COMPILES_AVX512F_1   -o CMakeFiles/cmTC_dabd1.dir/src.c.o   -c /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:12: error: AVX512F vector return without AVX512F enabled changes the ABI [-Werror=psabi]
+     __m512 a = _mm512_set1_ps(1.f);
+            ^
+In file included from /usr/lib/gcc/x86_64-linux-gnu/8/include/immintrin.h:45,
+                 from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/avx512fintrin.h:11534:1: error: inlining failed in call to always_inline ‘_mm512_add_ps’: target specific option mismatch
+ _mm512_add_ps (__m512 __A, __m512 __B)
+ ^~~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+     a = _mm512_add_ps(a, _mm512_set1_ps(1.f));;
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/8/include/immintrin.h:45,
+                 from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/avx512fintrin.h:201:1: error: inlining failed in call to always_inline ‘_mm512_set1_ps’: target specific option mismatch
+ _mm512_set1_ps (float __A)
+ ^~~~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+     a = _mm512_add_ps(a, _mm512_set1_ps(1.f));;
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/8/include/immintrin.h:45,
+                 from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/avx512fintrin.h:201:1: error: inlining failed in call to always_inline ‘_mm512_set1_ps’: target specific option mismatch
+ _mm512_set1_ps (float __A)
+ ^~~~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:16: note: called from here
+     __m512 a = _mm512_set1_ps(1.f);
+                ^~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+CMakeFiles/cmTC_dabd1.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_dabd1.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_dabd1.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_dabd1/fast' failed
+make: *** [cmTC_dabd1/fast] Error 2
+
+
+Source file was:
+
+  #include <immintrin.h>
+  int main()
+  {
+    __m512 a = _mm512_set1_ps(1.f);
+    a = _mm512_add_ps(a, _mm512_set1_ps(1.f));;
+    return 0;
+  }
+
+Performing C SOURCE FILE Test C_HAS_AVX512BW_1 failed with the following compile output:
+Change Dir: /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_bebba/fast && /usr/bin/make -f CMakeFiles/cmTC_bebba.dir/build.make CMakeFiles/cmTC_bebba.dir/build
+make[1]: Entering directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_bebba.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DC_HAS_AVX512BW_1   -o CMakeFiles/cmTC_bebba.dir/src.c.o   -c /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:13: error: AVX512F vector return without AVX512F enabled changes the ABI [-Werror=psabi]
+     __m512i mask = _mm512_set_epi64(0, 0, 0, 0, 0, 0, 0, 0);
+             ^~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/8/include/immintrin.h:55,
+                 from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/avx512bwintrin.h:1852:1: error: inlining failed in call to always_inline ‘_mm512_shuffle_epi8’: target specific option mismatch
+ _mm512_shuffle_epi8 (__m512i __A, __m512i __B)
+ ^~~~~~~~~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:12: note: called from here
+     load = _mm512_shuffle_epi8(load, mask);
+            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/8/include/immintrin.h:45,
+                 from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/avx512fintrin.h:79:1: error: inlining failed in call to always_inline ‘_mm512_set_epi64’: target specific option mismatch
+ _mm512_set_epi64 (long long __A, long long __B, long long __C,
+ ^~~~~~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:20: note: called from here
+     __m512i mask = _mm512_set_epi64(0, 0, 0, 0, 0, 0, 0, 0);
+                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+CMakeFiles/cmTC_bebba.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_bebba.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_bebba.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_bebba/fast' failed
+make: *** [cmTC_bebba/fast] Error 2
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+  #include <immintrin.h>
+  int main()
+  {
+    __m512i mask = _mm512_set_epi64(0, 0, 0, 0, 0, 0, 0, 0);
+    __attribute__((unused)) __m512i load = {0};
+    load = _mm512_shuffle_epi8(load, mask);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test C_COMPILES_AVX512BW_1 failed with the following output:
+Change Dir: /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_eba6d/fast && /usr/bin/make -f CMakeFiles/cmTC_eba6d.dir/build.make CMakeFiles/cmTC_eba6d.dir/build
+make[1]: Entering directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_eba6d.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DC_COMPILES_AVX512BW_1   -o CMakeFiles/cmTC_eba6d.dir/src.c.o   -c /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:13: error: AVX512F vector return without AVX512F enabled changes the ABI [-Werror=psabi]
+     __m512i mask = _mm512_set_epi64(0, 0, 0, 0, 0, 0, 0, 0);
+             ^~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/8/include/immintrin.h:55,
+                 from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/avx512bwintrin.h:1852:1: error: inlining failed in call to always_inline ‘_mm512_shuffle_epi8’: target specific option mismatch
+ _mm512_shuffle_epi8 (__m512i __A, __m512i __B)
+ ^~~~~~~~~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:12: note: called from here
+     load = _mm512_shuffle_epi8(load, mask);
+            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/8/include/immintrin.h:45,
+                 from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/avx512fintrin.h:79:1: error: inlining failed in call to always_inline ‘_mm512_set_epi64’: target specific option mismatch
+ _mm512_set_epi64 (long long __A, long long __B, long long __C,
+ ^~~~~~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:20: note: called from here
+     __m512i mask = _mm512_set_epi64(0, 0, 0, 0, 0, 0, 0, 0);
+                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+CMakeFiles/cmTC_eba6d.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_eba6d.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_eba6d.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_eba6d/fast' failed
+make: *** [cmTC_eba6d/fast] Error 2
+
+
+Source file was:
+
+  #include <immintrin.h>
+  int main()
+  {
+    __m512i mask = _mm512_set_epi64(0, 0, 0, 0, 0, 0, 0, 0);
+    __attribute__((unused)) __m512i load = {0};
+    load = _mm512_shuffle_epi8(load, mask);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test C_HAS_CLFLUSHOPT_1 failed with the following compile output:
+Change Dir: /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_f571c/fast && /usr/bin/make -f CMakeFiles/cmTC_f571c.dir/build.make CMakeFiles/cmTC_f571c.dir/build
+make[1]: Entering directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f571c.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DC_HAS_CLFLUSHOPT_1   -o CMakeFiles/cmTC_f571c.dir/src.c.o   -c /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:5: error: implicit declaration of function ‘__builtin_ia32_clflushopt’; did you mean ‘__builtin_ia32_clflush’? [-Werror=implicit-function-declaration]
+     __builtin_ia32_clflushopt(&flush);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~
+     __builtin_ia32_clflush
+cc1: all warnings being treated as errors
+CMakeFiles/cmTC_f571c.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_f571c.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_f571c.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_f571c/fast' failed
+make: *** [cmTC_f571c/fast] Error 2
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+  #include <immintrin.h>
+  int main()
+  {
+    int flush = 1;
+    __builtin_ia32_clflushopt(&flush);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test C_COMPILES_CLFLUSHOPT_1 failed with the following output:
+Change Dir: /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_31c40/fast && /usr/bin/make -f CMakeFiles/cmTC_31c40.dir/build.make CMakeFiles/cmTC_31c40.dir/build
+make[1]: Entering directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_31c40.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DC_COMPILES_CLFLUSHOPT_1   -o CMakeFiles/cmTC_31c40.dir/src.c.o   -c /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:5: error: implicit declaration of function ‘__builtin_ia32_clflushopt’; did you mean ‘__builtin_ia32_clflush’? [-Werror=implicit-function-declaration]
+     __builtin_ia32_clflushopt(&flush);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~
+     __builtin_ia32_clflush
+cc1: all warnings being treated as errors
+CMakeFiles/cmTC_31c40.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_31c40.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_31c40.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_31c40/fast' failed
+make: *** [cmTC_31c40/fast] Error 2
+
+
+Source file was:
+
+  #include <immintrin.h>
+  int main()
+  {
+    int flush = 1;
+    __builtin_ia32_clflushopt(&flush);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test CXX_HAS_SSE3_1 failed with the following compile output:
+Change Dir: /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_58caf/fast && /usr/bin/make -f CMakeFiles/cmTC_58caf.dir/build.make CMakeFiles/cmTC_58caf.dir/build
+make[1]: Entering directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_58caf.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DCXX_HAS_SSE3_1   -o CMakeFiles/cmTC_58caf.dir/src.c.o   -c /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+In file included from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/pmmintrin.h:110:1: error: inlining failed in call to always_inline ‘_mm_lddqu_si128’: target specific option mismatch
+ _mm_lddqu_si128 (__m128i const *__P)
+ ^~~~~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:9: note: called from here
+     a = _mm_lddqu_si128( (const __m128i*)vals );
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+CMakeFiles/cmTC_58caf.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_58caf.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_58caf.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_58caf/fast' failed
+make: *** [cmTC_58caf/fast] Error 2
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+  #include <pmmintrin.h>
+  int main( )
+  {
+    const int vals[4] = {0,0,0,0};
+    __attribute__((unused)) __m128i a;
+    a = _mm_lddqu_si128( (const __m128i*)vals );
+    return 0;
+  }
+Performing C SOURCE FILE Test CXX_COMPILES_SSE3_1 failed with the following output:
+Change Dir: /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_5170e/fast && /usr/bin/make -f CMakeFiles/cmTC_5170e.dir/build.make CMakeFiles/cmTC_5170e.dir/build
+make[1]: Entering directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5170e.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DCXX_COMPILES_SSE3_1   -o CMakeFiles/cmTC_5170e.dir/src.c.o   -c /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+In file included from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/pmmintrin.h:110:1: error: inlining failed in call to always_inline ‘_mm_lddqu_si128’: target specific option mismatch
+ _mm_lddqu_si128 (__m128i const *__P)
+ ^~~~~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:9: note: called from here
+     a = _mm_lddqu_si128( (const __m128i*)vals );
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+CMakeFiles/cmTC_5170e.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_5170e.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_5170e.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_5170e/fast' failed
+make: *** [cmTC_5170e/fast] Error 2
+
+
+Source file was:
+
+  #include <pmmintrin.h>
+  int main( )
+  {
+    const int vals[4] = {0,0,0,0};
+    __attribute__((unused)) __m128i a;
+    a = _mm_lddqu_si128( (const __m128i*)vals );
+    return 0;
+  }
+Performing C SOURCE FILE Test CXX_HAS_SSE4_1_1 failed with the following compile output:
+Change Dir: /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_515e1/fast && /usr/bin/make -f CMakeFiles/cmTC_515e1.dir/build.make CMakeFiles/cmTC_515e1.dir/build
+make[1]: Entering directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_515e1.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DCXX_HAS_SSE4_1_1   -o CMakeFiles/cmTC_515e1.dir/src.c.o   -c /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+In file included from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/smmintrin.h:282:1: error: inlining failed in call to always_inline ‘_mm_max_epi8’: target specific option mismatch
+ _mm_max_epi8 (__m128i __X, __m128i __Y)
+ ^~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:43: note: called from here
+     __attribute__((unused)) __m128i res = _mm_max_epi8(a, b);
+                                           ^~~~~~~~~~~~~~~~~~
+In file included from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/smmintrin.h:282:1: error: inlining failed in call to always_inline ‘_mm_max_epi8’: target specific option mismatch
+ _mm_max_epi8 (__m128i __X, __m128i __Y)
+ ^~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:43: note: called from here
+     __attribute__((unused)) __m128i res = _mm_max_epi8(a, b);
+                                           ^~~~~~~~~~~~~~~~~~
+CMakeFiles/cmTC_515e1.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_515e1.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_515e1.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_515e1/fast' failed
+make: *** [cmTC_515e1/fast] Error 2
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+  #include <smmintrin.h>
+  int main ()
+  {
+    __m128i a = _mm_set_epi8(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+    __m128i b = _mm_set_epi8(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+    __attribute__((unused)) __m128i res = _mm_max_epi8(a, b);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test CXX_COMPILES_SSE4_1_1 failed with the following output:
+Change Dir: /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_caae0/fast && /usr/bin/make -f CMakeFiles/cmTC_caae0.dir/build.make CMakeFiles/cmTC_caae0.dir/build
+make[1]: Entering directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_caae0.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DCXX_COMPILES_SSE4_1_1   -o CMakeFiles/cmTC_caae0.dir/src.c.o   -c /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+In file included from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/smmintrin.h:282:1: error: inlining failed in call to always_inline ‘_mm_max_epi8’: target specific option mismatch
+ _mm_max_epi8 (__m128i __X, __m128i __Y)
+ ^~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:43: note: called from here
+     __attribute__((unused)) __m128i res = _mm_max_epi8(a, b);
+                                           ^~~~~~~~~~~~~~~~~~
+In file included from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/smmintrin.h:282:1: error: inlining failed in call to always_inline ‘_mm_max_epi8’: target specific option mismatch
+ _mm_max_epi8 (__m128i __X, __m128i __Y)
+ ^~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:43: note: called from here
+     __attribute__((unused)) __m128i res = _mm_max_epi8(a, b);
+                                           ^~~~~~~~~~~~~~~~~~
+CMakeFiles/cmTC_caae0.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_caae0.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_caae0.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_caae0/fast' failed
+make: *** [cmTC_caae0/fast] Error 2
+
+
+Source file was:
+
+  #include <smmintrin.h>
+  int main ()
+  {
+    __m128i a = _mm_set_epi8(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+    __m128i b = _mm_set_epi8(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+    __attribute__((unused)) __m128i res = _mm_max_epi8(a, b);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test CXX_HAS_SSE4_2_1 failed with the following compile output:
+Change Dir: /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_6fd15/fast && /usr/bin/make -f CMakeFiles/cmTC_6fd15.dir/build.make CMakeFiles/cmTC_6fd15.dir/build
+make[1]: Entering directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6fd15.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DCXX_HAS_SSE4_2_1   -o CMakeFiles/cmTC_6fd15.dir/src.c.o   -c /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+In file included from /usr/lib/gcc/x86_64-linux-gnu/8/include/nmmintrin.h:31,
+                 from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/smmintrin.h:796:1: error: inlining failed in call to always_inline ‘_mm_cmpgt_epi64’: target specific option mismatch
+ _mm_cmpgt_epi64 (__m128i __X, __m128i __Y)
+ ^~~~~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:8:9: note: called from here
+     c = _mm_cmpgt_epi64(a, b);
+         ^~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/8/include/nmmintrin.h:31,
+                 from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/smmintrin.h:796:1: error: inlining failed in call to always_inline ‘_mm_cmpgt_epi64’: target specific option mismatch
+ _mm_cmpgt_epi64 (__m128i __X, __m128i __Y)
+ ^~~~~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:8:9: note: called from here
+     c = _mm_cmpgt_epi64(a, b);
+         ^~~~~~~~~~~~~~~~~~~~~
+CMakeFiles/cmTC_6fd15.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_6fd15.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_6fd15.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_6fd15/fast' failed
+make: *** [cmTC_6fd15/fast] Error 2
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+  #include <nmmintrin.h>
+  int main()
+  {
+    __m128i a = _mm_set_epi8(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+    __m128i b = _mm_set_epi8(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+    __attribute__((unused)) __m128i c = _mm_set_epi8(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+    c = _mm_cmpgt_epi64(a, b);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test CXX_COMPILES_SSE4_2_1 failed with the following output:
+Change Dir: /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_d35c3/fast && /usr/bin/make -f CMakeFiles/cmTC_d35c3.dir/build.make CMakeFiles/cmTC_d35c3.dir/build
+make[1]: Entering directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d35c3.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DCXX_COMPILES_SSE4_2_1   -o CMakeFiles/cmTC_d35c3.dir/src.c.o   -c /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+In file included from /usr/lib/gcc/x86_64-linux-gnu/8/include/nmmintrin.h:31,
+                 from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/smmintrin.h:796:1: error: inlining failed in call to always_inline ‘_mm_cmpgt_epi64’: target specific option mismatch
+ _mm_cmpgt_epi64 (__m128i __X, __m128i __Y)
+ ^~~~~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:8:9: note: called from here
+     c = _mm_cmpgt_epi64(a, b);
+         ^~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/8/include/nmmintrin.h:31,
+                 from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/smmintrin.h:796:1: error: inlining failed in call to always_inline ‘_mm_cmpgt_epi64’: target specific option mismatch
+ _mm_cmpgt_epi64 (__m128i __X, __m128i __Y)
+ ^~~~~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:8:9: note: called from here
+     c = _mm_cmpgt_epi64(a, b);
+         ^~~~~~~~~~~~~~~~~~~~~
+CMakeFiles/cmTC_d35c3.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_d35c3.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_d35c3.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_d35c3/fast' failed
+make: *** [cmTC_d35c3/fast] Error 2
+
+
+Source file was:
+
+  #include <nmmintrin.h>
+  int main()
+  {
+    __m128i a = _mm_set_epi8(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+    __m128i b = _mm_set_epi8(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+    __attribute__((unused)) __m128i c = _mm_set_epi8(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+    c = _mm_cmpgt_epi64(a, b);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test CXX_HAS_AVX_1 failed with the following compile output:
+Change Dir: /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_526d2/fast && /usr/bin/make -f CMakeFiles/cmTC_526d2.dir/build.make CMakeFiles/cmTC_526d2.dir/build
+make[1]: Entering directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_526d2.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DCXX_HAS_AVX_1   -o CMakeFiles/cmTC_526d2.dir/src.c.o   -c /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:7: error: AVX vector return without AVX enabled changes the ABI [-Werror=psabi]
+     a = _mm256_set1_ps(0);
+     ~~^~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/8/include/immintrin.h:41,
+                 from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/avxintrin.h:1311:1: error: inlining failed in call to always_inline ‘_mm256_set1_ps’: target specific option mismatch
+ _mm256_set1_ps (float __A)
+ ^~~~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+     a = _mm256_set1_ps(0);
+         ^~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+CMakeFiles/cmTC_526d2.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_526d2.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_526d2.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_526d2/fast' failed
+make: *** [cmTC_526d2/fast] Error 2
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+  #include <immintrin.h>
+  int main()
+  {
+    __attribute__((unused)) __m256 a;
+    a = _mm256_set1_ps(0);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test CXX_COMPILES_AVX_1 failed with the following output:
+Change Dir: /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_19576/fast && /usr/bin/make -f CMakeFiles/cmTC_19576.dir/build.make CMakeFiles/cmTC_19576.dir/build
+make[1]: Entering directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_19576.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DCXX_COMPILES_AVX_1   -o CMakeFiles/cmTC_19576.dir/src.c.o   -c /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:7: error: AVX vector return without AVX enabled changes the ABI [-Werror=psabi]
+     a = _mm256_set1_ps(0);
+     ~~^~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/8/include/immintrin.h:41,
+                 from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/avxintrin.h:1311:1: error: inlining failed in call to always_inline ‘_mm256_set1_ps’: target specific option mismatch
+ _mm256_set1_ps (float __A)
+ ^~~~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+     a = _mm256_set1_ps(0);
+         ^~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+CMakeFiles/cmTC_19576.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_19576.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_19576.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_19576/fast' failed
+make: *** [cmTC_19576/fast] Error 2
+
+
+Source file was:
+
+  #include <immintrin.h>
+  int main()
+  {
+    __attribute__((unused)) __m256 a;
+    a = _mm256_set1_ps(0);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test CXX_HAS_AVX2_1 failed with the following compile output:
+Change Dir: /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_cd21a/fast && /usr/bin/make -f CMakeFiles/cmTC_cd21a.dir/build.make CMakeFiles/cmTC_cd21a.dir/build
+make[1]: Entering directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cd21a.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DCXX_HAS_AVX2_1   -o CMakeFiles/cmTC_cd21a.dir/src.c.o   -c /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:7: error: AVX vector return without AVX enabled changes the ABI [-Werror=psabi]
+     a = _mm256_abs_epi16(a);
+     ~~^~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/8/include/immintrin.h:43,
+                 from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/avx2intrin.h:63:1: error: inlining failed in call to always_inline ‘_mm256_abs_epi16’: target specific option mismatch
+ _mm256_abs_epi16 (__m256i __A)
+ ^~~~~~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+     a = _mm256_abs_epi16(a);
+         ^~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+CMakeFiles/cmTC_cd21a.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_cd21a.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_cd21a.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_cd21a/fast' failed
+make: *** [cmTC_cd21a/fast] Error 2
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+  #include <immintrin.h>
+  int main()
+  {
+    __m256i a = {0};
+    a = _mm256_abs_epi16(a);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test CXX_COMPILES_AVX2_1 failed with the following output:
+Change Dir: /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_3ae17/fast && /usr/bin/make -f CMakeFiles/cmTC_3ae17.dir/build.make CMakeFiles/cmTC_3ae17.dir/build
+make[1]: Entering directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3ae17.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DCXX_COMPILES_AVX2_1   -o CMakeFiles/cmTC_3ae17.dir/src.c.o   -c /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:7: error: AVX vector return without AVX enabled changes the ABI [-Werror=psabi]
+     a = _mm256_abs_epi16(a);
+     ~~^~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/8/include/immintrin.h:43,
+                 from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/avx2intrin.h:63:1: error: inlining failed in call to always_inline ‘_mm256_abs_epi16’: target specific option mismatch
+ _mm256_abs_epi16 (__m256i __A)
+ ^~~~~~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+     a = _mm256_abs_epi16(a);
+         ^~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+CMakeFiles/cmTC_3ae17.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_3ae17.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_3ae17.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_3ae17/fast' failed
+make: *** [cmTC_3ae17/fast] Error 2
+
+
+Source file was:
+
+  #include <immintrin.h>
+  int main()
+  {
+    __m256i a = {0};
+    a = _mm256_abs_epi16(a);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test CXX_HAS_AVX512F_1 failed with the following compile output:
+Change Dir: /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_cb41b/fast && /usr/bin/make -f CMakeFiles/cmTC_cb41b.dir/build.make CMakeFiles/cmTC_cb41b.dir/build
+make[1]: Entering directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cb41b.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DCXX_HAS_AVX512F_1   -o CMakeFiles/cmTC_cb41b.dir/src.c.o   -c /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:12: error: AVX512F vector return without AVX512F enabled changes the ABI [-Werror=psabi]
+     __m512 a = _mm512_set1_ps(1.f);
+            ^
+In file included from /usr/lib/gcc/x86_64-linux-gnu/8/include/immintrin.h:45,
+                 from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/avx512fintrin.h:11534:1: error: inlining failed in call to always_inline ‘_mm512_add_ps’: target specific option mismatch
+ _mm512_add_ps (__m512 __A, __m512 __B)
+ ^~~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+     a = _mm512_add_ps(a, _mm512_set1_ps(1.f));;
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/8/include/immintrin.h:45,
+                 from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/avx512fintrin.h:201:1: error: inlining failed in call to always_inline ‘_mm512_set1_ps’: target specific option mismatch
+ _mm512_set1_ps (float __A)
+ ^~~~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+     a = _mm512_add_ps(a, _mm512_set1_ps(1.f));;
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/8/include/immintrin.h:45,
+                 from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/avx512fintrin.h:201:1: error: inlining failed in call to always_inline ‘_mm512_set1_ps’: target specific option mismatch
+ _mm512_set1_ps (float __A)
+ ^~~~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:16: note: called from here
+     __m512 a = _mm512_set1_ps(1.f);
+                ^~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+CMakeFiles/cmTC_cb41b.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_cb41b.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_cb41b.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_cb41b/fast' failed
+make: *** [cmTC_cb41b/fast] Error 2
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+  #include <immintrin.h>
+  int main()
+  {
+    __m512 a = _mm512_set1_ps(1.f);
+    a = _mm512_add_ps(a, _mm512_set1_ps(1.f));;
+    return 0;
+  }
+
+Performing C SOURCE FILE Test CXX_COMPILES_AVX512F_1 failed with the following output:
+Change Dir: /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_6bfc8/fast && /usr/bin/make -f CMakeFiles/cmTC_6bfc8.dir/build.make CMakeFiles/cmTC_6bfc8.dir/build
+make[1]: Entering directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6bfc8.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DCXX_COMPILES_AVX512F_1   -o CMakeFiles/cmTC_6bfc8.dir/src.c.o   -c /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:12: error: AVX512F vector return without AVX512F enabled changes the ABI [-Werror=psabi]
+     __m512 a = _mm512_set1_ps(1.f);
+            ^
+In file included from /usr/lib/gcc/x86_64-linux-gnu/8/include/immintrin.h:45,
+                 from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/avx512fintrin.h:11534:1: error: inlining failed in call to always_inline ‘_mm512_add_ps’: target specific option mismatch
+ _mm512_add_ps (__m512 __A, __m512 __B)
+ ^~~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+     a = _mm512_add_ps(a, _mm512_set1_ps(1.f));;
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/8/include/immintrin.h:45,
+                 from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/avx512fintrin.h:201:1: error: inlining failed in call to always_inline ‘_mm512_set1_ps’: target specific option mismatch
+ _mm512_set1_ps (float __A)
+ ^~~~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+     a = _mm512_add_ps(a, _mm512_set1_ps(1.f));;
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/8/include/immintrin.h:45,
+                 from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/avx512fintrin.h:201:1: error: inlining failed in call to always_inline ‘_mm512_set1_ps’: target specific option mismatch
+ _mm512_set1_ps (float __A)
+ ^~~~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:16: note: called from here
+     __m512 a = _mm512_set1_ps(1.f);
+                ^~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+CMakeFiles/cmTC_6bfc8.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_6bfc8.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_6bfc8.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_6bfc8/fast' failed
+make: *** [cmTC_6bfc8/fast] Error 2
+
+
+Source file was:
+
+  #include <immintrin.h>
+  int main()
+  {
+    __m512 a = _mm512_set1_ps(1.f);
+    a = _mm512_add_ps(a, _mm512_set1_ps(1.f));;
+    return 0;
+  }
+
+Performing C SOURCE FILE Test CXX_HAS_AVX512BW_1 failed with the following compile output:
+Change Dir: /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_b4d63/fast && /usr/bin/make -f CMakeFiles/cmTC_b4d63.dir/build.make CMakeFiles/cmTC_b4d63.dir/build
+make[1]: Entering directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b4d63.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DCXX_HAS_AVX512BW_1   -o CMakeFiles/cmTC_b4d63.dir/src.c.o   -c /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:13: error: AVX512F vector return without AVX512F enabled changes the ABI [-Werror=psabi]
+     __m512i mask = _mm512_set_epi64(0, 0, 0, 0, 0, 0, 0, 0);
+             ^~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/8/include/immintrin.h:55,
+                 from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/avx512bwintrin.h:1852:1: error: inlining failed in call to always_inline ‘_mm512_shuffle_epi8’: target specific option mismatch
+ _mm512_shuffle_epi8 (__m512i __A, __m512i __B)
+ ^~~~~~~~~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:12: note: called from here
+     load = _mm512_shuffle_epi8(load, mask);
+            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/8/include/immintrin.h:45,
+                 from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/avx512fintrin.h:79:1: error: inlining failed in call to always_inline ‘_mm512_set_epi64’: target specific option mismatch
+ _mm512_set_epi64 (long long __A, long long __B, long long __C,
+ ^~~~~~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:20: note: called from here
+     __m512i mask = _mm512_set_epi64(0, 0, 0, 0, 0, 0, 0, 0);
+                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+CMakeFiles/cmTC_b4d63.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_b4d63.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_b4d63.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_b4d63/fast' failed
+make: *** [cmTC_b4d63/fast] Error 2
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+  #include <immintrin.h>
+  int main()
+  {
+    __m512i mask = _mm512_set_epi64(0, 0, 0, 0, 0, 0, 0, 0);
+    __attribute__((unused)) __m512i load = {0};
+    load = _mm512_shuffle_epi8(load, mask);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test CXX_COMPILES_AVX512BW_1 failed with the following output:
+Change Dir: /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_eb2d9/fast && /usr/bin/make -f CMakeFiles/cmTC_eb2d9.dir/build.make CMakeFiles/cmTC_eb2d9.dir/build
+make[1]: Entering directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_eb2d9.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DCXX_COMPILES_AVX512BW_1   -o CMakeFiles/cmTC_eb2d9.dir/src.c.o   -c /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:13: error: AVX512F vector return without AVX512F enabled changes the ABI [-Werror=psabi]
+     __m512i mask = _mm512_set_epi64(0, 0, 0, 0, 0, 0, 0, 0);
+             ^~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/8/include/immintrin.h:55,
+                 from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/avx512bwintrin.h:1852:1: error: inlining failed in call to always_inline ‘_mm512_shuffle_epi8’: target specific option mismatch
+ _mm512_shuffle_epi8 (__m512i __A, __m512i __B)
+ ^~~~~~~~~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:12: note: called from here
+     load = _mm512_shuffle_epi8(load, mask);
+            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/8/include/immintrin.h:45,
+                 from /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/avx512fintrin.h:79:1: error: inlining failed in call to always_inline ‘_mm512_set_epi64’: target specific option mismatch
+ _mm512_set_epi64 (long long __A, long long __B, long long __C,
+ ^~~~~~~~~~~~~~~~
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:20: note: called from here
+     __m512i mask = _mm512_set_epi64(0, 0, 0, 0, 0, 0, 0, 0);
+                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+CMakeFiles/cmTC_eb2d9.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_eb2d9.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_eb2d9.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_eb2d9/fast' failed
+make: *** [cmTC_eb2d9/fast] Error 2
+
+
+Source file was:
+
+  #include <immintrin.h>
+  int main()
+  {
+    __m512i mask = _mm512_set_epi64(0, 0, 0, 0, 0, 0, 0, 0);
+    __attribute__((unused)) __m512i load = {0};
+    load = _mm512_shuffle_epi8(load, mask);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test CXX_HAS_CLFLUSHOPT_1 failed with the following compile output:
+Change Dir: /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_b03b1/fast && /usr/bin/make -f CMakeFiles/cmTC_b03b1.dir/build.make CMakeFiles/cmTC_b03b1.dir/build
+make[1]: Entering directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b03b1.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DCXX_HAS_CLFLUSHOPT_1   -o CMakeFiles/cmTC_b03b1.dir/src.c.o   -c /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:5: error: implicit declaration of function ‘__builtin_ia32_clflushopt’; did you mean ‘__builtin_ia32_clflush’? [-Werror=implicit-function-declaration]
+     __builtin_ia32_clflushopt(&flush);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~
+     __builtin_ia32_clflush
+cc1: all warnings being treated as errors
+CMakeFiles/cmTC_b03b1.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_b03b1.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_b03b1.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_b03b1/fast' failed
+make: *** [cmTC_b03b1/fast] Error 2
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+  #include <immintrin.h>
+  int main()
+  {
+    int flush = 1;
+    __builtin_ia32_clflushopt(&flush);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test CXX_COMPILES_CLFLUSHOPT_1 failed with the following output:
+Change Dir: /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_41e12/fast && /usr/bin/make -f CMakeFiles/cmTC_41e12.dir/build.make CMakeFiles/cmTC_41e12.dir/build
+make[1]: Entering directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_41e12.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DCXX_COMPILES_CLFLUSHOPT_1   -o CMakeFiles/cmTC_41e12.dir/src.c.o   -c /home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:5: error: implicit declaration of function ‘__builtin_ia32_clflushopt’; did you mean ‘__builtin_ia32_clflush’? [-Werror=implicit-function-declaration]
+     __builtin_ia32_clflushopt(&flush);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~
+     __builtin_ia32_clflush
+cc1: all warnings being treated as errors
+CMakeFiles/cmTC_41e12.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_41e12.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_41e12.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/joungwook/communication_library/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_41e12/fast' failed
+make: *** [cmTC_41e12/fast] Error 2
+
+
+Source file was:
+
+  #include <immintrin.h>
+  int main()
+  {
+    int flush = 1;
+    __builtin_ia32_clflushopt(&flush);
+    return 0;
+  }
+

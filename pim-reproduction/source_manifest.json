@@ -1,0 +1,16 @@
+{
+  "paper_artifact_commit": "4fdcbcac3b0d94f2d4d51d8d84c3a3a640ad14a4",
+  "baseline_source": "/home/mahaswint/cs5290/PIM-malloc/simulator/uPIMulator/golang_vm/uPIMulator",
+  "runtime": "/home/mahaswint/cs5290/pim-reproduction/runtime",
+  "measurement": "Per-thread issue-cycle timestamps at zero-instruction assembly labels immediately before and after each allocation; includes lock waiting, excludes allocator initialization.",
+  "architectural_defaults": "Unchanged from the authors software simulator; 350 MHz DPU, one channel/rank/DPU for these experiments.",
+  "toolchain_mirror": "https://github.com/AIS-SNU/LoCaLUT",
+  "toolchain_mirror_commit": "c4cf67ae623c5e313b0628ac119d957887b5f6df",
+  "sdk_version": "2023.2.0",
+  "compiler_revision": "846fdda8285dcc9b20ee5d2fec9e54dfea6a8928",
+  "host_vm_ranks": 1,
+  "host_vm_banks_per_rank": 1,
+  "device_defaults_unchanged": true,
+  "paper_path": "/home/mahaswint/Downloads/Group-11_PIM-Malloc_A Fast and Scalable Dynamic Memory Allocator for Processing-In-Memory PIM Architectures (HPCA 2026) (2).pdf",
+  "paper_sha256": "ba1a8f6143102ca3fba63651a67b2dbf457cecc427a11e52cc2e6c1b3f2f0212"
+}

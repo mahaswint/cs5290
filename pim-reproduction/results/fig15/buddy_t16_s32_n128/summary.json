@@ -1,0 +1,22 @@
+{
+  "allocator": "buddy",
+  "threads": 16,
+  "size_bytes": 32,
+  "requests_per_thread": 128,
+  "samples": 2048,
+  "frequency_mhz": 350,
+  "average_cycles": 4547627.109863281,
+  "average_latency_us": 12993.22031389509,
+  "batch_cycles": 583582473,
+  "batch_latency_per_request_us": 13026.394486607143,
+  "min_latency_us": 844.5314285714286,
+  "max_latency_us": 14220.468571428572,
+  "sdk": "/home/mahaswint/cs5290/pim-reproduction/toolchain/LoCaLUT/upmem-2023.2.0-Linux-x86_64",
+  "compiler_version": "clang version 12.0.0 (https://github.com/upmem/llvm-project.git 846fdda8285dcc9b20ee5d2fec9e54dfea6a8928)\nTarget: dpu-upmem-dpurte\nThread model: posix\nInstalledDir: /home/mahaswint/cs5290/pim-reproduction/toolchain/LoCaLUT/upmem-2023.2.0-Linux-x86_64/bin",
+  "source_sha256": "49742f6ecd4a3fe97bb43802ba338cdeb158c4f36a6eedf2c07dfbc5d5e52041",
+  "simulator_sha256": "d17c0500a8013de390a5f641e3fe4a1628ddf47274fd3b172a7c28ed2d201fc2",
+  "decode_cache_enabled": true,
+  "host_vm_ranks": 1,
+  "host_vm_banks_per_rank": 1,
+  "host_runtime_seconds": 1742.2036542892456
+}
