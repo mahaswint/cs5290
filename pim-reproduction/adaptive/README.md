@@ -85,7 +85,13 @@ The workload makespan includes payload reads/writes, pointer-table transfers, ba
 
 The reserved-byte counter includes live/retained buddy blocks, including untouched eager pages. Buddy metadata, descriptors, benchmark storage, and WRAM are reported/accounted separately rather than folded into payload reservation. OOM is a measured outcome, not an omitted failed sample.
 
-These are controlled allocator workloads. The assignment's dynamic graph workload remains a separate next milestone; these tests do not constitute a reproduction of Figure 17.
+The four workloads above are controlled allocator tests; they do not constitute a reproduction of Figure 17.
+
+A separate executable small-object graph workload is now available in [graph/README.md](graph/README.md).
+It uses sampled real Gowalla edges, 256 B graph blocks from the paper, a 64 B block variant,
+and changing insertion/deletion batches. Its runner and analyzer keep graph-update timing separate
+from graph preload. It is a reduced workload port and extension; the original Figure 17 is still
+not claimed as reproduced.
 
 ## Shared baseline repairs and provenance
 

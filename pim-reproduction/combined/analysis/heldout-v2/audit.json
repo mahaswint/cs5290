@@ -1,0 +1,486 @@
+{
+  "runs": [
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/graph_t1_indexed_adaptive-k2_9bdf56b483/summary.json",
+      "summary_sha256": "5e68a03a7d357f4f148979220b7f10860894a8ed20fd49b0160c3d2e7c69d86a"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/graph_t1_indexed_adaptive-k2_d3ca3e87f5/summary.json",
+      "summary_sha256": "8d568e50a20a7b2482178543ff20c3d47988cded2b510ad903de66982d8918dd"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/graph_t1_indexed_fixed-k2_23961d51be/summary.json",
+      "summary_sha256": "15d1d9247fc942d1710b084ac78a42ef2778b63e80481d66bdb18492c7e59c82"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/graph_t1_indexed_fixed-k2_416df0441b/summary.json",
+      "summary_sha256": "111ad6f401b4601bdb0dee32a14a3c8f570a7722af03b9096316ae59d484cbf4"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/graph_t1_scan_adaptive-k2_2168cb2e83/summary.json",
+      "summary_sha256": "f6850cb8468af4ba709b2a7abb8898de2e39347a43cc1b87bdbef9391029d5a9"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/graph_t1_scan_adaptive-k2_f54b6ae1ec/summary.json",
+      "summary_sha256": "cca13ea856a04dfb19fe42fd675309f373ca63c614f9b9edf23bf1f4ef00fa15"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/graph_t1_scan_fixed-k2_04e8beb8ca/summary.json",
+      "summary_sha256": "f46c994526170f684e6a2710833b037dee0ed4a202df95fc03c3008a3579c936"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/graph_t1_scan_fixed-k2_cd54b4d5ba/summary.json",
+      "summary_sha256": "7f6d173a20263b79c6c6d294d0784e1049f8f08ee603b9adf630fc13c1bc7234"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/graph_t4_indexed_adaptive-k2_45d38123b7/summary.json",
+      "summary_sha256": "7ad16533ac18c98ab0620b41ec6247ef8f6ea8bbbe5ebc4810a790d38d9a1a0a"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/graph_t4_indexed_adaptive-k2_fd3ad42ff1/summary.json",
+      "summary_sha256": "95bd7a546333247feab3b2580cc3a8a34fed113ff5e8de6cfda4bedc7b7f8f54"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/graph_t4_indexed_fixed-k2_5be95385b5/summary.json",
+      "summary_sha256": "a7f474f4852461e1e7506047422282f21118261ea1669482cb9fe2627475685b"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/graph_t4_indexed_fixed-k2_b3f7726a35/summary.json",
+      "summary_sha256": "5fdb53305814656f9537f7d445f76479d9250fa6a91ca30495015825214078a8"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/graph_t4_scan_adaptive-k2_0c2167f5d9/summary.json",
+      "summary_sha256": "0313aa893f52e17dceccf0272ba1866b66175e7ee4f4b37203633aab99c9d05b"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/graph_t4_scan_adaptive-k2_e94d27109e/summary.json",
+      "summary_sha256": "b79b0013764a9197e554f0df5f73465676b1dee572d5d205bf4447890b3be43d"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/graph_t4_scan_fixed-k2_95553f0c48/summary.json",
+      "summary_sha256": "ae1a107e5e4b8e74c243791a5754443bcdf8cf98fa73c213c00603d7afa752ce"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/graph_t4_scan_fixed-k2_b3029af44c/summary.json",
+      "summary_sha256": "07f6320a6b26d28d4e8d0ed132027fc49c2ee4242f44779f1129712ff446beb6"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/handoff_t1_indexed_adaptive-k2_9ec0bbabe6/summary.json",
+      "summary_sha256": "6b3623e3530c580bf98ed5a53ffe5928d339322fbbfd2c1bed45e5b7cd39ab1d"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/handoff_t1_indexed_adaptive-k2_ca5ad6379e/summary.json",
+      "summary_sha256": "0d1078ec725d6b075da4f242132dced79882f225da4566b6e44e3d38482f7e47"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/handoff_t1_indexed_fixed-k2_4db8ca37e6/summary.json",
+      "summary_sha256": "904331e86ad9ef934c0bcb3a26fef2ab6151ee46802f8bace3072c6de19ce2cc"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/handoff_t1_indexed_fixed-k2_7971aa0eb0/summary.json",
+      "summary_sha256": "6e4902d4da3b3960d656dbcb4c3d394e0963f3ed9aeec6b42c167512ef87affc"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/handoff_t1_scan_adaptive-k2_8c3775297e/summary.json",
+      "summary_sha256": "11b6f3833b6adc988c8ffe86faaa57178478d9782b597a7d628d197dc6b5b8a1"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/handoff_t1_scan_adaptive-k2_f3dbf80746/summary.json",
+      "summary_sha256": "2b3090a1ddc6595bca17e680471996f7929acaf6488dc9b66a07482f23999a18"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/handoff_t1_scan_fixed-k2_e03bbcd964/summary.json",
+      "summary_sha256": "0208270648faa5b306d4eeef9551d98bffb0017a3eb09c0a7686ffa1c312fe11"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/handoff_t1_scan_fixed-k2_ecbd3faaa7/summary.json",
+      "summary_sha256": "ab3587bfcd8045ba9c53b095ae86f1abde2a4dfe31b012d102a8153aef75e75d"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/handoff_t4_indexed_adaptive-k2_b9df1ec06b/summary.json",
+      "summary_sha256": "4cd13cdd7a95b0aef7715d4d617123db5b5e4bac1b4ad4d05093da0ec0e52b75"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/handoff_t4_indexed_adaptive-k2_e0f75fe2c4/summary.json",
+      "summary_sha256": "ee716185ce8bcd4ca5792fb5323c76708eaa355e17043c0198c80ad94548757d"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/handoff_t4_indexed_fixed-k2_888f828ae5/summary.json",
+      "summary_sha256": "c4cf9d77e7821218013f59eb1237863a7ab193e20c246ad98a6659b1bcbb1523"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/handoff_t4_indexed_fixed-k2_d939efcfca/summary.json",
+      "summary_sha256": "e595de814f518dd5a03140676f356221a720b06c118e0fa8ef1dbe413eb070ce"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/handoff_t4_scan_adaptive-k2_11d89631a4/summary.json",
+      "summary_sha256": "bf3d5032dcf5cb0f59baa5d368bac424057b607c9d5452d0bee8331a95b32ef2"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/handoff_t4_scan_adaptive-k2_a7297c92bc/summary.json",
+      "summary_sha256": "a58b506ff36cc0e04add8df564dd5bc9f1b26d96f372c553d5eaec21527f33be"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/handoff_t4_scan_fixed-k2_96c1795518/summary.json",
+      "summary_sha256": "d0274d342712d6b2421028e3eb3725297f69cc5d09d888039879136e490963d8"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/handoff_t4_scan_fixed-k2_c199dec5c8/summary.json",
+      "summary_sha256": "ac7bc78af88ced151712d11a71de030707f46da0bc1d2f36f372e686bd7b54ef"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/resident_t1_indexed_adaptive-k2_bb36323efe/summary.json",
+      "summary_sha256": "2908bafde18b6d3cd325cad25054475a0a2730cae4bc43cba27922a67d33c58b"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/resident_t1_indexed_adaptive-k2_bc2e3c388a/summary.json",
+      "summary_sha256": "9236fe8c7379f43ae9d15b902646831774fe1bac77f7b46559f96b4d87a5685b"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/resident_t1_indexed_fixed-k2_b27c822f15/summary.json",
+      "summary_sha256": "cba5641ab86df06aaef85297ca11f80a60a89205d665830942a9bca30a53aaff"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/resident_t1_indexed_fixed-k2_b9ef906ddd/summary.json",
+      "summary_sha256": "f4754b5f7679c238b3aa49d53bcb22dee6a62fd546853972d9b17c3ba891bcaf"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/resident_t1_scan_adaptive-k2_2849bf4bea/summary.json",
+      "summary_sha256": "7b2bdfcd164081b616fcfaef3db0b259fa4089276c981195d85d85d99b7a1ab6"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/resident_t1_scan_adaptive-k2_de90f8b336/summary.json",
+      "summary_sha256": "c86dd0d0b70511b23456cfd724155fe5e9c1e549f3602b591251bbacc7ddc6ec"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/resident_t1_scan_fixed-k2_1460df2903/summary.json",
+      "summary_sha256": "b1c41f756f3b7d9fce716d151b46d0840bc76eb67e5a006550b7f541c29732e4"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/resident_t1_scan_fixed-k2_c7efa1955a/summary.json",
+      "summary_sha256": "634c1c91980535bc47e2b7390659c8d7054bc6cfdd503340b4a50203078b3d4d"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/resident_t4_indexed_adaptive-k2_abc2326369/summary.json",
+      "summary_sha256": "0fcfe6963499b7f747215ac713c076c12d1d21d79756194603c8ac83cf7df0b4"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/resident_t4_indexed_adaptive-k2_e847d56430/summary.json",
+      "summary_sha256": "3ffe0710da4420eb86dd28b207c39c2f1f9fd2676b6b83f6b15365895b50d24f"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/resident_t4_indexed_fixed-k2_886f89a42b/summary.json",
+      "summary_sha256": "f6bca2f8a799c51e49e6a1ed356426c6c14b2060a162223289a7b8c7d90762a8"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/resident_t4_indexed_fixed-k2_b092a898ef/summary.json",
+      "summary_sha256": "0de16ef3e2e41d81c8a63e71011c29145761742b4c8228634aee42d67840987a"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/resident_t4_scan_adaptive-k2_d9653b0d21/summary.json",
+      "summary_sha256": "c25910f91c8080d4221ed48f7822f200b51b9eb293df49544015c7c6ff0a2275"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/resident_t4_scan_adaptive-k2_d98aff7039/summary.json",
+      "summary_sha256": "c3c5dc6bfc565f4223df8e15d37d65214328d1356bacc2f34c378b29f731a2fa"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/resident_t4_scan_fixed-k2_7a7a4eb543/summary.json",
+      "summary_sha256": "ed028cef7a004bf4f8638704fc90e91668808b9d314641a4bf856e4447ac09e2"
+    },
+    {
+      "path": "/home/mahaswint/cs5290/pim-reproduction/combined/results/heldout-v2/resident_t4_scan_fixed-k2_7cda9b23a2/summary.json",
+      "summary_sha256": "70e98c0990ee98e2f0c68d6fc5f4e9b09fc6e4e4a850f5f58fa1469afd4b0bd4"
+    }
+  ],
+  "comparisons": [
+    {
+      "workload": "graph",
+      "threads": 1,
+      "burst": 128,
+      "rounds": 2,
+      "heap_kib": 32768,
+      "budget_pages": 4,
+      "max_keep": 2,
+      "decay_ops": 64,
+      "pressure_percent": 75,
+      "seed": 9173,
+      "graph_edges": 384,
+      "graph_block_bytes": 256,
+      "validate": false,
+      "baseline": "scan/fixed-2",
+      "speedup": 1.023165617038389,
+      "baseline_work_ms": 87.34940857142857,
+      "combined_work_ms": 85.37172,
+      "baseline_total_ms": 112.34224,
+      "combined_total_ms": 111.19729428571429,
+      "baseline_peak_kib": 204.0,
+      "combined_peak_kib": 268.0,
+      "adaptive_vs_indexed_fixed2_speedup": 0.9850090538512888
+    },
+    {
+      "workload": "graph",
+      "threads": 1,
+      "burst": 128,
+      "rounds": 2,
+      "heap_kib": 32768,
+      "budget_pages": 4,
+      "max_keep": 2,
+      "decay_ops": 64,
+      "pressure_percent": 75,
+      "seed": 24107,
+      "graph_edges": 384,
+      "graph_block_bytes": 256,
+      "validate": false,
+      "baseline": "scan/fixed-2",
+      "speedup": 1.02433689806563,
+      "baseline_work_ms": 85.95990285714286,
+      "combined_work_ms": 83.91760857142857,
+      "baseline_total_ms": 110.85408857142856,
+      "combined_total_ms": 109.60737714285715,
+      "baseline_peak_kib": 200.0,
+      "combined_peak_kib": 264.0,
+      "adaptive_vs_indexed_fixed2_speedup": 0.9863665255611431
+    },
+    {
+      "workload": "graph",
+      "threads": 4,
+      "burst": 128,
+      "rounds": 2,
+      "heap_kib": 32768,
+      "budget_pages": 4,
+      "max_keep": 2,
+      "decay_ops": 64,
+      "pressure_percent": 75,
+      "seed": 9173,
+      "graph_edges": 384,
+      "graph_block_bytes": 256,
+      "validate": false,
+      "baseline": "scan/fixed-2",
+      "speedup": 0.9883641625232326,
+      "baseline_work_ms": 25.277585714285713,
+      "combined_work_ms": 25.575174285714287,
+      "baseline_total_ms": 36.45223142857143,
+      "combined_total_ms": 37.20956857142857,
+      "baseline_peak_kib": 208.0,
+      "combined_peak_kib": 272.0,
+      "adaptive_vs_indexed_fixed2_speedup": 0.9970519402130035
+    },
+    {
+      "workload": "graph",
+      "threads": 4,
+      "burst": 128,
+      "rounds": 2,
+      "heap_kib": 32768,
+      "budget_pages": 4,
+      "max_keep": 2,
+      "decay_ops": 64,
+      "pressure_percent": 75,
+      "seed": 24107,
+      "graph_edges": 384,
+      "graph_block_bytes": 256,
+      "validate": false,
+      "baseline": "scan/fixed-2",
+      "speedup": 0.9752236907397778,
+      "baseline_work_ms": 26.94697142857143,
+      "combined_work_ms": 27.631580000000003,
+      "baseline_total_ms": 37.90322285714286,
+      "combined_total_ms": 39.24883714285714,
+      "baseline_peak_kib": 208.0,
+      "combined_peak_kib": 272.0,
+      "adaptive_vs_indexed_fixed2_speedup": 0.9754769206621035
+    },
+    {
+      "workload": "handoff",
+      "threads": 1,
+      "burst": 32,
+      "rounds": 4,
+      "heap_kib": 32768,
+      "budget_pages": 4,
+      "max_keep": 2,
+      "decay_ops": 64,
+      "pressure_percent": 75,
+      "seed": 9173,
+      "graph_edges": 384,
+      "graph_block_bytes": 256,
+      "validate": false,
+      "baseline": "scan/fixed-2",
+      "speedup": 1.0246520613319132,
+      "baseline_work_ms": 26.003025714285716,
+      "combined_work_ms": 25.377419999999997,
+      "baseline_total_ms": 26.499545714285716,
+      "combined_total_ms": 25.863251428571427,
+      "baseline_peak_kib": 52.0,
+      "combined_peak_kib": 116.0,
+      "adaptive_vs_indexed_fixed2_speedup": 1.0441905779682434
+    },
+    {
+      "workload": "handoff",
+      "threads": 1,
+      "burst": 32,
+      "rounds": 4,
+      "heap_kib": 32768,
+      "budget_pages": 4,
+      "max_keep": 2,
+      "decay_ops": 64,
+      "pressure_percent": 75,
+      "seed": 24107,
+      "graph_edges": 384,
+      "graph_block_bytes": 256,
+      "validate": false,
+      "baseline": "scan/fixed-2",
+      "speedup": 1.025750947196707,
+      "baseline_work_ms": 26.003551428571427,
+      "combined_work_ms": 25.35074571428571,
+      "baseline_total_ms": 26.50000857142857,
+      "combined_total_ms": 25.836325714285714,
+      "baseline_peak_kib": 52.0,
+      "combined_peak_kib": 116.0,
+      "adaptive_vs_indexed_fixed2_speedup": 1.0437015039625208
+    },
+    {
+      "workload": "handoff",
+      "threads": 4,
+      "burst": 32,
+      "rounds": 4,
+      "heap_kib": 32768,
+      "budget_pages": 4,
+      "max_keep": 2,
+      "decay_ops": 64,
+      "pressure_percent": 75,
+      "seed": 9173,
+      "graph_edges": 384,
+      "graph_block_bytes": 256,
+      "validate": false,
+      "baseline": "scan/fixed-2",
+      "speedup": 1.0811044250806026,
+      "baseline_work_ms": 75.63677142857144,
+      "combined_work_ms": 69.96250285714285,
+      "baseline_total_ms": 77.42026,
+      "combined_total_ms": 71.12085714285715,
+      "baseline_peak_kib": 208.0,
+      "combined_peak_kib": 272.0,
+      "adaptive_vs_indexed_fixed2_speedup": 1.0920236619812183
+    },
+    {
+      "workload": "handoff",
+      "threads": 4,
+      "burst": 32,
+      "rounds": 4,
+      "heap_kib": 32768,
+      "budget_pages": 4,
+      "max_keep": 2,
+      "decay_ops": 64,
+      "pressure_percent": 75,
+      "seed": 24107,
+      "graph_edges": 384,
+      "graph_block_bytes": 256,
+      "validate": false,
+      "baseline": "scan/fixed-2",
+      "speedup": 1.088088823101963,
+      "baseline_work_ms": 76.33204857142857,
+      "combined_work_ms": 70.15240571428572,
+      "baseline_total_ms": 78.11544285714285,
+      "combined_total_ms": 71.31094857142857,
+      "baseline_peak_kib": 208.0,
+      "combined_peak_kib": 272.0,
+      "adaptive_vs_indexed_fixed2_speedup": 1.098034027302678
+    },
+    {
+      "workload": "resident",
+      "threads": 1,
+      "burst": 256,
+      "rounds": 2,
+      "heap_kib": 32768,
+      "budget_pages": 4,
+      "max_keep": 2,
+      "decay_ops": 64,
+      "pressure_percent": 75,
+      "seed": 9173,
+      "graph_edges": 384,
+      "graph_block_bytes": 256,
+      "validate": false,
+      "baseline": "scan/fixed-2",
+      "speedup": 1.4699598375324892,
+      "baseline_work_ms": 39.742737142857145,
+      "combined_work_ms": 27.036614285714283,
+      "baseline_total_ms": 48.47296571428572,
+      "combined_total_ms": 36.329800000000006,
+      "baseline_peak_kib": 72.0,
+      "combined_peak_kib": 136.0,
+      "adaptive_vs_indexed_fixed2_speedup": 0.9400663544621765
+    },
+    {
+      "workload": "resident",
+      "threads": 1,
+      "burst": 256,
+      "rounds": 2,
+      "heap_kib": 32768,
+      "budget_pages": 4,
+      "max_keep": 2,
+      "decay_ops": 64,
+      "pressure_percent": 75,
+      "seed": 24107,
+      "graph_edges": 384,
+      "graph_block_bytes": 256,
+      "validate": false,
+      "baseline": "scan/fixed-2",
+      "speedup": 1.9266871359451536,
+      "baseline_work_ms": 41.037054285714284,
+      "combined_work_ms": 21.29928285714286,
+      "baseline_total_ms": 49.595034285714284,
+      "combined_total_ms": 30.59287714285714,
+      "baseline_peak_kib": 72.0,
+      "combined_peak_kib": 136.0,
+      "adaptive_vs_indexed_fixed2_speedup": 0.9243044936858369
+    },
+    {
+      "workload": "resident",
+      "threads": 4,
+      "burst": 256,
+      "rounds": 2,
+      "heap_kib": 32768,
+      "budget_pages": 4,
+      "max_keep": 2,
+      "decay_ops": 64,
+      "pressure_percent": 75,
+      "seed": 9173,
+      "graph_edges": 384,
+      "graph_block_bytes": 256,
+      "validate": false,
+      "baseline": "scan/fixed-2",
+      "speedup": 1.3600972815569923,
+      "baseline_work_ms": 66.34043142857143,
+      "combined_work_ms": 48.77624,
+      "baseline_total_ms": 86.25597142857143,
+      "combined_total_ms": 69.24781428571428,
+      "baseline_peak_kib": 288.0,
+      "combined_peak_kib": 352.0,
+      "adaptive_vs_indexed_fixed2_speedup": 0.9849312463843637
+    },
+    {
+      "workload": "resident",
+      "threads": 4,
+      "burst": 256,
+      "rounds": 2,
+      "heap_kib": 32768,
+      "budget_pages": 4,
+      "max_keep": 2,
+      "decay_ops": 64,
+      "pressure_percent": 75,
+      "seed": 24107,
+      "graph_edges": 384,
+      "graph_block_bytes": 256,
+      "validate": false,
+      "baseline": "scan/fixed-2",
+      "speedup": 1.6980340396076856,
+      "baseline_work_ms": 50.85666285714286,
+      "combined_work_ms": 29.95032,
+      "baseline_total_ms": 70.94281428571428,
+      "combined_total_ms": 50.23656285714286,
+      "baseline_peak_kib": 288.0,
+      "combined_peak_kib": 352.0,
+      "adaptive_vs_indexed_fixed2_speedup": 0.9506797542444573
+    }
+  ]
+}

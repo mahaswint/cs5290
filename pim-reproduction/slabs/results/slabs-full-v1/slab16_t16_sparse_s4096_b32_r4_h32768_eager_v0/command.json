@@ -1,0 +1,49 @@
+{
+  "compiler": [
+    "/home/mahaswint/cs5290/pim-reproduction/toolchain/LoCaLUT/upmem-2023.2.0-Linux-x86_64/bin/dpu-upmem-dpurte-clang",
+    "-w",
+    "-O3",
+    "-S",
+    "-c",
+    "/home/mahaswint/cs5290/pim-reproduction/slabs/runtime/benchmark/microbenchmark/dpu/task.c",
+    "-o",
+    "/home/mahaswint/cs5290/pim-reproduction/slabs/runtime/benchmark/build/microbenchmark/dpu/CMakeFiles/microbenchmark_device.dir/task.c.o"
+  ],
+  "simulator": [
+    "/home/mahaswint/cs5290/pim-reproduction/slabs/runtime/build/uPIMulator",
+    "--root_dirpath",
+    "/home/mahaswint/cs5290/pim-reproduction/slabs/runtime",
+    "--bin_dirpath",
+    "/home/mahaswint/cs5290/pim-reproduction/slabs/results/slabs-full-v1/slab16_t16_sparse_s4096_b32_r4_h32768_eager_v0",
+    "--benchmark",
+    "microbenchmark",
+    "--num_channels",
+    "1",
+    "--num_ranks_per_channel",
+    "1",
+    "--num_dpus_per_rank",
+    "1",
+    "--num_vm_ranks_per_channel",
+    "1",
+    "--num_vm_banks_per_rank",
+    "1",
+    "--num_tasklets",
+    "16",
+    "--verbose",
+    "0"
+  ],
+  "implementation_sha256": "69f1bde4b1bc8c1d9898cad254e13957bee25149a494f86fce8eeaea5b58c49a",
+  "configuration": {
+    "action": "sweep",
+    "slab_kib": 16,
+    "population": "eager",
+    "threads": 16,
+    "workload": "sparse",
+    "size": 4096,
+    "burst": 32,
+    "rounds": 4,
+    "heap_kib": 32768,
+    "validate": false,
+    "tag": "slabs-full-v1"
+  }
+}

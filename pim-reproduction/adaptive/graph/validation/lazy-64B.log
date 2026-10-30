@@ -1,0 +1,1 @@
+PASS: exact adjacency order, long chains, changing batches, rollback, final coalescing

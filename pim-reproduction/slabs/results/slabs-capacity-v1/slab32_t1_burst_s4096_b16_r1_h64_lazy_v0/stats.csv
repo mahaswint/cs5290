@@ -1,0 +1,2 @@
+thread,alloc_calls,successes,free_calls,cache_hits,refills,returns,failures,direct_allocations,slab_hits,slab_refills,live_slots,peak_slots
+0,15,14,14,12,2,2,1,0,12,2,0,57344

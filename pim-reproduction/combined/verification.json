@@ -1,0 +1,93 @@
+{
+  "combined-v2": {
+    "runs": 88,
+    "completed": 78,
+    "oom": 10,
+    "declared_matrix_complete": true,
+    "current_generated_source_matches": true
+  },
+  "resident-v2": {
+    "runs": 10,
+    "completed": 10,
+    "oom": 0,
+    "declared_matrix_complete": true,
+    "current_generated_source_matches": true
+  },
+  "large-v2": {
+    "runs": 8,
+    "completed": 8,
+    "oom": 0,
+    "declared_matrix_complete": true,
+    "current_generated_source_matches": true
+  },
+  "ablation-v2": {
+    "runs": 16,
+    "completed": 16,
+    "oom": 0,
+    "declared_matrix_complete": true,
+    "current_generated_source_matches": true
+  },
+  "heldout-v2": {
+    "runs": 48,
+    "completed": 48,
+    "oom": 0,
+    "declared_matrix_complete": true,
+    "current_generated_source_matches": true
+  },
+  "validation": {
+    "native_mode_policy_combinations": 16,
+    "simulator_cases": 27,
+    "maximum_tested_tasklets": 16
+  },
+  "maximum_wram_end_address": 47308,
+  "headline_comparisons": [
+    {
+      "name": "Resident pool, 1 tasklet",
+      "baseline_ms": 151.1046,
+      "combined_ms": 74.50067428571428,
+      "fixed_indexed_speedup": 2.1672334522307897,
+      "combined_speedup": 2.0282313072832783,
+      "total_speedup": 1.8338749483104866
+    },
+    {
+      "name": "Resident pool, 4 tasklets",
+      "baseline_ms": 198.2808742857143,
+      "combined_ms": 121.64093142857143,
+      "fixed_indexed_speedup": 1.6805791911271777,
+      "combined_speedup": 1.6300506084347641,
+      "total_speedup": 1.4794394371994595
+    },
+    {
+      "name": "Class handoff, 4 tasklets",
+      "baseline_ms": 112.69077714285714,
+      "combined_ms": 101.04451142857143,
+      "fixed_indexed_speedup": 0.9905618066473054,
+      "combined_speedup": 1.1152587661579074,
+      "total_speedup": 1.1200759532334594
+    },
+    {
+      "name": "Small pool, 4 tasklets",
+      "baseline_ms": 1.841897142857143,
+      "combined_ms": 2.326751428571429,
+      "fixed_indexed_speedup": 0.8493373033648652,
+      "combined_speedup": 0.7916174973568297,
+      "total_speedup": 0.7694021804017552
+    },
+    {
+      "name": "Gowalla sample, 4 tasklets",
+      "baseline_ms": 24.861551428571428,
+      "combined_ms": 25.493385714285715,
+      "fixed_indexed_speedup": 0.9990479727801961,
+      "combined_speedup": 0.9752157562437763,
+      "total_speedup": 0.980470832245231
+    },
+    {
+      "name": "Backend only, 4 tasklets",
+      "baseline_ms": 67.83777142857143,
+      "combined_ms": 68.0183,
+      "fixed_indexed_speedup": 0.9994361991149077,
+      "combined_speedup": 0.9973458823371274,
+      "total_speedup": 0.9941161391125157
+    }
+  ]
+}

@@ -20,7 +20,7 @@ BASE = HERE.parent
 ROOT = BASE.parent
 RUNTIME = HERE / 'runtime'
 POLICIES = {'eager': 0, 'lazy': 1, 'fixed': 2, 'adaptive': 3}
-WORKLOADS = {'reuse': 0, 'phases': 1, 'pressure': 2, 'correctness': 3}
+WORKLOADS = {'reuse': 0, 'phases': 1, 'pressure': 2, 'correctness': 3, 'graph': 4}
 STATS = ['thread', 'alloc_calls', 'successes', 'free_calls', 'cache_hits', 'refills',
          'returns', 'failures', 'retained_hits', 'retained', 'live_slots', 'peak_slots',
          'grows', 'decays', 'idle_trims', 'pressure_trims', 'budget_trims', 'emergency_trims']
@@ -70,15 +70,24 @@ def compile_sdk(compiler, threads, env):
 
 
 def run_name(a):
+    if a.workload == 'graph':
+        return (f'{a.policy}_t{a.threads}_graph_n{a.graph_edges}_s{a.graph_seed}'
+                f'_z{a.graph_block_bytes}_r{a.rounds}_h{a.heap_kib}_k{a.keep}'
+                f'_m{a.max_keep}_e{a.budget_pages}_d{a.decay_ops}_p{a.pressure_percent}_v{int(a.validate)}')
     return (f'{a.policy}_t{a.threads}_{a.workload}_b{a.burst}_r{a.rounds}'
             f'_h{a.heap_kib}_k{a.keep}_m{a.max_keep}_e{a.budget_pages}'
             f'_d{a.decay_ops}_p{a.pressure_percent}_v{int(a.validate)}')
 
 
-def implementation_hash():
+def implementation_hash(workload=None):
     digest = hashlib.sha256()
     for name in ('allocator.c', 'buddy_backend.inc', 'benchmark.c', 'prepare.py'):
         digest.update(name.encode()); digest.update((HERE / name).read_bytes())
+    if workload == 'graph':
+        for name in ('graph/kernel.c', 'graph/benchmark.c', 'graph/trace.py'):
+            digest.update(name.encode()); digest.update((HERE / name).read_bytes())
+        from graph.trace import DATA
+        digest.update(hashlib.sha256(DATA.read_bytes()).digest())
     return digest.hexdigest()
 
 
@@ -115,7 +124,7 @@ def parse_run(out, a, started):
     assert len(snapshots) == 2 + 2 * phases * a.rounds
     for s in stats:
         assert s['successes'] == s['free_calls'] and s['live_slots'] == s['retained'] == 0
-        if not s['failures']:
+        if not s['failures'] and a.workload != 'graph':
             assert s['alloc_calls'] == a.burst * a.rounds * phases
         for kind, key in [('alloc', 'alloc_calls'), ('free', 'free_calls')]:
             rows = [e for e in events if e['kind'] == kind and e['thread'] == s['thread']]
@@ -147,6 +156,9 @@ def parse_run(out, a, started):
               'capacity_profile': 'WRAM end 65536; 24 stacks x 1536 B; inherited IRAM/timing defaults',
               'source_sha256': hashlib.sha256((out / 'task.c').read_bytes()).hexdigest(),
               'simulator_sha256': hashlib.sha256((RUNTIME / 'build/uPIMulator').read_bytes()).hexdigest()}
+    if a.workload == 'graph':
+        from graph.trace import add_measurements
+        add_measurements(result, events, out)
     (out / 'summary.json').write_text(json.dumps(result, indent=2) + '\n')
     return result
 
@@ -157,7 +169,7 @@ def run(a):
     out = HERE / 'results' / a.tag / run_name(a)
     if (out / 'summary.json').exists():
         previous = json.loads((out / 'summary.json').read_text())
-        if previous.get('implementation_sha256') == implementation_hash():
+        if previous.get('implementation_sha256') == implementation_hash(a.workload):
             print(f'Complete: {out.name}', flush=True)
             return
         out.rename(out.with_name(out.name + f'.superseded-{time.time_ns()}'))
@@ -172,11 +184,21 @@ def run(a):
         # Flatten includes so each result contains its exact complete C source.
         backend = (HERE / 'buddy_backend.inc').read_text()
         allocator = (HERE / 'allocator.c').read_text().replace('#include "buddy_backend.inc"', backend)
-        source = (HERE / 'benchmark.c').read_text().replace('#include "allocator.c"', allocator)
+        if a.workload == 'graph':
+            from graph.trace import make_trace
+            trace, manifest = make_trace(a.graph_edges, a.graph_seed, a.threads)
+            kernel = (HERE / 'graph/kernel.c').read_text().replace('#include "allocator.c"', allocator)
+            source = (HERE / 'graph/benchmark.c').read_text().replace('#include "kernel.c"', kernel)
+            source = source.replace('#include "trace.inc"', trace)
+            (out / 'trace.inc').write_text(trace)
+            (out / 'trace.json').write_text(json.dumps(manifest, indent=2) + '\n')
+        else:
+            source = (HERE / 'benchmark.c').read_text().replace('#include "allocator.c"', allocator)
         definitions = {'NR_TASKLETS': a.threads, 'POLICY': POLICIES[a.policy], 'WORKLOAD': WORKLOADS[a.workload],
                        'BURST': a.burst, 'ROUNDS': a.rounds, 'HEAP_BYTES': a.heap_kib * 1024,
                        'KEEP_PAGES': a.keep, 'MAX_KEEP': a.max_keep, 'EMPTY_BUDGET': a.budget_pages,
                        'DECAY_OPS': a.decay_ops, 'PRESSURE_PERCENT': a.pressure_percent, 'VALIDATE': int(a.validate)}
+        if a.workload == 'graph': definitions['GRAPH_BLOCK_BYTES'] = a.graph_block_bytes
         source = ''.join(f'#define {key} {value}\n' for key, value in definitions.items()) + source
         task = RUNTIME / 'benchmark/microbenchmark/dpu/task.c'
         task.write_text(source); (out / 'task.c').write_text(source)
@@ -200,7 +222,7 @@ def run(a):
                    '--num_tasklets', a.threads, '--verbose', '0']
         (out / 'command.json').write_text(json.dumps({'compiler': list(map(str, compile_command)),
                                                     'simulator': list(map(str, command)),
-                                                    'implementation_sha256': implementation_hash(),
+                                                    'implementation_sha256': implementation_hash(a.workload),
                                                     'configuration': vars(a)}, indent=2))
         execute(command + ['--mode', 'link'], out / 'link.log', env=env)
     print(f'Running {out.name}', flush=True)
@@ -222,6 +244,10 @@ def add_options(parser):
     parser.add_argument('--decay-ops', type=int, default=64)
     parser.add_argument('--pressure-percent', type=int, choices=range(1, 101), default=75)
     parser.add_argument('--validate', action='store_true')
+    parser.add_argument('--graph-edges', type=int, default=384,
+                        help='undirected sampled edges, multiple of 3 in 48..3072; graph only')
+    parser.add_argument('--graph-seed', type=int, default=5290)
+    parser.add_argument('--graph-block-bytes', type=int, choices=[64, 128, 256], default=256)
     parser.add_argument('--tag', default='comparison-v1')
 
 
@@ -236,6 +262,8 @@ def main():
     for value, label in [(a.heap_kib, 'heap-kib'), (a.decay_ops, 'decay-ops')]:
         if value <= 0 or value & (value - 1): parser.error(f'{label} must be a power of two')
     if not 4 <= a.heap_kib <= 32768: parser.error('heap-kib must be 4..32768')
+    if a.workload == 'graph' and (not 48 <= a.graph_edges <= 3072 or a.graph_edges % 3):
+        parser.error('graph-edges must be a multiple of 3 in 48..3072')
     if not a.tag or any(x in a.tag for x in ('/', '\\', '..')): parser.error('tag must be a simple directory name')
     if a.action == 'run': run(a); return
     configs = []

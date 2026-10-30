@@ -1,0 +1,52 @@
+[
+  {
+    "policy": "eager",
+    "block_bytes": 64,
+    "passed": true
+  },
+  {
+    "policy": "lazy",
+    "block_bytes": 64,
+    "passed": true
+  },
+  {
+    "policy": "fixed-1",
+    "block_bytes": 64,
+    "passed": true
+  },
+  {
+    "policy": "fixed-2",
+    "block_bytes": 64,
+    "passed": true
+  },
+  {
+    "policy": "adaptive",
+    "block_bytes": 64,
+    "passed": true
+  },
+  {
+    "policy": "eager",
+    "block_bytes": 256,
+    "passed": true
+  },
+  {
+    "policy": "lazy",
+    "block_bytes": 256,
+    "passed": true
+  },
+  {
+    "policy": "fixed-1",
+    "block_bytes": 256,
+    "passed": true
+  },
+  {
+    "policy": "fixed-2",
+    "block_bytes": 256,
+    "passed": true
+  },
+  {
+    "policy": "adaptive",
+    "block_bytes": 256,
+    "passed": true
+  }
+]

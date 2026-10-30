@@ -1,0 +1,10 @@
+{
+  "copied_from": "pim-reproduction/adaptive",
+  "files": {
+    "allocator.c": "57f938e738fde82b30326f385657c1e905de5d681235f9097e70a0630987d5bb",
+    "buddy_backend.inc": "f6b266942507a7df2bf19b7a99db77336a5f78a2db4d4416b472a02d2e3301a7",
+    "benchmark.c": "5395c93e32e54f224c088f77f591cc3e6d82ec845d2551d615ab57b763461690",
+    "experiment.py": "4f24914b3e91edb423d59c645ae082657afd3221679a56c68b7df3beeddd9c14",
+    "prepare.py": "aaf122492fa8c34c423e0e4301e0b0df1d0f7122526115ffe0347b3cf1660dbd"
+  }
+}

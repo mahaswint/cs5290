@@ -1,0 +1,303 @@
+{
+  "implementation_sha256": "69f1bde4b1bc8c1d9898cad254e13957bee25149a494f86fce8eeaea5b58c49a",
+  "native": [
+    {
+      "slab_kib": 0,
+      "population": "lazy",
+      "passed": true,
+      "log": "/home/mahaswint/cs5290/pim-reproduction/slabs/validation/host-slab0-eager0.log"
+    },
+    {
+      "slab_kib": 0,
+      "population": "eager",
+      "passed": true,
+      "log": "/home/mahaswint/cs5290/pim-reproduction/slabs/validation/host-slab0-eager1.log"
+    },
+    {
+      "slab_kib": 16,
+      "population": "lazy",
+      "passed": true,
+      "log": "/home/mahaswint/cs5290/pim-reproduction/slabs/validation/host-slab16-eager0.log"
+    },
+    {
+      "slab_kib": 16,
+      "population": "eager",
+      "passed": true,
+      "log": "/home/mahaswint/cs5290/pim-reproduction/slabs/validation/host-slab16-eager1.log"
+    },
+    {
+      "slab_kib": 32,
+      "population": "lazy",
+      "passed": true,
+      "log": "/home/mahaswint/cs5290/pim-reproduction/slabs/validation/host-slab32-eager0.log"
+    },
+    {
+      "slab_kib": 32,
+      "population": "eager",
+      "passed": true,
+      "log": "/home/mahaswint/cs5290/pim-reproduction/slabs/validation/host-slab32-eager1.log"
+    },
+    {
+      "slab_kib": 64,
+      "population": "lazy",
+      "passed": true,
+      "log": "/home/mahaswint/cs5290/pim-reproduction/slabs/validation/host-slab64-eager0.log"
+    },
+    {
+      "slab_kib": 64,
+      "population": "eager",
+      "passed": true,
+      "log": "/home/mahaswint/cs5290/pim-reproduction/slabs/validation/host-slab64-eager1.log"
+    }
+  ],
+  "simulator": [
+    {
+      "configuration": {
+        "action": "run",
+        "slab_kib": 0,
+        "population": "eager",
+        "threads": 4,
+        "workload": "phases",
+        "size": 4096,
+        "burst": 16,
+        "rounds": 1,
+        "heap_kib": 4096,
+        "validate": true,
+        "tag": "slabs-extra-validation-v1"
+      },
+      "passed": true,
+      "outcome": "completed",
+      "implementation_sha256": "69f1bde4b1bc8c1d9898cad254e13957bee25149a494f86fce8eeaea5b58c49a",
+      "summary": "/home/mahaswint/cs5290/pim-reproduction/slabs/results/slabs-extra-validation-v1/slab0_t4_phases_s4096_b16_r1_h4096_eager_v1/summary.json"
+    },
+    {
+      "configuration": {
+        "action": "run",
+        "slab_kib": 0,
+        "population": "eager",
+        "threads": 4,
+        "workload": "sparse",
+        "size": 4096,
+        "burst": 16,
+        "rounds": 1,
+        "heap_kib": 4096,
+        "validate": true,
+        "tag": "slabs-extra-validation-v1"
+      },
+      "passed": true,
+      "outcome": "completed",
+      "implementation_sha256": "69f1bde4b1bc8c1d9898cad254e13957bee25149a494f86fce8eeaea5b58c49a",
+      "summary": "/home/mahaswint/cs5290/pim-reproduction/slabs/results/slabs-extra-validation-v1/slab0_t4_sparse_s4096_b16_r1_h4096_eager_v1/summary.json"
+    },
+    {
+      "configuration": {
+        "action": "run",
+        "slab_kib": 64,
+        "population": "eager",
+        "threads": 4,
+        "workload": "phases",
+        "size": 4096,
+        "burst": 16,
+        "rounds": 1,
+        "heap_kib": 4096,
+        "validate": true,
+        "tag": "slabs-extra-validation-v1"
+      },
+      "passed": true,
+      "outcome": "completed",
+      "implementation_sha256": "69f1bde4b1bc8c1d9898cad254e13957bee25149a494f86fce8eeaea5b58c49a",
+      "summary": "/home/mahaswint/cs5290/pim-reproduction/slabs/results/slabs-extra-validation-v1/slab64_t4_phases_s4096_b16_r1_h4096_eager_v1/summary.json"
+    },
+    {
+      "configuration": {
+        "action": "run",
+        "slab_kib": 64,
+        "population": "eager",
+        "threads": 4,
+        "workload": "sparse",
+        "size": 4096,
+        "burst": 16,
+        "rounds": 1,
+        "heap_kib": 4096,
+        "validate": true,
+        "tag": "slabs-extra-validation-v1"
+      },
+      "passed": true,
+      "outcome": "completed",
+      "implementation_sha256": "69f1bde4b1bc8c1d9898cad254e13957bee25149a494f86fce8eeaea5b58c49a",
+      "summary": "/home/mahaswint/cs5290/pim-reproduction/slabs/results/slabs-extra-validation-v1/slab64_t4_sparse_s4096_b16_r1_h4096_eager_v1/summary.json"
+    },
+    {
+      "configuration": {
+        "action": "run",
+        "slab_kib": 0,
+        "population": "eager",
+        "threads": 1,
+        "workload": "correctness",
+        "size": 4096,
+        "burst": 8,
+        "rounds": 1,
+        "heap_kib": 4096,
+        "validate": true,
+        "tag": "slabs-validation-v1"
+      },
+      "passed": true,
+      "outcome": "completed",
+      "implementation_sha256": "69f1bde4b1bc8c1d9898cad254e13957bee25149a494f86fce8eeaea5b58c49a",
+      "summary": "/home/mahaswint/cs5290/pim-reproduction/slabs/results/slabs-validation-v1/slab0_t1_correctness_s4096_b8_r1_h4096_eager_v1/summary.json"
+    },
+    {
+      "configuration": {
+        "action": "run",
+        "slab_kib": 0,
+        "population": "eager",
+        "threads": 4,
+        "workload": "correctness",
+        "size": 4096,
+        "burst": 8,
+        "rounds": 1,
+        "heap_kib": 4096,
+        "validate": true,
+        "tag": "slabs-validation-v1"
+      },
+      "passed": true,
+      "outcome": "completed",
+      "implementation_sha256": "69f1bde4b1bc8c1d9898cad254e13957bee25149a494f86fce8eeaea5b58c49a",
+      "summary": "/home/mahaswint/cs5290/pim-reproduction/slabs/results/slabs-validation-v1/slab0_t4_correctness_s4096_b8_r1_h4096_eager_v1/summary.json"
+    },
+    {
+      "configuration": {
+        "action": "run",
+        "slab_kib": 16,
+        "population": "eager",
+        "threads": 1,
+        "workload": "correctness",
+        "size": 4096,
+        "burst": 8,
+        "rounds": 1,
+        "heap_kib": 4096,
+        "validate": true,
+        "tag": "slabs-validation-v1"
+      },
+      "passed": true,
+      "outcome": "completed",
+      "implementation_sha256": "69f1bde4b1bc8c1d9898cad254e13957bee25149a494f86fce8eeaea5b58c49a",
+      "summary": "/home/mahaswint/cs5290/pim-reproduction/slabs/results/slabs-validation-v1/slab16_t1_correctness_s4096_b8_r1_h4096_eager_v1/summary.json"
+    },
+    {
+      "configuration": {
+        "action": "run",
+        "slab_kib": 16,
+        "population": "eager",
+        "threads": 4,
+        "workload": "correctness",
+        "size": 4096,
+        "burst": 8,
+        "rounds": 1,
+        "heap_kib": 4096,
+        "validate": true,
+        "tag": "slabs-validation-v1"
+      },
+      "passed": true,
+      "outcome": "completed",
+      "implementation_sha256": "69f1bde4b1bc8c1d9898cad254e13957bee25149a494f86fce8eeaea5b58c49a",
+      "summary": "/home/mahaswint/cs5290/pim-reproduction/slabs/results/slabs-validation-v1/slab16_t4_correctness_s4096_b8_r1_h4096_eager_v1/summary.json"
+    },
+    {
+      "configuration": {
+        "action": "run",
+        "slab_kib": 32,
+        "population": "eager",
+        "threads": 1,
+        "workload": "correctness",
+        "size": 4096,
+        "burst": 8,
+        "rounds": 1,
+        "heap_kib": 4096,
+        "validate": true,
+        "tag": "slabs-validation-v1"
+      },
+      "passed": true,
+      "outcome": "completed",
+      "implementation_sha256": "69f1bde4b1bc8c1d9898cad254e13957bee25149a494f86fce8eeaea5b58c49a",
+      "summary": "/home/mahaswint/cs5290/pim-reproduction/slabs/results/slabs-validation-v1/slab32_t1_correctness_s4096_b8_r1_h4096_eager_v1/summary.json"
+    },
+    {
+      "configuration": {
+        "action": "run",
+        "slab_kib": 32,
+        "population": "eager",
+        "threads": 4,
+        "workload": "correctness",
+        "size": 4096,
+        "burst": 8,
+        "rounds": 1,
+        "heap_kib": 4096,
+        "validate": true,
+        "tag": "slabs-validation-v1"
+      },
+      "passed": true,
+      "outcome": "completed",
+      "implementation_sha256": "69f1bde4b1bc8c1d9898cad254e13957bee25149a494f86fce8eeaea5b58c49a",
+      "summary": "/home/mahaswint/cs5290/pim-reproduction/slabs/results/slabs-validation-v1/slab32_t4_correctness_s4096_b8_r1_h4096_eager_v1/summary.json"
+    },
+    {
+      "configuration": {
+        "action": "run",
+        "slab_kib": 64,
+        "population": "eager",
+        "threads": 16,
+        "workload": "correctness",
+        "size": 4096,
+        "burst": 8,
+        "rounds": 1,
+        "heap_kib": 4096,
+        "validate": true,
+        "tag": "slabs-validation-v1"
+      },
+      "passed": true,
+      "outcome": "completed",
+      "implementation_sha256": "69f1bde4b1bc8c1d9898cad254e13957bee25149a494f86fce8eeaea5b58c49a",
+      "summary": "/home/mahaswint/cs5290/pim-reproduction/slabs/results/slabs-validation-v1/slab64_t16_correctness_s4096_b8_r1_h4096_eager_v1/summary.json"
+    },
+    {
+      "configuration": {
+        "action": "run",
+        "slab_kib": 64,
+        "population": "eager",
+        "threads": 1,
+        "workload": "correctness",
+        "size": 4096,
+        "burst": 8,
+        "rounds": 1,
+        "heap_kib": 4096,
+        "validate": true,
+        "tag": "slabs-validation-v1"
+      },
+      "passed": true,
+      "outcome": "completed",
+      "implementation_sha256": "69f1bde4b1bc8c1d9898cad254e13957bee25149a494f86fce8eeaea5b58c49a",
+      "summary": "/home/mahaswint/cs5290/pim-reproduction/slabs/results/slabs-validation-v1/slab64_t1_correctness_s4096_b8_r1_h4096_eager_v1/summary.json"
+    },
+    {
+      "configuration": {
+        "action": "run",
+        "slab_kib": 64,
+        "population": "eager",
+        "threads": 4,
+        "workload": "correctness",
+        "size": 4096,
+        "burst": 8,
+        "rounds": 1,
+        "heap_kib": 4096,
+        "validate": true,
+        "tag": "slabs-validation-v1"
+      },
+      "passed": true,
+      "outcome": "completed",
+      "implementation_sha256": "69f1bde4b1bc8c1d9898cad254e13957bee25149a494f86fce8eeaea5b58c49a",
+      "summary": "/home/mahaswint/cs5290/pim-reproduction/slabs/results/slabs-validation-v1/slab64_t4_correctness_s4096_b8_r1_h4096_eager_v1/summary.json"
+    }
+  ],
+  "completed_at_unix": 1793365172.9035854
+}

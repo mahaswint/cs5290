@@ -1,0 +1,93 @@
+{
+  "configuration": {
+    "action": "sweep",
+    "slab_kib": 0,
+    "population": "eager",
+    "threads": 16,
+    "workload": "sparse",
+    "size": 4096,
+    "burst": 32,
+    "rounds": 4,
+    "heap_kib": 32768,
+    "validate": false,
+    "tag": "slabs-full-v1"
+  },
+  "correctness_passed": true,
+  "implementation_sha256": "69f1bde4b1bc8c1d9898cad254e13957bee25149a494f86fce8eeaea5b58c49a",
+  "outcome": "completed",
+  "frequency_mhz": 350,
+  "metrics": {
+    "alloc": {
+      "samples": 2048,
+      "mean_us": 3855.8102566964285,
+      "p99_us": 4049.365714285714,
+      "max_us": 4067.554285714286
+    },
+    "free": {
+      "samples": 2048,
+      "mean_us": 2435.5629506138393,
+      "p99_us": 2527.5857142857144,
+      "max_us": 2539.86
+    },
+    "init": {
+      "samples": 1,
+      "mean_us": 20970.785714285714,
+      "p99_us": 20970.785714285714,
+      "max_us": 20970.785714285714
+    },
+    "work": {
+      "samples": 16,
+      "mean_us": 818242.1475,
+      "p99_us": 818243.5514285715,
+      "max_us": 818243.5514285715
+    },
+    "drain": {
+      "samples": 16,
+      "mean_us": 19531.739285714284,
+      "p99_us": 19532.754285714287,
+      "max_us": 19532.754285714287
+    },
+    "total": {
+      "samples": 1,
+      "mean_us": 858810.3085714285,
+      "p99_us": 858810.3085714285,
+      "max_us": 858810.3085714285
+    }
+  },
+  "work_makespan_us": 818244.6628571429,
+  "successful_allocations_per_second": 2502.9188615160697,
+  "totals": {
+    "alloc_calls": 2048,
+    "successes": 2048,
+    "free_calls": 2048,
+    "cache_hits": 0,
+    "refills": 0,
+    "returns": 128,
+    "failures": 0,
+    "direct_allocations": 2048,
+    "slab_hits": 0,
+    "slab_refills": 0,
+    "live_slots": 0,
+    "peak_slots": 2097152
+  },
+  "backend": {
+    "used_bytes": 0,
+    "peak_bytes": 2621440,
+    "allocations": 2176,
+    "frees": 2176,
+    "failed_attempts": 0,
+    "init_failures": 0
+  },
+  "wram": {
+    "heap_end_address": 42900,
+    "cache_descriptor_bytes": 2880,
+    "stats_bytes": 768
+  },
+  "peak_requested_at_barriers_bytes": 2097152,
+  "max_reserved_at_live_barriers_ratio": 5.0,
+  "host_runtime_seconds": 825.448038816452,
+  "experiment": "Size-dependent slabs only; no adaptive allocation or empty-span retention",
+  "capacity_profile": "WRAM end 65536; 24 stacks x 1536 B; inherited IRAM/timing defaults",
+  "source_sha256": "3b293ff66d3635b992165a4b5b0a538cce163162ab5f55aeffc82687d36408dd",
+  "simulator_sha256": "58960921e8914864a1b566c04ffe28cadf81d9af0bf11436bea328a2d15abec8"
+}

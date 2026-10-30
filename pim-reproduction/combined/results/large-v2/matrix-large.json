@@ -1,0 +1,66 @@
+[
+  {
+    "mode": "scan",
+    "threads": 1,
+    "policy": "fixed",
+    "workload": "scatter",
+    "burst": 512,
+    "rounds": 2
+  },
+  {
+    "mode": "scan",
+    "threads": 1,
+    "policy": "adaptive",
+    "workload": "scatter",
+    "burst": 512,
+    "rounds": 2
+  },
+  {
+    "mode": "indexed",
+    "threads": 1,
+    "policy": "fixed",
+    "workload": "scatter",
+    "burst": 512,
+    "rounds": 2
+  },
+  {
+    "mode": "indexed",
+    "threads": 1,
+    "policy": "adaptive",
+    "workload": "scatter",
+    "burst": 512,
+    "rounds": 2
+  },
+  {
+    "mode": "scan",
+    "threads": 4,
+    "policy": "fixed",
+    "workload": "scatter",
+    "burst": 512,
+    "rounds": 2
+  },
+  {
+    "mode": "scan",
+    "threads": 4,
+    "policy": "adaptive",
+    "workload": "scatter",
+    "burst": 512,
+    "rounds": 2
+  },
+  {
+    "mode": "indexed",
+    "threads": 4,
+    "policy": "fixed",
+    "workload": "scatter",
+    "burst": 512,
+    "rounds": 2
+  },
+  {
+    "mode": "indexed",
+    "threads": 4,
+    "policy": "adaptive",
+    "workload": "scatter",
+    "burst": 512,
+    "rounds": 2
+  }
+]

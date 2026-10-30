@@ -1,0 +1,513 @@
+{
+  "checks": [
+    "exact source hash",
+    "event counts",
+    "positive issue-cycle durations",
+    "balanced backend",
+    "zero live after drain",
+    "WRAM end <=65536",
+    "single implementation"
+  ],
+  "runs": [
+    {
+      "run": "/home/mahaswint/cs5290/pim-reproduction/slabs/results/slabs-capacity-v1/slab0_t1_burst_s4096_b16_r1_h64_lazy_v0",
+      "configuration": {
+        "action": "run",
+        "slab_kib": 0,
+        "population": "lazy",
+        "threads": 1,
+        "workload": "burst",
+        "size": 4096,
+        "burst": 16,
+        "rounds": 1,
+        "heap_kib": 64,
+        "validate": false,
+        "tag": "slabs-capacity-v1"
+      },
+      "outcome": "completed",
+      "alloc_events": 16,
+      "free_events": 16,
+      "implementation_sha256": "69f1bde4b1bc8c1d9898cad254e13957bee25149a494f86fce8eeaea5b58c49a"
+    },
+    {
+      "run": "/home/mahaswint/cs5290/pim-reproduction/slabs/results/slabs-capacity-v1/slab16_t1_burst_s4096_b16_r1_h64_lazy_v0",
+      "configuration": {
+        "action": "run",
+        "slab_kib": 16,
+        "population": "lazy",
+        "threads": 1,
+        "workload": "burst",
+        "size": 4096,
+        "burst": 16,
+        "rounds": 1,
+        "heap_kib": 64,
+        "validate": false,
+        "tag": "slabs-capacity-v1"
+      },
+      "outcome": "oom",
+      "alloc_events": 13,
+      "free_events": 12,
+      "implementation_sha256": "69f1bde4b1bc8c1d9898cad254e13957bee25149a494f86fce8eeaea5b58c49a"
+    },
+    {
+      "run": "/home/mahaswint/cs5290/pim-reproduction/slabs/results/slabs-capacity-v1/slab32_t1_burst_s4096_b16_r1_h64_lazy_v0",
+      "configuration": {
+        "action": "run",
+        "slab_kib": 32,
+        "population": "lazy",
+        "threads": 1,
+        "workload": "burst",
+        "size": 4096,
+        "burst": 16,
+        "rounds": 1,
+        "heap_kib": 64,
+        "validate": false,
+        "tag": "slabs-capacity-v1"
+      },
+      "outcome": "oom",
+      "alloc_events": 15,
+      "free_events": 14,
+      "implementation_sha256": "69f1bde4b1bc8c1d9898cad254e13957bee25149a494f86fce8eeaea5b58c49a"
+    },
+    {
+      "run": "/home/mahaswint/cs5290/pim-reproduction/slabs/results/slabs-capacity-v1/slab64_t1_burst_s4096_b16_r1_h64_lazy_v0",
+      "configuration": {
+        "action": "run",
+        "slab_kib": 64,
+        "population": "lazy",
+        "threads": 1,
+        "workload": "burst",
+        "size": 4096,
+        "burst": 16,
+        "rounds": 1,
+        "heap_kib": 64,
+        "validate": false,
+        "tag": "slabs-capacity-v1"
+      },
+      "outcome": "oom",
+      "alloc_events": 16,
+      "free_events": 15,
+      "implementation_sha256": "69f1bde4b1bc8c1d9898cad254e13957bee25149a494f86fce8eeaea5b58c49a"
+    },
+    {
+      "run": "/home/mahaswint/cs5290/pim-reproduction/slabs/results/slabs-extra-validation-v1/slab0_t4_phases_s4096_b16_r1_h4096_eager_v1",
+      "configuration": {
+        "action": "run",
+        "slab_kib": 0,
+        "population": "eager",
+        "threads": 4,
+        "workload": "phases",
+        "size": 4096,
+        "burst": 16,
+        "rounds": 1,
+        "heap_kib": 4096,
+        "validate": true,
+        "tag": "slabs-extra-validation-v1"
+      },
+      "outcome": "completed",
+      "alloc_events": 120,
+      "free_events": 120,
+      "implementation_sha256": "69f1bde4b1bc8c1d9898cad254e13957bee25149a494f86fce8eeaea5b58c49a"
+    },
+    {
+      "run": "/home/mahaswint/cs5290/pim-reproduction/slabs/results/slabs-extra-validation-v1/slab0_t4_sparse_s4096_b16_r1_h4096_eager_v1",
+      "configuration": {
+        "action": "run",
+        "slab_kib": 0,
+        "population": "eager",
+        "threads": 4,
+        "workload": "sparse",
+        "size": 4096,
+        "burst": 16,
+        "rounds": 1,
+        "heap_kib": 4096,
+        "validate": true,
+        "tag": "slabs-extra-validation-v1"
+      },
+      "outcome": "completed",
+      "alloc_events": 64,
+      "free_events": 64,
+      "implementation_sha256": "69f1bde4b1bc8c1d9898cad254e13957bee25149a494f86fce8eeaea5b58c49a"
+    },
+    {
+      "run": "/home/mahaswint/cs5290/pim-reproduction/slabs/results/slabs-extra-validation-v1/slab64_t4_phases_s4096_b16_r1_h4096_eager_v1",
+      "configuration": {
+        "action": "run",
+        "slab_kib": 64,
+        "population": "eager",
+        "threads": 4,
+        "workload": "phases",
+        "size": 4096,
+        "burst": 16,
+        "rounds": 1,
+        "heap_kib": 4096,
+        "validate": true,
+        "tag": "slabs-extra-validation-v1"
+      },
+      "outcome": "completed",
+      "alloc_events": 120,
+      "free_events": 120,
+      "implementation_sha256": "69f1bde4b1bc8c1d9898cad254e13957bee25149a494f86fce8eeaea5b58c49a"
+    },
+    {
+      "run": "/home/mahaswint/cs5290/pim-reproduction/slabs/results/slabs-extra-validation-v1/slab64_t4_sparse_s4096_b16_r1_h4096_eager_v1",
+      "configuration": {
+        "action": "run",
+        "slab_kib": 64,
+        "population": "eager",
+        "threads": 4,
+        "workload": "sparse",
+        "size": 4096,
+        "burst": 16,
+        "rounds": 1,
+        "heap_kib": 4096,
+        "validate": true,
+        "tag": "slabs-extra-validation-v1"
+      },
+      "outcome": "completed",
+      "alloc_events": 64,
+      "free_events": 64,
+      "implementation_sha256": "69f1bde4b1bc8c1d9898cad254e13957bee25149a494f86fce8eeaea5b58c49a"
+    },
+    {
+      "run": "/home/mahaswint/cs5290/pim-reproduction/slabs/results/slabs-quick-v1/slab0_t1_burst_s4096_b32_r2_h32768_eager_v0",
+      "configuration": {
+        "action": "sweep",
+        "slab_kib": 0,
+        "population": "eager",
+        "threads": 1,
+        "workload": "burst",
+        "size": 4096,
+        "burst": 32,
+        "rounds": 2,
+        "heap_kib": 32768,
+        "validate": false,
+        "tag": "slabs-quick-v1"
+      },
+      "outcome": "completed",
+      "alloc_events": 64,
+      "free_events": 64,
+      "implementation_sha256": "69f1bde4b1bc8c1d9898cad254e13957bee25149a494f86fce8eeaea5b58c49a"
+    },
+    {
+      "run": "/home/mahaswint/cs5290/pim-reproduction/slabs/results/slabs-quick-v1/slab0_t4_burst_s4096_b32_r2_h32768_eager_v0",
+      "configuration": {
+        "action": "sweep",
+        "slab_kib": 0,
+        "population": "eager",
+        "threads": 4,
+        "workload": "burst",
+        "size": 4096,
+        "burst": 32,
+        "rounds": 2,
+        "heap_kib": 32768,
+        "validate": false,
+        "tag": "slabs-quick-v1"
+      },
+      "outcome": "completed",
+      "alloc_events": 256,
+      "free_events": 256,
+      "implementation_sha256": "69f1bde4b1bc8c1d9898cad254e13957bee25149a494f86fce8eeaea5b58c49a"
+    },
+    {
+      "run": "/home/mahaswint/cs5290/pim-reproduction/slabs/results/slabs-quick-v1/slab16_t1_burst_s4096_b32_r2_h32768_eager_v0",
+      "configuration": {
+        "action": "sweep",
+        "slab_kib": 16,
+        "population": "eager",
+        "threads": 1,
+        "workload": "burst",
+        "size": 4096,
+        "burst": 32,
+        "rounds": 2,
+        "heap_kib": 32768,
+        "validate": false,
+        "tag": "slabs-quick-v1"
+      },
+      "outcome": "completed",
+      "alloc_events": 64,
+      "free_events": 64,
+      "implementation_sha256": "69f1bde4b1bc8c1d9898cad254e13957bee25149a494f86fce8eeaea5b58c49a"
+    },
+    {
+      "run": "/home/mahaswint/cs5290/pim-reproduction/slabs/results/slabs-quick-v1/slab16_t4_burst_s4096_b32_r2_h32768_eager_v0",
+      "configuration": {
+        "action": "sweep",
+        "slab_kib": 16,
+        "population": "eager",
+        "threads": 4,
+        "workload": "burst",
+        "size": 4096,
+        "burst": 32,
+        "rounds": 2,
+        "heap_kib": 32768,
+        "validate": false,
+        "tag": "slabs-quick-v1"
+      },
+      "outcome": "completed",
+      "alloc_events": 256,
+      "free_events": 256,
+      "implementation_sha256": "69f1bde4b1bc8c1d9898cad254e13957bee25149a494f86fce8eeaea5b58c49a"
+    },
+    {
+      "run": "/home/mahaswint/cs5290/pim-reproduction/slabs/results/slabs-quick-v1/slab32_t1_burst_s4096_b32_r2_h32768_eager_v0",
+      "configuration": {
+        "action": "sweep",
+        "slab_kib": 32,
+        "population": "eager",
+        "threads": 1,
+        "workload": "burst",
+        "size": 4096,
+        "burst": 32,
+        "rounds": 2,
+        "heap_kib": 32768,
+        "validate": false,
+        "tag": "slabs-quick-v1"
+      },
+      "outcome": "completed",
+      "alloc_events": 64,
+      "free_events": 64,
+      "implementation_sha256": "69f1bde4b1bc8c1d9898cad254e13957bee25149a494f86fce8eeaea5b58c49a"
+    },
+    {
+      "run": "/home/mahaswint/cs5290/pim-reproduction/slabs/results/slabs-quick-v1/slab32_t4_burst_s4096_b32_r2_h32768_eager_v0",
+      "configuration": {
+        "action": "sweep",
+        "slab_kib": 32,
+        "population": "eager",
+        "threads": 4,
+        "workload": "burst",
+        "size": 4096,
+        "burst": 32,
+        "rounds": 2,
+        "heap_kib": 32768,
+        "validate": false,
+        "tag": "slabs-quick-v1"
+      },
+      "outcome": "completed",
+      "alloc_events": 256,
+      "free_events": 256,
+      "implementation_sha256": "69f1bde4b1bc8c1d9898cad254e13957bee25149a494f86fce8eeaea5b58c49a"
+    },
+    {
+      "run": "/home/mahaswint/cs5290/pim-reproduction/slabs/results/slabs-quick-v1/slab64_t1_burst_s4096_b32_r2_h32768_eager_v0",
+      "configuration": {
+        "action": "sweep",
+        "slab_kib": 64,
+        "population": "eager",
+        "threads": 1,
+        "workload": "burst",
+        "size": 4096,
+        "burst": 32,
+        "rounds": 2,
+        "heap_kib": 32768,
+        "validate": false,
+        "tag": "slabs-quick-v1"
+      },
+      "outcome": "completed",
+      "alloc_events": 64,
+      "free_events": 64,
+      "implementation_sha256": "69f1bde4b1bc8c1d9898cad254e13957bee25149a494f86fce8eeaea5b58c49a"
+    },
+    {
+      "run": "/home/mahaswint/cs5290/pim-reproduction/slabs/results/slabs-quick-v1/slab64_t4_burst_s4096_b32_r2_h32768_eager_v0",
+      "configuration": {
+        "action": "sweep",
+        "slab_kib": 64,
+        "population": "eager",
+        "threads": 4,
+        "workload": "burst",
+        "size": 4096,
+        "burst": 32,
+        "rounds": 2,
+        "heap_kib": 32768,
+        "validate": false,
+        "tag": "slabs-quick-v1"
+      },
+      "outcome": "completed",
+      "alloc_events": 256,
+      "free_events": 256,
+      "implementation_sha256": "69f1bde4b1bc8c1d9898cad254e13957bee25149a494f86fce8eeaea5b58c49a"
+    },
+    {
+      "run": "/home/mahaswint/cs5290/pim-reproduction/slabs/results/slabs-validation-v1/slab0_t1_correctness_s4096_b8_r1_h4096_eager_v1",
+      "configuration": {
+        "action": "run",
+        "slab_kib": 0,
+        "population": "eager",
+        "threads": 1,
+        "workload": "correctness",
+        "size": 4096,
+        "burst": 8,
+        "rounds": 1,
+        "heap_kib": 4096,
+        "validate": true,
+        "tag": "slabs-validation-v1"
+      },
+      "outcome": "completed",
+      "alloc_events": 32,
+      "free_events": 32,
+      "implementation_sha256": "69f1bde4b1bc8c1d9898cad254e13957bee25149a494f86fce8eeaea5b58c49a"
+    },
+    {
+      "run": "/home/mahaswint/cs5290/pim-reproduction/slabs/results/slabs-validation-v1/slab0_t4_correctness_s4096_b8_r1_h4096_eager_v1",
+      "configuration": {
+        "action": "run",
+        "slab_kib": 0,
+        "population": "eager",
+        "threads": 4,
+        "workload": "correctness",
+        "size": 4096,
+        "burst": 8,
+        "rounds": 1,
+        "heap_kib": 4096,
+        "validate": true,
+        "tag": "slabs-validation-v1"
+      },
+      "outcome": "completed",
+      "alloc_events": 128,
+      "free_events": 128,
+      "implementation_sha256": "69f1bde4b1bc8c1d9898cad254e13957bee25149a494f86fce8eeaea5b58c49a"
+    },
+    {
+      "run": "/home/mahaswint/cs5290/pim-reproduction/slabs/results/slabs-validation-v1/slab16_t1_correctness_s4096_b8_r1_h4096_eager_v1",
+      "configuration": {
+        "action": "run",
+        "slab_kib": 16,
+        "population": "eager",
+        "threads": 1,
+        "workload": "correctness",
+        "size": 4096,
+        "burst": 8,
+        "rounds": 1,
+        "heap_kib": 4096,
+        "validate": true,
+        "tag": "slabs-validation-v1"
+      },
+      "outcome": "completed",
+      "alloc_events": 32,
+      "free_events": 32,
+      "implementation_sha256": "69f1bde4b1bc8c1d9898cad254e13957bee25149a494f86fce8eeaea5b58c49a"
+    },
+    {
+      "run": "/home/mahaswint/cs5290/pim-reproduction/slabs/results/slabs-validation-v1/slab16_t4_correctness_s4096_b8_r1_h4096_eager_v1",
+      "configuration": {
+        "action": "run",
+        "slab_kib": 16,
+        "population": "eager",
+        "threads": 4,
+        "workload": "correctness",
+        "size": 4096,
+        "burst": 8,
+        "rounds": 1,
+        "heap_kib": 4096,
+        "validate": true,
+        "tag": "slabs-validation-v1"
+      },
+      "outcome": "completed",
+      "alloc_events": 128,
+      "free_events": 128,
+      "implementation_sha256": "69f1bde4b1bc8c1d9898cad254e13957bee25149a494f86fce8eeaea5b58c49a"
+    },
+    {
+      "run": "/home/mahaswint/cs5290/pim-reproduction/slabs/results/slabs-validation-v1/slab32_t1_correctness_s4096_b8_r1_h4096_eager_v1",
+      "configuration": {
+        "action": "run",
+        "slab_kib": 32,
+        "population": "eager",
+        "threads": 1,
+        "workload": "correctness",
+        "size": 4096,
+        "burst": 8,
+        "rounds": 1,
+        "heap_kib": 4096,
+        "validate": true,
+        "tag": "slabs-validation-v1"
+      },
+      "outcome": "completed",
+      "alloc_events": 32,
+      "free_events": 32,
+      "implementation_sha256": "69f1bde4b1bc8c1d9898cad254e13957bee25149a494f86fce8eeaea5b58c49a"
+    },
+    {
+      "run": "/home/mahaswint/cs5290/pim-reproduction/slabs/results/slabs-validation-v1/slab32_t4_correctness_s4096_b8_r1_h4096_eager_v1",
+      "configuration": {
+        "action": "run",
+        "slab_kib": 32,
+        "population": "eager",
+        "threads": 4,
+        "workload": "correctness",
+        "size": 4096,
+        "burst": 8,
+        "rounds": 1,
+        "heap_kib": 4096,
+        "validate": true,
+        "tag": "slabs-validation-v1"
+      },
+      "outcome": "completed",
+      "alloc_events": 128,
+      "free_events": 128,
+      "implementation_sha256": "69f1bde4b1bc8c1d9898cad254e13957bee25149a494f86fce8eeaea5b58c49a"
+    },
+    {
+      "run": "/home/mahaswint/cs5290/pim-reproduction/slabs/results/slabs-validation-v1/slab64_t16_correctness_s4096_b8_r1_h4096_eager_v1",
+      "configuration": {
+        "action": "run",
+        "slab_kib": 64,
+        "population": "eager",
+        "threads": 16,
+        "workload": "correctness",
+        "size": 4096,
+        "burst": 8,
+        "rounds": 1,
+        "heap_kib": 4096,
+        "validate": true,
+        "tag": "slabs-validation-v1"
+      },
+      "outcome": "completed",
+      "alloc_events": 512,
+      "free_events": 512,
+      "implementation_sha256": "69f1bde4b1bc8c1d9898cad254e13957bee25149a494f86fce8eeaea5b58c49a"
+    },
+    {
+      "run": "/home/mahaswint/cs5290/pim-reproduction/slabs/results/slabs-validation-v1/slab64_t1_correctness_s4096_b8_r1_h4096_eager_v1",
+      "configuration": {
+        "action": "run",
+        "slab_kib": 64,
+        "population": "eager",
+        "threads": 1,
+        "workload": "correctness",
+        "size": 4096,
+        "burst": 8,
+        "rounds": 1,
+        "heap_kib": 4096,
+        "validate": true,
+        "tag": "slabs-validation-v1"
+      },
+      "outcome": "completed",
+      "alloc_events": 32,
+      "free_events": 32,
+      "implementation_sha256": "69f1bde4b1bc8c1d9898cad254e13957bee25149a494f86fce8eeaea5b58c49a"
+    },
+    {
+      "run": "/home/mahaswint/cs5290/pim-reproduction/slabs/results/slabs-validation-v1/slab64_t4_correctness_s4096_b8_r1_h4096_eager_v1",
+      "configuration": {
+        "action": "run",
+        "slab_kib": 64,
+        "population": "eager",
+        "threads": 4,
+        "workload": "correctness",
+        "size": 4096,
+        "burst": 8,
+        "rounds": 1,
+        "heap_kib": 4096,
+        "validate": true,
+        "tag": "slabs-validation-v1"
+      },
+      "outcome": "completed",
+      "alloc_events": 128,
+      "free_events": 128,
+      "implementation_sha256": "69f1bde4b1bc8c1d9898cad254e13957bee25149a494f86fce8eeaea5b58c49a"
+    }
+  ]
+}

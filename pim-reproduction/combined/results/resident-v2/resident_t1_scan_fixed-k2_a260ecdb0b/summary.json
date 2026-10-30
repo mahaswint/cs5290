@@ -1,0 +1,131 @@
+{
+  "configuration": {
+    "mode": "scan",
+    "policy": "fixed",
+    "workload": "resident",
+    "threads": 1,
+    "burst": 512,
+    "rounds": 3,
+    "heap_kib": 32768,
+    "keep": 2,
+    "max_keep": 2,
+    "budget_pages": 4,
+    "decay_ops": 64,
+    "pressure_percent": 75,
+    "seed": 5290,
+    "graph_edges": 384,
+    "graph_block_bytes": 256,
+    "validate": false,
+    "tag": "resident-v2"
+  },
+  "correctness_passed": true,
+  "frequency_mhz": 350,
+  "outcome": "completed",
+  "metrics": {
+    "alloc": {
+      "samples": 3584,
+      "mean_us": 31.475770089285714,
+      "p99_us": 261.4114285714286,
+      "max_us": 273.0628571428571
+    },
+    "free": {
+      "samples": 3584,
+      "mean_us": 11.876545758928572,
+      "p99_us": 115.88571428571429,
+      "max_us": 121.92571428571429
+    },
+    "init": {
+      "samples": 1,
+      "mean_us": 9997.702857142856,
+      "p99_us": 9997.702857142856,
+      "max_us": 9997.702857142856
+    },
+    "work": {
+      "samples": 1,
+      "mean_us": 151104.6,
+      "p99_us": 151104.6,
+      "max_us": 151104.6
+    },
+    "drain": {
+      "samples": 1,
+      "mean_us": 8713.322857142857,
+      "p99_us": 8713.322857142857,
+      "max_us": 8713.322857142857
+    },
+    "total": {
+      "samples": 1,
+      "mean_us": 169816.09714285715,
+      "p99_us": 169816.09714285715,
+      "max_us": 169816.09714285715
+    }
+  },
+  "work_makespan_us": 151104.6,
+  "totals": {
+    "alloc_calls": 3584,
+    "successes": 3584,
+    "free_calls": 3584,
+    "cache_hits": 3472,
+    "refills": 112,
+    "returns": 112,
+    "failures": 0,
+    "retained_hits": 24,
+    "retained": 0,
+    "live_slots": 0,
+    "peak_slots": 131072,
+    "grows": 0,
+    "decays": 0,
+    "idle_trims": 0,
+    "pressure_trims": 0,
+    "budget_trims": 0,
+    "emergency_trims": 0
+  },
+  "backend": {
+    "used_bytes": 0,
+    "peak_bytes": 143360,
+    "allocations": 112,
+    "frees": 112,
+    "failed_attempts": 0
+  },
+  "wram": {
+    "heap_end_address": 39332,
+    "cache_descriptor_bytes": 256,
+    "stats_bytes": 72
+  },
+  "owner_table_mram_bytes": 0,
+  "peak_payload_plus_owner_bytes": 143360,
+  "native_statistics": {
+    "ThreadScheduler[0_0_0]_breakdown_etc": 50534704,
+    "ThreadScheduler[0_0_0]_breakdown_run": 5053469,
+    "ThreadScheduler[0_0_0]_breakdown_dma": 3850324,
+    "Logic[0_0_0]_active_tasklets_1": 53797039,
+    "Logic[0_0_0]_logic_cycle": 59438497,
+    "Logic[0_0_0]_num_instructions": 5053469,
+    "Logic[0_0_0]_release_cycle": 296,
+    "Logic[0_0_0]_acquire_cycle": 292,
+    "Logic[0_0_0]_active_tasklets_0": 5641458,
+    "CycleRule[0_0_0]_cycle_rule": 1748110,
+    "MemoryController[0_0_0]_memory_cycle": 356630982,
+    "MemoryScheduler[0_0_0]_num_fcfs": 137750,
+    "RowBuffer[0_0_0]_write_bytes": 432192,
+    "RowBuffer[0_0_0]_num_activations": 109045,
+    "RowBuffer[0_0_0]_num_precharges": 109044,
+    "RowBuffer[0_0_0]_num_reads": 192715,
+    "RowBuffer[0_0_0]_read_bytes": 1541112,
+    "RowBuffer[0_0_0]_num_writes": 54080
+  },
+  "source_sha256": "744539f5a3b2fe90070044a2ce119120c054710bbec9b09cfff08db1a80134fa",
+  "simulator_sha256": "907c1e5efe6302aa971e1e3824a2473c20b688da8f5ee093d52069fc2c8a8808",
+  "host_runtime_seconds": 73.6952018737793,
+  "capacity_profile": "WRAM address end 65536; 24 stacks x 1536 B; inherited IRAM/timing",
+  "requested_allocations_per_tasklet": 3584,
+  "work_alloc": {
+    "samples": 3072,
+    "mean_us": 33.68599330357143,
+    "p99_us": 261.53714285714284
+  },
+  "work_free": {
+    "samples": 3072,
+    "mean_us": 11.364453125,
+    "p99_us": 115.36571428571429
+  }
+}

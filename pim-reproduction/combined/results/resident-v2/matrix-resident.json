@@ -1,0 +1,82 @@
+[
+  {
+    "mode": "scan",
+    "threads": 1,
+    "policy": "fixed",
+    "workload": "resident",
+    "burst": 512,
+    "rounds": 3
+  },
+  {
+    "mode": "scan",
+    "threads": 1,
+    "policy": "adaptive",
+    "workload": "resident",
+    "burst": 512,
+    "rounds": 3
+  },
+  {
+    "mode": "indexed",
+    "threads": 1,
+    "policy": "fixed",
+    "workload": "resident",
+    "burst": 512,
+    "rounds": 3
+  },
+  {
+    "mode": "indexed",
+    "threads": 1,
+    "policy": "adaptive",
+    "workload": "resident",
+    "burst": 512,
+    "rounds": 3
+  },
+  {
+    "mode": "scan",
+    "threads": 4,
+    "policy": "fixed",
+    "workload": "resident",
+    "burst": 512,
+    "rounds": 3
+  },
+  {
+    "mode": "scan",
+    "threads": 4,
+    "policy": "adaptive",
+    "workload": "resident",
+    "burst": 512,
+    "rounds": 3
+  },
+  {
+    "mode": "indexed",
+    "threads": 4,
+    "policy": "fixed",
+    "workload": "resident",
+    "burst": 512,
+    "rounds": 3
+  },
+  {
+    "mode": "indexed",
+    "threads": 4,
+    "policy": "adaptive",
+    "workload": "resident",
+    "burst": 512,
+    "rounds": 3
+  },
+  {
+    "mode": "lists",
+    "threads": 1,
+    "policy": "fixed",
+    "workload": "resident",
+    "burst": 512,
+    "rounds": 3
+  },
+  {
+    "mode": "lookup",
+    "threads": 1,
+    "policy": "fixed",
+    "workload": "resident",
+    "burst": 512,
+    "rounds": 3
+  }
+]

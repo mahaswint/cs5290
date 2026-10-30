@@ -1,0 +1,82 @@
+[
+  {
+    "mode": "scan",
+    "policy": "eager",
+    "native_passed": true
+  },
+  {
+    "mode": "scan",
+    "policy": "lazy",
+    "native_passed": true
+  },
+  {
+    "mode": "scan",
+    "policy": "fixed",
+    "native_passed": true
+  },
+  {
+    "mode": "scan",
+    "policy": "adaptive",
+    "native_passed": true
+  },
+  {
+    "mode": "lists",
+    "policy": "eager",
+    "native_passed": true
+  },
+  {
+    "mode": "lists",
+    "policy": "lazy",
+    "native_passed": true
+  },
+  {
+    "mode": "lists",
+    "policy": "fixed",
+    "native_passed": true
+  },
+  {
+    "mode": "lists",
+    "policy": "adaptive",
+    "native_passed": true
+  },
+  {
+    "mode": "lookup",
+    "policy": "eager",
+    "native_passed": true
+  },
+  {
+    "mode": "lookup",
+    "policy": "lazy",
+    "native_passed": true
+  },
+  {
+    "mode": "lookup",
+    "policy": "fixed",
+    "native_passed": true
+  },
+  {
+    "mode": "lookup",
+    "policy": "adaptive",
+    "native_passed": true
+  },
+  {
+    "mode": "indexed",
+    "policy": "eager",
+    "native_passed": true
+  },
+  {
+    "mode": "indexed",
+    "policy": "lazy",
+    "native_passed": true
+  },
+  {
+    "mode": "indexed",
+    "policy": "fixed",
+    "native_passed": true
+  },
+  {
+    "mode": "indexed",
+    "policy": "adaptive",
+    "native_passed": true
+  }
+]

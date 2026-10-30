@@ -1,0 +1,1 @@
+PASS: slab geometry/hits, payloads, non-overlap, mixed sizes, partial frees, exact capacity, coalescing, OOM recovery

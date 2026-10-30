@@ -1,0 +1,244 @@
+{
+  "configuration": {
+    "policy": "lazy",
+    "threads": 4,
+    "workload": "graph",
+    "burst": 1,
+    "rounds": 2,
+    "heap_kib": 32768,
+    "keep": 1,
+    "max_keep": 2,
+    "budget_pages": 4,
+    "decay_ops": 64,
+    "pressure_percent": 75,
+    "validate": false,
+    "graph_edges": 384,
+    "graph_seed": 5290,
+    "graph_block_bytes": 64,
+    "tag": "gowalla-v1"
+  },
+  "correctness_passed": true,
+  "implementation_sha256": "ce4508a807775f9d65eca542a9f7d7c5417a393f29276c6b53e4fc44316ebd12",
+  "outcome": "completed",
+  "frequency_mhz": 350,
+  "metrics": {
+    "alloc": {
+      "samples": 1329,
+      "mean_us": 8.426649467913576,
+      "p99_us": 170.34857142857143,
+      "max_us": 624.1914285714286
+    },
+    "free": {
+      "samples": 1329,
+      "mean_us": 7.525421906911749,
+      "p99_us": 116.32857142857142,
+      "max_us": 203.3542857142857
+    },
+    "init": {
+      "samples": 1,
+      "mean_us": 2733.3314285714287,
+      "p99_us": 2733.3314285714287,
+      "max_us": 2733.3314285714287
+    },
+    "work": {
+      "samples": 32,
+      "mean_us": 2373.1789285714285,
+      "p99_us": 2564.3371428571427,
+      "max_us": 2564.3371428571427
+    },
+    "drain": {
+      "samples": 4,
+      "mean_us": 1585.9257142857143,
+      "p99_us": 1586.0514285714285,
+      "max_us": 1586.0514285714285
+    },
+    "total": {
+      "samples": 1,
+      "mean_us": 23307.717142857142,
+      "p99_us": 23307.717142857142,
+      "max_us": 23307.717142857142
+    }
+  },
+  "work_makespan_us": 18987.514285714286,
+  "successful_allocations_per_second": 69993.36406029225,
+  "totals": {
+    "alloc_calls": 1329,
+    "successes": 1329,
+    "free_calls": 1329,
+    "cache_hits": 1303,
+    "refills": 26,
+    "returns": 26,
+    "failures": 0,
+    "retained_hits": 0,
+    "retained": 0,
+    "live_slots": 0,
+    "peak_slots": 47936,
+    "grows": 0,
+    "decays": 0,
+    "idle_trims": 0,
+    "pressure_trims": 0,
+    "budget_trims": 0,
+    "emergency_trims": 0
+  },
+  "backend": {
+    "used_bytes": 0,
+    "peak_bytes": 49152,
+    "allocations": 26,
+    "frees": 26,
+    "failed_attempts": 0
+  },
+  "wram": {
+    "heap_end_address": 46532,
+    "cache_descriptor_bytes": 1024,
+    "stats_bytes": 288
+  },
+  "peak_requested_at_barriers_bytes": 47936,
+  "max_reserved_at_live_barriers_ratio": 1.476923076923077,
+  "host_runtime_seconds": 18.06625270843506,
+  "capacity_profile": "WRAM end 65536; 24 stacks x 1536 B; inherited IRAM/timing defaults",
+  "source_sha256": "c17113981bd3348a4be9d6818ebe01276b607763577c4a8a3d988ecb4331bfae",
+  "simulator_sha256": "907c1e5efe6302aa971e1e3824a2473c20b688da8f5ee093d52069fc2c8a8808",
+  "graph": {
+    "update_alloc": {
+      "samples": 824,
+      "mean_us": 8.189622052704577,
+      "p99_us": 170.34857142857143
+    },
+    "update_free": {
+      "samples": 824,
+      "mean_us": 7.639514563106796,
+      "p99_us": 113.91142857142857
+    },
+    "phases": [
+      {
+        "index": 0,
+        "cycle": 0,
+        "phase": "low",
+        "begin_cycle": 957282,
+        "end_cycle": 1827115,
+        "duration_us": 2485.2371428571428,
+        "attempted_insert_arcs": 16,
+        "read_passes": 4,
+        "allocations": 15,
+        "alloc_mean_us": 33.995619047619044,
+        "alloc_p99_us": 291.2942857142857,
+        "frees": 15,
+        "free_mean_us": 24.87257142857143
+      },
+      {
+        "index": 1,
+        "cycle": 0,
+        "phase": "high",
+        "begin_cycle": 1827052,
+        "end_cycle": 2724666,
+        "duration_us": 2564.6114285714284,
+        "attempted_insert_arcs": 256,
+        "read_passes": 1,
+        "allocations": 244,
+        "alloc_mean_us": 5.679812646370023,
+        "alloc_p99_us": 3.9857142857142858,
+        "frees": 244,
+        "free_mean_us": 6.008103044496488
+      },
+      {
+        "index": 2,
+        "cycle": 0,
+        "phase": "low-again",
+        "begin_cycle": 2724602,
+        "end_cycle": 3618506,
+        "duration_us": 2554.0114285714285,
+        "attempted_insert_arcs": 32,
+        "read_passes": 4,
+        "allocations": 30,
+        "alloc_mean_us": 18.856666666666666,
+        "alloc_p99_us": 292.27714285714285,
+        "frees": 30,
+        "free_mean_us": 14.318190476190475
+      },
+      {
+        "index": 3,
+        "cycle": 0,
+        "phase": "rebound",
+        "begin_cycle": 3618442,
+        "end_cycle": 4280539,
+        "duration_us": 1891.7057142857143,
+        "attempted_insert_arcs": 128,
+        "read_passes": 1,
+        "allocations": 123,
+        "alloc_mean_us": 7.448362369337979,
+        "alloc_p99_us": 170.24571428571429,
+        "frees": 123,
+        "free_mean_us": 7.145272938443671
+      },
+      {
+        "index": 4,
+        "cycle": 1,
+        "phase": "low",
+        "begin_cycle": 4280519,
+        "end_cycle": 5150327,
+        "duration_us": 2485.1657142857143,
+        "attempted_insert_arcs": 16,
+        "read_passes": 4,
+        "allocations": 15,
+        "alloc_mean_us": 33.98171428571429,
+        "alloc_p99_us": 291.64285714285717,
+        "frees": 15,
+        "free_mean_us": 24.87257142857143
+      },
+      {
+        "index": 5,
+        "cycle": 1,
+        "phase": "high",
+        "begin_cycle": 5150264,
+        "end_cycle": 6047039,
+        "duration_us": 2562.214285714286,
+        "attempted_insert_arcs": 256,
+        "read_passes": 1,
+        "allocations": 244,
+        "alloc_mean_us": 5.651709601873536,
+        "alloc_p99_us": 3.954285714285714,
+        "frees": 244,
+        "free_mean_us": 6.008103044496488
+      },
+      {
+        "index": 6,
+        "cycle": 1,
+        "phase": "low-again",
+        "begin_cycle": 6046975,
+        "end_cycle": 6940879,
+        "duration_us": 2554.0114285714285,
+        "attempted_insert_arcs": 32,
+        "read_passes": 4,
+        "allocations": 30,
+        "alloc_mean_us": 18.856666666666666,
+        "alloc_p99_us": 292.27714285714285,
+        "frees": 30,
+        "free_mean_us": 14.318190476190475
+      },
+      {
+        "index": 7,
+        "cycle": 1,
+        "phase": "rebound",
+        "begin_cycle": 6940815,
+        "end_cycle": 7602912,
+        "duration_us": 1891.7057142857143,
+        "attempted_insert_arcs": 128,
+        "read_passes": 1,
+        "allocations": 123,
+        "alloc_mean_us": 7.448362369337979,
+        "alloc_p99_us": 170.24571428571429,
+        "frees": 123,
+        "free_mean_us": 7.145272938443671
+      }
+    ],
+    "update_phase_makespan_us": 18988.662857142856,
+    "attempted_insert_arcs": 864,
+    "frontend_hit_fraction_all_requests": 0.9804364183596689,
+    "counter_scope": "Allocator counters include preload and teardown; update latency uses work windows only.",
+    "trace_sha256": "6d9008fe914bbad2dfb6c22bc5c60807dd629e1c7c2c0259bb6e23fb70c07ea6",
+    "dataset_sha256": "418c002fd2f70d25d6561465ffc7b4a6f14f7e406856aaba8ddc327ac4de10e6",
+    "sampled_vertices": 749,
+    "block_bytes": 64,
+    "schedule_kind": "synthetic closed-loop batch schedule; not measured arrival timestamps"
+  }
+}

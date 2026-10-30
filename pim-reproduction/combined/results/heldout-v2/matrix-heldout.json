@@ -1,0 +1,498 @@
+[
+  {
+    "mode": "scan",
+    "policy": "fixed",
+    "keep": 2,
+    "threads": 1,
+    "workload": "resident",
+    "burst": 256,
+    "rounds": 2,
+    "heap_kib": 32768,
+    "seed": 9173
+  },
+  {
+    "mode": "scan",
+    "policy": "adaptive",
+    "keep": 2,
+    "threads": 1,
+    "workload": "resident",
+    "burst": 256,
+    "rounds": 2,
+    "heap_kib": 32768,
+    "seed": 9173
+  },
+  {
+    "mode": "indexed",
+    "policy": "fixed",
+    "keep": 2,
+    "threads": 1,
+    "workload": "resident",
+    "burst": 256,
+    "rounds": 2,
+    "heap_kib": 32768,
+    "seed": 9173
+  },
+  {
+    "mode": "indexed",
+    "policy": "adaptive",
+    "keep": 2,
+    "threads": 1,
+    "workload": "resident",
+    "burst": 256,
+    "rounds": 2,
+    "heap_kib": 32768,
+    "seed": 9173
+  },
+  {
+    "mode": "scan",
+    "policy": "fixed",
+    "keep": 2,
+    "threads": 1,
+    "workload": "handoff",
+    "burst": 32,
+    "rounds": 4,
+    "heap_kib": 32768,
+    "seed": 9173
+  },
+  {
+    "mode": "scan",
+    "policy": "adaptive",
+    "keep": 2,
+    "threads": 1,
+    "workload": "handoff",
+    "burst": 32,
+    "rounds": 4,
+    "heap_kib": 32768,
+    "seed": 9173
+  },
+  {
+    "mode": "indexed",
+    "policy": "fixed",
+    "keep": 2,
+    "threads": 1,
+    "workload": "handoff",
+    "burst": 32,
+    "rounds": 4,
+    "heap_kib": 32768,
+    "seed": 9173
+  },
+  {
+    "mode": "indexed",
+    "policy": "adaptive",
+    "keep": 2,
+    "threads": 1,
+    "workload": "handoff",
+    "burst": 32,
+    "rounds": 4,
+    "heap_kib": 32768,
+    "seed": 9173
+  },
+  {
+    "mode": "scan",
+    "policy": "fixed",
+    "threads": 1,
+    "workload": "graph",
+    "rounds": 2,
+    "graph_edges": 384,
+    "seed": 9173
+  },
+  {
+    "mode": "scan",
+    "policy": "adaptive",
+    "threads": 1,
+    "workload": "graph",
+    "rounds": 2,
+    "graph_edges": 384,
+    "seed": 9173
+  },
+  {
+    "mode": "indexed",
+    "policy": "fixed",
+    "threads": 1,
+    "workload": "graph",
+    "rounds": 2,
+    "graph_edges": 384,
+    "seed": 9173
+  },
+  {
+    "mode": "indexed",
+    "policy": "adaptive",
+    "threads": 1,
+    "workload": "graph",
+    "rounds": 2,
+    "graph_edges": 384,
+    "seed": 9173
+  },
+  {
+    "mode": "scan",
+    "policy": "fixed",
+    "keep": 2,
+    "threads": 4,
+    "workload": "resident",
+    "burst": 256,
+    "rounds": 2,
+    "heap_kib": 32768,
+    "seed": 9173
+  },
+  {
+    "mode": "scan",
+    "policy": "adaptive",
+    "keep": 2,
+    "threads": 4,
+    "workload": "resident",
+    "burst": 256,
+    "rounds": 2,
+    "heap_kib": 32768,
+    "seed": 9173
+  },
+  {
+    "mode": "indexed",
+    "policy": "fixed",
+    "keep": 2,
+    "threads": 4,
+    "workload": "resident",
+    "burst": 256,
+    "rounds": 2,
+    "heap_kib": 32768,
+    "seed": 9173
+  },
+  {
+    "mode": "indexed",
+    "policy": "adaptive",
+    "keep": 2,
+    "threads": 4,
+    "workload": "resident",
+    "burst": 256,
+    "rounds": 2,
+    "heap_kib": 32768,
+    "seed": 9173
+  },
+  {
+    "mode": "scan",
+    "policy": "fixed",
+    "keep": 2,
+    "threads": 4,
+    "workload": "handoff",
+    "burst": 32,
+    "rounds": 4,
+    "heap_kib": 32768,
+    "seed": 9173
+  },
+  {
+    "mode": "scan",
+    "policy": "adaptive",
+    "keep": 2,
+    "threads": 4,
+    "workload": "handoff",
+    "burst": 32,
+    "rounds": 4,
+    "heap_kib": 32768,
+    "seed": 9173
+  },
+  {
+    "mode": "indexed",
+    "policy": "fixed",
+    "keep": 2,
+    "threads": 4,
+    "workload": "handoff",
+    "burst": 32,
+    "rounds": 4,
+    "heap_kib": 32768,
+    "seed": 9173
+  },
+  {
+    "mode": "indexed",
+    "policy": "adaptive",
+    "keep": 2,
+    "threads": 4,
+    "workload": "handoff",
+    "burst": 32,
+    "rounds": 4,
+    "heap_kib": 32768,
+    "seed": 9173
+  },
+  {
+    "mode": "scan",
+    "policy": "fixed",
+    "threads": 4,
+    "workload": "graph",
+    "rounds": 2,
+    "graph_edges": 384,
+    "seed": 9173
+  },
+  {
+    "mode": "scan",
+    "policy": "adaptive",
+    "threads": 4,
+    "workload": "graph",
+    "rounds": 2,
+    "graph_edges": 384,
+    "seed": 9173
+  },
+  {
+    "mode": "indexed",
+    "policy": "fixed",
+    "threads": 4,
+    "workload": "graph",
+    "rounds": 2,
+    "graph_edges": 384,
+    "seed": 9173
+  },
+  {
+    "mode": "indexed",
+    "policy": "adaptive",
+    "threads": 4,
+    "workload": "graph",
+    "rounds": 2,
+    "graph_edges": 384,
+    "seed": 9173
+  },
+  {
+    "mode": "scan",
+    "policy": "fixed",
+    "keep": 2,
+    "threads": 1,
+    "workload": "resident",
+    "burst": 256,
+    "rounds": 2,
+    "heap_kib": 32768,
+    "seed": 24107
+  },
+  {
+    "mode": "scan",
+    "policy": "adaptive",
+    "keep": 2,
+    "threads": 1,
+    "workload": "resident",
+    "burst": 256,
+    "rounds": 2,
+    "heap_kib": 32768,
+    "seed": 24107
+  },
+  {
+    "mode": "indexed",
+    "policy": "fixed",
+    "keep": 2,
+    "threads": 1,
+    "workload": "resident",
+    "burst": 256,
+    "rounds": 2,
+    "heap_kib": 32768,
+    "seed": 24107
+  },
+  {
+    "mode": "indexed",
+    "policy": "adaptive",
+    "keep": 2,
+    "threads": 1,
+    "workload": "resident",
+    "burst": 256,
+    "rounds": 2,
+    "heap_kib": 32768,
+    "seed": 24107
+  },
+  {
+    "mode": "scan",
+    "policy": "fixed",
+    "keep": 2,
+    "threads": 1,
+    "workload": "handoff",
+    "burst": 32,
+    "rounds": 4,
+    "heap_kib": 32768,
+    "seed": 24107
+  },
+  {
+    "mode": "scan",
+    "policy": "adaptive",
+    "keep": 2,
+    "threads": 1,
+    "workload": "handoff",
+    "burst": 32,
+    "rounds": 4,
+    "heap_kib": 32768,
+    "seed": 24107
+  },
+  {
+    "mode": "indexed",
+    "policy": "fixed",
+    "keep": 2,
+    "threads": 1,
+    "workload": "handoff",
+    "burst": 32,
+    "rounds": 4,
+    "heap_kib": 32768,
+    "seed": 24107
+  },
+  {
+    "mode": "indexed",
+    "policy": "adaptive",
+    "keep": 2,
+    "threads": 1,
+    "workload": "handoff",
+    "burst": 32,
+    "rounds": 4,
+    "heap_kib": 32768,
+    "seed": 24107
+  },
+  {
+    "mode": "scan",
+    "policy": "fixed",
+    "threads": 1,
+    "workload": "graph",
+    "rounds": 2,
+    "graph_edges": 384,
+    "seed": 24107
+  },
+  {
+    "mode": "scan",
+    "policy": "adaptive",
+    "threads": 1,
+    "workload": "graph",
+    "rounds": 2,
+    "graph_edges": 384,
+    "seed": 24107
+  },
+  {
+    "mode": "indexed",
+    "policy": "fixed",
+    "threads": 1,
+    "workload": "graph",
+    "rounds": 2,
+    "graph_edges": 384,
+    "seed": 24107
+  },
+  {
+    "mode": "indexed",
+    "policy": "adaptive",
+    "threads": 1,
+    "workload": "graph",
+    "rounds": 2,
+    "graph_edges": 384,
+    "seed": 24107
+  },
+  {
+    "mode": "scan",
+    "policy": "fixed",
+    "keep": 2,
+    "threads": 4,
+    "workload": "resident",
+    "burst": 256,
+    "rounds": 2,
+    "heap_kib": 32768,
+    "seed": 24107
+  },
+  {
+    "mode": "scan",
+    "policy": "adaptive",
+    "keep": 2,
+    "threads": 4,
+    "workload": "resident",
+    "burst": 256,
+    "rounds": 2,
+    "heap_kib": 32768,
+    "seed": 24107
+  },
+  {
+    "mode": "indexed",
+    "policy": "fixed",
+    "keep": 2,
+    "threads": 4,
+    "workload": "resident",
+    "burst": 256,
+    "rounds": 2,
+    "heap_kib": 32768,
+    "seed": 24107
+  },
+  {
+    "mode": "indexed",
+    "policy": "adaptive",
+    "keep": 2,
+    "threads": 4,
+    "workload": "resident",
+    "burst": 256,
+    "rounds": 2,
+    "heap_kib": 32768,
+    "seed": 24107
+  },
+  {
+    "mode": "scan",
+    "policy": "fixed",
+    "keep": 2,
+    "threads": 4,
+    "workload": "handoff",
+    "burst": 32,
+    "rounds": 4,
+    "heap_kib": 32768,
+    "seed": 24107
+  },
+  {
+    "mode": "scan",
+    "policy": "adaptive",
+    "keep": 2,
+    "threads": 4,
+    "workload": "handoff",
+    "burst": 32,
+    "rounds": 4,
+    "heap_kib": 32768,
+    "seed": 24107
+  },
+  {
+    "mode": "indexed",
+    "policy": "fixed",
+    "keep": 2,
+    "threads": 4,
+    "workload": "handoff",
+    "burst": 32,
+    "rounds": 4,
+    "heap_kib": 32768,
+    "seed": 24107
+  },
+  {
+    "mode": "indexed",
+    "policy": "adaptive",
+    "keep": 2,
+    "threads": 4,
+    "workload": "handoff",
+    "burst": 32,
+    "rounds": 4,
+    "heap_kib": 32768,
+    "seed": 24107
+  },
+  {
+    "mode": "scan",
+    "policy": "fixed",
+    "threads": 4,
+    "workload": "graph",
+    "rounds": 2,
+    "graph_edges": 384,
+    "seed": 24107
+  },
+  {
+    "mode": "scan",
+    "policy": "adaptive",
+    "threads": 4,
+    "workload": "graph",
+    "rounds": 2,
+    "graph_edges": 384,
+    "seed": 24107
+  },
+  {
+    "mode": "indexed",
+    "policy": "fixed",
+    "threads": 4,
+    "workload": "graph",
+    "rounds": 2,
+    "graph_edges": 384,
+    "seed": 24107
+  },
+  {
+    "mode": "indexed",
+    "policy": "adaptive",
+    "threads": 4,
+    "workload": "graph",
+    "rounds": 2,
+    "graph_edges": 384,
+    "seed": 24107
+  }
+]

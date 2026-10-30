@@ -1,0 +1,178 @@
+[
+  {
+    "mode": "scan",
+    "policy": "fixed",
+    "keep": 2,
+    "threads": 1,
+    "workload": "scatter",
+    "burst": 128,
+    "rounds": 3,
+    "heap_kib": 32768,
+    "seed": 5290
+  },
+  {
+    "mode": "scan",
+    "policy": "adaptive",
+    "keep": 2,
+    "threads": 1,
+    "workload": "scatter",
+    "burst": 128,
+    "rounds": 3,
+    "heap_kib": 32768,
+    "seed": 5290
+  },
+  {
+    "mode": "indexed",
+    "policy": "fixed",
+    "keep": 2,
+    "threads": 1,
+    "workload": "scatter",
+    "burst": 128,
+    "rounds": 3,
+    "heap_kib": 32768,
+    "seed": 5290
+  },
+  {
+    "mode": "indexed",
+    "policy": "adaptive",
+    "keep": 2,
+    "threads": 1,
+    "workload": "scatter",
+    "burst": 128,
+    "rounds": 3,
+    "heap_kib": 32768,
+    "seed": 5290
+  },
+  {
+    "mode": "scan",
+    "policy": "fixed",
+    "keep": 2,
+    "threads": 1,
+    "workload": "handoff",
+    "burst": 32,
+    "rounds": 6,
+    "heap_kib": 32768,
+    "seed": 5290
+  },
+  {
+    "mode": "scan",
+    "policy": "adaptive",
+    "keep": 2,
+    "threads": 1,
+    "workload": "handoff",
+    "burst": 32,
+    "rounds": 6,
+    "heap_kib": 32768,
+    "seed": 5290
+  },
+  {
+    "mode": "indexed",
+    "policy": "fixed",
+    "keep": 2,
+    "threads": 1,
+    "workload": "handoff",
+    "burst": 32,
+    "rounds": 6,
+    "heap_kib": 32768,
+    "seed": 5290
+  },
+  {
+    "mode": "indexed",
+    "policy": "adaptive",
+    "keep": 2,
+    "threads": 1,
+    "workload": "handoff",
+    "burst": 32,
+    "rounds": 6,
+    "heap_kib": 32768,
+    "seed": 5290
+  },
+  {
+    "mode": "scan",
+    "policy": "fixed",
+    "keep": 2,
+    "threads": 4,
+    "workload": "scatter",
+    "burst": 128,
+    "rounds": 3,
+    "heap_kib": 32768,
+    "seed": 5290
+  },
+  {
+    "mode": "scan",
+    "policy": "adaptive",
+    "keep": 2,
+    "threads": 4,
+    "workload": "scatter",
+    "burst": 128,
+    "rounds": 3,
+    "heap_kib": 32768,
+    "seed": 5290
+  },
+  {
+    "mode": "indexed",
+    "policy": "fixed",
+    "keep": 2,
+    "threads": 4,
+    "workload": "scatter",
+    "burst": 128,
+    "rounds": 3,
+    "heap_kib": 32768,
+    "seed": 5290
+  },
+  {
+    "mode": "indexed",
+    "policy": "adaptive",
+    "keep": 2,
+    "threads": 4,
+    "workload": "scatter",
+    "burst": 128,
+    "rounds": 3,
+    "heap_kib": 32768,
+    "seed": 5290
+  },
+  {
+    "mode": "scan",
+    "policy": "fixed",
+    "keep": 2,
+    "threads": 4,
+    "workload": "handoff",
+    "burst": 32,
+    "rounds": 6,
+    "heap_kib": 32768,
+    "seed": 5290
+  },
+  {
+    "mode": "scan",
+    "policy": "adaptive",
+    "keep": 2,
+    "threads": 4,
+    "workload": "handoff",
+    "burst": 32,
+    "rounds": 6,
+    "heap_kib": 32768,
+    "seed": 5290
+  },
+  {
+    "mode": "indexed",
+    "policy": "fixed",
+    "keep": 2,
+    "threads": 4,
+    "workload": "handoff",
+    "burst": 32,
+    "rounds": 6,
+    "heap_kib": 32768,
+    "seed": 5290
+  },
+  {
+    "mode": "indexed",
+    "policy": "adaptive",
+    "keep": 2,
+    "threads": 4,
+    "workload": "handoff",
+    "burst": 32,
+    "rounds": 6,
+    "heap_kib": 32768,
+    "seed": 5290
+  }
+]
