@@ -13,7 +13,7 @@ The report introduces DPUs and the PIM-malloc baseline, explains our allocator c
 
 `output/submission.zip` collects all six items. `output/speaker-notes.md` provides the presentation script, source references and timing. Present slides 1-20 in 16 minutes; slides 21-24 are backup material. Tables and charts in the PowerPoint remain editable.
 
-The six-page report uses IEEEtran, the standard two-column layout and the author label **CS5290 Project Group**. The result extracts use one column to make the wide data tables easy to read. Figures are supplied as vector PDF/SVG and 400 dpi PNG.
+The ten-page report uses IEEEtran, the standard two-column layout and the author label **CS5290 Project Group**. Eight results plots show the indexing ablation, check interval, slab geometry and reuse, full allocator progression, pinning, paper-derived workloads, and work versus total speedups. The result extracts use one column to make the wide data tables easy to read. Figures are supplied as vector PDF/SVG and 400 dpi PNG.
 
 The report separates the original paper reproduction from the corrected controls with a 64 KiB WRAM limit. The final results cover fourteen workload settings and all seven requested stages. Work runtime, checked lifecycle runtime and full-execution memory traffic have distinct definitions. Reduced graph ports, configured Larson sizes and the allocation-only KV replay are identified explicitly in the paper.
 

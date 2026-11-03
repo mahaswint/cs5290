@@ -30,8 +30,35 @@ plt.rcParams.update({'font.family':'serif','font.serif':['STIXGeneral'],'mathtex
  'pdf.fonttype':42,'ps.fonttype':42,'savefig.facecolor':'white'})
 
 def save(fig,stem):
- for ext in ['pdf','svg','png']:fig.savefig(OUT/f'{stem}.{ext}',dpi=400,bbox_inches='tight',pad_inches=.025)
+ for ext in ['pdf','svg','png']:
+  path=OUT/f'{stem}.{ext}'
+  fig.savefig(path,dpi=400,bbox_inches='tight',pad_inches=.025)
+  if ext=='svg':path.write_text('\n'.join(line.rstrip() for line in path.read_text().splitlines())+'\n')
  plt.close(fig)
+
+def synthetic_reuse(stacked):
+ # A separate attribution study: every bar has the same policy as its control.
+ cases=[('burst',1,'Dense burst\n1T'),('burst',4,'Dense burst\n4T'),
+        ('pool',4,'Persistent pool\n4T'),('sparse',1,'Sparse survivors\n1T')]
+ fig,axs=plt.subplots(1,2,figsize=(7.16,2.65),sharey=True)
+ x=np.arange(len(cases))
+ for ax,key,title in zip(axs,['work_speedup','total_speedup'],['Work phase','Checked total']):
+  for j,(policy,col) in enumerate([('adaptive',COLORS[5]),('fixed',COLORS[6])]):
+   vals=[]
+   for workload,threads,_ in cases:
+    r=next(r for r in stacked if r['workload']==workload and int(r['threads'])==threads
+           and int(r['size'])==4096 and r['policy']==policy and int(r['slab_kib'])==64)
+    vals.append(f(r,key))
+   bars=ax.bar(x+(j-.5)*.35,vals,.35,color=col,label=policy)
+   for bar,val in zip(bars,vals):
+    ax.text(bar.get_x()+bar.get_width()/2,val*1.08,f'{val:.2f}',ha='center',va='bottom',fontsize=6.5)
+  ax.set_xticks(x,[c[2] for c in cases]);ax.set_title(title)
+  ax.set_yscale('log',base=2);ax.set_ylim(1,90);ax.set_yticks([1,2,4,8,16,32,64])
+  ax.yaxis.set_major_formatter(FuncFormatter(lambda v,p:f'{v:g}'))
+  ax.axhline(1,color='black',lw=.6);ax.grid(axis='y',alpha=.2);ax.set_axisbelow(True)
+ axs[0].set_ylabel('64 KiB slab speedup vs indexed direct (×)')
+ axs[1].legend(frameon=False,loc='upper right')
+ fig.tight_layout();save(fig,'synthetic-reuse')
 
 def main():
  # Original paper-artifact reproduction, with its own aggregation and runtime.
@@ -54,6 +81,7 @@ def main():
   selected={r['mode']:r for r in a if r['preset']=='ablation' and r['workload']==w}
   vals=[f(selected['scan'],'work_ms')/f(selected[m],'work_ms') for m in ['scan','lists','lookup','indexed']]
   ax.bar(x+(j-.5)*.36,vals,.36,label='Larson 8–999 B' if w=='larson' else 'Graph churn',color=[COLORS[1],COLORS[6]][j])
+  ax.text(x[-1]+(j-.5)*.36,vals[-1]*1.08,f'{vals[-1]:.2f}×',ha='center',va='bottom',fontsize=7)
  ax.set_xticks(x,['Scan','Lists','Lookup','Both']);ax.set_ylabel('Work speedup (×)');ax.set_yscale('log',base=2)
  ax.set_yticks([1,2,4,8,16,32]);ax.yaxis.set_major_formatter(FuncFormatter(lambda v,p:f'{v:g}'))
  ax.axhline(1,color='black',lw=.6);ax.legend(frameon=False);fig.tight_layout();save(fig,'index-ablation')
@@ -76,6 +104,7 @@ def main():
  ax.grid(axis='y',alpha=.2);fig.tight_layout();save(fig,'standalone-slabs')
  # Combined slab geometry and sparse reservation cost, equal budgets.
  stacked=rows(ROOT/'stacked/analysis/comparisons.csv')
+ synthetic_reuse(stacked)
  fig,axs=plt.subplots(1,2,figsize=(7.16,2.45))
  for policy,col in [('fixed',COLORS[1]),('adaptive',COLORS[6])]:
   sel=sorted([r for r in stacked if r['workload']=='burst' and r['threads']=='4' and r['size']=='4096' and r['policy']==policy],key=lambda r:int(r['slab_kib']))
@@ -99,7 +128,9 @@ def main():
  cases=[c for c in CASES if c[0]=='paper-cases'];fig,ax=plt.subplots(figsize=(7.16,2.8));x=np.arange(len(cases))
  for j,v in enumerate(['slab-pinned-adaptive64','slab-pinned-fixed2']):
   vals=[f(group(c)['baseline'],'work_ms')/f(group(c)[v],'work_ms') for c in cases]
-  ax.bar(x+(j-.5)*.36,vals,.36,color=[COLORS[5],COLORS[6]][j],label=['Full adaptive-64','Full fixed-2'][j])
+  bars=ax.bar(x+(j-.5)*.36,vals,.36,color=[COLORS[5],COLORS[6]][j],label=['Full adaptive-64','Full fixed-2'][j])
+  for bar,val in zip(bars,vals):
+   if val>4:ax.text(bar.get_x()+bar.get_width()/2,val*1.07,f'{val:.2f}',ha='center',va='bottom',fontsize=6.5)
  ax.set_xticks(x,[LABEL[c[1]]+f'\n{c[2]}T' for c in cases]);ax.set_ylabel('Work speedup vs scan fixed-2 (×)');ax.set_yscale('log',base=2)
  ax.set_yticks([.5,1,2,4,8,16,32]);ax.yaxis.set_major_formatter(FuncFormatter(lambda v,p:f'{v:g}'));ax.set_ylim(.6,32)
  ax.axhline(1,color='black',lw=.6);ax.legend(frameon=False,loc='upper left');ax.grid(axis='y',alpha=.2);ax.set_axisbelow(True)
@@ -116,17 +147,22 @@ def main():
  for ax in axs:ax.grid(axis='x',alpha=.2);ax.set_axisbelow(True)
  fig.tight_layout();save(fig,'pinning-isolation')
  # Work versus checked lifecycle, all 14 final cases.
- fig,ax=plt.subplots(figsize=(7.16,3.8));y=np.arange(len(CASES))
- for j,key in enumerate(['work_ms','total_ms']):
-  vals=[f(group(c)['baseline'],key)/f(group(c)['slab-pinned-fixed2'],key) for c in CASES]
-  ax.barh(y+(j-.5)*.34,vals,.34,color=[COLORS[6],COLORS[1]][j],label=['Work','Harness total'][j])
- ax.set_yticks(y,[name(c) for c in CASES]);ax.invert_yaxis();ax.set_xscale('log',base=2);ax.set_xticks([.5,1,2,4,8,16,32]);ax.xaxis.set_major_formatter(FuncFormatter(lambda v,p:f'{v:g}'))
- ax.set_xlim(.65,32);ax.set_xlabel('Full fixed-stack speedup vs scan fixed-2 (×)');ax.axvline(1,color='black',lw=.6)
- ax.legend(frameon=False,loc='lower right',bbox_to_anchor=(1,1.01),ncol=2);ax.grid(axis='x',alpha=.2);ax.set_axisbelow(True);fig.tight_layout();save(fig,'work-versus-total')
+ fig,axs=plt.subplots(1,2,figsize=(7.16,2.8))
+ for ax,family,title in zip(axs,['main-stack','paper-cases'],['Mixed workloads','Paper-derived settings']):
+  cases=[c for c in CASES if c[0]==family];y=np.arange(len(cases))
+  for j,key in enumerate(['work_ms','total_ms']):
+   vals=[f(group(c)['baseline'],key)/f(group(c)['slab-pinned-fixed2'],key) for c in cases]
+   ax.barh(y+(j-.5)*.34,vals,.34,color=[COLORS[6],COLORS[1]][j],label=['Work','Checked total'][j])
+  ax.set_yticks(y,[name(c) for c in cases]);ax.invert_yaxis();ax.set_xscale('log',base=2)
+  ax.set_xticks([1,2,4,8,16,32]);ax.xaxis.set_major_formatter(FuncFormatter(lambda v,p:f'{v:g}'))
+  ax.set_xlim(.65,32);ax.set_title(title);ax.set_xlabel('Full fixed-stack speedup vs scan fixed-2 (×)')
+  ax.axvline(1,color='black',lw=.6);ax.grid(axis='x',alpha=.2);ax.set_axisbelow(True)
+ axs[0].legend(frameon=False,loc='lower right',ncol=1)
+ fig.tight_layout();save(fig,'work-versus-total')
  # Machine-readable values drive both editable slide charts and tables.
  slide_data=dict(final=FINAL,cases=[list(c) for c in CASES],baseline=base,interval=interval,stacked=stacked,
   ablation=[r for r in a if r['preset']=='ablation'])
  (HERE/'build/deck-data.json').write_text(json.dumps(slide_data,indent=2)+'\n')
- print('Exported nine publication-sized figures as PDF/SVG/400 dpi PNG.')
+ print('Exported ten publication-sized figures as PDF/SVG/400 dpi PNG.')
 
 if __name__=='__main__':main()
