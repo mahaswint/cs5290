@@ -75,6 +75,21 @@ def reuse_summary(stacked):
  ax.legend(frameon=False,loc='upper left');ax.grid(axis='y',alpha=.2);ax.set_axisbelow(True)
  fig.tight_layout();save(fig,'reuse-summary')
 
+def pinning_work():
+ # The work-speedup panel of the pinning study, sized for one paper column.
+ cases=[c for c in CASES if c[1] in ['larson','larson-wide','cloud-cache','graph-churn','pim-list','pim-array','micro-4096']]
+ fig,ax=plt.subplots(figsize=(3.5,2.8));y=np.arange(len(cases))
+ for j,(pin,slab,col,label) in enumerate([
+  ('slab-pinned-adaptive64','slab-adaptive64',COLORS[5],'Adaptive'),
+  ('slab-pinned-fixed2','slab-fixed2',COLORS[6],'Fixed-2')]):
+  vals=[f(group(c)[slab],'work_ms')/f(group(c)[pin],'work_ms') for c in cases]
+  ax.barh(y+(j-.5)*.32,vals,.32,color=col,label=label)
+ ax.set_yticks(y,[name(c) for c in cases]);ax.invert_yaxis()
+ ax.set_xlim(.9,1.4);ax.axvline(1,color='black',lw=.6)
+ ax.set_xlabel('Pinning work speedup (×)');ax.legend(frameon=False,ncol=2,loc='lower right',bbox_to_anchor=(1,1.01))
+ ax.grid(axis='x',alpha=.2);ax.set_axisbelow(True)
+ fig.tight_layout();save(fig,'pinning-work')
+
 def main():
  # Original paper-artifact reproduction, with its own aggregation and runtime.
  base=rows(ROOT/'analysis/figure15_comparison.csv')
@@ -121,6 +136,7 @@ def main():
  stacked=rows(ROOT/'stacked/analysis/comparisons.csv')
  synthetic_reuse(stacked)
  reuse_summary(stacked)
+ pinning_work()
  fig,axs=plt.subplots(1,2,figsize=(7.16,2.45))
  for policy,col in [('fixed',COLORS[1]),('adaptive',COLORS[6])]:
   sel=sorted([r for r in stacked if r['workload']=='burst' and r['threads']=='4' and r['size']=='4096' and r['policy']==policy],key=lambda r:int(r['slab_kib']))
@@ -179,6 +195,6 @@ def main():
  slide_data=dict(final=FINAL,cases=[list(c) for c in CASES],baseline=base,interval=interval,stacked=stacked,
   ablation=[r for r in a if r['preset']=='ablation'])
  (HERE/'build/deck-data.json').write_text(json.dumps(slide_data,indent=2)+'\n')
- print('Exported eleven publication-sized figures as PDF/SVG/400 dpi PNG.')
+ print('Exported twelve publication-sized figures as PDF/SVG/400 dpi PNG.')
 
 if __name__=='__main__':main()

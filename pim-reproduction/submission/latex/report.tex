@@ -61,7 +61,7 @@ The backend manages the shared MRAM heap using the buddy algorithm. A mutex prot
 \draw[->] (front)--node[right]{\scriptsize refill / return}(back);
 \draw[->] (back)--(heap);
 \end{tikzpicture}
-\caption{Baseline allocation path. Requests above 2 KiB bypass the frontend and go directly to the backend.}
+\caption{Baseline allocation path; requests above 2 KiB go directly to the backend. DPU = DRAM Processing Unit; MRAM = main DRAM; DRAM = dynamic random-access memory; B = bytes; KiB = 1024 bytes.}
 \label{fig:baseline-path}
 \end{figure}
 
@@ -141,7 +141,7 @@ Figure~\ref{fig:index} isolates lists and ownership lookup with fixed retention.
 On a stable resident pool, indexed fixed takes 69.72 ms and indexed adaptive takes 74.50 ms. Indexing removes search overhead in both policies, but it does not remove adaptive maintenance. This explains why fixed-2 can remain faster even after both use the same page lookup.
 \begin{figure}[t]
 \centering\includegraphics[width=\columnwidth]{index-ablation.pdf}
-\caption{Indexing ablation at one tasklet with fixed-2 retention. Both mechanisms use the same input as the scan control.}
+\caption{Indexing ablation at one tasklet with fixed-2 retention, relative to the scan control. B = bytes; Both = page lists plus ownership lookup.}
 \label{fig:index}
 \end{figure}
 
@@ -155,21 +155,22 @@ The standalone slab tests first confirmed that combining several 4 KiB objects i
 A 64 KiB heap holds sixteen direct 4 KiB objects, but only twelve, fourteen or fifteen objects with the three slab layouts because of headers and unused tails. A fragmented heap may also lack a sufficiently large contiguous span. The implementation has no hidden direct-allocation fallback.
 
 \subsection{Repeated allocation and persistent pools}
-Figure~\ref{fig:synthetic} shows the larger gains in the combined synthetic tests. At four tasklets, 64 KiB slabs improve dense-burst work by \textbf{29.50-fold} with fixed retention and 28.15-fold with adaptive retention. The corresponding total gains are 23.95-fold and 23.00-fold. Backend allocations fall from 512 to 24. Each tasklet allocates and frees 32 objects over four rounds, allowing empty spans to be reused.
-
-The persistent pool has 64 live 4 KiB objects per tasklet and 128 random victim replacements per tasklet. With fixed retention, slab reuse improves work from 137.603 to 2.530 ms, or \textbf{54.39-fold}; adaptive improves it by 51.06-fold. Total gains are 26.94-fold and 26.23-fold. Here, direct allocation calls buddy for every replacement, while a freed slot can be reused within its slab. The live payload stays at 1,024 KiB, but the slab pool reserves 1,280 KiB at the work-end snapshot.
 
 \begin{figure}[t]
 \centering\includegraphics[width=\columnwidth]{reuse-summary.pdf}
-\caption{Synthetic reuse at four tasklets. Each 64 KiB slab variant uses its matching indexed direct control, interval 128 and equal byte budget.}
+\caption{Synthetic reuse at four tasklets. Each 64 KiB slab variant uses its matching indexed direct control, interval 128 and equal byte budget. KiB = 1024 bytes; fixed-2 retains at most two empty spans per class.}
 \label{fig:synthetic}
 \end{figure}
 
 \begin{figure*}[!t]
 \centering\includegraphics[width=\textwidth]{final-progression.pdf}
-\caption{Final full-stack speedups and their intermediate stages at four tasklets. B is scan fixed-2; I adds indexing, S adds slabs, and P adds pinning. A uses adaptive-64 and F uses fixed-2. Each workload uses its matching B control.}
+\caption{Final work speedups at four tasklets, relative to B. B = scan fixed-2; IA/IF = indexed adaptive-64/fixed-2; SA/SF add slabs; PA/PF also add pinning. PrIM = Processing-in-Memory benchmarks; SEL = selection; B in request sizes = bytes.}
 \label{fig:progression}
 \end{figure*}
+
+Figure~\ref{fig:synthetic} shows the larger gains in the combined synthetic tests. At four tasklets, 64 KiB slabs improve dense-burst work by \textbf{29.50-fold} with fixed retention and 28.15-fold with adaptive retention. The corresponding total gains are 23.95-fold and 23.00-fold. Backend allocations fall from 512 to 24. Each tasklet allocates and frees 32 objects over four rounds, allowing empty spans to be reused.
+
+The persistent pool has 64 live 4 KiB objects per tasklet and 128 random victim replacements per tasklet. With fixed retention, slab reuse improves work from 137.603 to 2.530 ms, or \textbf{54.39-fold}; adaptive improves it by 51.06-fold. Total gains are 26.94-fold and 26.23-fold. Here, direct allocation calls buddy for every replacement, while a freed slot can be reused within its slab. The live payload stays at 1,024 KiB, but the slab pool reserves 1,280 KiB at the work-end snapshot.
 
 These tests show when the slab mechanism is most useful: many requests in the new class, repeated reuse and enough live objects to fill spans. They do not represent complete application speedups. The sparse case also becomes faster, but its two survivors keep sixteen times their live payload reserved. Larger slabs trade backend work for reserved memory rather than removing both costs.
 
@@ -183,9 +184,15 @@ The explicit Larson 8--4095 B configuration has 523 slab-eligible allocations ou
 
 Figure~\ref{fig:progression} compares all seven requested stages at four tasklets. The full fixed variant reaches 9.849-fold work speedup on Larson 8--4095 B. Indexing alone is almost neutral there because many requests bypass the original small classes. The new slab class provides most of the gain. Wider Larson improves by 1.703-fold, while CloudPhysics improves by 1.086-fold. The wider range still sends many objects directly to buddy.
 
+\begin{figure}[t]
+\centering\includegraphics[width=\columnwidth]{pinning-work.pdf}
+\caption{Pinning work speedup over matching unpinned indexed-plus-slab controls. Adaptive checks every 64 allocation-plus-free operations; fixed-2 retains at most two empty spans per class. T = tasklets; B = bytes; KiB = 1024 bytes.}
+\label{fig:pinning-work}
+\end{figure}
+
 \begin{figure*}[!t]
 \centering\includegraphics[width=\textwidth]{paper-workloads.pdf}
-\caption{Both full-stack policies on all nine paper-derived settings. The 4 KiB benchmark reaches 22.86-fold work speedup at sixteen tasklets. Original request sizes are retained, and the small-object regression is shown. KV is an allocation-only replay; graphs are reduced ports.}
+\caption{Full-stack policies on the nine paper-derived settings, with original request sizes. KV = key-value (allocation-only replay); T = tasklets; B = bytes; KiB = 1024 bytes. Adaptive-64 checks every 64 allocation-plus-free operations; fixed-2 retains at most two empty spans per class. Graphs are reduced ports.}
 \label{fig:paper-workloads}
 \end{figure*}
 
@@ -194,7 +201,7 @@ Graph churn gets 5.963-fold speedup from indexed fixed alone and 5.763-fold from
 Figure~\ref{fig:progression} shows why we keep every stage. Adding slabs to a workload with no eligible requests does not create a new gain. Similarly, the wider Larson range still has direct-bypass requests above 4 KiB. The complete design improves different paths, but its gains cannot be obtained by multiplying ratios from separate experiments.
 
 \subsection{The effect of pinning metadata}
-We compare each pinned variant with its matching unpinned slab variant. On Larson 8--4095 B, pinning adds 1.253-fold work speedup with adaptive retention and 1.224-fold with fixed retention. The corresponding CloudPhysics gains are 1.014 and 1.013. Wider Larson gains 1.056-fold with adaptive and 1.236-fold with fixed. Pinning barely changes churn work, but improves its total time by about 1.16--1.17-fold because initialization and final reclamation also call buddy.
+Figure~\ref{fig:pinning-work} compares each pinned variant with its matching unpinned slab variant. On Larson 8--4095 B, pinning adds 1.253-fold work speedup with adaptive retention and 1.224-fold with fixed retention. The corresponding CloudPhysics gains are 1.014 and 1.013. Wider Larson gains 1.056-fold with adaptive and 1.236-fold with fixed. Pinning barely changes churn work, but improves its total time by about 1.16--1.17-fold because initialization and final reclamation also call buddy.
 
 The measured WRAM endpoint rises by 540 B. This comparison uses extra storage rather than equal WRAM budgets. Full-execution DRAM bytes fall by 46.48\% for fixed Larson 8--4095 B and 66.49\% for wider fixed Larson, but the work speedups are smaller. Some saved accesses occur outside work or outside its main bottleneck. A second Larson seed and another CloudPhysics window preserve similar incremental pinning gains.
 
@@ -220,12 +227,12 @@ Table~\ref{tab:traffic} summarizes representative memory costs. The complete fou
 
 The final 98 configurations complete their offered work and fully coalesce the heap. The parent and paper-extension checks include 47 and 42 native test cases. Their maximum audited WRAM endpoints are 49,472 B and 48,296 B. The full numerical tables and memory counters accompany the submission.
 
+\newpage
 \section{Discussion and Future Work}
 The design addresses different costs at different points. Indexing reduces page discovery. The new class reduces repeated backend calls for medium-sized objects. Pinning speeds up metadata access in the backend calls that remain. Adaptive retention is useful when demand changes, while stable reuse often favors fixed retention.
 
 The main limits are ownership and memory capacity. One tasklet cannot reclaim another inactive tasklet's pages. Large spans can waste space or fail under fragmentation. The graph sample is small and sparse, and the cache uses a selected trace window. All experiments use deterministic simulation. Testing a complete hardware image, broader traces and equal-WRAM metadata policies would make the results more useful. Separating check frequency from idle-decay duration would also make the adaptive policy easier to tune.
 
-\newpage
 \section{Conclusion}
 We extended PIM-malloc's software allocator with indexed allocation/free, fixed or adaptive empty retention, a 4 KiB slab class and pinned buddy metadata. The evaluation shows why these changes need separate controls. Each helps a particular part of allocation, while its metadata and memory costs remain visible on other workloads. Fixed retention is a strong choice for steady demand. Adaptation needs changing demand or memory pressure to justify its added work.
 

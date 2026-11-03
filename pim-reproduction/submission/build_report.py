@@ -121,7 +121,7 @@ def make_tables():
   for s in [32,256,4096]:
    r=next(r for r in base if int(r['threads'])==t and int(r['size_bytes'])==s and r['allocator']=='sw')
    compact.append([t,'4 KiB' if s==4096 else f'{s} B',f"{f(r,'paper_latency_us'):g}",f"{f(r,'measured_latency_us'):.2f}"])
- table('baseline-summary.tex','Software allocator reproduction. Latency is batch time / 128, in microseconds.',
+ table('baseline-summary.tex','Software allocator reproduction. Latency is batch time / 128, in microseconds. B = bytes; KiB = 1024 bytes. Tasklets are hardware threads.',
   ['Tasklets','Request','Paper','Reproduced'],compact,'rlrr','tab:baseline',wide=False)
  compact=[]
  selected=[('main-stack','larson',4,'Larson (4T)'),('main-stack','cloud-cache',4,'Cache (4T)'),
@@ -133,9 +133,9 @@ def make_tables():
   peak=(f(p,'peak_payload_bytes')-f(b,'peak_payload_bytes'))/1024
   compact.append([label,f"{f(b,'dram_bytes')/2**20:.{precision}f}",
                   f"{f(p,'dram_bytes')/2**20:.{precision}f}",f'{peak:+.0f}' if peak else '0'])
- table('memory-summary.tex','Selected memory costs. B and PF give full-execution DRAM traffic in MiB; the last column is extra peak payload in KiB.',
+ table('memory-summary.tex','Main-memory traffic and extra peak payload. B = scan fixed-2; PF = indexed + slabs + pinning with fixed-2. T = tasklets; MiB = $2^{20}$ bytes; KiB = $2^{10}$ bytes.',
   ['Case','B MiB','PF MiB','Peak +KiB'],compact,'lrrr','tab:traffic',wide=False,
-  note='PF is the full fixed stack. The separate 64 KiB ownership map is excluded from payload peaks.')
+  note='Peak is PF minus B; B in request sizes means bytes. The separate 64 KiB ownership map is excluded from payload peaks.')
 
 def main():
  make_tables()

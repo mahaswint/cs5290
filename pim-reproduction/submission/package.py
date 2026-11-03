@@ -91,7 +91,7 @@ Optional graph regeneration: install tools/requirements.txt in a Python environm
 
 Upload the contents of this ZIP to Overleaf. Select report.tex as the main file and use pdfLaTeX. Alternatively run `tectonic report.tex` or `latexmk -pdf report.tex`.
 
-The main file includes all report text, equations, references and the TikZ baseline diagram. IEEEtran.cls, two short tables and all four results plots are included. Keep the tables/ and figures/ directories next to report.tex. The report uses the standard IEEE conference layout and is seven pages.
+The main file includes all report text, equations, references and the TikZ baseline diagram. IEEEtran.cls, two short tables and all five results plots are included. Figure and table captions define their abbreviations locally. Keep the tables/ and figures/ directories next to report.tex. The report uses the standard IEEE conference layout and is seven pages.
 
 The complete data and plot-generation scripts are in the accompanying latex-source.zip and source-code.zip packages.
 ''')
