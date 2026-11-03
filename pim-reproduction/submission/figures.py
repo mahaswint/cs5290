@@ -60,6 +60,21 @@ def synthetic_reuse(stacked):
  axs[1].legend(frameon=False,loc='upper right')
  fig.tight_layout();save(fig,'synthetic-reuse')
 
+def reuse_summary(stacked):
+ # Compact main-paper view; the complete work/total plot remains available.
+ fig,ax=plt.subplots(figsize=(3.5,2.2));x=np.arange(2)
+ for j,(policy,col,label) in enumerate([('adaptive',COLORS[5],'Adaptive'),('fixed',COLORS[6],'Fixed-2')]):
+  vals=[f(next(r for r in stacked if r['workload']==workload and r['threads']=='4'
+        and r['size']=='4096' and r['slab_kib']=='64' and r['policy']==policy),'work_speedup')
+        for workload in ['burst','pool']]
+  bars=ax.bar(x+(j-.5)*.3,vals,.3,color=col,label=label)
+  for bar,val in zip(bars,vals):
+   ax.text(bar.get_x()+bar.get_width()/2,val+1,f'{val:.2f}×',ha='center',va='bottom',fontsize=7)
+ ax.set_xticks(x,['Dense bursts','Persistent pool']);ax.set_ylim(0,68)
+ ax.set_yticks([0,20,40,60]);ax.set_ylabel('Work speedup (×)')
+ ax.legend(frameon=False,loc='upper left');ax.grid(axis='y',alpha=.2);ax.set_axisbelow(True)
+ fig.tight_layout();save(fig,'reuse-summary')
+
 def main():
  # Original paper-artifact reproduction, with its own aggregation and runtime.
  base=rows(ROOT/'analysis/figure15_comparison.csv')
@@ -105,6 +120,7 @@ def main():
  # Combined slab geometry and sparse reservation cost, equal budgets.
  stacked=rows(ROOT/'stacked/analysis/comparisons.csv')
  synthetic_reuse(stacked)
+ reuse_summary(stacked)
  fig,axs=plt.subplots(1,2,figsize=(7.16,2.45))
  for policy,col in [('fixed',COLORS[1]),('adaptive',COLORS[6])]:
   sel=sorted([r for r in stacked if r['workload']=='burst' and r['threads']=='4' and r['size']=='4096' and r['policy']==policy],key=lambda r:int(r['slab_kib']))
@@ -163,6 +179,6 @@ def main():
  slide_data=dict(final=FINAL,cases=[list(c) for c in CASES],baseline=base,interval=interval,stacked=stacked,
   ablation=[r for r in a if r['preset']=='ablation'])
  (HERE/'build/deck-data.json').write_text(json.dumps(slide_data,indent=2)+'\n')
- print('Exported ten publication-sized figures as PDF/SVG/400 dpi PNG.')
+ print('Exported eleven publication-sized figures as PDF/SVG/400 dpi PNG.')
 
 if __name__=='__main__':main()

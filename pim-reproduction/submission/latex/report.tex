@@ -105,8 +105,8 @@ This is a software placement change that uses additional WRAM. The baseline pape
 \subsection{Setup and comparison stages}
 We use the released software simulator at 350 MHz with one DPU and SDK 2023.2.0. The original Figure 15 reproduction uses the authors' allocator bodies and memory layout. Contribution experiments share the corrected paths and the 64 KiB WRAM limit described above.
 
-The final matrix has 14 workload settings and seven variants per setting, for 98 configurations. Table~\ref{tab:variants} defines the stages. Each comparison uses the same input and 32 MiB payload heap. Final adaptive variants check every 64 allocation-plus-free operations. All final variants have a 256 KiB empty-byte budget per tasklet and a maximum of two empty pages or spans per class. Earlier retention/indexing studies used 16 KiB per tasklet. The paired interval study compares 64 with 128 operations. The combined slab-size and heavy-request studies use interval 128 and 256 KiB. We compare times only within a stage.
-\input{tables/variants-compact.tex}
+The final matrix has 14 workload settings and seven variants per setting, for 98 configurations. Each comparison uses the same input and 32 MiB payload heap. Final adaptive variants check every 64 allocation-plus-free operations. All final variants have a 256 KiB empty-byte budget per tasklet and a maximum of two empty pages or spans per class. Earlier retention/indexing studies used 16 KiB per tasklet. The paired interval study compares 64 with 128 operations. The combined slab-size and heavy-request studies use interval 128 and 256 KiB. We compare times only within a stage.
+The plot labels use B for scan fixed-2, I for indexing, S for indexing plus slabs, and P for indexing plus slabs and pinned metadata. The suffix A means adaptive-64; F means fixed-2.
 
 \subsection{Workloads}
 The allocation microbenchmark follows the paper: 128 requests per tasklet, sizes of 32 B, 256 B and 4 KiB, and one or sixteen tasklets. The two graph insertion kernels also follow the paper's data structures. We reservoir-sample 3,072 real undirected Gowalla edges, preload 2,048, and insert 1,024 while storing both directed arcs. Linked blocks request 256 B. Growing arrays start at 64 B and reach 256 B in this small sample. The full paper uses larger graphs and arrays.
@@ -126,11 +126,10 @@ Native sanitizer and differential tests check live intervals, payloads, wrong-si
 
 \section{Evaluation}\label{sec:evaluation}
 \subsection{Reproducing the paper baseline}
-Table~\ref{tab:baseline} compares the original Figure 15 labels with our measurements. The maximum absolute deviation is 7.20\%. The displayed latency is batch completion time divided by 128 requests per tasklet. The paper does not state the exact multithread aggregation formula, so this is our documented interpretation. Individual request latencies remain available separately. These numbers use the preserved runtime and are separate from our contribution baseline.
-\input{tables/baseline.tex}
+Table~\ref{tab:baseline} compares the original Figure 15 labels with our measurements. Across the buddy and software allocator settings, the maximum absolute deviation is 7.20\%. The table shows the software allocator; the accompanying baseline results contain both allocators. The displayed latency is batch completion time divided by 128 requests per tasklet. The paper does not state the exact multithread aggregation formula, so this is our documented interpretation. Individual request latencies remain available separately. These numbers use the preserved runtime and are separate from our contribution baseline.
+\input{tables/baseline-summary.tex}
 
-
-Table~\ref{tab:baseline} also shows the baseline's size boundary. The software frontend is useful for 32 B and 256 B requests, while 4 KiB requests still use buddy directly. Our later slab change targets this missing frontend class. The original reproduction establishes the starting behavior; the corrected scan fixed-2 control is the baseline for our final contributions.
+The key size boundary is 2 KiB: smaller requests use the software frontend, while 4 KiB requests still use buddy directly. Our later slab change targets this missing frontend class. The original reproduction establishes the starting behavior; the corrected scan fixed-2 control is the baseline for our final contributions.
 
 \subsection{Retention, indexing and check frequency}
 On regular four-tasklet phases, fixed-2 takes 16.25 ms total and adaptive takes 18.52 ms. Both peak at 128 KiB. Eager population takes 29.66 ms at 192 KiB, while immediate return takes 23.82 ms at 96 KiB. Fixed retention works well when demand is stable and pages are reused predictably.
@@ -147,21 +146,11 @@ On a stable resident pool, indexed fixed takes 69.72 ms and indexed adaptive tak
 \end{figure}
 
 Increasing the check interval from 64 to 128 operations gives only small improvements. Most main-seed cases improve by 0.30--0.83\%, while four-tasklet linked insertion becomes 1.30\% slower. One-tasklet Larson changes from 42.161 to 41.811 ms, still behind indexed fixed-2 at 38.759 ms. Its DRAM commands change from 200,230 to 200,234, so lower traffic does not explain the time saving. Fewer maintenance instructions and changed scheduling are plausible causes. The longer interval also slows idle decay. The final matrix returns to interval 64.
-\begin{figure*}[!t]
-\centering\includegraphics[width=\textwidth]{interval-sweep.pdf}
-\caption{Changing only the adaptive check interval from 64 to 128 allocation-plus-free operations. Positive values mean lower work time at 128. Labels identify tasklet count and input seed. The linked-block regression is retained.}
-\label{fig:interval}
-\end{figure*}
 
-Figure~\ref{fig:interval} includes the second-seed checks, where Larson and churn improve by 0.44--0.60\%. PrIM selection is nearly unchanged because it makes no work-phase allocator calls. Most pairs have unchanged refill counts and DRAM bytes. Thus, reducing check frequency is a small tuning change, while removing page scans addresses a much larger cost.
+In the second-seed checks, Larson and churn improve by 0.44--0.60\%. PrIM selection is nearly unchanged because it makes no work-phase allocator calls. Most pairs have unchanged refill counts and DRAM bytes. Thus, reducing check frequency is a small tuning change, while removing page scans addresses a much larger cost.
 
 \subsection{Slab size, request sizes and capacity}
-The standalone slab tests first confirmed that combining several 4 KiB objects into one backend allocation reduces repeated buddy calls. In the combined four-tasklet dense burst, fixed retention takes 136.669 ms with direct allocation, 35.950 ms with 16 KiB spans, 11.947 ms with 32 KiB spans, and 4.633 ms with 64 KiB spans. All use the same 256 KiB empty-byte budget. Figure~\ref{fig:slab} also shows the memory cost: two surviving 4 KiB objects can keep 128 KiB reserved in separate large spans.
-\begin{figure*}[!t]
-\centering\includegraphics[width=\textwidth]{slab-tradeoff.pdf}
-\caption{Larger spans reduce work in a dense burst, but sparse survivors can keep much more memory reserved. The sparse case has 8 KiB of live payload.}
-\label{fig:slab}
-\end{figure*}
+The standalone slab tests first confirmed that combining several 4 KiB objects into one backend allocation reduces repeated buddy calls. In the combined four-tasklet dense burst, fixed retention takes 136.669 ms with direct allocation, 35.950 ms with 16 KiB spans, 11.947 ms with 32 KiB spans, and 4.633 ms with 64 KiB spans. All use the same 256 KiB empty-byte budget. The memory cost is substantial: two surviving 4 KiB objects can keep 128 KiB reserved in separate large spans.
 
 A 64 KiB heap holds sixteen direct 4 KiB objects, but only twelve, fourteen or fifteen objects with the three slab layouts because of headers and unused tails. A fragmented heap may also lack a sufficiently large contiguous span. The implementation has no hidden direct-allocation fallback.
 
@@ -170,10 +159,16 @@ Figure~\ref{fig:synthetic} shows the larger gains in the combined synthetic test
 
 The persistent pool has 64 live 4 KiB objects per tasklet and 128 random victim replacements per tasklet. With fixed retention, slab reuse improves work from 137.603 to 2.530 ms, or \textbf{54.39-fold}; adaptive improves it by 51.06-fold. Total gains are 26.94-fold and 26.23-fold. Here, direct allocation calls buddy for every replacement, while a freed slot can be reused within its slab. The live payload stays at 1,024 KiB, but the slab pool reserves 1,280 KiB at the work-end snapshot.
 
-\begin{figure*}[!t]
-\centering\includegraphics[width=\textwidth]{synthetic-reuse.pdf}
-\caption{Combined slab study with interval 128: each bar compares a 64 KiB slab against the indexed direct allocator with the same retention policy and byte budget. These are synthetic reuse tests. Work and checked-total speedups are plotted separately; sparse survivors still incur the memory cost in Fig.~\ref{fig:slab}.}
+\begin{figure}[t]
+\centering\includegraphics[width=\columnwidth]{reuse-summary.pdf}
+\caption{Synthetic reuse at four tasklets. Each 64 KiB slab variant uses its matching indexed direct control, interval 128 and equal byte budget.}
 \label{fig:synthetic}
+\end{figure}
+
+\begin{figure*}[!t]
+\centering\includegraphics[width=\textwidth]{final-progression.pdf}
+\caption{Final full-stack speedups and their intermediate stages at four tasklets. B is scan fixed-2; I adds indexing, S adds slabs, and P adds pinning. A uses adaptive-64 and F uses fixed-2. Each workload uses its matching B control.}
+\label{fig:progression}
 \end{figure*}
 
 These tests show when the slab mechanism is most useful: many requests in the new class, repeated reuse and enough live objects to fill spans. They do not represent complete application speedups. The sparse case also becomes faster, but its two survivors keep sixteen times their live payload reserved. Larger slabs trade backend work for reserved memory rather than removing both costs.
@@ -185,12 +180,13 @@ The unchanged small-request ports do not use the new class. Larson 8--999 B beco
 The explicit Larson 8--4095 B configuration has 523 slab-eligible allocations out of 1,024 timed allocations at four tasklets. With interval 128, 64 KiB fixed slabs reduce work from 159.826 to 19.894 ms, an 8.03-fold gain over the matching indexed control. A 32 KiB slab takes 20.221 ms, so increasing an already useful slab is a much smaller part of the gain. Some adaptive cases prefer 32 KiB. CloudPhysics has only 54 eligible requests out of 150, with 43 above 4 KiB. Its fixed work changes from 122.784 to 114.528 ms, a 1.07-fold gain. Payload processing and bypass requests leave less time for slabs to save.
 
 \subsection{The full allocator}
-Table~\ref{tab:final-main} reports all seven requested stages at four tasklets. The full fixed variant reaches 9.849-fold work speedup on Larson 8--4095 B. Indexing alone is almost neutral there because many requests bypass the original small classes. The new slab class provides most of the gain. Wider Larson improves by 1.703-fold, while CloudPhysics improves by 1.086-fold. The wider range still sends many objects directly to buddy.
-\input{tables/final-main.tex}
+
+Figure~\ref{fig:progression} compares all seven requested stages at four tasklets. The full fixed variant reaches 9.849-fold work speedup on Larson 8--4095 B. Indexing alone is almost neutral there because many requests bypass the original small classes. The new slab class provides most of the gain. Wider Larson improves by 1.703-fold, while CloudPhysics improves by 1.086-fold. The wider range still sends many objects directly to buddy.
+
 \begin{figure*}[!t]
-\centering\includegraphics[width=\textwidth]{final-progression.pdf}
-\caption{All seven final variants on the five four-tasklet workloads. Labels follow Table~\ref{tab:variants}; each workload is normalized to its scan fixed-2 control. Churn benefits mainly from indexing, while configured Larson benefits mainly from the new slab class.}
-\label{fig:progression}
+\centering\includegraphics[width=\textwidth]{paper-workloads.pdf}
+\caption{Both full-stack policies on all nine paper-derived settings. The 4 KiB benchmark reaches 22.86-fold work speedup at sixteen tasklets. Original request sizes are retained, and the small-object regression is shown. KV is an allocation-only replay; graphs are reduced ports.}
+\label{fig:paper-workloads}
 \end{figure*}
 
 Graph churn gets 5.963-fold speedup from indexed fixed alone and 5.763-fold from the full fixed variant. Extra mechanisms do not improve its work phase further. Selection stays nearly unchanged. Full adaptive takes 19.172 ms on Larson 8--4095 B, compared with fixed's 16.255 ms. Adaptive bookkeeping and different refill/reclamation timing still matter after indexing and slabs are present.
@@ -201,22 +197,12 @@ Figure~\ref{fig:progression} shows why we keep every stage. Adding slabs to a wo
 We compare each pinned variant with its matching unpinned slab variant. On Larson 8--4095 B, pinning adds 1.253-fold work speedup with adaptive retention and 1.224-fold with fixed retention. The corresponding CloudPhysics gains are 1.014 and 1.013. Wider Larson gains 1.056-fold with adaptive and 1.236-fold with fixed. Pinning barely changes churn work, but improves its total time by about 1.16--1.17-fold because initialization and final reclamation also call buddy.
 
 The measured WRAM endpoint rises by 540 B. This comparison uses extra storage rather than equal WRAM budgets. Full-execution DRAM bytes fall by 46.48\% for fixed Larson 8--4095 B and 66.49\% for wider fixed Larson, but the work speedups are smaller. Some saved accesses occur outside work or outside its main bottleneck. A second Larson seed and another CloudPhysics window preserve similar incremental pinning gains.
-\begin{figure*}[!t]
-\centering\includegraphics[width=\textwidth]{pinning-isolation.pdf}
-\caption{Pinning isolated from slabs and retention: each pinned variant is compared with its matching unpinned slab variant. The left panel measures work speedup; the right measures full-execution DRAM-byte reduction. Their scopes differ, so equal percentage gains are not expected.}
-\label{fig:pinning}
-\end{figure*}
 
-Figure~\ref{fig:pinning} includes graph insertion and the original 4 KiB microbenchmark. Pinning adds 1.250-fold work speedup on fixed linked blocks and 1.228-fold on fixed 4 KiB allocation at sixteen tasklets. On churn it saves 9.66\% of full-execution DRAM bytes with almost no work-time change. On the second Larson seed, its incremental gains are 1.219-fold adaptive and 1.231-fold fixed; on the second cache window they remain about 1.014-fold. This supports the metadata-placement mechanism while showing that traffic saved outside the main timed path has less effect on work time.
+On graph insertion and the original 4 KiB microbenchmark, pinning adds 1.250-fold work speedup on fixed linked blocks and 1.228-fold on fixed 4 KiB allocation at sixteen tasklets. On churn it saves 9.66\% of full-execution DRAM bytes with almost no work-time change. On the second Larson seed, its incremental gains are 1.219-fold adaptive and 1.231-fold fixed; on the second cache window they remain about 1.014-fold. This supports the metadata-placement mechanism while showing that traffic saved outside the main timed path has less effect on work time.
 
 \subsection{Workloads from the paper}
-Table~\ref{tab:paper-final} gives the reduced graph ports, the original allocation-size settings and the KV allocation replay. Linked blocks improve from 19.330 to 15.198 ms with full fixed, or 1.272-fold. Growing arrays improve from 5.752 to 5.494 ms, or 1.047-fold, while full adaptive is slightly slower than baseline. These graphs contain no requests for the slab class. Their gains come from other parts of the allocator.
-\input{tables/paper-final.tex}
-\begin{figure*}[!t]
-\centering\includegraphics[width=\textwidth]{paper-workloads.pdf}
-\caption{Both full-stack policies on all nine paper-derived settings. The 4 KiB benchmark reaches 22.86-fold work speedup at sixteen tasklets. Original request sizes are retained, and the small-object regression is shown. KV is an allocation-only replay; graphs are reduced ports.}
-\label{fig:paper-workloads}
-\end{figure*}
+
+Figure~\ref{fig:paper-workloads} shows the reduced graph ports, the original allocation-size settings and the KV allocation replay. Linked blocks improve from 19.330 to 15.198 ms with full fixed, or 1.272-fold. Growing arrays improve from 5.752 to 5.494 ms, or 1.047-fold, while full adaptive is slightly slower than baseline. These graphs contain no requests for the slab class. Their gains come from other parts of the allocator.
 
 The 4 KiB allocation microbenchmark benefits most. Full fixed reduces one-tasklet work from 20.912 to 1.778 ms, or 11.763-fold. At sixteen tasklets it reduces 508.474 to 22.243 ms, or \textbf{22.860-fold}. Full adaptive reaches 22.766-fold. Backend allocations fall from 128 to 9 at one tasklet and from 2,048 to 144 at sixteen. Mean individual allocation latency at sixteen tasklets falls from 3960.865 to 166.665 microseconds with full fixed. The original frontend has no 4 KiB class, so these gains mainly show the value of serving a previously uncached size. They do not imply the same gain from enlarging existing small-object pages.
 
@@ -224,18 +210,13 @@ The one-tasklet 32 B case regresses from 0.875 to 0.990 ms with full fixed, or 0
 
 \subsection{Total time and memory use}
 Work speedup and total speedup answer different questions. In the one-tasklet 4 KiB case, full fixed improves work by 11.76-fold but total by 1.51-fold. Full-payload checking and the rest of the lifecycle occupy a large common share. At sixteen tasklets, total improves by 6.75-fold against 22.86-fold work. These are checked program totals in the simulator.
-\begin{figure*}[!t]
-\centering\includegraphics[width=\textwidth]{work-versus-total.pdf}
-\caption{Work-phase and checked-total speedups for full fixed across all fourteen final settings. Each ratio uses the matching baseline phase. The large allocation-only work gains become smaller when initialization, payload checks and reclamation are included.}
-\label{fig:work-total}
-\end{figure*}
 
-Figure~\ref{fig:work-total} puts the largest work gains next to their lifecycle gains. Larson 8--4095 B reaches 9.85-fold work and 6.77-fold total speedup. Graph churn reaches 5.76-fold work and 2.30-fold total. Wider Larson has 1.70-fold work and 1.86-fold total speedup because pinning also helps initialization and final free. Total can therefore improve more or less than work, depending on which phases benefit.
+The same distinction appears in the other workloads. Larson 8--4095 B reaches 9.85-fold work and 6.77-fold total speedup. Graph churn reaches 5.76-fold work and 2.30-fold total. Wider Larson has 1.70-fold work and 1.86-fold total speedup because pinning also helps initialization and final free. Total can therefore improve more or less than work, depending on which phases benefit.
 
 For configured Larson, full fixed reduces full-execution DRAM commands from 709,446 to 94,810. Its payload peak rises from 996 to 1,244 KiB. The sixteen-tasklet 4 KiB case reduces commands from 2,990,666 to 2,147,130, but payload reservation rises from 8 to 9 MiB. Indexed variants also need the separate 64 KiB ownership table. In the one-tasklet 32 B case, commands rise from 4,226 to 11,566. These costs explain why a larger allocator is not always faster or more memory-efficient.
-\input{tables/traffic.tex}
+\input{tables/memory-summary.tex}
 
-Table~\ref{tab:traffic} reports the complete demand and memory comparison for all fourteen final settings. Counts include the whole execution, while timed allocations refer only to work. For example, the 4 KiB sixteen-tasklet benchmark issues 2,048 timed requests and needs only 144 slab backend allocations, yet it still transfers 16.38 MiB overall. Full-payload writes and checking remain after metadata calls have been reduced. Fewer backend calls therefore need not produce the same reduction in total bytes.
+Table~\ref{tab:traffic} summarizes representative memory costs. The complete fourteen-setting comparison is included in the accompanying result files. Counts include the whole execution, while timed allocations refer only to work. For example, the 4 KiB sixteen-tasklet benchmark issues 2,048 timed requests and needs only 144 slab backend allocations, yet it still transfers 16.38 MiB overall. Full-payload writes and checking remain after metadata calls have been reduced. Fewer backend calls therefore need not produce the same reduction in total bytes.
 
 The final 98 configurations complete their offered work and fully coalesce the heap. The parent and paper-extension checks include 47 and 42 native test cases. Their maximum audited WRAM endpoints are 49,472 B and 48,296 B. The full numerical tables and memory counters accompany the submission.
 
@@ -244,6 +225,7 @@ The design addresses different costs at different points. Indexing reduces page 
 
 The main limits are ownership and memory capacity. One tasklet cannot reclaim another inactive tasklet's pages. Large spans can waste space or fail under fragmentation. The graph sample is small and sparse, and the cache uses a selected trace window. All experiments use deterministic simulation. Testing a complete hardware image, broader traces and equal-WRAM metadata policies would make the results more useful. Separating check frequency from idle-decay duration would also make the adaptive policy easier to tune.
 
+\newpage
 \section{Conclusion}
 We extended PIM-malloc's software allocator with indexed allocation/free, fixed or adaptive empty retention, a 4 KiB slab class and pinned buddy metadata. The evaluation shows why these changes need separate controls. Each helps a particular part of allocation, while its metadata and memory costs remain visible on other workloads. Fixed retention is a strong choice for steady demand. Adaptation needs changing demand or memory pressure to justify its added work.
 

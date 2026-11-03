@@ -1,0 +1,13 @@
+\begin{table}[t]
+\caption{Software allocator reproduction. Latency is batch time / 128, in microseconds.}\label{tab:baseline}
+\centering\small
+\begin{tabular}{rlrr}\toprule
+Tasklets & Request & Paper & Reproduced \\ \midrule
+1 & 32 B & 6.9 & 6.99 \\
+1 & 256 B & 32 & 32.12 \\
+1 & 4 KiB & 310 & 312.71 \\
+16 & 32 B & 51 & 51.86 \\
+16 & 256 B & 430 & 457.72 \\
+16 & 4 KiB & 6700 & 6808.97 \\
+\bottomrule\end{tabular}
+\end{table}

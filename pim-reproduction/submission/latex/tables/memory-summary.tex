@@ -1,0 +1,13 @@
+\begin{table}[t]
+\caption{Selected memory costs. B and PF give full-execution DRAM traffic in MiB; the last column is extra peak payload in KiB.}\label{tab:traffic}
+\centering\small
+\begin{tabular}{lrrr}\toprule
+Case & B MiB & PF MiB & Peak +KiB \\ \midrule
+Larson (4T) & 5.41 & 0.72 & +248 \\
+Cache (4T) & 5.88 & 5.37 & +188 \\
+Churn (4T) & 15.70 & 8.43 & 0 \\
+4 KiB (16T) & 22.82 & 16.38 & +1024 \\
+32 B (1T) & 0.032 & 0.088 & 0 \\
+\bottomrule\end{tabular}
+\par\vspace{2pt}{\footnotesize PF is the full fixed stack. The separate 64 KiB ownership map is excluded from payload peaks.}
+\end{table}
