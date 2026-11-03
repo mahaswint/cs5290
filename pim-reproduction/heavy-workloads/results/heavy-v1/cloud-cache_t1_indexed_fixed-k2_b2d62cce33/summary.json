@@ -1,0 +1,189 @@
+{
+  "configuration": {
+    "workload": "cloud-cache",
+    "mode": "indexed",
+    "policy": "fixed",
+    "threads": 1,
+    "objects": 64,
+    "operations": 256,
+    "larson_max": 4096,
+    "warmup": 128,
+    "trace_offset": 0,
+    "seed": 4141,
+    "heap_kib": 32768,
+    "keep": 2,
+    "max_keep": 2,
+    "budget_pages": 64,
+    "decay_ops": 128,
+    "pressure_percent": 75,
+    "items": 32768,
+    "rounds": 2,
+    "validate": false,
+    "tag": "heavy-v1",
+    "slab_kib": 64
+  },
+  "correctness_passed": true,
+  "outcome": "completed",
+  "frequency_mhz": 350,
+  "metrics": {
+    "alloc": {
+      "samples": 257,
+      "mean_us": 63.09715397443024,
+      "p99_us": 215.24857142857144,
+      "max_us": 247.4257142857143
+    },
+    "free": {
+      "samples": 257,
+      "mean_us": 37.64462479155086,
+      "p99_us": 118.39714285714285,
+      "max_us": 118.49142857142857
+    },
+    "init": {
+      "samples": 1,
+      "mean_us": 80007.95714285714,
+      "p99_us": 80007.95714285714,
+      "max_us": 80007.95714285714
+    },
+    "work": {
+      "samples": 1,
+      "mean_us": 243538.71714285715,
+      "p99_us": 243538.71714285715,
+      "max_us": 243538.71714285715
+    },
+    "drain": {
+      "samples": 1,
+      "mean_us": 42333.75714285715,
+      "p99_us": 42333.75714285715,
+      "max_us": 42333.75714285715
+    },
+    "total": {
+      "samples": 1,
+      "mean_us": 405869.9314285714,
+      "p99_us": 405869.9314285714,
+      "max_us": 405869.9314285714
+    }
+  },
+  "work_metrics": {
+    "alloc": {
+      "samples": 166,
+      "mean_us": 62.97376936316695,
+      "p99_us": 239.97714285714287,
+      "max_us": 247.4257142857143
+    },
+    "free": {
+      "samples": 166,
+      "mean_us": 34.41664371772806,
+      "p99_us": 104.86285714285714,
+      "max_us": 118.28857142857143
+    }
+  },
+  "work_makespan_us": 243538.71714285715,
+  "totals": {
+    "alloc_calls": 257,
+    "successes": 257,
+    "free_calls": 257,
+    "cache_hits": 170,
+    "refills": 20,
+    "returns": 20,
+    "failures": 0,
+    "retained_hits": 23,
+    "retained": 0,
+    "live_slots": 0,
+    "peak_slots": 609792,
+    "grows": 0,
+    "decays": 0,
+    "idle_trims": 0,
+    "pressure_trims": 0,
+    "budget_trims": 0,
+    "emergency_trims": 0
+  },
+  "backend": {
+    "used_bytes": 0,
+    "peak_bytes": 716800,
+    "allocations": 87,
+    "frees": 87,
+    "failed_attempts": 0
+  },
+  "wram": {
+    "heap_end_address": 41404,
+    "cache_descriptor_bytes": 504,
+    "stats_bytes": 72
+  },
+  "owner_table_mram_bytes": 65536,
+  "peak_payload_plus_owner_bytes": 782336,
+  "source_sha256": "6b939d8dd47f4af81700fcecf54bf6725d177fa4929a21952b1e5c3acc09e82a",
+  "simulator_sha256": "907c1e5efe6302aa971e1e3824a2473c20b688da8f5ee093d52069fc2c8a8808",
+  "trace": {
+    "workload": "cloud-cache",
+    "source_commit": "c6ffd976c83d9e731b37fc91e1ce930039f5ddb9",
+    "dataset_sha256": "987ff2213050e47d24e8ba6e010d4b3127e51aafef6a76a8a6d43d13b9156fa1",
+    "dataset_url": "https://github.com/1a1a11a/libCacheSim/blob/c6ffd976c83d9e731b37fc91e1ce930039f5ddb9/data/cloudPhysicsIO.csv",
+    "original_records": 113872,
+    "trace_offset": 0,
+    "selected_records": 384,
+    "warmup_records": 128,
+    "work_records": 256,
+    "threads": 1,
+    "cache_entries_per_tasklet": 64,
+    "counts": [
+      {
+        "allocations": 257,
+        "frees": 193,
+        "hits": 127,
+        "work_allocations": 166,
+        "work_frees": 166,
+        "work_hits": 90
+      }
+    ],
+    "request_sizes": {
+      "512": 43,
+      "1024": 8,
+      "1536": 21,
+      "2048": 10,
+      "2560": 17,
+      "3072": 8,
+      "3584": 7,
+      "4096": 76,
+      "4608": 11,
+      "5120": 9,
+      "5632": 2,
+      "6144": 1,
+      "6656": 1,
+      "8192": 6,
+      "8704": 1,
+      "9728": 1,
+      "11264": 1,
+      "12288": 3,
+      "16384": 19,
+      "49152": 2,
+      "53248": 6,
+      "57344": 4
+    },
+    "work_request_sizes": {
+      "512": 27,
+      "1024": 5,
+      "1536": 17,
+      "2048": 5,
+      "2560": 12,
+      "3072": 4,
+      "3584": 5,
+      "4096": 47,
+      "4608": 8,
+      "5120": 3,
+      "5632": 1,
+      "8192": 4,
+      "8704": 1,
+      "9728": 1,
+      "12288": 2,
+      "16384": 16,
+      "49152": 1,
+      "53248": 5,
+      "57344": 2
+    },
+    "final_requested_bytes": 410624,
+    "trace_sha256": "d1625f8d34645db6d3648f73bc921151b6d37b68f934f7922363512b431330d6",
+    "limitations": "Reduced sharded LRU write-cache kernel, original I/O lengths and per-owner order; no storage latency, timestamps, original application, cache-policy comparison or production miss-ratio claim.",
+    "allocator_sha256": "cb357befcb5a473c62d2971e3b24679efb500e158d506193fa7e936e5779c758"
+  },
+  "host_runtime_seconds": 118.9310507774353
+}

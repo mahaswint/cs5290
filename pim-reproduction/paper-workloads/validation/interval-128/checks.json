@@ -1,0 +1,47 @@
+[
+  {
+    "workload": "larson",
+    "mode": "indexed",
+    "policy": "adaptive",
+    "passed": true,
+    "decay_ops": 128,
+    "generated_native_source_sha256": "4c3927003c64218c294db7d96c01a732e1d30448de189292b105a57dacc5f801",
+    "native_log_sha256": "96fd5625b5d8bf6c7e88846b0db5b5eeeb7c0bcba729267b9d996f6648f6c97d"
+  },
+  {
+    "workload": "pim-list",
+    "mode": "indexed",
+    "policy": "adaptive",
+    "passed": true,
+    "decay_ops": 128,
+    "generated_native_source_sha256": "4fab8285d399988a2446a3e5ffa3c70bdfaf6a361315bf6f6713893e13b52647",
+    "native_log_sha256": "96fd5625b5d8bf6c7e88846b0db5b5eeeb7c0bcba729267b9d996f6648f6c97d"
+  },
+  {
+    "workload": "pim-array",
+    "mode": "indexed",
+    "policy": "adaptive",
+    "passed": true,
+    "decay_ops": 128,
+    "generated_native_source_sha256": "d28f07f45dc256e46e69de76704aef03c496f3a7d333d4a5a7e70dd8c01909c0",
+    "native_log_sha256": "96fd5625b5d8bf6c7e88846b0db5b5eeeb7c0bcba729267b9d996f6648f6c97d"
+  },
+  {
+    "workload": "faimgraph",
+    "mode": "indexed",
+    "policy": "adaptive",
+    "passed": true,
+    "decay_ops": 128,
+    "generated_native_source_sha256": "d2c9b80779182614fa7ebd47a4572d99bf43e4cd427aaa110f8c5a5773511c9b",
+    "native_log_sha256": "96fd5625b5d8bf6c7e88846b0db5b5eeeb7c0bcba729267b9d996f6648f6c97d"
+  },
+  {
+    "workload": "prim-sel",
+    "mode": "indexed",
+    "policy": "adaptive",
+    "passed": true,
+    "decay_ops": 128,
+    "generated_native_source_sha256": "db5d9ba23240e13f3d82db92166355ddf50db047300b8be3f91c89ac52287d62",
+    "native_log_sha256": "96fd5625b5d8bf6c7e88846b0db5b5eeeb7c0bcba729267b9d996f6648f6c97d"
+  }
+]

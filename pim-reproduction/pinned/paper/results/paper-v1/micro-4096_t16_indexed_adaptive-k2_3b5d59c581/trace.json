@@ -1,0 +1,20 @@
+{
+  "workload": "micro-4096",
+  "source": "PIM-malloc, HPCA 2026, Sections V and VI-A",
+  "paper_sha256": "ba1a8f6143102ca3fba63651a67b2dbf457cecc427a11e52cc2e6c1b3f2f0212",
+  "schedule": {
+    "threads": 16,
+    "bytes": 4096,
+    "count_per_tasklet": 128,
+    "warmup_per_tasklet": 0,
+    "timed_per_tasklet": 128,
+    "free_order": "allocation order after work",
+    "payload_in_work": false
+  },
+  "trace_sha256": "b26bd5ed74b92be88076788c4fa288886e5b18ac31065617728f80f99326cc3c",
+  "allocator_sha256": "cb357befcb5a473c62d2971e3b24679efb500e158d506193fa7e936e5779c758",
+  "backend_sha256": "f6b266942507a7df2bf19b7a99db77336a5f78a2db4d4416b472a02d2e3301a7",
+  "pin_levels": 0,
+  "pinned_metadata_bytes": 0,
+  "limitations": "Paper request sizes/count/tasklets; maintained scan fixed-2 baseline, not paper straw-man. MRAM pointer recording is outside per-call probes but inside work; checking and reclamation follow work."
+}

@@ -10,3 +10,35 @@ __pycache__/
 .env
 .env.*
 !.env.example
+
+# Generated build products and local authoring files
+**/build/
+**/.chart-data-*/
+**/.mplconfig/
+**/.locks/
+*.pyc
+*.o
+*.a
+*.so
+*.so.*
+*.aux
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+/pim-reproduction/submission/output/pdf/*.log
+/pim-reproduction/toolchain/compat/
+/pim-reproduction/toolchain/LoCaLUT/upmem-2023.2.0-Linux-x86_64/
+
+# Per-run binaries and compiler intermediates; keep sources and measured evidence
+**/results/**/*.bin
+**/results/**/main.S
+**/results/**/addresses.txt
+**/results/**/bytecode.txt
+**/results/**/values.txt
+**/results/**/compile.log
+**/results/**/link.log
+**/results/**/simulate.log
+# SDK build symlinks resolve into the ignored local build trees.
+/pim-reproduction/runtime/sdk/build
+/pim-reproduction/adaptive/runtime/sdk/build
+/pim-reproduction/slabs/runtime/sdk/build

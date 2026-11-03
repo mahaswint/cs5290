@@ -1,0 +1,131 @@
+{
+  "configuration": {
+    "slab_kib": 32,
+    "policy": "adaptive",
+    "mode": "indexed",
+    "threads": 4,
+    "workload": "mixed",
+    "objects": 16,
+    "operations": 256,
+    "size": 4096,
+    "rounds": 1,
+    "heap_kib": 4096,
+    "keep": 2,
+    "max_keep": 2,
+    "budget_pages": 64,
+    "decay_ops": 128,
+    "pressure_percent": 75,
+    "seed": 4141,
+    "validate": true,
+    "tag": "validation-v1"
+  },
+  "correctness_passed": true,
+  "outcome": "completed",
+  "frequency_mhz": 350,
+  "metrics": {
+    "alloc": {
+      "samples": 64,
+      "mean_us": 241.1157142857143,
+      "p99_us": 850.1257142857143,
+      "max_us": 850.1257142857143
+    },
+    "free": {
+      "samples": 64,
+      "mean_us": 103.94754464285714,
+      "p99_us": 1028.1171428571429,
+      "max_us": 1028.1171428571429
+    },
+    "init": {
+      "samples": 1,
+      "mean_us": 118.93142857142857,
+      "p99_us": 118.93142857142857,
+      "max_us": 118.93142857142857
+    },
+    "work": {
+      "samples": 4,
+      "mean_us": 5858.222857142857,
+      "p99_us": 5858.622857142857,
+      "max_us": 5858.622857142857
+    },
+    "drain": {
+      "samples": 4,
+      "mean_us": 1284.3507142857143,
+      "p99_us": 1284.5028571428572,
+      "max_us": 1284.5028571428572
+    },
+    "total": {
+      "samples": 1,
+      "mean_us": 7298.611428571428,
+      "p99_us": 7298.611428571428,
+      "max_us": 7298.611428571428
+    }
+  },
+  "work_metrics": {
+    "alloc": {
+      "samples": 64,
+      "mean_us": 241.1157142857143,
+      "p99_us": 850.1257142857143,
+      "max_us": 850.1257142857143
+    },
+    "free": {
+      "samples": 64,
+      "mean_us": 103.94754464285714,
+      "p99_us": 1028.1171428571429,
+      "max_us": 1028.1171428571429
+    }
+  },
+  "work_makespan_us": 5858.622857142857,
+  "totals": {
+    "alloc_calls": 64,
+    "successes": 64,
+    "free_calls": 64,
+    "cache_hits": 28,
+    "refills": 20,
+    "returns": 20,
+    "failures": 0,
+    "retained_hits": 0,
+    "retained": 0,
+    "live_slots": 0,
+    "peak_slots": 254144,
+    "grows": 4,
+    "decays": 0,
+    "idle_trims": 0,
+    "pressure_trims": 0,
+    "budget_trims": 0,
+    "emergency_trims": 0
+  },
+  "backend": {
+    "used_bytes": 0,
+    "peak_bytes": 327680,
+    "allocations": 36,
+    "frees": 36,
+    "failed_attempts": 0
+  },
+  "wram": {
+    "heap_end_address": 40832,
+    "cache_descriptor_bytes": 2016,
+    "stats_bytes": 288
+  },
+  "owner_table_mram_bytes": 8192,
+  "peak_payload_plus_owner_bytes": 335872,
+  "source_sha256": "bba3cc68a5152d2c84fa706569d133335bacd94b97703b0f3ee7d475498e9ead",
+  "simulator_sha256": "907c1e5efe6302aa971e1e3824a2473c20b688da8f5ee093d52069fc2c8a8808",
+  "trace": {
+    "workload": "mixed",
+    "threads": 4,
+    "objects": 16,
+    "operations": 256,
+    "size": 4096,
+    "rounds": 1,
+    "seed": 4141,
+    "description": "Synthetic dense bursts, persistent replacements, sparse survivors, or mixed size boundaries.",
+    "trace_sha256": "23227c9b60f5c0a62584e17f57c1246c5c0f8cbbd74b5ccc17eb183979fece84",
+    "allocator_sha256": "cb357befcb5a473c62d2971e3b24679efb500e158d506193fa7e936e5779c758"
+  },
+  "host_runtime_seconds": 14.208268404006958,
+  "slab_bytes": 32768,
+  "retention_budget_bytes_per_tasklet": 262144,
+  "retention_units": "retained counts physical 4 KiB units; class targets count empty spans",
+  "size_4096_capacity": 7,
+  "capacity_profile": "64 KiB WRAM endpoint; 24 x 1536 B stack reservations; physical stack/IRAM validation not claimed"
+}

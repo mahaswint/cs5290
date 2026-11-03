@@ -1,0 +1,15 @@
+# Keep full evidence in the checkout; omit local intermediates from source exports.
+**/build/** export-ignore
+**/__pycache__/** export-ignore
+**/.chart-data-*/** export-ignore
+**/.venv/** export-ignore
+**/.cache/** export-ignore
+**/.vscode/** export-ignore
+*.pyc export-ignore
+archive/ export-ignore
+
+# Preserve byte-exact simulator evidence and standard CSV CRLF records.
+*.csv whitespace=cr-at-eol
+**/results/** -whitespace
+# The archived assignment retains its upstream source formatting.
+archive/** -whitespace

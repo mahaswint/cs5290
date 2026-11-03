@@ -142,7 +142,12 @@ The complete data and plot-generation scripts are in the accompanying latex-sour
  for name in ['figures.py','build_report.py','package.py']:copy(HERE/name,source/'pim-reproduction/submission'/name)
  copy(HERE/'evidence/final-98-runs.csv',source/'pim-reproduction/submission/evidence/final-98-runs.csv')
  for name in FIG_INPUTS:copy(ROOT/name,source/'pim-reproduction'/name)
- (source/'README.md').write_text('Read pim-reproduction/SNAPSHOT.md for the implementation progression, exact external toolchain dependencies and reproduction commands. SOURCE_MANIFEST.json hashes the included sources, public inputs and selected measured evidence.\n')
+ # Include the repository entry points and verification workflow in the offline snapshot.
+ for name in ['README.md','Makefile','PIM_SETUP.md','.gitignore','.gitattributes']:
+  copy(REPO/name,source/name)
+ for folder in ['docs','scripts']:
+  for p in (REPO/folder).rglob('*'):
+   if p.is_file() and '__pycache__' not in p.parts:copy(p,source/p.relative_to(REPO))
  manifest=[dict(path=str(p.relative_to(source)),sha256=sha(p),bytes=p.stat().st_size) for p in sorted(source.rglob('*')) if p.is_file()]
  (source/'SOURCE_MANIFEST.json').write_text(json.dumps(manifest,indent=2)+'\n')
  zipdir(source,OUT/'source-code.zip')

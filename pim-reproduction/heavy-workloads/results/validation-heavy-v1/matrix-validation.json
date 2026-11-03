@@ -1,0 +1,130 @@
+[
+  {
+    "workload": "larson",
+    "threads": 4,
+    "policy": "fixed",
+    "objects": 16,
+    "operations": 32,
+    "warmup": 32,
+    "validate": true,
+    "heap_kib": 4096
+  },
+  {
+    "workload": "larson",
+    "threads": 4,
+    "policy": "fixed",
+    "objects": 16,
+    "operations": 32,
+    "warmup": 32,
+    "slab_kib": 32,
+    "validate": true,
+    "heap_kib": 4096
+  },
+  {
+    "workload": "larson",
+    "threads": 4,
+    "policy": "fixed",
+    "objects": 16,
+    "operations": 32,
+    "warmup": 32,
+    "slab_kib": 64,
+    "validate": true,
+    "heap_kib": 4096
+  },
+  {
+    "workload": "larson",
+    "threads": 4,
+    "policy": "adaptive",
+    "objects": 16,
+    "operations": 32,
+    "warmup": 32,
+    "validate": true,
+    "heap_kib": 4096
+  },
+  {
+    "workload": "larson",
+    "threads": 4,
+    "policy": "adaptive",
+    "objects": 16,
+    "operations": 32,
+    "warmup": 32,
+    "slab_kib": 32,
+    "validate": true,
+    "heap_kib": 4096
+  },
+  {
+    "workload": "larson",
+    "threads": 4,
+    "policy": "adaptive",
+    "objects": 16,
+    "operations": 32,
+    "warmup": 32,
+    "slab_kib": 64,
+    "validate": true,
+    "heap_kib": 4096
+  },
+  {
+    "workload": "cloud-cache",
+    "threads": 4,
+    "policy": "fixed",
+    "objects": 16,
+    "operations": 32,
+    "warmup": 32,
+    "validate": true,
+    "heap_kib": 4096
+  },
+  {
+    "workload": "cloud-cache",
+    "threads": 4,
+    "policy": "fixed",
+    "objects": 16,
+    "operations": 32,
+    "warmup": 32,
+    "slab_kib": 32,
+    "validate": true,
+    "heap_kib": 4096
+  },
+  {
+    "workload": "cloud-cache",
+    "threads": 4,
+    "policy": "fixed",
+    "objects": 16,
+    "operations": 32,
+    "warmup": 32,
+    "slab_kib": 64,
+    "validate": true,
+    "heap_kib": 4096
+  },
+  {
+    "workload": "cloud-cache",
+    "threads": 4,
+    "policy": "adaptive",
+    "objects": 16,
+    "operations": 32,
+    "warmup": 32,
+    "validate": true,
+    "heap_kib": 4096
+  },
+  {
+    "workload": "cloud-cache",
+    "threads": 4,
+    "policy": "adaptive",
+    "objects": 16,
+    "operations": 32,
+    "warmup": 32,
+    "slab_kib": 32,
+    "validate": true,
+    "heap_kib": 4096
+  },
+  {
+    "workload": "cloud-cache",
+    "threads": 4,
+    "policy": "adaptive",
+    "objects": 16,
+    "operations": 32,
+    "warmup": 32,
+    "slab_kib": 64,
+    "validate": true,
+    "heap_kib": 4096
+  }
+]

@@ -1,0 +1,144 @@
+{
+  "configuration": {
+    "variant": "indexed-fixed2",
+    "workload": "micro-32",
+    "threads": 16,
+    "objects": 64,
+    "operations": 256,
+    "warmup": 128,
+    "trace_offset": 0,
+    "seed": 4141,
+    "heap_kib": 32768,
+    "budget_pages": 64,
+    "items": 32768,
+    "rounds": 2,
+    "graph_edges": 3072,
+    "fixture": false,
+    "validate": false,
+    "tag": "paper-v1",
+    "requests": 128,
+    "prompt_tokens": 128,
+    "decode_tokens": 256,
+    "mode": "indexed",
+    "policy": "fixed",
+    "slab_kib": 0,
+    "pin_levels": 0,
+    "keep": 2,
+    "max_keep": 2,
+    "decay_ops": 64,
+    "pressure_percent": 75,
+    "larson_max": 4096
+  },
+  "correctness_passed": true,
+  "outcome": "completed",
+  "frequency_mhz": 350,
+  "metrics": {
+    "alloc": {
+      "samples": 2048,
+      "mean_us": 44.41754324776786,
+      "p99_us": 2052.2714285714287,
+      "max_us": 4153.465714285714
+    },
+    "free": {
+      "samples": 2048,
+      "mean_us": 13.234315011160714,
+      "p99_us": 15.382857142857143,
+      "max_us": 17.357142857142858
+    },
+    "init": {
+      "samples": 1,
+      "mean_us": 498.48857142857145,
+      "p99_us": 498.48857142857145,
+      "max_us": 498.48857142857145
+    },
+    "work": {
+      "samples": 16,
+      "mean_us": 7062.182678571428,
+      "p99_us": 7062.608571428572,
+      "max_us": 7062.608571428572
+    },
+    "drain": {
+      "samples": 16,
+      "mean_us": 6266.649642857143,
+      "p99_us": 6267.274285714286,
+      "max_us": 6267.274285714286
+    },
+    "total": {
+      "samples": 1,
+      "mean_us": 14662.717142857144,
+      "p99_us": 14662.717142857144,
+      "max_us": 14662.717142857144
+    }
+  },
+  "work_metrics": {
+    "alloc": {
+      "samples": 2048,
+      "mean_us": 44.41754324776786,
+      "p99_us": 2052.2714285714287,
+      "max_us": 4153.465714285714
+    },
+    "free": {
+      "samples": 0,
+      "mean_us": null,
+      "p99_us": null,
+      "max_us": null
+    }
+  },
+  "work_makespan_us": 7064.4628571428575,
+  "totals": {
+    "alloc_calls": 2048,
+    "successes": 2048,
+    "free_calls": 2048,
+    "cache_hits": 2016,
+    "refills": 32,
+    "returns": 32,
+    "failures": 0,
+    "retained_hits": 0,
+    "retained": 0,
+    "live_slots": 0,
+    "peak_slots": 65536,
+    "grows": 0,
+    "decays": 0,
+    "idle_trims": 0,
+    "pressure_trims": 0,
+    "budget_trims": 0,
+    "emergency_trims": 0
+  },
+  "backend": {
+    "used_bytes": 0,
+    "peak_bytes": 131072,
+    "allocations": 32,
+    "frees": 32,
+    "failed_attempts": 0
+  },
+  "wram": {
+    "heap_end_address": 46860,
+    "cache_descriptor_bytes": 7168,
+    "stats_bytes": 1152
+  },
+  "owner_table_mram_bytes": 65536,
+  "peak_payload_plus_owner_bytes": 196608,
+  "source_sha256": "429770629080b6259f052ce252e2854d20ded007a9d3e7816cd6306b790c8c75",
+  "simulator_sha256": "907c1e5efe6302aa971e1e3824a2473c20b688da8f5ee093d52069fc2c8a8808",
+  "trace": {
+    "workload": "micro-32",
+    "source": "PIM-malloc, HPCA 2026, Sections V and VI-A",
+    "paper_sha256": "ba1a8f6143102ca3fba63651a67b2dbf457cecc427a11e52cc2e6c1b3f2f0212",
+    "schedule": {
+      "threads": 16,
+      "bytes": 32,
+      "count_per_tasklet": 128,
+      "warmup_per_tasklet": 0,
+      "timed_per_tasklet": 128,
+      "free_order": "allocation order after work",
+      "payload_in_work": false
+    },
+    "trace_sha256": "f66d8d599042ab2b1f4356e787a8d3957c997ad1e3d9a44f8634005d186361f2",
+    "allocator_sha256": "2161824bd2c0fe9508ece58ebc603f9869a0d0b59381158dde7cc10a954aaaa4",
+    "backend_sha256": "f6b266942507a7df2bf19b7a99db77336a5f78a2db4d4416b472a02d2e3301a7",
+    "pin_levels": 0,
+    "pinned_metadata_bytes": 0,
+    "limitations": "Paper request sizes/count/tasklets; maintained scan fixed-2 baseline, not paper straw-man. MRAM pointer recording is outside per-call probes but inside work; checking and reclamation follow work."
+  },
+  "host_runtime_seconds": 24.92991304397583
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "workload": "larson",
+    "threads": 4,
+    "policy": "adaptive",
+    "objects": 64,
+    "operations": 256,
+    "warmup": 128,
+    "seed": 9173,
+    "trace_offset": 4096
+  },
+  {
+    "workload": "larson",
+    "threads": 4,
+    "policy": "adaptive",
+    "objects": 64,
+    "operations": 256,
+    "warmup": 128,
+    "slab_kib": 64,
+    "seed": 9173,
+    "trace_offset": 4096
+  },
+  {
+    "workload": "cloud-cache",
+    "threads": 4,
+    "policy": "adaptive",
+    "objects": 64,
+    "operations": 256,
+    "warmup": 128,
+    "seed": 9173,
+    "trace_offset": 4096
+  },
+  {
+    "workload": "cloud-cache",
+    "threads": 4,
+    "policy": "adaptive",
+    "objects": 64,
+    "operations": 256,
+    "warmup": 128,
+    "slab_kib": 64,
+    "seed": 9173,
+    "trace_offset": 4096
+  }
+]

@@ -1,6 +1,6 @@
 # Software results to reproduce
 
-These targets were read from the user-provided HPCA 2026 PDF. They are published values, not simulator measurements made on this PC.
+These targets were read from the reference HPCA 2026 paper. They are published values, not simulator measurements made on this PC.
 
 ## First: Figure 15 microbenchmark
 

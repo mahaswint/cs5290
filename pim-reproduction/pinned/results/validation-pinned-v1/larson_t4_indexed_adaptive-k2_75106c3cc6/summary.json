@@ -1,0 +1,152 @@
+{
+  "configuration": {
+    "variant": "slab-pinned-adaptive64",
+    "workload": "larson",
+    "threads": 4,
+    "objects": 16,
+    "operations": 32,
+    "warmup": 32,
+    "trace_offset": 0,
+    "seed": 4141,
+    "heap_kib": 32768,
+    "budget_pages": 64,
+    "items": 256,
+    "rounds": 2,
+    "graph_edges": 3072,
+    "fixture": true,
+    "validate": true,
+    "tag": "validation-pinned-v1",
+    "mode": "indexed",
+    "policy": "adaptive",
+    "slab_kib": 64,
+    "pin_levels": 11,
+    "keep": 2,
+    "max_keep": 2,
+    "decay_ops": 64,
+    "pressure_percent": 75,
+    "larson_max": 4096
+  },
+  "correctness_passed": true,
+  "outcome": "completed",
+  "frequency_mhz": 350,
+  "metrics": {
+    "alloc": {
+      "samples": 448,
+      "mean_us": 81.47895408163265,
+      "p99_us": 878.64,
+      "max_us": 1471.2942857142857
+    },
+    "free": {
+      "samples": 448,
+      "mean_us": 35.41747448979592,
+      "p99_us": 491.4,
+      "max_us": 612.6571428571428
+    },
+    "init": {
+      "samples": 1,
+      "mean_us": 10323.165714285715,
+      "p99_us": 10323.165714285715,
+      "max_us": 10323.165714285715
+    },
+    "work": {
+      "samples": 4,
+      "mean_us": 3760.1242857142856,
+      "p99_us": 3760.36,
+      "max_us": 3760.36
+    },
+    "drain": {
+      "samples": 4,
+      "mean_us": 3399.3707142857143,
+      "p99_us": 3399.6485714285714,
+      "max_us": 3399.6485714285714
+    },
+    "total": {
+      "samples": 1,
+      "mean_us": 17553.614285714284,
+      "p99_us": 17553.614285714284,
+      "max_us": 17553.614285714284
+    }
+  },
+  "work_metrics": {
+    "alloc": {
+      "samples": 128,
+      "mean_us": 54.72584821428571,
+      "p99_us": 516.0857142857143,
+      "max_us": 1160.7114285714285
+    },
+    "free": {
+      "samples": 128,
+      "mean_us": 39.71946428571429,
+      "p99_us": 591.2542857142857,
+      "max_us": 612.6571428571428
+    }
+  },
+  "work_makespan_us": 3760.5085714285715,
+  "totals": {
+    "alloc_calls": 448,
+    "successes": 448,
+    "free_calls": 448,
+    "cache_hits": 369,
+    "refills": 79,
+    "returns": 79,
+    "failures": 0,
+    "retained_hits": 96,
+    "retained": 0,
+    "live_slots": 0,
+    "peak_slots": 211712,
+    "grows": 8,
+    "decays": 19,
+    "idle_trims": 8,
+    "pressure_trims": 0,
+    "budget_trims": 0,
+    "emergency_trims": 0
+  },
+  "backend": {
+    "used_bytes": 0,
+    "peak_bytes": 458752,
+    "allocations": 79,
+    "frees": 79,
+    "failed_attempts": 0
+  },
+  "wram": {
+    "heap_end_address": 41408,
+    "cache_descriptor_bytes": 2016,
+    "stats_bytes": 288
+  },
+  "owner_table_mram_bytes": 65536,
+  "peak_payload_plus_owner_bytes": 524288,
+  "source_sha256": "623892884c25e15c02645214bc6e4bfe679b8b287d083d931ddd68833eca94d6",
+  "simulator_sha256": "907c1e5efe6302aa971e1e3824a2473c20b688da8f5ee093d52069fc2c8a8808",
+  "trace": {
+    "source": "https://github.com/daanx/mimalloc-bench/blob/c65a68834c8fbd619f3ef449f72b9ec659cb551e/bench/larson/larson.cpp",
+    "operation_records": 512,
+    "pool_per_tasklet": 16,
+    "warmup_replacements_per_tasklet": 64,
+    "work_replacements_per_tasklet": 32,
+    "requested_size_range": "8..4095 B, uniform integer; explicit larger-size Larson parameterization",
+    "limitations": "Scaled fixed operation count; independent tasklets, no thread respawn/object bleeding.",
+    "expected_sums": [
+      1842,
+      1826,
+      1868,
+      1827
+    ],
+    "expected_live": [
+      34784,
+      32430,
+      40193,
+      32095
+    ],
+    "workload": "larson",
+    "seed": 4141,
+    "threads": 4,
+    "trace_sha256": "21e2ad9ed4e272878e3287ae04f82f00653ad3e82a2f17b34c8abf4dd7cfd575",
+    "allocator_sha256": "4df6d81fd72585f4274b57fa4cbe8ccf94c8430f3cabfa59bbd42b8e8d6c1cb6",
+    "larson_max_exclusive": 4096,
+    "selection": "Owner-local Larson; explicit uniform 8..4095 B range.",
+    "backend_sha256": "f8e5a49ccf7020e28f8d99a22bc8a13ecdb3b4a63cf9dd1e041cd0e3da2e1141",
+    "pin_levels": 11,
+    "pinned_metadata_bytes": 528
+  },
+  "host_runtime_seconds": 16.321855545043945
+}

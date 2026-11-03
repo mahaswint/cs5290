@@ -1,0 +1,141 @@
+{
+  "configuration": {
+    "workload": "larson",
+    "mode": "indexed",
+    "policy": "adaptive",
+    "threads": 4,
+    "objects": 32,
+    "operations": 64,
+    "graph_edges": 96,
+    "items": 256,
+    "rounds": 2,
+    "seed": 4141,
+    "heap_kib": 1024,
+    "keep": 2,
+    "max_keep": 2,
+    "budget_pages": 4,
+    "decay_ops": 128,
+    "pressure_percent": 75,
+    "validate": true,
+    "fixture": true,
+    "tag": "validation-interval128-v1"
+  },
+  "correctness_passed": true,
+  "outcome": "completed",
+  "frequency_mhz": 350,
+  "metrics": {
+    "alloc": {
+      "samples": 896,
+      "mean_us": 27.070873724489797,
+      "p99_us": 462.9657142857143,
+      "max_us": 1413.6885714285713
+    },
+    "free": {
+      "samples": 896,
+      "mean_us": 18.85297512755102,
+      "p99_us": 335.80857142857144,
+      "max_us": 1332.6485714285714
+    },
+    "init": {
+      "samples": 1,
+      "mean_us": 7291.38,
+      "p99_us": 7291.38,
+      "max_us": 7291.38
+    },
+    "work": {
+      "samples": 4,
+      "mean_us": 1666.5457142857142,
+      "p99_us": 1666.68,
+      "max_us": 1666.68
+    },
+    "drain": {
+      "samples": 4,
+      "mean_us": 3818.84,
+      "p99_us": 3819.12,
+      "max_us": 3819.12
+    },
+    "total": {
+      "samples": 1,
+      "mean_us": 12842.448571428571,
+      "p99_us": 12842.448571428571,
+      "max_us": 12842.448571428571
+    }
+  },
+  "work_metrics": {
+    "alloc": {
+      "samples": 256,
+      "mean_us": 10.567678571428571,
+      "p99_us": 109.67428571428572,
+      "max_us": 166.72857142857143
+    },
+    "free": {
+      "samples": 256,
+      "mean_us": 8.398035714285715,
+      "p99_us": 9.428571428571429,
+      "max_us": 79.64
+    }
+  },
+  "work_makespan_us": 1666.9371428571428,
+  "totals": {
+    "alloc_calls": 896,
+    "successes": 896,
+    "free_calls": 896,
+    "cache_hits": 833,
+    "refills": 63,
+    "returns": 63,
+    "failures": 0,
+    "retained_hits": 37,
+    "retained": 0,
+    "live_slots": 0,
+    "peak_slots": 107904,
+    "grows": 10,
+    "decays": 10,
+    "idle_trims": 1,
+    "pressure_trims": 0,
+    "budget_trims": 31,
+    "emergency_trims": 0
+  },
+  "backend": {
+    "used_bytes": 0,
+    "peak_bytes": 229376,
+    "allocations": 63,
+    "frees": 63,
+    "failed_attempts": 0
+  },
+  "wram": {
+    "heap_end_address": 40624,
+    "cache_descriptor_bytes": 1792,
+    "stats_bytes": 288
+  },
+  "owner_table_mram_bytes": 2048,
+  "peak_payload_plus_owner_bytes": 231424,
+  "source_sha256": "f4822c11a1a1738e26ad325861b0a466b7adbf016047219b566f1ed78e9ddd84",
+  "simulator_sha256": "907c1e5efe6302aa971e1e3824a2473c20b688da8f5ee093d52069fc2c8a8808",
+  "trace": {
+    "source": "https://github.com/daanx/mimalloc-bench/blob/c65a68834c8fbd619f3ef449f72b9ec659cb551e/bench/larson/larson.cpp",
+    "operation_records": 1024,
+    "pool_per_tasklet": 32,
+    "warmup_replacements_per_tasklet": 128,
+    "work_replacements_per_tasklet": 64,
+    "requested_size_range": "8..999 B, uniform integer; same as mimalloc-bench command",
+    "limitations": "Scaled fixed operation count; independent tasklets, no thread respawn/object bleeding.",
+    "expected_sums": [
+      7235,
+      7275,
+      7031,
+      7203
+    ],
+    "expected_live": [
+      14062,
+      15311,
+      14379,
+      20806
+    ],
+    "workload": "larson",
+    "seed": 4141,
+    "threads": 4,
+    "trace_sha256": "a748175cf0010c6dba98e563bdbed075950aa172e83ab0b159db6b36804c4317",
+    "allocator_sha256": "2161824bd2c0fe9508ece58ebc603f9869a0d0b59381158dde7cc10a954aaaa4"
+  },
+  "host_runtime_seconds": 15.075011253356934
+}

@@ -1,0 +1,210 @@
+[
+  {
+    "workload": "larson",
+    "threads": 1,
+    "policy": "fixed",
+    "objects": 64,
+    "operations": 256,
+    "warmup": 128
+  },
+  {
+    "workload": "larson",
+    "threads": 1,
+    "policy": "fixed",
+    "objects": 64,
+    "operations": 256,
+    "warmup": 128,
+    "slab_kib": 32
+  },
+  {
+    "workload": "larson",
+    "threads": 1,
+    "policy": "fixed",
+    "objects": 64,
+    "operations": 256,
+    "warmup": 128,
+    "slab_kib": 64
+  },
+  {
+    "workload": "larson",
+    "threads": 1,
+    "policy": "adaptive",
+    "objects": 64,
+    "operations": 256,
+    "warmup": 128
+  },
+  {
+    "workload": "larson",
+    "threads": 1,
+    "policy": "adaptive",
+    "objects": 64,
+    "operations": 256,
+    "warmup": 128,
+    "slab_kib": 32
+  },
+  {
+    "workload": "larson",
+    "threads": 1,
+    "policy": "adaptive",
+    "objects": 64,
+    "operations": 256,
+    "warmup": 128,
+    "slab_kib": 64
+  },
+  {
+    "workload": "larson",
+    "threads": 4,
+    "policy": "fixed",
+    "objects": 64,
+    "operations": 256,
+    "warmup": 128
+  },
+  {
+    "workload": "larson",
+    "threads": 4,
+    "policy": "fixed",
+    "objects": 64,
+    "operations": 256,
+    "warmup": 128,
+    "slab_kib": 32
+  },
+  {
+    "workload": "larson",
+    "threads": 4,
+    "policy": "fixed",
+    "objects": 64,
+    "operations": 256,
+    "warmup": 128,
+    "slab_kib": 64
+  },
+  {
+    "workload": "larson",
+    "threads": 4,
+    "policy": "adaptive",
+    "objects": 64,
+    "operations": 256,
+    "warmup": 128
+  },
+  {
+    "workload": "larson",
+    "threads": 4,
+    "policy": "adaptive",
+    "objects": 64,
+    "operations": 256,
+    "warmup": 128,
+    "slab_kib": 32
+  },
+  {
+    "workload": "larson",
+    "threads": 4,
+    "policy": "adaptive",
+    "objects": 64,
+    "operations": 256,
+    "warmup": 128,
+    "slab_kib": 64
+  },
+  {
+    "workload": "cloud-cache",
+    "threads": 1,
+    "policy": "fixed",
+    "objects": 64,
+    "operations": 256,
+    "warmup": 128
+  },
+  {
+    "workload": "cloud-cache",
+    "threads": 1,
+    "policy": "fixed",
+    "objects": 64,
+    "operations": 256,
+    "warmup": 128,
+    "slab_kib": 32
+  },
+  {
+    "workload": "cloud-cache",
+    "threads": 1,
+    "policy": "fixed",
+    "objects": 64,
+    "operations": 256,
+    "warmup": 128,
+    "slab_kib": 64
+  },
+  {
+    "workload": "cloud-cache",
+    "threads": 1,
+    "policy": "adaptive",
+    "objects": 64,
+    "operations": 256,
+    "warmup": 128
+  },
+  {
+    "workload": "cloud-cache",
+    "threads": 1,
+    "policy": "adaptive",
+    "objects": 64,
+    "operations": 256,
+    "warmup": 128,
+    "slab_kib": 32
+  },
+  {
+    "workload": "cloud-cache",
+    "threads": 1,
+    "policy": "adaptive",
+    "objects": 64,
+    "operations": 256,
+    "warmup": 128,
+    "slab_kib": 64
+  },
+  {
+    "workload": "cloud-cache",
+    "threads": 4,
+    "policy": "fixed",
+    "objects": 64,
+    "operations": 256,
+    "warmup": 128
+  },
+  {
+    "workload": "cloud-cache",
+    "threads": 4,
+    "policy": "fixed",
+    "objects": 64,
+    "operations": 256,
+    "warmup": 128,
+    "slab_kib": 32
+  },
+  {
+    "workload": "cloud-cache",
+    "threads": 4,
+    "policy": "fixed",
+    "objects": 64,
+    "operations": 256,
+    "warmup": 128,
+    "slab_kib": 64
+  },
+  {
+    "workload": "cloud-cache",
+    "threads": 4,
+    "policy": "adaptive",
+    "objects": 64,
+    "operations": 256,
+    "warmup": 128
+  },
+  {
+    "workload": "cloud-cache",
+    "threads": 4,
+    "policy": "adaptive",
+    "objects": 64,
+    "operations": 256,
+    "warmup": 128,
+    "slab_kib": 32
+  },
+  {
+    "workload": "cloud-cache",
+    "threads": 4,
+    "policy": "adaptive",
+    "objects": 64,
+    "operations": 256,
+    "warmup": 128,
+    "slab_kib": 64
+  }
+]

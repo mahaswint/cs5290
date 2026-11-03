@@ -1,0 +1,242 @@
+[
+  {
+    "workload": "larson",
+    "mode": "scan",
+    "policy": "fixed",
+    "passed": true
+  },
+  {
+    "workload": "larson",
+    "mode": "scan",
+    "policy": "adaptive",
+    "passed": true
+  },
+  {
+    "workload": "larson",
+    "mode": "lists",
+    "policy": "fixed",
+    "passed": true
+  },
+  {
+    "workload": "larson",
+    "mode": "lists",
+    "policy": "adaptive",
+    "passed": true
+  },
+  {
+    "workload": "larson",
+    "mode": "lookup",
+    "policy": "fixed",
+    "passed": true
+  },
+  {
+    "workload": "larson",
+    "mode": "lookup",
+    "policy": "adaptive",
+    "passed": true
+  },
+  {
+    "workload": "larson",
+    "mode": "indexed",
+    "policy": "fixed",
+    "passed": true
+  },
+  {
+    "workload": "larson",
+    "mode": "indexed",
+    "policy": "adaptive",
+    "passed": true
+  },
+  {
+    "workload": "pim-list",
+    "mode": "scan",
+    "policy": "fixed",
+    "passed": true
+  },
+  {
+    "workload": "pim-list",
+    "mode": "scan",
+    "policy": "adaptive",
+    "passed": true
+  },
+  {
+    "workload": "pim-list",
+    "mode": "lists",
+    "policy": "fixed",
+    "passed": true
+  },
+  {
+    "workload": "pim-list",
+    "mode": "lists",
+    "policy": "adaptive",
+    "passed": true
+  },
+  {
+    "workload": "pim-list",
+    "mode": "lookup",
+    "policy": "fixed",
+    "passed": true
+  },
+  {
+    "workload": "pim-list",
+    "mode": "lookup",
+    "policy": "adaptive",
+    "passed": true
+  },
+  {
+    "workload": "pim-list",
+    "mode": "indexed",
+    "policy": "fixed",
+    "passed": true
+  },
+  {
+    "workload": "pim-list",
+    "mode": "indexed",
+    "policy": "adaptive",
+    "passed": true
+  },
+  {
+    "workload": "pim-array",
+    "mode": "scan",
+    "policy": "fixed",
+    "passed": true
+  },
+  {
+    "workload": "pim-array",
+    "mode": "scan",
+    "policy": "adaptive",
+    "passed": true
+  },
+  {
+    "workload": "pim-array",
+    "mode": "lists",
+    "policy": "fixed",
+    "passed": true
+  },
+  {
+    "workload": "pim-array",
+    "mode": "lists",
+    "policy": "adaptive",
+    "passed": true
+  },
+  {
+    "workload": "pim-array",
+    "mode": "lookup",
+    "policy": "fixed",
+    "passed": true
+  },
+  {
+    "workload": "pim-array",
+    "mode": "lookup",
+    "policy": "adaptive",
+    "passed": true
+  },
+  {
+    "workload": "pim-array",
+    "mode": "indexed",
+    "policy": "fixed",
+    "passed": true
+  },
+  {
+    "workload": "pim-array",
+    "mode": "indexed",
+    "policy": "adaptive",
+    "passed": true
+  },
+  {
+    "workload": "faimgraph",
+    "mode": "scan",
+    "policy": "fixed",
+    "passed": true
+  },
+  {
+    "workload": "faimgraph",
+    "mode": "scan",
+    "policy": "adaptive",
+    "passed": true
+  },
+  {
+    "workload": "faimgraph",
+    "mode": "lists",
+    "policy": "fixed",
+    "passed": true
+  },
+  {
+    "workload": "faimgraph",
+    "mode": "lists",
+    "policy": "adaptive",
+    "passed": true
+  },
+  {
+    "workload": "faimgraph",
+    "mode": "lookup",
+    "policy": "fixed",
+    "passed": true
+  },
+  {
+    "workload": "faimgraph",
+    "mode": "lookup",
+    "policy": "adaptive",
+    "passed": true
+  },
+  {
+    "workload": "faimgraph",
+    "mode": "indexed",
+    "policy": "fixed",
+    "passed": true
+  },
+  {
+    "workload": "faimgraph",
+    "mode": "indexed",
+    "policy": "adaptive",
+    "passed": true
+  },
+  {
+    "workload": "prim-sel",
+    "mode": "scan",
+    "policy": "fixed",
+    "passed": true
+  },
+  {
+    "workload": "prim-sel",
+    "mode": "scan",
+    "policy": "adaptive",
+    "passed": true
+  },
+  {
+    "workload": "prim-sel",
+    "mode": "lists",
+    "policy": "fixed",
+    "passed": true
+  },
+  {
+    "workload": "prim-sel",
+    "mode": "lists",
+    "policy": "adaptive",
+    "passed": true
+  },
+  {
+    "workload": "prim-sel",
+    "mode": "lookup",
+    "policy": "fixed",
+    "passed": true
+  },
+  {
+    "workload": "prim-sel",
+    "mode": "lookup",
+    "policy": "adaptive",
+    "passed": true
+  },
+  {
+    "workload": "prim-sel",
+    "mode": "indexed",
+    "policy": "fixed",
+    "passed": true
+  },
+  {
+    "workload": "prim-sel",
+    "mode": "indexed",
+    "policy": "adaptive",
+    "passed": true
+  }
+]

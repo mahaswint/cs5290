@@ -1,0 +1,152 @@
+{
+  "configuration": {
+    "variant": "baseline",
+    "workload": "larson",
+    "threads": 4,
+    "objects": 64,
+    "operations": 256,
+    "warmup": 128,
+    "trace_offset": 0,
+    "seed": 4141,
+    "heap_kib": 32768,
+    "budget_pages": 64,
+    "items": 32768,
+    "rounds": 2,
+    "graph_edges": 3072,
+    "fixture": false,
+    "validate": false,
+    "tag": "pinned-v1",
+    "mode": "scan",
+    "policy": "fixed",
+    "slab_kib": 0,
+    "pin_levels": 0,
+    "keep": 2,
+    "max_keep": 2,
+    "decay_ops": 64,
+    "pressure_percent": 75,
+    "larson_max": 4096
+  },
+  "correctness_passed": true,
+  "outcome": "completed",
+  "frequency_mhz": 350,
+  "metrics": {
+    "alloc": {
+      "samples": 2304,
+      "mean_us": 353.2883234126984,
+      "p99_us": 1565.0914285714287,
+      "max_us": 2360.157142857143
+    },
+    "free": {
+      "samples": 2304,
+      "mean_us": 285.7038566468254,
+      "p99_us": 1179.1114285714286,
+      "max_us": 2728.12
+    },
+    "init": {
+      "samples": 1,
+      "mean_us": 195194.52,
+      "p99_us": 195194.52,
+      "max_us": 195194.52
+    },
+    "work": {
+      "samples": 4,
+      "mean_us": 160088.26357142857,
+      "p99_us": 160088.5,
+      "max_us": 160088.5
+    },
+    "drain": {
+      "samples": 4,
+      "mean_us": 25722.931428571428,
+      "p99_us": 25723.337142857144,
+      "max_us": 25723.337142857144
+    },
+    "total": {
+      "samples": 1,
+      "mean_us": 381057.54,
+      "p99_us": 381057.54,
+      "max_us": 381057.54
+    }
+  },
+  "work_metrics": {
+    "alloc": {
+      "samples": 1024,
+      "mean_us": 332.42703683035717,
+      "p99_us": 1492.4942857142858,
+      "max_us": 2360.157142857143
+    },
+    "free": {
+      "samples": 1024,
+      "mean_us": 276.9502706473214,
+      "p99_us": 1236.162857142857,
+      "max_us": 2728.12
+    }
+  },
+  "work_makespan_us": 160088.64857142858,
+  "totals": {
+    "alloc_calls": 2304,
+    "successes": 2304,
+    "free_calls": 2304,
+    "cache_hits": 888,
+    "refills": 243,
+    "returns": 243,
+    "failures": 0,
+    "retained_hits": 436,
+    "retained": 0,
+    "live_slots": 0,
+    "peak_slots": 803536,
+    "grows": 0,
+    "decays": 0,
+    "idle_trims": 0,
+    "pressure_trims": 0,
+    "budget_trims": 0,
+    "emergency_trims": 0
+  },
+  "backend": {
+    "used_bytes": 0,
+    "peak_bytes": 1019904,
+    "allocations": 1416,
+    "frees": 1416,
+    "failed_attempts": 0
+  },
+  "wram": {
+    "heap_end_address": 39868,
+    "cache_descriptor_bytes": 1024,
+    "stats_bytes": 288
+  },
+  "owner_table_mram_bytes": 0,
+  "peak_payload_plus_owner_bytes": 1019904,
+  "source_sha256": "1c751f96dc066686d73c2508245b3aa5656cb07f0f2d2a61d8b7bf2298034985",
+  "simulator_sha256": "907c1e5efe6302aa971e1e3824a2473c20b688da8f5ee093d52069fc2c8a8808",
+  "trace": {
+    "source": "https://github.com/daanx/mimalloc-bench/blob/c65a68834c8fbd619f3ef449f72b9ec659cb551e/bench/larson/larson.cpp",
+    "operation_records": 2560,
+    "pool_per_tasklet": 64,
+    "warmup_replacements_per_tasklet": 256,
+    "work_replacements_per_tasklet": 256,
+    "requested_size_range": "8..4095 B, uniform integer; explicit larger-size Larson parameterization",
+    "limitations": "Scaled fixed operation count; independent tasklets, no thread respawn/object bleeding.",
+    "expected_sums": [
+      37395,
+      37154,
+      37407,
+      36900
+    ],
+    "expected_live": [
+      116425,
+      139561,
+      141742,
+      122023
+    ],
+    "workload": "larson",
+    "seed": 4141,
+    "threads": 4,
+    "trace_sha256": "46c5f9ef6c6e0bfaf6a02cfc8051471ee891333c284edf1f6ece595f87540d0a",
+    "allocator_sha256": "2161824bd2c0fe9508ece58ebc603f9869a0d0b59381158dde7cc10a954aaaa4",
+    "larson_max_exclusive": 4096,
+    "selection": "Owner-local Larson; explicit uniform 8..4095 B range.",
+    "backend_sha256": "f6b266942507a7df2bf19b7a99db77336a5f78a2db4d4416b472a02d2e3301a7",
+    "pin_levels": 0,
+    "pinned_metadata_bytes": 0
+  },
+  "host_runtime_seconds": 246.8384988307953
+}

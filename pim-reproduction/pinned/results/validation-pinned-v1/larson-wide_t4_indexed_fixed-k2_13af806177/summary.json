@@ -1,0 +1,152 @@
+{
+  "configuration": {
+    "variant": "indexed-fixed2",
+    "workload": "larson-wide",
+    "threads": 4,
+    "objects": 16,
+    "operations": 32,
+    "warmup": 32,
+    "trace_offset": 0,
+    "seed": 4141,
+    "heap_kib": 32768,
+    "budget_pages": 64,
+    "items": 256,
+    "rounds": 2,
+    "graph_edges": 3072,
+    "fixture": true,
+    "validate": true,
+    "tag": "validation-pinned-v1",
+    "mode": "indexed",
+    "policy": "fixed",
+    "slab_kib": 0,
+    "pin_levels": 0,
+    "keep": 2,
+    "max_keep": 2,
+    "decay_ops": 64,
+    "pressure_percent": 75,
+    "larson_max": 8192
+  },
+  "correctness_passed": true,
+  "outcome": "completed",
+  "frequency_mhz": 350,
+  "metrics": {
+    "alloc": {
+      "samples": 448,
+      "mean_us": 475.239681122449,
+      "p99_us": 1726.86,
+      "max_us": 2380.945714285714
+    },
+    "free": {
+      "samples": 448,
+      "mean_us": 435.42658163265304,
+      "p99_us": 1719.0428571428572,
+      "max_us": 2694.4142857142856
+    },
+    "init": {
+      "samples": 1,
+      "mean_us": 70073.66,
+      "p99_us": 70073.66,
+      "max_us": 70073.66
+    },
+    "work": {
+      "samples": 4,
+      "mean_us": 30394.983571428573,
+      "p99_us": 30395.094285714287,
+      "max_us": 30395.094285714287
+    },
+    "drain": {
+      "samples": 4,
+      "mean_us": 7803.222142857143,
+      "p99_us": 7803.628571428571,
+      "max_us": 7803.628571428571
+    },
+    "total": {
+      "samples": 1,
+      "mean_us": 108312.71428571429,
+      "p99_us": 108312.71428571429,
+      "max_us": 108312.71428571429
+    }
+  },
+  "work_metrics": {
+    "alloc": {
+      "samples": 128,
+      "mean_us": 475.48339285714286,
+      "p99_us": 1772.28,
+      "max_us": 2380.945714285714
+    },
+    "free": {
+      "samples": 128,
+      "mean_us": 452.4091071428571,
+      "p99_us": 1523.1342857142856,
+      "max_us": 1648.2428571428572
+    }
+  },
+  "work_makespan_us": 30395.371428571427,
+  "totals": {
+    "alloc_calls": 448,
+    "successes": 448,
+    "free_calls": 448,
+    "cache_hits": 76,
+    "refills": 31,
+    "returns": 31,
+    "failures": 0,
+    "retained_hits": 48,
+    "retained": 0,
+    "live_slots": 0,
+    "peak_slots": 421888,
+    "grows": 0,
+    "decays": 0,
+    "idle_trims": 0,
+    "pressure_trims": 0,
+    "budget_trims": 0,
+    "emergency_trims": 0
+  },
+  "backend": {
+    "used_bytes": 0,
+    "peak_bytes": 462848,
+    "allocations": 372,
+    "frees": 372,
+    "failed_attempts": 0
+  },
+  "wram": {
+    "heap_end_address": 40644,
+    "cache_descriptor_bytes": 1792,
+    "stats_bytes": 288
+  },
+  "owner_table_mram_bytes": 65536,
+  "peak_payload_plus_owner_bytes": 528384,
+  "source_sha256": "96a740cc726093800009aeaf7cf0dd3307cd1c97bb3715bf1fbe9e230780a0cd",
+  "simulator_sha256": "907c1e5efe6302aa971e1e3824a2473c20b688da8f5ee093d52069fc2c8a8808",
+  "trace": {
+    "source": "https://github.com/daanx/mimalloc-bench/blob/c65a68834c8fbd619f3ef449f72b9ec659cb551e/bench/larson/larson.cpp",
+    "operation_records": 512,
+    "pool_per_tasklet": 16,
+    "warmup_replacements_per_tasklet": 64,
+    "work_replacements_per_tasklet": 32,
+    "requested_size_range": "8..8191 B, uniform integer; explicit larger-size Larson parameterization",
+    "limitations": "Scaled fixed operation count; independent tasklets, no thread respawn/object bleeding.",
+    "expected_sums": [
+      1842,
+      1826,
+      1868,
+      1827
+    ],
+    "expected_live": [
+      69376,
+      64886,
+      76153,
+      59959
+    ],
+    "workload": "larson-wide",
+    "seed": 4141,
+    "threads": 4,
+    "trace_sha256": "2092ee5281dfe0d2d12c347172e77cd85153729e6949e6ed1318b33f4b8ebe9b",
+    "allocator_sha256": "2161824bd2c0fe9508ece58ebc603f9869a0d0b59381158dde7cc10a954aaaa4",
+    "larson_max_exclusive": 8192,
+    "selection": "Owner-local Larson; explicit uniform 8..8191 B range.",
+    "backend_sha256": "f6b266942507a7df2bf19b7a99db77336a5f78a2db4d4416b472a02d2e3301a7",
+    "pin_levels": 0,
+    "pinned_metadata_bytes": 0
+  },
+  "host_runtime_seconds": 68.17491054534912
+}

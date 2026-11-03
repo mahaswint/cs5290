@@ -1,0 +1,20 @@
+{
+  "source": "https://github.com/daanx/mimalloc-bench/blob/c65a68834c8fbd619f3ef449f72b9ec659cb551e/bench/larson/larson.cpp",
+  "operation_records": 128,
+  "pool_per_tasklet": 16,
+  "warmup_replacements_per_tasklet": 64,
+  "work_replacements_per_tasklet": 32,
+  "requested_size_range": "8..999 B, uniform integer; same as mimalloc-bench command",
+  "limitations": "Scaled fixed operation count; independent tasklets, no thread respawn/object bleeding.",
+  "expected_sums": [
+    1842
+  ],
+  "expected_live": [
+    7376
+  ],
+  "workload": "larson",
+  "seed": 4141,
+  "threads": 1,
+  "trace_sha256": "c62bb0b39dd9053946636cbdc26320a88999f7d4dd905b47d71e36e3ea3ec7e6",
+  "allocator_sha256": "2161824bd2c0fe9508ece58ebc603f9869a0d0b59381158dde7cc10a954aaaa4"
+}

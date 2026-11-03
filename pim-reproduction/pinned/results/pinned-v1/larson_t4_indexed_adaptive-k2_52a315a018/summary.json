@@ -1,0 +1,152 @@
+{
+  "configuration": {
+    "variant": "indexed-adaptive64",
+    "workload": "larson",
+    "threads": 4,
+    "objects": 64,
+    "operations": 256,
+    "warmup": 128,
+    "trace_offset": 0,
+    "seed": 4141,
+    "heap_kib": 32768,
+    "budget_pages": 64,
+    "items": 32768,
+    "rounds": 2,
+    "graph_edges": 3072,
+    "fixture": false,
+    "validate": false,
+    "tag": "pinned-v1",
+    "mode": "indexed",
+    "policy": "adaptive",
+    "slab_kib": 0,
+    "pin_levels": 0,
+    "keep": 2,
+    "max_keep": 2,
+    "decay_ops": 64,
+    "pressure_percent": 75,
+    "larson_max": 4096
+  },
+  "correctness_passed": true,
+  "outcome": "completed",
+  "frequency_mhz": 350,
+  "metrics": {
+    "alloc": {
+      "samples": 2304,
+      "mean_us": 355.7672581845238,
+      "p99_us": 1401.3,
+      "max_us": 2543.425714285714
+    },
+    "free": {
+      "samples": 2304,
+      "mean_us": 290.7847160218254,
+      "p99_us": 1289.8314285714287,
+      "max_us": 2196.9657142857145
+    },
+    "init": {
+      "samples": 1,
+      "mean_us": 199297.26,
+      "p99_us": 199297.26,
+      "max_us": 199297.26
+    },
+    "work": {
+      "samples": 4,
+      "mean_us": 164536.48285714287,
+      "p99_us": 164536.74857142856,
+      "max_us": 164536.74857142856
+    },
+    "drain": {
+      "samples": 4,
+      "mean_us": 24730.799285714285,
+      "p99_us": 24731.077142857142,
+      "max_us": 24731.077142857142
+    },
+    "total": {
+      "samples": 1,
+      "mean_us": 388615.98,
+      "p99_us": 388615.98,
+      "max_us": 388615.98
+    }
+  },
+  "work_metrics": {
+    "alloc": {
+      "samples": 1024,
+      "mean_us": 332.5431277901786,
+      "p99_us": 1302.5114285714285,
+      "max_us": 2543.425714285714
+    },
+    "free": {
+      "samples": 1024,
+      "mean_us": 290.02465401785713,
+      "p99_us": 1225.2314285714285,
+      "max_us": 2196.9657142857145
+    }
+  },
+  "work_makespan_us": 164536.86857142858,
+  "totals": {
+    "alloc_calls": 2304,
+    "successes": 2304,
+    "free_calls": 2304,
+    "cache_hits": 864,
+    "refills": 267,
+    "returns": 267,
+    "failures": 0,
+    "retained_hits": 421,
+    "retained": 0,
+    "live_slots": 0,
+    "peak_slots": 803536,
+    "grows": 14,
+    "decays": 23,
+    "idle_trims": 8,
+    "pressure_trims": 0,
+    "budget_trims": 0,
+    "emergency_trims": 0
+  },
+  "backend": {
+    "used_bytes": 0,
+    "peak_bytes": 983040,
+    "allocations": 1440,
+    "frees": 1440,
+    "failed_attempts": 0
+  },
+  "wram": {
+    "heap_end_address": 40644,
+    "cache_descriptor_bytes": 1792,
+    "stats_bytes": 288
+  },
+  "owner_table_mram_bytes": 65536,
+  "peak_payload_plus_owner_bytes": 1048576,
+  "source_sha256": "53bf9b24e116109edb4b56fef04792ae857d4c23b43d18560a71c750d3e960cf",
+  "simulator_sha256": "907c1e5efe6302aa971e1e3824a2473c20b688da8f5ee093d52069fc2c8a8808",
+  "trace": {
+    "source": "https://github.com/daanx/mimalloc-bench/blob/c65a68834c8fbd619f3ef449f72b9ec659cb551e/bench/larson/larson.cpp",
+    "operation_records": 2560,
+    "pool_per_tasklet": 64,
+    "warmup_replacements_per_tasklet": 256,
+    "work_replacements_per_tasklet": 256,
+    "requested_size_range": "8..4095 B, uniform integer; explicit larger-size Larson parameterization",
+    "limitations": "Scaled fixed operation count; independent tasklets, no thread respawn/object bleeding.",
+    "expected_sums": [
+      37395,
+      37154,
+      37407,
+      36900
+    ],
+    "expected_live": [
+      116425,
+      139561,
+      141742,
+      122023
+    ],
+    "workload": "larson",
+    "seed": 4141,
+    "threads": 4,
+    "trace_sha256": "46c5f9ef6c6e0bfaf6a02cfc8051471ee891333c284edf1f6ece595f87540d0a",
+    "allocator_sha256": "2161824bd2c0fe9508ece58ebc603f9869a0d0b59381158dde7cc10a954aaaa4",
+    "larson_max_exclusive": 4096,
+    "selection": "Owner-local Larson; explicit uniform 8..4095 B range.",
+    "backend_sha256": "f6b266942507a7df2bf19b7a99db77336a5f78a2db4d4416b472a02d2e3301a7",
+    "pin_levels": 0,
+    "pinned_metadata_bytes": 0
+  },
+  "host_runtime_seconds": 262.87182569503784
+}

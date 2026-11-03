@@ -1,0 +1,144 @@
+[
+  {
+    "slab_kib": 0,
+    "policy": "fixed",
+    "threads": 4,
+    "workload": "mixed",
+    "objects": 16,
+    "rounds": 1,
+    "heap_kib": 4096,
+    "validate": true
+  },
+  {
+    "slab_kib": 0,
+    "policy": "adaptive",
+    "threads": 4,
+    "workload": "mixed",
+    "objects": 16,
+    "rounds": 1,
+    "heap_kib": 4096,
+    "validate": true
+  },
+  {
+    "slab_kib": 16,
+    "policy": "fixed",
+    "threads": 4,
+    "workload": "mixed",
+    "objects": 16,
+    "rounds": 1,
+    "heap_kib": 4096,
+    "validate": true
+  },
+  {
+    "slab_kib": 16,
+    "policy": "adaptive",
+    "threads": 4,
+    "workload": "mixed",
+    "objects": 16,
+    "rounds": 1,
+    "heap_kib": 4096,
+    "validate": true
+  },
+  {
+    "slab_kib": 32,
+    "policy": "fixed",
+    "threads": 4,
+    "workload": "mixed",
+    "objects": 16,
+    "rounds": 1,
+    "heap_kib": 4096,
+    "validate": true
+  },
+  {
+    "slab_kib": 32,
+    "policy": "adaptive",
+    "threads": 4,
+    "workload": "mixed",
+    "objects": 16,
+    "rounds": 1,
+    "heap_kib": 4096,
+    "validate": true
+  },
+  {
+    "slab_kib": 64,
+    "policy": "fixed",
+    "threads": 4,
+    "workload": "mixed",
+    "objects": 16,
+    "rounds": 1,
+    "heap_kib": 4096,
+    "validate": true
+  },
+  {
+    "slab_kib": 64,
+    "policy": "adaptive",
+    "threads": 4,
+    "workload": "mixed",
+    "objects": 16,
+    "rounds": 1,
+    "heap_kib": 4096,
+    "validate": true
+  },
+  {
+    "slab_kib": 64,
+    "policy": "fixed",
+    "threads": 16,
+    "workload": "burst",
+    "objects": 8,
+    "rounds": 1,
+    "heap_kib": 8192,
+    "validate": true
+  },
+  {
+    "slab_kib": 64,
+    "policy": "fixed",
+    "threads": 4,
+    "workload": "burst",
+    "objects": 32,
+    "rounds": 1,
+    "heap_kib": 8192,
+    "budget_pages": 4,
+    "validate": true
+  },
+  {
+    "slab_kib": 64,
+    "policy": "adaptive",
+    "threads": 16,
+    "workload": "burst",
+    "objects": 8,
+    "rounds": 1,
+    "heap_kib": 8192,
+    "validate": true
+  },
+  {
+    "slab_kib": 64,
+    "policy": "adaptive",
+    "threads": 4,
+    "workload": "burst",
+    "objects": 32,
+    "rounds": 1,
+    "heap_kib": 8192,
+    "budget_pages": 4,
+    "validate": true
+  },
+  {
+    "slab_kib": 32,
+    "policy": "adaptive",
+    "threads": 4,
+    "workload": "pool",
+    "objects": 32,
+    "operations": 64,
+    "heap_kib": 4096,
+    "validate": true
+  },
+  {
+    "slab_kib": 64,
+    "policy": "fixed",
+    "threads": 4,
+    "workload": "sparse",
+    "objects": 32,
+    "rounds": 1,
+    "heap_kib": 8192,
+    "validate": true
+  }
+]

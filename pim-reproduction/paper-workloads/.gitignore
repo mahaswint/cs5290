@@ -1,0 +1,5 @@
+validation/host-*
+validation/**/host-*
+.mplconfig/
+.stop
+.locks/

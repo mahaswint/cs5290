@@ -1,0 +1,4 @@
+phase,round,requested_bytes,slot_bytes,reserved_bytes,empty_bytes
+0,0,9016,11392,32768,8192
+1,0,7376,9760,32768,4096
+99,0,0,0,0,0

@@ -1,0 +1,15 @@
+{
+  "source": "CMU-SAFARI/prim-benchmarks/SEL",
+  "input_elements": 32768,
+  "block_bytes": 256,
+  "predicate": "retain odd uint64 values (!pred)",
+  "limitations": "Single-DPU kernel port with per-tasklet static output partitions; no allocator calls in work.",
+  "workload": "prim-sel",
+  "seed": 4141,
+  "threads": 4,
+  "trace_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "allocator_sha256": "4df6d81fd72585f4274b57fa4cbe8ccf94c8430f3cabfa59bbd42b8e8d6c1cb6",
+  "backend_sha256": "f8e5a49ccf7020e28f8d99a22bc8a13ecdb3b4a63cf9dd1e041cd0e3da2e1141",
+  "pin_levels": 11,
+  "pinned_metadata_bytes": 528
+}

@@ -1,5 +1,7 @@
 # PIM-malloc reproduction and software allocator extensions
 
+See the [report-to-experiment guide](../docs/EXPERIMENTS.md) for all completed stages and [reproduction instructions](../docs/REPRODUCING.md) for environment setup.
+
 The completed [submission package](submission/README.md) contains the IEEE report, complete LaTeX project, editable 16-minute presentation, separate baseline/contribution figures and tables, and an offline source snapshot. [SNAPSHOT.md](SNAPSHOT.md) describes the implementation progression and reproduction dependencies.
 
 The original experiment below reproduces the **software-only microbenchmark comparison in Figure 15** of the attached HPCA 2026 paper. Hardware buddy-cache experiments and the full language-model serving case study are outside its scope. The completed software extensions and report are linked above and at the end of this document.
@@ -31,7 +33,7 @@ The buddy allocator is instantiated directly from the same authors' `initBuddyAl
 - `analysis/software_results.csv`: the six completed PIM-malloc-SW configurations with both metrics.
 - `analysis/RESULTS.md`: numerical results, discrepancies, and speedups.
 
-Failed early toolchain smoke tests remain under explicitly named `results/smoke-*` directories. They are excluded from the results and plots. `results/fig15` includes only full, successful 128-request configurations once the sweep finishes. A resumed interrupted attempt is retained with `.incomplete-<timestamp>` and excluded from analysis.
+Failed early toolchain smoke tests remain under explicitly named `results/smoke-*` directories. They are excluded from the results and plots. The accepted `results/fig15` matrix contains twelve full, successful 128-request configurations. A resumed interrupted attempt is retained with `.incomplete-<timestamp>` and excluded from analysis.
 
 ## Measurement definition
 
@@ -64,10 +66,9 @@ Independent simulations can run concurrently. Native compilation and linking are
 
 ## Commands
 
-The runtime has already been prepared and built. Resume missing configurations with:
+With the runtime prepared and built, run the Figure 15 matrix with:
 
 ```bash
-cd /home/mahaswint/cs5290
 python3 pim-reproduction/sweep.py --jobs 4
 ```
 
@@ -77,19 +78,19 @@ Run one configuration in a fresh results tag:
 python3 pim-reproduction/run.py --allocator sw --threads 16 --size 256 --tag repeat-01
 ```
 
-After all 12 runs finish:
+Analyze the twelve completed configurations:
 
 ```bash
-pim-reproduction/.venv/bin/python pim-reproduction/analyze.py
+python3 pim-reproduction/analyze.py
 ```
 
 To prepare a new experiment folder from scratch, run `prepare.py` once before running the sweep. It deliberately refuses to overwrite an existing runtime. The SDK mirror and local compatibility library must be available at the paths documented above. Matplotlib dependencies are pinned in `requirements-lock.txt`.
 
-## Next milestones
+## Implemented experiment stages
 
-The first contribution is now implemented separately in [adaptive/README.md](adaptive/README.md): adaptive empty-page retention with eager, lazy, fixed-1/fixed-2, and adaptive comparison modes, raw measurements, a resumable sweep, and plots. See that README for the commands. The preserved Figure 15 runs and reference runtime remain unchanged.
+Empty-page retention is implemented separately in [adaptive/README.md](adaptive/README.md): adaptive empty-page retention with eager, lazy, fixed-1/fixed-2, and adaptive comparison modes, raw measurements, a resumable sweep, and plots. See that README for the commands. The preserved Figure 15 runs and reference runtime remain unchanged.
 
-The first comparison covers 1 and 16 threads, matching Figure 15. Adding 2, 4, and 8 threads expands the evaluation; it does not by itself satisfy the assignment's requirement for an implemented contribution. Software policy candidates and literature sources are recorded in [research/IMPROVEMENT_OPTIONS.md](research/IMPROVEMENT_OPTIONS.md). The user selected adaptive empty-page retention as the first contribution; its isolated implementation and comparison commands are in [adaptive/README.md](adaptive/README.md). The released reference frontend has hardcoded caches for tasklets 0 through 15; the contribution runner also currently limits experiments to 16 threads.
+The initial retention comparison covers 1 and 16 threads, matching Figure 15. Design alternatives and literature sources are recorded in [research/IMPROVEMENT_OPTIONS.md](research/IMPROVEMENT_OPTIONS.md). The isolated implementation and commands are in [adaptive/README.md](adaptive/README.md). The released reference frontend has hardcoded caches for tasklets 0 through 15; the contribution runner also currently limits experiments to 16 threads.
 
 The dynamic-allocation graph workload now has a separate reduced implementation in [adaptive/graph/README.md](adaptive/graph/README.md). It uses real loc-gowalla edges, the paper's 256 B linked-list blocks and a 1:2 new-edge to existing-edge split at the peak batch. It adds 64 B blocks and a changing low/high/low/rebound insertion/deletion schedule inspired by faimGraph. The paper's full Figure 17 experiment, including its variable-array representation and full-dataset evaluation, is not claimed as reproduced. The released artifact's microbenchmark-only build does not include that graph kernel.
 

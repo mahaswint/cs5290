@@ -1,0 +1,127 @@
+{
+  "configuration": {
+    "workload": "prim-sel",
+    "mode": "indexed",
+    "policy": "fixed",
+    "threads": 4,
+    "objects": 512,
+    "operations": 2048,
+    "graph_edges": 3072,
+    "items": 32768,
+    "rounds": 4,
+    "seed": 4141,
+    "heap_kib": 32768,
+    "keep": 2,
+    "max_keep": 2,
+    "budget_pages": 4,
+    "decay_ops": 64,
+    "pressure_percent": 75,
+    "validate": false,
+    "fixture": false,
+    "tag": "papers-v3"
+  },
+  "correctness_passed": true,
+  "outcome": "completed",
+  "frequency_mhz": 350,
+  "metrics": {
+    "alloc": {
+      "samples": 0,
+      "mean_us": null,
+      "p99_us": null,
+      "max_us": null
+    },
+    "free": {
+      "samples": 0,
+      "mean_us": null,
+      "p99_us": null,
+      "max_us": null
+    },
+    "init": {
+      "samples": 1,
+      "mean_us": 20562.408571428572,
+      "p99_us": 20562.408571428572,
+      "max_us": 20562.408571428572
+    },
+    "work": {
+      "samples": 4,
+      "mean_us": 14179.102857142858,
+      "p99_us": 14179.228571428572,
+      "max_us": 14179.228571428572
+    },
+    "drain": {
+      "samples": 4,
+      "mean_us": 5.311428571428571,
+      "p99_us": 5.311428571428571,
+      "max_us": 5.311428571428571
+    },
+    "total": {
+      "samples": 1,
+      "mean_us": 114140.27142857143,
+      "p99_us": 114140.27142857143,
+      "max_us": 114140.27142857143
+    }
+  },
+  "work_metrics": {
+    "alloc": {
+      "samples": 0,
+      "mean_us": null,
+      "p99_us": null,
+      "max_us": null
+    },
+    "free": {
+      "samples": 0,
+      "mean_us": null,
+      "p99_us": null,
+      "max_us": null
+    }
+  },
+  "work_makespan_us": 14179.505714285715,
+  "totals": {
+    "alloc_calls": 0,
+    "successes": 0,
+    "free_calls": 0,
+    "cache_hits": 0,
+    "refills": 0,
+    "returns": 0,
+    "failures": 0,
+    "retained_hits": 0,
+    "retained": 0,
+    "live_slots": 0,
+    "peak_slots": 0,
+    "grows": 0,
+    "decays": 0,
+    "idle_trims": 0,
+    "pressure_trims": 0,
+    "budget_trims": 0,
+    "emergency_trims": 0
+  },
+  "backend": {
+    "used_bytes": 0,
+    "peak_bytes": 0,
+    "allocations": 0,
+    "frees": 0,
+    "failed_attempts": 0
+  },
+  "wram": {
+    "heap_end_address": 40580,
+    "cache_descriptor_bytes": 1792,
+    "stats_bytes": 288
+  },
+  "owner_table_mram_bytes": 65536,
+  "peak_payload_plus_owner_bytes": 65536,
+  "source_sha256": "8766839c5fb4c5115d9e6a3009609192818bec628be406525865dab6209f3601",
+  "simulator_sha256": "907c1e5efe6302aa971e1e3824a2473c20b688da8f5ee093d52069fc2c8a8808",
+  "trace": {
+    "source": "CMU-SAFARI/prim-benchmarks/SEL",
+    "input_elements": 32768,
+    "block_bytes": 256,
+    "predicate": "retain odd uint64 values (!pred)",
+    "limitations": "Single-DPU kernel port with per-tasklet static output partitions; no allocator calls in work.",
+    "workload": "prim-sel",
+    "seed": 4141,
+    "threads": 4,
+    "trace_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "allocator_sha256": "2161824bd2c0fe9508ece58ebc603f9869a0d0b59381158dde7cc10a954aaaa4"
+  },
+  "host_runtime_seconds": 102.83598828315735
+}

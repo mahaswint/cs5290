@@ -1,0 +1,144 @@
+{
+  "configuration": {
+    "variant": "slab-fixed2",
+    "workload": "kv-growth",
+    "threads": 4,
+    "objects": 64,
+    "operations": 256,
+    "warmup": 128,
+    "trace_offset": 0,
+    "seed": 4141,
+    "heap_kib": 32768,
+    "budget_pages": 64,
+    "items": 32768,
+    "rounds": 2,
+    "graph_edges": 3072,
+    "fixture": false,
+    "validate": false,
+    "tag": "paper-v1",
+    "requests": 128,
+    "prompt_tokens": 128,
+    "decode_tokens": 256,
+    "mode": "indexed",
+    "policy": "fixed",
+    "slab_kib": 64,
+    "pin_levels": 0,
+    "keep": 2,
+    "max_keep": 2,
+    "decay_ops": 64,
+    "pressure_percent": 75,
+    "larson_max": 4096
+  },
+  "correctness_passed": true,
+  "outcome": "completed",
+  "frequency_mhz": 350,
+  "metrics": {
+    "alloc": {
+      "samples": 1536,
+      "mean_us": 61.65139880952381,
+      "p99_us": 745.3857142857142,
+      "max_us": 1060.4085714285713
+    },
+    "free": {
+      "samples": 1536,
+      "mean_us": 54.53960007440476,
+      "p99_us": 694.2571428571429,
+      "max_us": 2926.34
+    },
+    "init": {
+      "samples": 1,
+      "mean_us": 12641.88,
+      "p99_us": 12641.88,
+      "max_us": 12641.88
+    },
+    "work": {
+      "samples": 4,
+      "mean_us": 24342.376428571428,
+      "p99_us": 24342.782857142858,
+      "max_us": 24342.782857142858
+    },
+    "drain": {
+      "samples": 4,
+      "mean_us": 23761.501428571428,
+      "p99_us": 23761.654285714285,
+      "max_us": 23761.654285714285
+    },
+    "total": {
+      "samples": 1,
+      "mean_us": 73285.72857142857,
+      "p99_us": 73285.72857142857,
+      "max_us": 73285.72857142857
+    }
+  },
+  "work_metrics": {
+    "alloc": {
+      "samples": 1024,
+      "mean_us": 61.62863560267857,
+      "p99_us": 745.5714285714286,
+      "max_us": 1060.4085714285713
+    },
+    "free": {
+      "samples": 0,
+      "mean_us": null,
+      "p99_us": null,
+      "max_us": null
+    }
+  },
+  "work_makespan_us": 24342.782857142858,
+  "totals": {
+    "alloc_calls": 1536,
+    "successes": 1536,
+    "free_calls": 1536,
+    "cache_hits": 1316,
+    "refills": 220,
+    "returns": 220,
+    "failures": 0,
+    "retained_hits": 0,
+    "retained": 0,
+    "live_slots": 0,
+    "peak_slots": 786432,
+    "grows": 0,
+    "decays": 0,
+    "idle_trims": 0,
+    "pressure_trims": 0,
+    "budget_trims": 0,
+    "emergency_trims": 0
+  },
+  "backend": {
+    "used_bytes": 0,
+    "peak_bytes": 901120,
+    "allocations": 220,
+    "frees": 220,
+    "failed_attempts": 0
+  },
+  "wram": {
+    "heap_end_address": 40796,
+    "cache_descriptor_bytes": 2016,
+    "stats_bytes": 288
+  },
+  "owner_table_mram_bytes": 65536,
+  "peak_payload_plus_owner_bytes": 966656,
+  "source_sha256": "c9d4276d34ebd5dc7b99242b8523dd7e664f6e0755524281fd46fd633294ebf7",
+  "simulator_sha256": "907c1e5efe6302aa971e1e3824a2473c20b688da8f5ee093d52069fc2c8a8808",
+  "trace": {
+    "workload": "kv-growth",
+    "source": "PIM-malloc, HPCA 2026, Sections V and VI-A",
+    "paper_sha256": "ba1a8f6143102ca3fba63651a67b2dbf457cecc427a11e52cc2e6c1b3f2f0212",
+    "schedule": {
+      "threads": 4,
+      "bytes": 512,
+      "count_per_tasklet": 384,
+      "warmup_per_tasklet": 128,
+      "timed_per_tasklet": 256,
+      "free_order": "allocation order after work",
+      "payload_in_work": true
+    },
+    "trace_sha256": "87e7368cc2cb8fc8ee54b672ea942b6a54697df6593623de8a69bfaadb4d4a79",
+    "allocator_sha256": "cb357befcb5a473c62d2971e3b24679efb500e158d506193fa7e936e5779c758",
+    "backend_sha256": "f6b266942507a7df2bf19b7a99db77336a5f78a2db4d4416b472a02d2e3301a7",
+    "pin_levels": 0,
+    "pinned_metadata_bytes": 0,
+    "limitations": "Allocator-only replay of 512 B KV-block growth, one stream/tasklet, 128 prompt + 256 decode tokens. No GEMV/softmax, model weights, 100-request arrival process, host transfers or LLMServingSim. Not an end-to-end LLM attention or serving result."
+  },
+  "host_runtime_seconds": 51.26552629470825
+}

@@ -1,0 +1,5 @@
+thread,alloc_calls,successes,free_calls,cache_hits,refills,returns,failures,retained_hits,retained,live_slots,peak_slots,grows,decays,idle_trims,pressure_trims,budget_trims,emergency_trims
+0,36,36,36,20,5,5,0,3,0,0,211968,1,0,0,0,0,0
+1,7,7,7,3,4,4,0,0,0,0,19968,0,0,0,0,0,0
+2,3,3,3,1,2,2,0,0,0,0,5120,0,0,0,0,0,0
+3,9,9,9,4,3,3,0,0,0,0,31744,0,0,0,0,0,0

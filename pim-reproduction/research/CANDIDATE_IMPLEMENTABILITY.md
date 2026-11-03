@@ -1,8 +1,8 @@
 # Implementability assessment of the eight proposed research directions
 
-Implementation update: Idea 1 has now been selected and implemented separately. See [adaptive/README.md](/home/mahaswint/cs5290/pim-reproduction/adaptive/README.md) for the controller, common baseline repairs, verification, and commands. This assessment describes the preceding design review.
+Implementation update: Idea 1 has now been selected and implemented separately. See [adaptive/README.md](../adaptive/README.md) for the controller, common baseline repairs, verification, and commands. This assessment describes the preceding design review.
 
-29 October 2026. This reviews the user's pasted proposal against the released allocator, local SDK, and cited primary sources. No proposed allocator was implemented or benchmarked during this review. Difficulty refers to a small, correct prototype plus a meaningful evaluation, not a publication-level implementation. The potential significance labels in the proposal are hypotheses, not established novelty or expected speedups.
+29 October 2026. This reviews the initial design proposal against the released allocator, local SDK, and cited primary sources. No proposed allocator was implemented or benchmarked during this review. Difficulty refers to a small, correct prototype plus a meaningful evaluation, not a publication-level implementation. The potential significance labels in the proposal are hypotheses, not established novelty or expected speedups.
 
 ## Recommendation for this project
 
@@ -39,9 +39,9 @@ Preserve the original allocation-only Figure 15 reproduction. Create a separatel
 - `safeBuddyFree` starts at the minimum-block leaf; freeing larger backend allocations needs a dedicated correctness test. Do not assume region chunks or large objects are already reclaimed correctly after fixing frontend routing.
 - `safeBuddyAllocate` asserts on allocation failure. Memory-pressure tests and cross-arena fallback need a defined nonfatal `try_allocate`/failure path.
 
-Confirm these cases using small simulator tests, then share required correctness repairs across compared variants. Do not report a corrected allocator beating a leaking baseline as a policy benefit. See [existing audit](/home/mahaswint/cs5290/pim-reproduction/research/IMPROVEMENT_OPTIONS.md) for exact source links.
+Confirm these cases using small simulator tests, then share required correctness repairs across compared variants. Do not report a corrected allocator beating a leaking baseline as a policy benefit. See [existing audit](IMPROVEMENT_OPTIONS.md) for exact source links.
 
-The inherited simulator permits 256 KiB WRAM and reserves 24 × 4 KiB stacks. Physical UPMEM has 64 KiB. Keep simulation-reproduction results distinct from a physical-capacity fit check; see [WRAM audit](/home/mahaswint/cs5290/pim-reproduction/research/WRAM_AND_SLAB_CONSTRAINTS.md). All candidate memory budgets must include stacks, application buffers, and metadata.
+The inherited simulator permits 256 KiB WRAM and reserves 24 × 4 KiB stacks. Physical UPMEM has 64 KiB. Keep simulation-reproduction results distinct from a physical-capacity fit check; see [WRAM audit](WRAM_AND_SLAB_CONSTRAINTS.md). All candidate memory budgets must include stacks, application buffers, and metadata.
 
 ## 1. Adaptive empty-page retention
 
@@ -55,7 +55,7 @@ Evaluate changing hot classes, skewed thread demand, pressure, and repeated allo
 
 ## 2. Sharded buddy backend
 
-Use 2 or 4 power-of-two arenas first, with explicitly separated metadata and payload ranges. Each arena needs its own lock, buffer, and buddy state. Merely creating multiple `BuddyAllocator` structures is insufficient: [buddyAllocate/buddyFree](/home/mahaswint/cs5290/PIM-malloc/simulator/uPIMulator/golang_vm/uPIMulator/benchmark/microbenchmark/dpu/task.c:291) reference one global `buddyAllocatorMutex`. The SDK already supports multiple mutexes and try-lock, so a lock-free implementation is unnecessary.
+Use 2 or 4 power-of-two arenas first, with explicitly separated metadata and payload ranges. Each arena needs its own lock, buffer, and buddy state. Merely creating multiple `BuddyAllocator` structures is insufficient: [buddyAllocate/buddyFree](../../PIM-malloc/simulator/uPIMulator/golang_vm/uPIMulator/benchmark/microbenchmark/dpu/task.c) reference one global `buddyAllocatorMutex`. The SDK already supports multiple mutexes and try-lock, so a lock-free implementation is unnecessary.
 
 Route allocation to a preferred arena, and use bounded fallback that releases one arena lock before acquiring another. Track the owning arena for free. The current asserting failure path must be replaced for fallback. Do not silently grow total heap capacity by giving every arena the original 32 MiB. Do not assume every split arena remains perfectly aligned after reserving its metadata; define the layout explicitly.
 
@@ -65,7 +65,7 @@ Prototype fixed arena count and simple routing. Online splitting/merging and a s
 
 ## 3. Partial-page allocation lists and direct free lookup
 
-The [authors' documentation](/home/mahaswint/cs5290/PIM-malloc/hw/README.md:72) really does describe linked-list scans and acknowledge class lookup as future work. The code's page scan is a separate, potentially larger issue than scanning eight classes.
+The [authors' documentation](../../PIM-malloc/hw/README.md) really does describe linked-list scans and acknowledge class lookup as future work. The code's page scan is a separate, potentially larger issue than scanning eight classes.
 
 Stage A: maintain a list containing only pages with available slots. Allocate from its head; move a page out when full, and back when a free creates space. Keep enough state for constant-length list edits. Test the extra MRAM writes against saved scans. For the released layout, 256 B objects have 15 slots per page; 128 sequential allocations already require nine pages. Larger fixed-size traces should expose the difference without introducing other policies.
 

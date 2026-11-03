@@ -1,12 +1,12 @@
 # Software improvement options for PIM-malloc
 
-Implementation update: the user selected adaptive empty-page retention. It is now implemented and correctness-tested in [adaptive/README.md](/home/mahaswint/cs5290/pim-reproduction/adaptive/README.md). The discussion below records the earlier research shortlist; the full contribution comparison remains to be run.
+Implementation status: adaptive empty-page retention is implemented and correctness-tested in [adaptive/README.md](../adaptive/README.md). The discussion below records the earlier research shortlist; completed comparisons are indexed in [the experiment guide](../../docs/EXPERIMENTS.md).
 
 Research date: 29 October 2026. These are implementation proposals, not measured improvements. Scope: the existing UPMEM SDK/uPIMulator setup, software allocator changes only; hardware buddy cache and language-model serving remain excluded.
 
-Follow-up audit: [WRAM_AND_SLAB_CONSTRAINTS.md](/home/mahaswint/cs5290/pim-reproduction/research/WRAM_AND_SLAB_CONSTRAINTS.md) quantifies metadata-cache space, separates explicit author statements from inferred slab-size tradeoffs, and records a material capacity limitation: the released simulator uses 256 KiB WRAM rather than the physical 64 KiB. A successful simulation is not a hardware-fit check. The paper also reports that software LRU for buddy metadata slowed its 16-thread, 4 KiB benchmark by 29%; keep any proposed frontend cache simple and evaluate its bookkeeping costs.
+Follow-up audit: [WRAM_AND_SLAB_CONSTRAINTS.md](WRAM_AND_SLAB_CONSTRAINTS.md) quantifies metadata-cache space, separates explicit author statements from inferred slab-size tradeoffs, and records a material capacity limitation: the released simulator uses 256 KiB WRAM rather than the physical 64 KiB. A successful simulation is not a hardware-fit check. The paper also reports that software LRU for buddy metadata slowed its 16-thread, 4 KiB benchmark by 29%; keep any proposed frontend cache simple and evaluate its bookkeeping costs.
 
-Expanded review: [CANDIDATE_IMPLEMENTABILITY.md](/home/mahaswint/cs5290/pim-reproduction/research/CANDIDATE_IMPLEMENTABILITY.md) assesses the eight directions in the user's later research proposal. For a larger policy contribution, it recommends adaptive empty-page retention, with partial-page lists/direct lookup as an alternative and pinned buddy metadata as the smallest focused pilot. The slab experiment below remains a small prototype option; no policy has been implemented or selected by the user yet.
+Expanded review: [CANDIDATE_IMPLEMENTABILITY.md](CANDIDATE_IMPLEMENTABILITY.md) assesses the eight directions in the extended design proposal. For a larger policy contribution, it recommends adaptive empty-page retention, with partial-page lists/direct lookup as an alternative and pinned buddy metadata as the smallest focused pilot. The proposals below record the initial design review; implemented retention, indexing, slabs, and pinning stages are evaluated separately in the final report.
 
 ## Recommendation
 
@@ -16,12 +16,12 @@ Adapting a published policy to this PIM allocator, implementing it, and evaluati
 
 ## What the current evidence supports
 
-- In the [local Figure 15 results](/home/mahaswint/cs5290/pim-reproduction/analysis/RESULTS.md), the 16-thread, 4096 B configuration takes 7810.92 microseconds for buddy and 6808.97 for PIM-malloc-SW using batch completion time / 128: only 1.15x improvement. These are local measurements. The paper's multithread aggregation formula remains unconfirmed; individual-request means are retained separately.
-- The released frontend uses classes 16–2048 B. Larger requests reach the shared buddy allocator through [allocateUMalloc](/home/mahaswint/cs5290/PIM-malloc/simulator/uPIMulator/golang_vm/uPIMulator/benchmark/microbenchmark/dpu/task.c:1143) and [getThreadCache](/home/mahaswint/cs5290/PIM-malloc/simulator/uPIMulator/golang_vm/uPIMulator/benchmark/microbenchmark/dpu/task.c:1311).
-- Each cached allocation reads a 16 B bitmap from MRAM and writes it back on success in [allocateThreadCacheNode](/home/mahaswint/cs5290/PIM-malloc/simulator/uPIMulator/golang_vm/uPIMulator/benchmark/microbenchmark/dpu/task.c:894). [allocateThreadCache](/home/mahaswint/cs5290/PIM-malloc/simulator/uPIMulator/golang_vm/uPIMulator/benchmark/microbenchmark/dpu/task.c:754) restarts its page-list search at the root for every request.
+- In the [local Figure 15 results](../analysis/RESULTS.md), the 16-thread, 4096 B configuration takes 7810.92 microseconds for buddy and 6808.97 for PIM-malloc-SW using batch completion time / 128: only 1.15x improvement. These are local measurements. The paper's multithread aggregation formula remains unconfirmed; individual-request means are retained separately.
+- The released frontend uses classes 16–2048 B. Larger requests reach the shared buddy allocator through [allocateUMalloc](../../PIM-malloc/simulator/uPIMulator/golang_vm/uPIMulator/benchmark/microbenchmark/dpu/task.c) and [getThreadCache](../../PIM-malloc/simulator/uPIMulator/golang_vm/uPIMulator/benchmark/microbenchmark/dpu/task.c).
+- Each cached allocation reads a 16 B bitmap from MRAM and writes it back on success in [allocateThreadCacheNode](../../PIM-malloc/simulator/uPIMulator/golang_vm/uPIMulator/benchmark/microbenchmark/dpu/task.c). [allocateThreadCache](../../PIM-malloc/simulator/uPIMulator/golang_vm/uPIMulator/benchmark/microbenchmark/dpu/task.c) restarts its page-list search at the root for every request.
 - Section VI-D and Table III of the assigned paper already evaluate **PIM-malloc-lazy**, disabling eager cache population. For its two graph representations, the reported reserved/requested memory ratios fall from 1.95 to 1.21 and from 1.72 to 1.49. The authors leave the latency–memory balance for future work. Plain lazy initialization is therefore an additional baseline, not our new contribution.
 
-Paper source: [assigned PDF](</home/mahaswint/Downloads/Group-11_PIM-Malloc_A Fast and Scalable Dynamic Memory Allocator for Processing-In-Memory PIM Architectures (HPCA 2026) (2).pdf>); searchable extract: [paper.txt](/home/mahaswint/cs5290/pim-reproduction/reference/paper.txt:1201).
+Paper source: searchable extract: [paper.txt](../reference/paper.txt).
 
 ## Ranked candidates
 
@@ -72,7 +72,7 @@ Evaluate producer/consumer traces and batch sizes, including draining and memory
 
 Static inspection found issues requiring focused tests before adding churn workloads:
 
-- Allocation maps chunk 0 to bitmap word 3, bit 31; [freeThreadCacheNode](/home/mahaswint/cs5290/PIM-malloc/simulator/uPIMulator/golang_vm/uPIMulator/benchmark/microbenchmark/dpu/task.c:977) instead maps it to word 0, bit 0.
+- Allocation maps chunk 0 to bitmap word 3, bit 31; [freeThreadCacheNode](../../PIM-malloc/simulator/uPIMulator/golang_vm/uPIMulator/benchmark/microbenchmark/dpu/task.c) instead maps it to word 0, bit 0.
 - `freeUMalloc` initializes `isFreedInUMalloc` to zero and does not set it before the final conditional call to `buddyFree`. Backend deallocation therefore appears to be skipped.
 - Empty-page removal needs valid head/tail handling; do not assume the existing unused removal helper supplies it safely.
 

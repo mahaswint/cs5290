@@ -4,7 +4,7 @@ Checked 29 October 2026. This note answers the two follow-up questions about the
 
 ## 1. Can an active-page bitmap and pointer fit in WRAM?
 
-Real UPMEM exposes **64 KiB (65,536 bytes) of WRAM per DPU, shared by its tasklets**. It is a software-managed scratchpad used for globals, runtime state, stacks, heap allocations, and application DMA buffers. It is not 64 KiB per thread, and it is not all available to the allocator. The local SDK's [linker script](/home/mahaswint/cs5290/pim-reproduction/toolchain/LoCaLUT/upmem-2023.2.0-Linux-x86_64/src/dpu-rt/src/misc/dpu.lds:19) explicitly sets WRAM to 64K. The assigned paper describes the same capacity in Section II-A.
+Real UPMEM exposes **64 KiB (65,536 bytes) of WRAM per DPU, shared by its tasklets**. It is a software-managed scratchpad used for globals, runtime state, stacks, heap allocations, and application DMA buffers. It is not 64 KiB per thread, and it is not all available to the allocator. The local SDK's [linker script](../toolchain/LoCaLUT/upmem-2023.2.0-Linux-x86_64/src/dpu-rt/src/misc/dpu.lds) explicitly sets WRAM to 64K. The assigned paper describes the same capacity in Section II-A.
 
 The proposed cache holds **metadata only**; object payloads and slabs stay in MRAM. The released frontend bitmap is 16 B. A compile-only descriptor layout uses:
 
@@ -17,7 +17,7 @@ The proposed cache holds **metadata only**; object payloads and slabs stay in MR
 | Dirty state | 4 |
 | Total, with 8-byte alignment | **32** |
 
-Putting the bitmap first gives it the 8-byte alignment needed for MRAM DMA. [wram_budget_probe.c](/home/mahaswint/cs5290/pim-reproduction/research/wram_budget_probe.c) was compiled successfully by the actual SDK 2023.2 DPU compiler; static assertions verify the pointer width, descriptor size, and alignment. Its [assembly](/home/mahaswint/cs5290/pim-reproduction/research/wram_budget_probe.S) returns the following sizes:
+Putting the bitmap first gives it the 8-byte alignment needed for MRAM DMA. [wram_budget_probe.c](wram_budget_probe.c) was compiled successfully by the actual SDK 2023.2 DPU compiler; static assertions verify the pointer width, descriptor size, and alignment. Its [assembly](wram_budget_probe.S) returns the following sizes:
 
 | Cache arrangement | Additional WRAM | Fraction of 64 KiB |
 | --- | ---: | ---: |
@@ -32,9 +32,9 @@ Whole-program feasibility still requires: linked WRAM sections plus dynamically 
 
 ### A material limitation in the released simulation configuration
 
-The authors' [ConfigLoader.WramSize](/home/mahaswint/cs5290/PIM-malloc/simulator/uPIMulator/golang_vm/uPIMulator/src/misc/config_loader.go:45) returns **256 KiB**, and the isolated runtime inherited it. Its linker reserves **24 stacks of 4 KiB**, even for our 16-tasklet experiment: see [InitLinkerConstants](/home/mahaswint/cs5290/pim-reproduction/runtime/src/device/linker/logic/linker_script.go:50) and [AssignWram](/home/mahaswint/cs5290/pim-reproduction/runtime/src/device/linker/logic/linker_script.go:246).
+The authors' [ConfigLoader.WramSize](../../PIM-malloc/simulator/uPIMulator/golang_vm/uPIMulator/src/misc/config_loader.go) returns **256 KiB**, and the isolated runtime inherited it. Its linker reserves **24 stacks of 4 KiB**, even for our 16-tasklet experiment: see [InitLinkerConstants](../runtime/src/device/linker/logic/linker_script.go) and [AssignWram](../runtime/src/device/linker/logic/linker_script.go).
 
-The preserved 16-thread SW run's [values.txt](/home/mahaswint/cs5290/pim-reproduction/results/fig15/sw_t16_s32_n128/values.txt:19) puts `__sys_heap_pointer_reset` at address **99,784**, already beyond real 64 KiB WRAM. This is a linker reservation, not a measurement of actually touched stack bytes. It nevertheless means that the current linked image is not a valid demonstration of fitting on real hardware.
+The preserved 16-thread SW run's [values.txt](../results/fig15/sw_t16_s32_n128/values.txt) puts `__sys_heap_pointer_reset` at address **99,784**, already beyond real 64 KiB WRAM. This is a linker reservation, not a measurement of actually touched stack bytes. It nevertheless means that the current linked image is not a valid demonstration of fitting on real hardware.
 
 The completed results remain measurements of the released simulation configuration. They must not be described as proving deployment within the physical 64 KiB limit. A hardware-capacity validation needs a separate configuration/build with tasklet stack reservations and the full memory budget checked; keep it separate from the preserved paper-artifact reproduction. Enlarged address capacity does not by itself imply a particular latency error, and we have not measured the effect of changing that layout.
 

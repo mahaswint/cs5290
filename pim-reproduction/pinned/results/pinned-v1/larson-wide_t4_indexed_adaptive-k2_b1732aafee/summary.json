@@ -1,0 +1,152 @@
+{
+  "configuration": {
+    "variant": "slab-pinned-adaptive64",
+    "workload": "larson-wide",
+    "threads": 4,
+    "objects": 64,
+    "operations": 256,
+    "warmup": 128,
+    "trace_offset": 0,
+    "seed": 4141,
+    "heap_kib": 32768,
+    "budget_pages": 64,
+    "items": 32768,
+    "rounds": 2,
+    "graph_edges": 3072,
+    "fixture": false,
+    "validate": false,
+    "tag": "pinned-v1",
+    "mode": "indexed",
+    "policy": "adaptive",
+    "slab_kib": 64,
+    "pin_levels": 11,
+    "keep": 2,
+    "max_keep": 2,
+    "decay_ops": 64,
+    "pressure_percent": 75,
+    "larson_max": 8192
+  },
+  "correctness_passed": true,
+  "outcome": "completed",
+  "frequency_mhz": 350,
+  "metrics": {
+    "alloc": {
+      "samples": 2304,
+      "mean_us": 381.722605406746,
+      "p99_us": 1869.9828571428573,
+      "max_us": 3580.562857142857
+    },
+    "free": {
+      "samples": 2304,
+      "mean_us": 280.9079786706349,
+      "p99_us": 1667.3685714285714,
+      "max_us": 4056.1114285714284
+    },
+    "init": {
+      "samples": 1,
+      "mean_us": 180295.96285714285,
+      "p99_us": 180295.96285714285,
+      "max_us": 180295.96285714285
+    },
+    "work": {
+      "samples": 4,
+      "mean_us": 204806.76285714286,
+      "p99_us": 204806.9,
+      "max_us": 204806.9
+    },
+    "drain": {
+      "samples": 4,
+      "mean_us": 16327.630714285715,
+      "p99_us": 16327.631428571429,
+      "max_us": 16327.631428571429
+    },
+    "total": {
+      "samples": 1,
+      "mean_us": 401482.36,
+      "p99_us": 401482.36,
+      "max_us": 401482.36
+    }
+  },
+  "work_metrics": {
+    "alloc": {
+      "samples": 1024,
+      "mean_us": 445.52859095982143,
+      "p99_us": 1971.8285714285714,
+      "max_us": 3580.562857142857
+    },
+    "free": {
+      "samples": 1024,
+      "mean_us": 325.7745452008929,
+      "p99_us": 2153.962857142857,
+      "max_us": 4056.1114285714284
+    }
+  },
+  "work_makespan_us": 204807.14857142858,
+  "totals": {
+    "alloc_calls": 2304,
+    "successes": 2304,
+    "free_calls": 2304,
+    "cache_hits": 973,
+    "refills": 172,
+    "returns": 172,
+    "failures": 0,
+    "retained_hits": 214,
+    "retained": 0,
+    "live_slots": 0,
+    "peak_slots": 1551424,
+    "grows": 16,
+    "decays": 27,
+    "idle_trims": 6,
+    "pressure_trims": 0,
+    "budget_trims": 0,
+    "emergency_trims": 0
+  },
+  "backend": {
+    "used_bytes": 0,
+    "peak_bytes": 1916928,
+    "allocations": 1331,
+    "frees": 1331,
+    "failed_attempts": 0
+  },
+  "wram": {
+    "heap_end_address": 41408,
+    "cache_descriptor_bytes": 2016,
+    "stats_bytes": 288
+  },
+  "owner_table_mram_bytes": 65536,
+  "peak_payload_plus_owner_bytes": 1982464,
+  "source_sha256": "e26efc3bd7acaa0e9f827d622375d5b0048499eb4c30be7cc6fc09977424867d",
+  "simulator_sha256": "907c1e5efe6302aa971e1e3824a2473c20b688da8f5ee093d52069fc2c8a8808",
+  "trace": {
+    "source": "https://github.com/daanx/mimalloc-bench/blob/c65a68834c8fbd619f3ef449f72b9ec659cb551e/bench/larson/larson.cpp",
+    "operation_records": 2560,
+    "pool_per_tasklet": 64,
+    "warmup_replacements_per_tasklet": 256,
+    "work_replacements_per_tasklet": 256,
+    "requested_size_range": "8..8191 B, uniform integer; explicit larger-size Larson parameterization",
+    "limitations": "Scaled fixed operation count; independent tasklets, no thread respawn/object bleeding.",
+    "expected_sums": [
+      37395,
+      37154,
+      37407,
+      36900
+    ],
+    "expected_live": [
+      282233,
+      256745,
+      277598,
+      237279
+    ],
+    "workload": "larson-wide",
+    "seed": 4141,
+    "threads": 4,
+    "trace_sha256": "9b24b55da8ba80c576021bb86c398c885c1f1c115efb288f65794aab2ffabb41",
+    "allocator_sha256": "4df6d81fd72585f4274b57fa4cbe8ccf94c8430f3cabfa59bbd42b8e8d6c1cb6",
+    "larson_max_exclusive": 8192,
+    "selection": "Owner-local Larson; explicit uniform 8..8191 B range.",
+    "backend_sha256": "f8e5a49ccf7020e28f8d99a22bc8a13ecdb3b4a63cf9dd1e041cd0e3da2e1141",
+    "pin_levels": 11,
+    "pinned_metadata_bytes": 528
+  },
+  "host_runtime_seconds": 211.2699339389801
+}

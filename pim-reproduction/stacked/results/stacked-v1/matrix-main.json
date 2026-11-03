@@ -1,0 +1,186 @@
+[
+  {
+    "slab_kib": 0,
+    "policy": "fixed",
+    "threads": 1,
+    "workload": "burst"
+  },
+  {
+    "slab_kib": 0,
+    "policy": "fixed",
+    "threads": 4,
+    "workload": "burst"
+  },
+  {
+    "slab_kib": 0,
+    "policy": "adaptive",
+    "threads": 1,
+    "workload": "burst"
+  },
+  {
+    "slab_kib": 0,
+    "policy": "adaptive",
+    "threads": 4,
+    "workload": "burst"
+  },
+  {
+    "slab_kib": 16,
+    "policy": "fixed",
+    "threads": 1,
+    "workload": "burst"
+  },
+  {
+    "slab_kib": 16,
+    "policy": "fixed",
+    "threads": 4,
+    "workload": "burst"
+  },
+  {
+    "slab_kib": 16,
+    "policy": "adaptive",
+    "threads": 1,
+    "workload": "burst"
+  },
+  {
+    "slab_kib": 16,
+    "policy": "adaptive",
+    "threads": 4,
+    "workload": "burst"
+  },
+  {
+    "slab_kib": 32,
+    "policy": "fixed",
+    "threads": 1,
+    "workload": "burst"
+  },
+  {
+    "slab_kib": 32,
+    "policy": "fixed",
+    "threads": 4,
+    "workload": "burst"
+  },
+  {
+    "slab_kib": 32,
+    "policy": "adaptive",
+    "threads": 1,
+    "workload": "burst"
+  },
+  {
+    "slab_kib": 32,
+    "policy": "adaptive",
+    "threads": 4,
+    "workload": "burst"
+  },
+  {
+    "slab_kib": 64,
+    "policy": "fixed",
+    "threads": 1,
+    "workload": "burst"
+  },
+  {
+    "slab_kib": 64,
+    "policy": "fixed",
+    "threads": 4,
+    "workload": "burst"
+  },
+  {
+    "slab_kib": 64,
+    "policy": "adaptive",
+    "threads": 1,
+    "workload": "burst"
+  },
+  {
+    "slab_kib": 64,
+    "policy": "adaptive",
+    "threads": 4,
+    "workload": "burst"
+  },
+  {
+    "slab_kib": 0,
+    "policy": "fixed",
+    "threads": 4,
+    "workload": "pool",
+    "objects": 64,
+    "operations": 128
+  },
+  {
+    "slab_kib": 0,
+    "policy": "fixed",
+    "threads": 1,
+    "workload": "sparse"
+  },
+  {
+    "slab_kib": 0,
+    "policy": "adaptive",
+    "threads": 4,
+    "workload": "pool",
+    "objects": 64,
+    "operations": 128
+  },
+  {
+    "slab_kib": 0,
+    "policy": "adaptive",
+    "threads": 1,
+    "workload": "sparse"
+  },
+  {
+    "slab_kib": 64,
+    "policy": "fixed",
+    "threads": 4,
+    "workload": "pool",
+    "objects": 64,
+    "operations": 128
+  },
+  {
+    "slab_kib": 64,
+    "policy": "fixed",
+    "threads": 1,
+    "workload": "sparse"
+  },
+  {
+    "slab_kib": 64,
+    "policy": "adaptive",
+    "threads": 4,
+    "workload": "pool",
+    "objects": 64,
+    "operations": 128
+  },
+  {
+    "slab_kib": 64,
+    "policy": "adaptive",
+    "threads": 1,
+    "workload": "sparse"
+  },
+  {
+    "slab_kib": 0,
+    "policy": "adaptive",
+    "threads": 4,
+    "workload": "burst",
+    "size": 256,
+    "rounds": 2
+  },
+  {
+    "slab_kib": 64,
+    "policy": "adaptive",
+    "threads": 4,
+    "workload": "burst",
+    "size": 256,
+    "rounds": 2
+  },
+  {
+    "slab_kib": 0,
+    "policy": "adaptive",
+    "threads": 4,
+    "workload": "burst",
+    "size": 8192,
+    "rounds": 2
+  },
+  {
+    "slab_kib": 64,
+    "policy": "adaptive",
+    "threads": 4,
+    "workload": "burst",
+    "size": 8192,
+    "rounds": 2
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "workload": "burst",
+  "threads": 16,
+  "objects": 8,
+  "operations": 256,
+  "size": 4096,
+  "rounds": 1,
+  "seed": 4141,
+  "description": "Synthetic dense bursts, persistent replacements, sparse survivors, or mixed size boundaries.",
+  "trace_sha256": "237d7edd8225e66ec4ae5b1ec4351b394ca100774f6e4470bdf08b1d5a8a5605",
+  "allocator_sha256": "cb357befcb5a473c62d2971e3b24679efb500e158d506193fa7e936e5779c758"
+}

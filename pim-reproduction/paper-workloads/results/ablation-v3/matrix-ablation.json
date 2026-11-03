@@ -1,0 +1,90 @@
+[
+  {
+    "workload": "larson",
+    "mode": "scan",
+    "policy": "fixed",
+    "threads": 1,
+    "seed": 4141,
+    "objects": 512,
+    "operations": 2048,
+    "graph_edges": 3072,
+    "rounds": 2
+  },
+  {
+    "workload": "larson",
+    "mode": "lists",
+    "policy": "fixed",
+    "threads": 1,
+    "seed": 4141,
+    "objects": 512,
+    "operations": 2048,
+    "graph_edges": 3072,
+    "rounds": 2
+  },
+  {
+    "workload": "larson",
+    "mode": "lookup",
+    "policy": "fixed",
+    "threads": 1,
+    "seed": 4141,
+    "objects": 512,
+    "operations": 2048,
+    "graph_edges": 3072,
+    "rounds": 2
+  },
+  {
+    "workload": "larson",
+    "mode": "indexed",
+    "policy": "fixed",
+    "threads": 1,
+    "seed": 4141,
+    "objects": 512,
+    "operations": 2048,
+    "graph_edges": 3072,
+    "rounds": 2
+  },
+  {
+    "workload": "faimgraph",
+    "mode": "scan",
+    "policy": "fixed",
+    "threads": 1,
+    "seed": 4141,
+    "objects": 512,
+    "operations": 2048,
+    "graph_edges": 3072,
+    "rounds": 2
+  },
+  {
+    "workload": "faimgraph",
+    "mode": "lists",
+    "policy": "fixed",
+    "threads": 1,
+    "seed": 4141,
+    "objects": 512,
+    "operations": 2048,
+    "graph_edges": 3072,
+    "rounds": 2
+  },
+  {
+    "workload": "faimgraph",
+    "mode": "lookup",
+    "policy": "fixed",
+    "threads": 1,
+    "seed": 4141,
+    "objects": 512,
+    "operations": 2048,
+    "graph_edges": 3072,
+    "rounds": 2
+  },
+  {
+    "workload": "faimgraph",
+    "mode": "indexed",
+    "policy": "fixed",
+    "threads": 1,
+    "seed": 4141,
+    "objects": 512,
+    "operations": 2048,
+    "graph_edges": 3072,
+    "rounds": 2
+  }
+]

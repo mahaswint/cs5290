@@ -1,2 +1,0 @@
-/usr/bin/ar qc librtmcount.a CMakeFiles/rtmcount.dir/src/syslib/mcount.c.o
-/usr/bin/ranlib librtmcount.a
