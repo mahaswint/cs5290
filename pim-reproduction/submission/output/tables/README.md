@@ -1,0 +1,3 @@
+Units and scope
+
+Runtime columns are milliseconds. Speedups divide the matching baseline phase by the variant phase; values below one are regressions. Work is the concurrent application phase. Total includes initialization/preload/checking/drain. DRAM commands and bytes cover full execution including final accounting, and exclude WRAM and instruction fetch. Payload peaks exclude the 64 KiB ownership map and shared buddy metadata. IA/SA/PA use interval 64 over allocations plus frees. Fixed-2 caps empty retention. The original paper baseline uses batch/128 microseconds and a different runtime layout; it must remain separate.

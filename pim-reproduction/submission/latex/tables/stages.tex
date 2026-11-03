@@ -1,0 +1,12 @@
+\begin{table*}[t]
+\caption{Comparison contracts across the progressive evaluation. Ratios are formed only within a stage.}\label{tab:stages}
+\centering\small
+\begin{tabular}{@{}p{.22\textwidth}p{.26\textwidth}p{.16\textwidth}p{.27\textwidth}@{}}\toprule
+Stage & Baseline & Empty-byte budget & Adaptive interval / workload \\ \midrule
+Reference reproduction & Original buddy / PIM-malloc-SW & Released layout & 128 allocations/tasklet \\
+Retention and indexing & Maintained scan controls & 16 KiB/tasklet & Normally 64 alloc+free operations \\
+Check-frequency study & Indexed adaptive-64 & 16 KiB/tasklet & Paired 64 versus 128 \\
+Stacked slabs / heavy requests & Indexed, same retention policy & 256 KiB/tasklet & 128 alloc+free operations \\
+Final complete stack & Scan fixed-2 & 256 KiB/tasklet & 64 alloc+free operations \\
+\bottomrule\end{tabular}
+\end{table*}

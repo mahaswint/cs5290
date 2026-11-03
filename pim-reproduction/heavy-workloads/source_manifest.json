@@ -1,0 +1,16 @@
+{
+  "dataset": {
+    "path": "data/cloudPhysicsIO.csv",
+    "url": "https://github.com/1a1a11a/libCacheSim/blob/c6ffd976c83d9e731b37fc91e1ce930039f5ddb9/data/cloudPhysicsIO.csv",
+    "commit": "c6ffd976c83d9e731b37fc91e1ce930039f5ddb9",
+    "git_blob_sha1": "fd9dd5905a58ed7d2a12bd2fb0bcefd4928d07cb",
+    "sha256": "987ff2213050e47d24e8ba6e010d4b3127e51aafef6a76a8a6d43d13b9156fa1"
+  },
+  "larson": {
+    "reference": "https://github.com/daanx/mimalloc-bench/blob/c65a68834c8fbd619f3ef449f72b9ec659cb551e/bench/larson/larson.cpp",
+    "source_blob_sha1": "676223af31bc2a4b8db00c74b0c3eac4da976cc2",
+    "parameters": "min=8, max-exclusive=4096; 64 owner-local live objects/tasklet; 4*pool warmup replacements; 256 timed replacements/tasklet"
+  },
+  "selection": "Chosen a priori from size/lifetime suitability, no application speedup guarantee; all declared configurations reported. Cloud trace sizes, operations and per-owner order preserved, allocation sizes are not rounded into the slab class by the workload.",
+  "cache_model": "64 entries/tasklet; 128 global warmup requests followed by 256 global measured requests; hash-sharded ownership; exact original sizes; full payload read/write checks; storage latency and interarrival time omitted."
+}

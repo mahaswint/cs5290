@@ -1,0 +1,15 @@
+\begin{table*}[t]
+\caption{Design directions considered and the implemented scope.}\label{tab:ideas}
+\centering\small
+\begin{tabular}{@{}p{.23\textwidth}p{.15\textwidth}p{.53\textwidth}@{}}\toprule
+Direction & Decision & Reason or realization \\ \midrule
+Adaptive empty retention & Implemented & Retain/release wholly empty pages; pressure and changing demand \\
+Sharded buddy arenas & Deferred & Partitioning, arena ownership and fallback require a separate study \\
+Scalable allocation/free & Implemented & Partial/full/empty lists plus direct MRAM ownership map \\
+Lifetime regions & Deferred & Requires explicit application lifetime boundaries and API changes \\
+Cross-DPU balancing & Deferred & Host placement, data movement and pointer relocation exceed this scope \\
+Pinned buddy metadata & Implemented & Keep upper tree in shared WRAM; stream lower metadata \\
+Adaptive classes/slabs & Partly implemented & Static 16/32/64 KiB geometry for a new 4 KiB class; no online migration \\
+Long-running workloads & Implemented as evaluation & Persistent pools, churn, phase changes and trace replay \\
+\bottomrule\end{tabular}
+\end{table*}

@@ -1,0 +1,18 @@
+\begin{table*}[t]
+\caption{Pinning isolated from the slab and retention policy.}\label{tab:pinning}
+\centering\small
+\begin{tabular}{llrrr}\toprule
+Workload (4T) & Policy & Work speedup & Total speedup & DRAM-byte reduction (\%) \\ \midrule
+Larson 8--4095 B & A & 1.253 & 1.258 & 48.34 \\
+Larson 8--4095 B & F & 1.224 & 1.230 & 46.48 \\
+CloudPhysics cache & A & 1.014 & 1.011 & 4.45 \\
+CloudPhysics cache & F & 1.013 & 1.010 & 4.44 \\
+Larson 8--8191 B & A & 1.056 & 1.193 & 66.92 \\
+Larson 8--8191 B & F & 1.236 & 1.208 & 66.49 \\
+Gowalla churn & A & 0.999 & 1.169 & 9.66 \\
+Gowalla churn & F & 1.000 & 1.164 & 9.66 \\
+PrIM selection & A & 1.000 & 1.000 & 0.00 \\
+PrIM selection & F & 1.000 & 1.000 & 0.00 \\
+\bottomrule\end{tabular}
+\par\vspace{2pt}{\footnotesize The pinned variant uses a measured 540 B additional WRAM endpoint in each pair. It is an added-storage comparison, not an equal-WRAM-budget replacement experiment.}
+\end{table*}

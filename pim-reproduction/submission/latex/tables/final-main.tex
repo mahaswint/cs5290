@@ -1,0 +1,13 @@
+\begin{table*}[t]
+\caption{Final work runtime (milliseconds) for every stage on five complementary cases.}\label{tab:final-main}
+\centering\small
+\begin{tabular}{lrrrrrrr}\toprule
+Case & B & IA & IF & SA & SF & PA & PF \\ \midrule
+Larson 8--4095 B (4T) & 160.089 & 164.537 & 159.826 & 24.026 & 19.894 & 19.172 & 16.255 \\
+CloudPhysics cache (4T) & 122.773 & 122.925 & 122.784 & 114.586 & 114.528 & 113.023 & 113.075 \\
+Larson 8--8191 B (4T) & 320.457 & 342.572 & 331.666 & 216.369 & 232.613 & 204.807 & 188.202 \\
+Gowalla churn (4T) & 148.847 & 26.172 & 24.961 & 26.918 & 25.830 & 26.954 & 25.827 \\
+PrIM selection (4T) & 14.134 & 14.180 & 14.180 & 14.135 & 14.135 & 14.133 & 14.133 \\
+\bottomrule\end{tabular}
+\par\vspace{2pt}{\footnotesize B: scan fixed-2; I: indexed; S: indexed plus 64 KiB slabs; P: indexed plus slabs plus pinned metadata. A uses adaptive interval 64; F retains at most two empty spans/class. All rows use four tasklets.}
+\end{table*}

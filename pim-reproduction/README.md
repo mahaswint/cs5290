@@ -1,6 +1,8 @@
-# PIM-malloc: first reproduction milestone
+# PIM-malloc reproduction and software allocator extensions
 
-This experiment reproduces the **software-only microbenchmark comparison in Figure 15** of the attached HPCA 2026 paper. Hardware buddy-cache experiments and the language-model serving case study are excluded. The report and presentation will follow after the measurements and contribution experiments are established.
+The completed [submission package](submission/README.md) contains the IEEE report, complete LaTeX project, editable 16-minute presentation, separate baseline/contribution figures and tables, and an offline source snapshot. [SNAPSHOT.md](SNAPSHOT.md) describes the implementation progression and reproduction dependencies.
+
+The original experiment below reproduces the **software-only microbenchmark comparison in Figure 15** of the attached HPCA 2026 paper. Hardware buddy-cache experiments and the full language-model serving case study are outside its scope. The completed software extensions and report are linked above and at the end of this document.
 
 ## Experiment matrix
 
@@ -90,3 +92,13 @@ The first contribution is now implemented separately in [adaptive/README.md](ada
 The first comparison covers 1 and 16 threads, matching Figure 15. Adding 2, 4, and 8 threads expands the evaluation; it does not by itself satisfy the assignment's requirement for an implemented contribution. Software policy candidates and literature sources are recorded in [research/IMPROVEMENT_OPTIONS.md](research/IMPROVEMENT_OPTIONS.md). The user selected adaptive empty-page retention as the first contribution; its isolated implementation and comparison commands are in [adaptive/README.md](adaptive/README.md). The released reference frontend has hardcoded caches for tasklets 0 through 15; the contribution runner also currently limits experiments to 16 threads.
 
 The dynamic-allocation graph workload now has a separate reduced implementation in [adaptive/graph/README.md](adaptive/graph/README.md). It uses real loc-gowalla edges, the paper's 256 B linked-list blocks and a 1:2 new-edge to existing-edge split at the peak batch. It adds 64 B blocks and a changing low/high/low/rebound insertion/deletion schedule inspired by faimGraph. The paper's full Figure 17 experiment, including its variable-array representation and full-dataset evaluation, is not claimed as reproduced. The released artifact's microbenchmark-only build does not include that graph kernel.
+
+The combined retention/list/ownership implementation is documented in [combined/SUMMARY.md](combined/SUMMARY.md). Its additional paper-derived evaluation is in [paper-workloads/README.md](paper-workloads/README.md), with [source mappings and port limitations](paper-workloads/SOURCES.md): Larson persistent replacement, both PIM-malloc graph representations, faimGraph-style arbitrary edge updates, and a preallocated PrIM SEL control. These scaled DPU ports have separate declared matrices, correctness oracles, raw measurements and an audited [results report](paper-workloads/RESULTS.md).
+
+The extended [stacked allocator](stacked/README.md) combines 4 KiB object slabs with indexed lists/ownership and selectable fixed/adaptive retention. Its [results](stacked/RESULTS.md) compare slab sizes, byte budgets, dense reuse, sparse survivors and bypass controls.
+
+[Large-request workloads](heavy-workloads/README.md) add an explicit mixed-size 8–4095 B Larson configuration and a variable-size LRU write-cache replay of actual CloudPhysics I/O records. The paired [results](heavy-workloads/RESULTS.md) report both policies, 32/64 KiB slabs, 1/4 tasklets, a second seed/trace window, backend calls and memory costs.
+
+[Pinned buddy metadata](pinned/README.md) adds an authoritative 528 B upper-tree prefix in shared WRAM while streaming disjoint lower metadata from MRAM. Its [full-stage comparison](pinned/RESULTS.md) runs scan fixed-2, indexed adaptive-64/fixed-2, slabs with both policies, and slabs plus pinning with both policies on five workload cases.
+
+The [paper workload extension](pinned/paper/README.md) applies all seven stages to the PIM-malloc paper's two Gowalla insertion structures and its 32 B / 256 B / 4 KiB allocation microbenchmarks at 1/16 tasklets. It also includes a separately labelled allocator-only KV-growth replay; the paper's full attention kernel and LLM-serving trace are not supplied in the pinned artifact. [Results and memory traffic](pinned/paper/RESULTS.md) cover every declared case.

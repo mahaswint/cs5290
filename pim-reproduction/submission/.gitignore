@@ -1,0 +1,6 @@
+/build/
+/evidence/*
+!/evidence/final-98-runs.csv
+/collect.py
+/compile.py
+/output/pdf/*.log

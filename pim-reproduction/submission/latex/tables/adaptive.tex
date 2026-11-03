@@ -1,0 +1,13 @@
+\begin{table}[t]
+\caption{Early retention experiment: regular phases do not favor adaptive bookkeeping.}\label{tab:adaptive}
+\centering\small
+\begin{tabular}{llrr}\toprule
+Case & Policy & Total (ms) & Peak (KiB) \\ \midrule
+Regular phases, 1T & fixed-2 & 5.48 & 32 \\
+Regular phases, 1T & adaptive & 6.21 & 32 \\
+Regular phases, 4T & fixed-2 & 16.25 & 128 \\
+Regular phases, 4T & adaptive & 18.52 & 128 \\
+Regular phases, 4T & eager & 29.66 & 192 \\
+Regular phases, 4T & lazy & 23.82 & 96 \\
+\bottomrule\end{tabular}
+\end{table}

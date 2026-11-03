@@ -1,0 +1,23 @@
+\begin{table*}[t]
+\caption{Allocation demand, full-execution backend/DRAM activity and peak payload reservation.}\label{tab:traffic}
+\centering\small
+\setlength{\tabcolsep}{4.5pt}
+\begin{tabular}{lrrrrrrr}\toprule
+Case & Timed allocs & B buddy & PF buddy & B DRAM MiB & PF DRAM MiB & B peak KiB & PF peak KiB \\ \midrule
+Larson 8--4095 B (4T) & 1,024 & 1,416 & 255 & 5.412 & 0.722 & 996 & 1244 \\
+CloudPhysics cache (4T) & 150 & 183 & 95 & 5.879 & 5.365 & 1408 & 1596 \\
+Larson 8--8191 B (4T) & 1,024 & 1,865 & 1,311 & 10.689 & 2.247 & 1624 & 1932 \\
+Gowalla churn (4T) & 3,397 & 360 & 360 & 15.696 & 8.433 & 1440 & 1440 \\
+PrIM selection (4T) & 0 & 0 & 0 & 1.876 & 1.939 & 0 & 0 \\
+Gowalla linked blocks (4T) & 1,687 & 360 & 360 & 7.289 & 4.409 & 1440 & 1440 \\
+Gowalla growing arrays (4T) & 1,690 & 93 & 93 & 1.858 & 1.221 & 372 & 372 \\
+KV growth replay (4T) & 1,024 & 220 & 220 & 2.840 & 1.915 & 880 & 880 \\
+32 B microbenchmark (1T) & 128 & 2 & 2 & 0.032 & 0.088 & 8 & 8 \\
+32 B microbenchmark (16T) & 2,048 & 32 & 32 & 0.456 & 0.414 & 128 & 128 \\
+256 B microbenchmark (1T) & 128 & 9 & 9 & 0.114 & 0.148 & 36 & 36 \\
+256 B microbenchmark (16T) & 2,048 & 144 & 144 & 1.771 & 1.395 & 576 & 576 \\
+4 KiB microbenchmark (1T) & 128 & 128 & 9 & 1.430 & 1.086 & 512 & 576 \\
+4 KiB microbenchmark (16T) & 2,048 & 2,048 & 144 & 22.816 & 16.381 & 8192 & 9216 \\
+\bottomrule\end{tabular}
+\par\vspace{2pt}{\footnotesize Buddy counts and DRAM bytes cover the full execution; they are not timed-work counts. Peak excludes the extra 64 KiB owner map, buddy metadata and identical application tables. DRAM counters exclude WRAM and instruction fetches.}
+\end{table*}

@@ -1,0 +1,6 @@
+{
+  "base": "../adaptive/buddy_backend.inc",
+  "base_sha256": "f6b266942507a7df2bf19b7a99db77336a5f78a2db4d4416b472a02d2e3301a7",
+  "pin_levels": 11,
+  "scope": "Pinned authoritative upper packed metadata prefix; lower streamed DMA windows remain disjoint; existing shared mutex unchanged; 8-byte boundary padding explicitly pinned."
+}

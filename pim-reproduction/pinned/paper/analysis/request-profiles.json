@@ -1,0 +1,114 @@
+[
+  {
+    "workload": "pim-list",
+    "threads": 4,
+    "all_sizes": {
+      "256": 5372
+    },
+    "work_sizes": {
+      "256": 1687
+    },
+    "all_frees": 5372,
+    "work_frees": 0
+  },
+  {
+    "workload": "pim-array",
+    "threads": 4,
+    "all_sizes": {
+      "64": 5372,
+      "128": 3,
+      "256": 2
+    },
+    "work_sizes": {
+      "64": 1687,
+      "128": 1,
+      "256": 2
+    },
+    "all_frees": 5377,
+    "work_frees": 3
+  },
+  {
+    "workload": "kv-growth",
+    "threads": 4,
+    "all_sizes": {
+      "512": 1536
+    },
+    "work_sizes": {
+      "512": 1024
+    },
+    "all_frees": 1536,
+    "work_frees": 0
+  },
+  {
+    "workload": "micro-32",
+    "threads": 1,
+    "all_sizes": {
+      "32": 128
+    },
+    "work_sizes": {
+      "32": 128
+    },
+    "all_frees": 128,
+    "work_frees": 0
+  },
+  {
+    "workload": "micro-32",
+    "threads": 16,
+    "all_sizes": {
+      "32": 2048
+    },
+    "work_sizes": {
+      "32": 2048
+    },
+    "all_frees": 2048,
+    "work_frees": 0
+  },
+  {
+    "workload": "micro-256",
+    "threads": 1,
+    "all_sizes": {
+      "256": 128
+    },
+    "work_sizes": {
+      "256": 128
+    },
+    "all_frees": 128,
+    "work_frees": 0
+  },
+  {
+    "workload": "micro-256",
+    "threads": 16,
+    "all_sizes": {
+      "256": 2048
+    },
+    "work_sizes": {
+      "256": 2048
+    },
+    "all_frees": 2048,
+    "work_frees": 0
+  },
+  {
+    "workload": "micro-4096",
+    "threads": 1,
+    "all_sizes": {
+      "4096": 128
+    },
+    "work_sizes": {
+      "4096": 128
+    },
+    "all_frees": 128,
+    "work_frees": 0
+  },
+  {
+    "workload": "micro-4096",
+    "threads": 16,
+    "all_sizes": {
+      "4096": 2048
+    },
+    "work_sizes": {
+      "4096": 2048
+    },
+    "all_frees": 2048,
+    "work_frees": 0
+  }
+]

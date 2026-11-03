@@ -1,0 +1,6 @@
+{
+  "base_allocator": "../combined/allocator.c",
+  "base_sha256": "b381f717e426f7432dbddaca2b53d0d0624e46def1cffbebfc7f734d04b3ed21",
+  "slab_design": "../slabs/README.md",
+  "scope": "Add 2049..4096 B class only; small classes remain 4 KiB; indexed ownership for all span leaves; byte-charged retention."
+}

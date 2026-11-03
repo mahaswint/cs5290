@@ -1,0 +1,11 @@
+\begin{table}[t]
+\caption{The seven allocator variants.}\label{tab:variants}
+\centering\small
+\begin{tabular}{@{}lp{.68\columnwidth}@{}}\toprule
+Labels & Changes from the common baseline \\ \midrule
+B & Scan + fixed-2, classes through 2 KiB \\
+IA / IF & Indexed lists and lookup, adaptive-64 / fixed-2 \\
+SA / SF & Indexed + 64 KiB slabs, adaptive-64 / fixed-2 \\
+PA / PF & Indexed + slabs + pinned metadata, adaptive-64 / fixed-2 \\
+\bottomrule\end{tabular}
+\end{table}

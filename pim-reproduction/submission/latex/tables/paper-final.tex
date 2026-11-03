@@ -1,0 +1,17 @@
+\begin{table*}[t]
+\caption{Final paper-derived cases: the baseline and both full-stack policies.}\label{tab:paper-final}
+\centering\small
+\begin{tabular}{lrrrrrr}\toprule
+Case & B work (ms) & PA work (ms) & PF work (ms) & PA speedup & PF speedup & PF total speedup \\ \midrule
+Gowalla linked blocks (4T) & 19.330 & 15.479 & 15.198 & 1.249 & 1.272 & 1.335 \\
+Gowalla growing arrays (4T) & 5.752 & 5.845 & 5.494 & 0.984 & 1.047 & 1.070 \\
+KV growth replay (4T) & 24.382 & 19.657 & 19.625 & 1.240 & 1.242 & 1.210 \\
+32 B microbenchmark (1T) & 0.875 & 1.077 & 0.990 & 0.813 & 0.884 & 0.799 \\
+32 B microbenchmark (16T) & 6.938 & 5.719 & 5.648 & 1.213 & 1.228 & 1.105 \\
+256 B microbenchmark (1T) & 2.076 & 2.005 & 1.925 & 1.035 & 1.079 & 0.994 \\
+256 B microbenchmark (16T) & 34.201 & 27.750 & 27.641 & 1.232 & 1.237 & 1.192 \\
+4 KiB microbenchmark (1T) & 20.912 & 1.858 & 1.778 & 11.255 & 11.763 & 1.512 \\
+4 KiB microbenchmark (16T) & 508.474 & 22.335 & 22.243 & 22.766 & 22.860 & 6.746 \\
+\bottomrule\end{tabular}
+\par\vspace{2pt}{\footnotesize Graph cases are reduced ports; KV is an allocation-only replay and excludes attention/serving. Original request sizes and 128 microbenchmark requests/tasklet are retained. Values below one are regressions.}
+\end{table*}

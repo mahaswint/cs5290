@@ -1,0 +1,21 @@
+{
+  "paper": {
+    "paper_artifact_commit": "4fdcbcac3b0d94f2d4d51d8d84c3a3a640ad14a4",
+    "paper_path": "/home/mahaswint/Downloads/Group-11_PIM-Malloc_A Fast and Scalable Dynamic Memory Allocator for Processing-In-Memory PIM Architectures (HPCA 2026) (2).pdf",
+    "paper_sha256": "ba1a8f6143102ca3fba63651a67b2dbf457cecc427a11e52cc2e6c1b3f2f0212"
+  },
+  "artifact_commit": "4fdcbcac3b0d94f2d4d51d8d84c3a3a640ad14a4",
+  "released_microbenchmark_path": "PIM-malloc/simulator/uPIMulator/golang_vm/uPIMulator/benchmark/microbenchmark/dpu/task.c",
+  "released_microbenchmark_sha256": "c2b70666fcd8825961eeb3962dd0e031c1e1c1cebc6ce4c6f4f6f5bd68bdda29",
+  "released_software_benchmark_files": [
+    "simulator/uPIMulator/golang_vm/uPIMulator/benchmark/CMakeLists.txt",
+    "simulator/uPIMulator/golang_vm/uPIMulator/benchmark/build.py",
+    "simulator/uPIMulator/golang_vm/uPIMulator/benchmark/microbenchmark/CMakeLists.txt",
+    "simulator/uPIMulator/golang_vm/uPIMulator/benchmark/microbenchmark/dpu/CMakeLists.txt",
+    "simulator/uPIMulator/golang_vm/uPIMulator/benchmark/microbenchmark/dpu/task.c",
+    "simulator/uPIMulator/golang_vm/uPIMulator/benchmark/microbenchmark/host/app.c"
+  ],
+  "parent_allocator_origin_manifest_sha256": "078c7c9576b9c21be57c40ff962bd1b7538b42d6b03a6ea768a16330a26ec947",
+  "attention_status": "Original GEMV attention kernel and serving trace not found in pinned released checkout; KV allocation-only replay explicitly separate.",
+  "replay_assumption": "One 512 B allocation per token per stream; one stream/tasklet, 128 prompt tokens and 256 output tokens."
+}

@@ -2,7 +2,7 @@
 .git/
 .cache/
 .agents/
-.codex/
+.[a-z]*/
 .aws/
 .venv/
 __pycache__/

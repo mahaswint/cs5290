@@ -1,0 +1,11 @@
+\begin{table*}[t]
+\caption{Final implementation progression and additional storage.}\label{tab:variants}
+\centering\small
+\begin{tabular}{@{}p{.09\textwidth}p{.29\textwidth}p{.27\textwidth}p{.27\textwidth}@{}}\toprule
+Variants & Mechanism & Geometry & Additional storage \\ \midrule
+B & Scan + fixed-2 & 4 KiB pages, classes through 2 KiB & None \\
+IA / IF & Indexed + adaptive-64 / fixed-2 & Same small classes & 64 KiB owner map (MRAM) \\
+SA / SF & Indexed + slabs + A / F & New 4 KiB class, 64 KiB MRAM spans & Ninth class descriptors \\
+PA / PF & Indexed + slabs + pinning + A / F & Same geometry and policy & 528 B WRAM prefix; 540 B endpoint delta \\
+\bottomrule\end{tabular}
+\end{table*}

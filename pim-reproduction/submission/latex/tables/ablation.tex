@@ -1,0 +1,15 @@
+\begin{table*}[t]
+\caption{Allocation/free mechanisms isolated at one tasklet with fixed-2 retention and unchanged input.}\label{tab:ablation}
+\centering\small
+\begin{tabular}{llrrrr}\toprule
+Workload & Mode & Work (ms) & Speedup & Alloc. mean ($\mu$s) & Free mean ($\mu$s) \\ \midrule
+Larson 8--999 B & scan & 202.945 & 1.000 & 78.89 & 17.39 \\
+Larson 8--999 B & lists & 69.812 & 2.907 & 8.17 & 23.11 \\
+Larson 8--999 B & lookup & 166.219 & 1.221 & 73.28 & 5.07 \\
+Larson 8--999 B & indexed & 38.759 & 5.236 & 8.36 & 7.75 \\
+Gowalla churn & scan & 2055.865 & 1.000 & 540.49 & 50.44 \\
+Gowalla churn & lists & 236.009 & 8.711 & 5.02 & 50.20 \\
+Gowalla churn & lookup & 1902.033 & 1.081 & 540.65 & 5.00 \\
+Gowalla churn & indexed & 89.790 & 22.896 & 5.49 & 6.68 \\
+\bottomrule\end{tabular}
+\end{table*}
