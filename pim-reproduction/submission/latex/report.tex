@@ -1,3 +1,7 @@
+% Find the bundled IEEE class alongside the other supporting assets.
+\makeatletter
+\def\input@path{{artifacts/}}
+\makeatother
 \documentclass[conference]{IEEEtran}
 \usepackage{cite}
 \usepackage{amsmath,amssymb}
@@ -7,9 +11,14 @@
 \usepackage[section]{placeins}
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,positioning}
-\graphicspath{{figures/}}
+\graphicspath{{artifacts/}}
 \title{Improving Dynamic Memory Allocation in PIM-malloc}
-\author{\IEEEauthorblockN{CS5290 Project Group}}
+\author{
+\IEEEauthorblockN{\small
+Bhavya Negi (\textit{230101025}), Lasya Madhu Sundar (\textit{230101058}),
+Pinjala Narmada (\textit{230101074}), Tedla Mahaswin (\textit{230101104})}
+\IEEEauthorblockA{\small \textit{Group-11}}
+}
 \begin{document}
 \raggedbottom
 \maketitle
@@ -69,23 +78,31 @@ This leaves several possible costs. A frontend may scan many pages to find a fre
 
 \section{Proposed Design}
 \subsection{Common implementation and memory limits}
-Free and reuse need to work correctly before we compare policies. We corrected bitmap indexing, free routing and empty-page unlinking in the common implementation. We also added correct handling of large backend blocks and nonfatal allocation failure. Every contribution variant uses these same fixes.
+Free and reuse must work consistently across variants; otherwise timings can confuse a policy change with incorrect reclamation.
+
+We corrected bitmap indexing, free routing and empty-page unlinking in the common implementation. We also added correct handling of large backend blocks and nonfatal allocation failure. Every contribution variant uses these same fixes.
 
 The released simulator allows 256 KiB WRAM and reserves 24 stacks of 4 KiB. We retain that setup for the original-paper reproduction. For our changes, we cap WRAM at 65,536 B and use 1,536 B reservations for each of the 24 stacks. The original reproduction and the contribution experiments are therefore separate baseline families. This address limit checks the linked memory budget. Worst-case stack use and physical instruction-memory fit still need hardware validation.
 
 \subsection{Empty-page retention}
+Empty pages trade reuse against capacity. Returning them immediately can force the next burst back to the shared backend. Keeping them avoids refills but holds memory within one tasklet and class. Bounded retention aims to keep useful pages while releasing idle capacity.
+
 We implemented eager population, immediate return, fixed retention and adaptive retention. Fixed-2 keeps at most two completely empty pages per class. It does not limit the number of live or partially filled pages. When a page fills, the frontend can obtain another page and use all its slots.
 
-The adaptive policy maintains a target for each class. Repeated refills increase that target. Periodic checks lower idle targets and return excess empty pages. A shared byte budget limits total retained memory per tasklet. A pressure flag at 75\% heap use and an emergency drain allow further reclamation. A tasklet only reclaims its own pages. This keeps ownership simple but can leave memory with an inactive tasklet.
+Demand can move between classes, so a fixed limit may retain pages where they are no longer useful. The adaptive policy maintains a target for each class. Repeated refills increase that target. Periodic checks lower idle targets and return excess empty pages. A shared byte budget limits total retained memory per tasklet. A pressure flag at 75\% heap use and an emergency drain allow further reclamation. A tasklet only reclaims its own pages. This keeps ownership simple but can leave memory with an inactive tasklet.
 
-We support checks every 64 or 128 allocator operations. An operation means one allocation or one free. Changing the interval changes both maintenance overhead and how quickly an idle target decays.
+Periodic checks keep maintenance off most requests, at the cost of slower reclamation. We support checks every 64 or 128 allocator operations. An operation means one allocation or one free. Changing the interval changes both maintenance overhead and how quickly an idle target decays.
 
 \subsection{Indexed page lists and ownership lookup}
+A larger page pool can make discovery more expensive. Allocation needs a page with free space, while free needs the owner of a known pointer. Separate lists and a pointer-derived table answer these questions directly instead of repeating a scan.
+
 We replace page scans with separate partial, full and empty lists. Allocation can start from a partial or empty page. Filling or emptying a page moves it between lists by updating a few links. We also add an ownership table indexed by the pointer's 4 KiB heap leaf. An 8 B entry identifies the tasklet, class and page or span head, so free can find the right frontend directly.
 
 A 32 MiB payload heap has 8,192 leaves, giving a 64 KiB ownership table in MRAM. This is extra metadata outside the payload heap. The lists add 24 B of WRAM state per tasklet and class. Frees remain local to the tasklet that allocated the object.
 
 \subsection{A slab class for 4 KiB objects}
+Requests above 2 KiB bypass the original frontend and pay for buddy traversal and locking per object. A larger span can pay that cost once for several slots. We add a separate class to target these requests while preserving small-object layouts, and compare span sizes to examine the space cost.
+
 The original frontend ends at 2 KiB. We add a ninth class for requests from 2,049 B through 4,096 B. It obtains a 16, 32 or 64 KiB MRAM span and divides that span into 4 KiB slots. For span size $S$ and slot size $B$, the existing header and bitmap give
 \begin{equation}
  C(S,B)=\min\left(128,\left\lfloor\frac{S-24}{B}\right\rfloor\right).
@@ -95,6 +112,8 @@ The three span sizes hold 3, 7 and 15 objects. Smaller classes keep their origin
 The span records its size, and the ownership table maps every covered leaf to its head. Retention charges the span's physical bytes: an empty 64 KiB span costs sixteen 4 KiB units. All variants receive the same byte budget within a comparison. Geometry stays fixed during a run, and live objects do not move. We first tested slabs separately, then added them to the indexed allocator with both retention policies.
 
 \subsection{Buddy metadata in WRAM}
+Backend calls remain after slab reuse. Many paths share upper buddy-tree levels, making their metadata a useful reuse target. Pinning the whole tree would compete with application data and stacks in WRAM. We therefore keep only a small upper prefix, leaving lower metadata in MRAM.
+
 We keep tree levels 0--10 in shared WRAM and continue to stream lower metadata from MRAM. For the 32 MiB heap, the upper levels need 524 B, rounded to a 528 B DMA boundary. The aligned prefix includes the first packed word of the next level. Two descriptor fields add 8 B. Alignment accounts for a further 4 B in the measured memory layout.
 
 The WRAM copy holds the current upper-tree state. Lower DMA windows cannot overlap it. The existing buddy mutex protects updates. An explicit checkpoint copies the prefix to its MRAM shadow when the allocator is locked or idle. Normal allocations do not write the prefix back after every access.
@@ -127,7 +146,19 @@ Native sanitizer and differential tests check live intervals, payloads, wrong-si
 \section{Evaluation}\label{sec:evaluation}
 \subsection{Reproducing the paper baseline}
 Table~\ref{tab:baseline} compares the original Figure 15 labels with our measurements. Across the buddy and software allocator settings, the maximum absolute deviation is 7.20\%. The table shows the software allocator; the accompanying baseline results contain both allocators. The displayed latency is batch completion time divided by 128 requests per tasklet. The paper does not state the exact multithread aggregation formula, so this is our documented interpretation. Individual request latencies remain available separately. These numbers use the preserved runtime and are separate from our contribution baseline.
-\input{tables/baseline-summary.tex}
+\begin{table}[t]
+\caption{Software allocator reproduction. Latency is batch time / 128, in microseconds. B = bytes; KiB = 1024 bytes. Tasklets are hardware threads.}\label{tab:baseline}
+\centering\small
+\begin{tabular}{rlrr}\toprule
+Tasklets & Request & Paper & Reproduced \\ \midrule
+1 & 32 B & 6.9 & 6.99 \\
+1 & 256 B & 32 & 32.12 \\
+1 & 4 KiB & 310 & 312.71 \\
+16 & 32 B & 51 & 51.86 \\
+16 & 256 B & 430 & 457.72 \\
+16 & 4 KiB & 6700 & 6808.97 \\
+\bottomrule\end{tabular}
+\end{table}
 
 The key size boundary is 2 KiB: smaller requests use the software frontend, while 4 KiB requests still use buddy directly. Our later slab change targets this missing frontend class. The original reproduction establishes the starting behavior; the corrected scan fixed-2 control is the baseline for our final contributions.
 
@@ -221,17 +252,33 @@ Work speedup and total speedup answer different questions. In the one-tasklet 4 
 The same distinction appears in the other workloads. Larson 8--4095 B reaches 9.85-fold work and 6.77-fold total speedup. Graph churn reaches 5.76-fold work and 2.30-fold total. Wider Larson has 1.70-fold work and 1.86-fold total speedup because pinning also helps initialization and final free. Total can therefore improve more or less than work, depending on which phases benefit.
 
 For configured Larson, full fixed reduces full-execution DRAM commands from 709,446 to 94,810. Its payload peak rises from 996 to 1,244 KiB. The sixteen-tasklet 4 KiB case reduces commands from 2,990,666 to 2,147,130, but payload reservation rises from 8 to 9 MiB. Indexed variants also need the separate 64 KiB ownership table. In the one-tasklet 32 B case, commands rise from 4,226 to 11,566. These costs explain why a larger allocator is not always faster or more memory-efficient.
-\input{tables/memory-summary.tex}
+\begin{table}[t]
+\caption{Main-memory traffic and extra peak payload. B = scan fixed-2; PF = indexed + slabs + pinning with fixed-2. T = tasklets; MiB = $2^{20}$ bytes; KiB = $2^{10}$ bytes.}\label{tab:traffic}
+\centering\small
+\begin{tabular}{lrrr}\toprule
+Case & B MiB & PF MiB & Peak +KiB \\ \midrule
+Larson (4T) & 5.41 & 0.72 & +248 \\
+Cache (4T) & 5.88 & 5.37 & +188 \\
+Churn (4T) & 15.70 & 8.43 & 0 \\
+4 KiB (16T) & 22.82 & 16.38 & +1024 \\
+32 B (1T) & 0.032 & 0.088 & 0 \\
+\bottomrule\end{tabular}
+\par\vspace{2pt}{\footnotesize Peak is PF minus B; B in request sizes means bytes. The separate 64 KiB ownership map is excluded from payload peaks.}
+\end{table}
 
 Table~\ref{tab:traffic} summarizes representative memory costs. The complete fourteen-setting comparison is included in the accompanying result files. Counts include the whole execution, while timed allocations refer only to work. For example, the 4 KiB sixteen-tasklet benchmark issues 2,048 timed requests and needs only 144 slab backend allocations, yet it still transfers 16.38 MiB overall. Full-payload writes and checking remain after metadata calls have been reduced. Fewer backend calls therefore need not produce the same reduction in total bytes.
 
 The final 98 configurations complete their offered work and fully coalesce the heap. The parent and paper-extension checks include 47 and 42 native test cases. Their maximum audited WRAM endpoints are 49,472 B and 48,296 B. The full numerical tables and memory counters accompany the submission.
 
-\newpage
 \section{Discussion and Future Work}
 The design addresses different costs at different points. Indexing reduces page discovery. The new class reduces repeated backend calls for medium-sized objects. Pinning speeds up metadata access in the backend calls that remain. Adaptive retention is useful when demand changes, while stable reuse often favors fixed retention.
 
 The main limits are ownership and memory capacity. One tasklet cannot reclaim another inactive tasklet's pages. Large spans can waste space or fail under fragmentation. The graph sample is small and sparse, and the cache uses a selected trace window. All experiments use deterministic simulation. Testing a complete hardware image, broader traces and equal-WRAM metadata policies would make the results more useful. Separating check frequency from idle-decay duration would also make the adaptive policy easier to tune.
+
+% Start the conclusion in the right column without forcing an extra page.
+\makeatletter
+\if@firstcolumn\newpage\fi
+\makeatother
 
 \section{Conclusion}
 We extended PIM-malloc's software allocator with indexed allocation/free, fixed or adaptive empty retention, a 4 KiB slab class and pinned buddy metadata. The evaluation shows why these changes need separate controls. Each helps a particular part of allocation, while its metadata and memory costs remain visible on other workloads. Fixed retention is a strong choice for steady demand. Adaptation needs changing demand or memory pressure to justify its added work.

@@ -34,6 +34,8 @@ def save(fig,stem):
   path=OUT/f'{stem}.{ext}'
   fig.savefig(path,dpi=400,bbox_inches='tight',pad_inches=.025)
   if ext=='svg':path.write_text('\n'.join(line.rstrip() for line in path.read_text().splitlines())+'\n')
+  current=HERE/'latex/artifacts'/path.name
+  if current.exists():current.write_bytes(path.read_bytes())
  plt.close(fig)
 
 def synthetic_reuse(stacked):

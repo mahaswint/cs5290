@@ -65,13 +65,14 @@ def main():
  for name in ['final-progression.csv','traffic-and-memory.csv','README.md']:copy(tables/name,latex/'data'/name)
  plotting=(HERE/'figures.py').read_text().replace("HERE=Path(__file__).resolve().parent;ROOT=HERE.parent", "HERE=Path(__file__).resolve().parent.parent;ROOT=HERE/'data/history'")
  plotting=plotting.replace("OUT=HERE/'latex/figures'","OUT=HERE/'figures'").replace("inventory=json.loads((HERE/'evidence/inventory.json').read_text())","inventory={}")
+ plotting=plotting.replace("HERE/'latex/artifacts'","HERE/'artifacts'")
  plotting=plotting.replace("OUT.mkdir(exist_ok=True)","OUT.mkdir(exist_ok=True);(HERE/'build').mkdir(exist_ok=True)")
  (latex/'tools').mkdir(exist_ok=True)
  (latex/'tools/figures.py').write_text(plotting)
  copy(ROOT/'requirements-lock.txt',latex/'tools/requirements.txt')
  (latex/'README.md').write_text('''# Complete IEEE LaTeX project
 
-Upload this directory to Overleaf and select report.tex as the main document, with pdfLaTeX. Alternatively run `tectonic report.tex` or `latexmk -pdf report.tex`. The requested template uses IEEEtran conference mode, standard margins and two columns. IEEEtran.cls and all external figures/tables are included. Author label: CS5290 Project Group.
+Upload this directory to Overleaf and select report.tex as the main document, with pdfLaTeX. Alternatively run `tectonic report.tex` or `latexmk -pdf report.tex`. The requested template uses IEEEtran conference mode, standard margins and two columns. IEEEtran.cls and all external figures/tables are included. The main report preserves the Group-11 author block and inline tables from the uploaded source, with its supporting files in artifacts/.
 
 Select baseline-results.tex or contribution-results.tex for the separate results documents. Those extracts use one column for wide tables. All figures are vector PDFs, with editable SVG and 400 dpi PNG exports. No figure downloads are needed during compilation.
 
@@ -80,18 +81,28 @@ Optional graph regeneration: install tools/requirements.txt in a Python environm
  zipdir(latex,OUT/'latex-source.zip')
  # The report-only source ZIP opens directly as an Overleaf project.
  report_source=BUILD/'report-latex-source';report_source.mkdir(exist_ok=True)
- for name in ['report.tex','IEEEtran.cls','README.md']:
+ for name in ['report.tex','README.md']:
   copy(latex/name,report_source/name)
  report_text=(latex/'report.tex').read_text()
+ if (latex/'artifacts/IEEEtran.cls').exists():
+  copy(latex/'artifacts/IEEEtran.cls',report_source/'artifacts/IEEEtran.cls')
+ else:copy(latex/'IEEEtran.cls',report_source/'IEEEtran.cls')
  for name in re.findall(r'\\input\{([^}]+)\}',report_text):copy(latex/name,report_source/name)
+ graphic_dirs=[Path('.')]
+ for group in re.findall(r'\\graphicspath\{((?:\{[^{}]*\})+)\}',report_text):
+  graphic_dirs += [Path(p) for p in re.findall(r'\{([^{}]*)\}',group)]
  for name in re.findall(r'\\includegraphics\[[^]]+\]\{([^}]+)\}',report_text):
-  stem=Path(name).stem
-  for ext in ['pdf','svg','png']:copy(latex/'figures'/f'{stem}.{ext}',report_source/'figures'/f'{stem}.{ext}')
+  requested=Path(name)
+  assert not requested.is_absolute() and '..' not in requested.parts
+  relative=next(folder/requested for folder in graphic_dirs if (latex/folder/requested).is_file())
+  for ext in ['pdf','svg','png']:
+   asset=relative.with_suffix('.'+ext)
+   if (latex/asset).exists():copy(latex/asset,report_source/asset)
  (report_source/'README.md').write_text('''# Report LaTeX source
 
 Upload the contents of this ZIP to Overleaf. Select report.tex as the main file and use pdfLaTeX. Alternatively run `tectonic report.tex` or `latexmk -pdf report.tex`.
 
-The main file includes all report text, equations, references and the TikZ baseline diagram. IEEEtran.cls, two short tables and all five results plots are included. Figure and table captions define their abbreviations locally. Keep the tables/ and figures/ directories next to report.tex. The report uses the standard IEEE conference layout and is seven pages.
+The main file includes all report text, both tables, equations, references and the TikZ baseline diagram. The Group-11 author block and artifacts/ layout follow the uploaded current source. The bundled IEEEtran.cls and all five results plots are in artifacts/; keep that directory next to report.tex. Figure and table captions define their abbreviations locally. The report uses the standard IEEE conference layout and is seven pages.
 
 The complete data and plot-generation scripts are in the accompanying latex-source.zip and source-code.zip packages.
 ''')
