@@ -1,5 +1,6 @@
-# Improving Dynamic Memory Allocation in PIM-malloc
+**Please refer to the final-submission branch**
 
+# Improving Dynamic Memory Allocation in PIM-malloc
 CS5290 course project. We reproduce the software allocation benchmark from
 PIM-malloc (HPCA 2026) and evaluate empty-page retention, indexed page lookup,
 a 4 KiB slab class, and buddy metadata placement in WRAM.
